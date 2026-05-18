@@ -25,8 +25,12 @@ export function SectionHub({ section }: { section: SectionId }) {
     <Container className="py-12">
       <JsonLd data={breadcrumbSchema(crumbs)} />
       <Breadcrumbs items={crumbs} />
-      <h1 className="mt-6 font-serif text-4xl tracking-tight">{m.title}</h1>
-      <p className="mt-3 max-w-2xl text-lg text-ink-soft">{m.description}</p>
+      <h1 className="mt-6 font-serif text-4xl tracking-tight text-balance">
+        {m.title}
+      </h1>
+      <p className="mt-3 max-w-2xl text-lg text-ink-soft text-pretty">
+        {m.description}
+      </p>
       {items.length > 0 ? (
         <SectionList items={items} />
       ) : (

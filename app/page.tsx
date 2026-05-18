@@ -14,11 +14,11 @@ export default function HomePage() {
           <p className="font-sans text-xs uppercase tracking-[0.2em] text-ink-faint">
             {site.tagline}
           </p>
-          <h1 className="mt-4 max-w-3xl font-serif text-5xl leading-[1.1] tracking-tight max-sm:text-4xl">
+          <h1 className="mt-4 max-w-3xl font-serif text-5xl leading-[1.1] tracking-tight text-balance max-sm:text-4xl">
             A calm, factual reference for printing, fax, and document
             technology.
           </h1>
-          <p className="mt-5 max-w-2xl text-lg text-ink-soft">
+          <p className="mt-5 max-w-2xl text-lg text-ink-soft text-pretty">
             {site.description}
           </p>
         </Container>

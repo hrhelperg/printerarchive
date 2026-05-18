@@ -6,15 +6,18 @@ export function SectionList({ items }: { items: ContentEntry[] }) {
     <ul className="mt-8 divide-y divide-rule border-y border-rule">
       {items.map((e) => (
         <li key={`${e.section}/${e.slug}`} className="py-6">
-          <Link
-            href={`/${e.section}/${e.slug}`}
-            className="font-serif text-xl tracking-tight no-underline hover:underline"
-          >
-            {e.title}
-          </Link>
-          <p className="mt-1.5 text-ink-soft">{e.summary}</p>
+          <h2 className="font-serif text-xl tracking-tight">
+            <Link
+              href={`/${e.section}/${e.slug}`}
+              className="no-underline hover:underline"
+            >
+              {e.title}
+            </Link>
+          </h2>
+          <p className="mt-1.5 text-ink-soft text-pretty">{e.summary}</p>
           <p className="mt-2 font-sans text-xs uppercase tracking-wide text-ink-faint">
-            Updated {e.updated}
+            Updated{" "}
+            <time dateTime={e.updated}>{e.updated}</time>
           </p>
         </li>
       ))}
