@@ -123,6 +123,9 @@ const entry: HistoryEntry = {
   ],
   related: [
     { section: "history", slug: "history-of-fax-machines" },
+    { section: "history", slug: "evolution-of-laser-printing" },
+    { section: "history", slug: "evolution-of-inkjet-printers" },
+    { section: "history", slug: "dot-matrix-printers-explained" },
     { section: "guides", slug: "how-laser-printers-work" },
     { section: "guides", slug: "how-inkjet-printers-work" },
   ],

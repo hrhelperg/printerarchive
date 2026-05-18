@@ -1,4 +1,6 @@
 import type { ContentEntry } from "@/lib/content/types";
+
+// Foundation content
 import historyOfPrinters from "@/content/history/history-of-printers";
 import historyOfFax from "@/content/history/history-of-fax-machines";
 import howLaser from "@/content/guides/how-laser-printers-work";
@@ -16,7 +18,58 @@ import gAirprint from "@/content/glossary/airprint";
 import gOcr from "@/content/glossary/ocr";
 import gPpm from "@/content/glossary/ppm";
 
+// Phase 3 — history cluster
+import histEvoLaser from "@/content/history/evolution-of-laser-printing";
+import histEvoInkjet from "@/content/history/evolution-of-inkjet-printers";
+import histDotMatrix from "@/content/history/dot-matrix-printers-explained";
+import histThermal from "@/content/history/thermal-printing-history";
+import hist1990s from "@/content/history/office-printing-in-the-1990s";
+import histEarlyComputer from "@/content/history/early-computer-printing";
+
+// Phase 3 — guides cluster
+import gdDuplex from "@/content/guides/what-is-duplex-printing";
+import gdPostscript from "@/content/guides/what-is-postscript-printing";
+import gdDrivers from "@/content/guides/how-printer-drivers-work";
+import gdWireless from "@/content/guides/how-wireless-printing-works";
+import gdResolution from "@/content/guides/understanding-printer-resolution";
+import gdLaserVsInkjet from "@/content/guides/laser-vs-inkjet-printers";
+import gdPrintServer from "@/content/guides/what-is-a-print-server";
+
+// Phase 3 — troubleshooting cluster
+import tsMac from "@/content/troubleshooting/printer-not-detected-on-mac";
+import tsWindows from "@/content/troubleshooting/printer-not-detected-on-windows";
+import tsWifi from "@/content/troubleshooting/printer-wont-connect-to-wifi";
+import tsJam from "@/content/troubleshooting/paper-jam-guide";
+import tsBlank from "@/content/troubleshooting/printer-printing-blank-pages";
+import tsScanner from "@/content/troubleshooting/scanner-not-detected";
+import tsAirprint from "@/content/troubleshooting/airprint-not-working";
+import tsOffline11 from "@/content/troubleshooting/printer-offline-windows-11";
+
+// Phase 3 — brands cluster
+import brCanon from "@/content/brands/canon";
+import brEpson from "@/content/brands/epson";
+import brBrother from "@/content/brands/brother";
+import brXerox from "@/content/brands/xerox";
+
+// Phase 3 — glossary expansion
+import gSpooler from "@/content/glossary/print-spooler";
+import gQueue from "@/content/glossary/print-queue";
+import gDriver from "@/content/glossary/print-driver";
+import gThermal from "@/content/glossary/thermal-printing";
+import gScannerBed from "@/content/glossary/scanner-bed";
+
+// Phase 3 — workflows cluster
+import wfIphone from "@/content/workflows/print-from-iphone";
+import wfAndroid from "@/content/workflows/print-from-android";
+import wfIpad from "@/content/workflows/print-documents-from-ipad";
+import wfLabels from "@/content/workflows/print-shipping-labels";
+import wfMobileOffice from "@/content/workflows/mobile-office-printing";
+
+// Phase 3 — mobile-printing cluster
+import mpChromebook from "@/content/mobile-printing/printing-from-a-chromebook";
+
 export const allEntries: ContentEntry[] = [
+  // Foundation
   historyOfPrinters,
   historyOfFax,
   howLaser,
@@ -33,4 +86,47 @@ export const allEntries: ContentEntry[] = [
   gAirprint,
   gOcr,
   gPpm,
+  // History
+  histEvoLaser,
+  histEvoInkjet,
+  histDotMatrix,
+  histThermal,
+  hist1990s,
+  histEarlyComputer,
+  // Guides
+  gdDuplex,
+  gdPostscript,
+  gdDrivers,
+  gdWireless,
+  gdResolution,
+  gdLaserVsInkjet,
+  gdPrintServer,
+  // Troubleshooting
+  tsMac,
+  tsWindows,
+  tsWifi,
+  tsJam,
+  tsBlank,
+  tsScanner,
+  tsAirprint,
+  tsOffline11,
+  // Brands
+  brCanon,
+  brEpson,
+  brBrother,
+  brXerox,
+  // Glossary
+  gSpooler,
+  gQueue,
+  gDriver,
+  gThermal,
+  gScannerBed,
+  // Workflows
+  wfIphone,
+  wfAndroid,
+  wfIpad,
+  wfLabels,
+  wfMobileOffice,
+  // Mobile printing
+  mpChromebook,
 ];

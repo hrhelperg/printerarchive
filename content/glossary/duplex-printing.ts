@@ -28,6 +28,7 @@ const entry: GlossaryEntry = {
     },
   ],
   seeAlso: [
+    { section: "guides", slug: "what-is-duplex-printing" },
     { section: "glossary", slug: "ppm" },
     { section: "workflows", slug: "scan-to-searchable-pdf" },
   ],

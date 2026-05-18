@@ -94,6 +94,8 @@ const entry: GuideEntry = {
   ],
   related: [
     { section: "glossary", slug: "airprint" },
+    { section: "troubleshooting", slug: "airprint-not-working" },
+    { section: "workflows", slug: "print-from-iphone" },
     { section: "troubleshooting", slug: "printer-offline-guide" },
   ],
   published: "2026-05-18",
