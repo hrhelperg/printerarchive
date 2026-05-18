@@ -25,10 +25,10 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: {
-    default: `${site.name} — ${site.tagline}`,
-    template: `%s — ${site.name}`,
-  },
+  // Plain string (no template): every page sets an absolute title via
+  // buildMetadata, so a template would double the site name. This value
+  // is the default for pages that do not set their own (e.g. the home page).
+  title: `${site.name} — ${site.tagline}`,
   description: site.description,
   alternates: {
     canonical: "/",

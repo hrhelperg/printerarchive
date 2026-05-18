@@ -16,7 +16,9 @@ export function buildMetadata(o: MetaOpts): Metadata {
   const fullTitle =
     o.path === "/" ? `${site.name} — ${site.tagline}` : `${o.title} — ${site.name}`;
   return {
-    title: fullTitle,
+    // Absolute bypasses the root layout title.template so the site name
+    // is not appended twice (fullTitle already includes it).
+    title: { absolute: fullTitle },
     description: o.description,
     keywords: o.keywords,
     alternates: { canonical: url },
