@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "test:content": "node --experimental-strip-types --test lib/content/integrity.test.mjs"
+    "test:content": "node --experimental-strip-types scripts/check-content.mjs"
   },
   "dependencies": {
     "next": "16.2.6",
