@@ -51,6 +51,28 @@ const entry: GuideEntry = {
       title: "If the printer does not appear",
       text: "Most AirPrint problems come down to the device and printer being on different networks or unable to discover one another. Confirming the shared network is the first thing to check.",
     },
+    {
+      kind: "heading",
+      level: 2,
+      text: "Why driver-free printing matters",
+    },
+    {
+      kind: "paragraph",
+      text: "Before driver-free approaches, printing from a new device often meant finding and installing software specific to a particular printer model. That step is a common point of failure, especially on phones and tablets where installing system-level printer software is awkward or not possible. By removing the driver step, AirPrint makes printing behave like other everyday share actions.",
+    },
+    {
+      kind: "heading",
+      level: 2,
+      text: "Common limitations",
+    },
+    {
+      kind: "list",
+      items: [
+        "Both the device and the printer must support the technology.",
+        "They generally need to be on the same local network and able to discover each other.",
+        "Network configurations that block device discovery can prevent the printer from appearing even when both devices support it.",
+      ],
+    },
   ],
   faqs: [
     {
@@ -64,6 +86,10 @@ const entry: GuideEntry = {
     {
       q: "Is AirPrint specific to Apple devices?",
       a: "AirPrint is Apple's technology for printing from Apple devices to compatible printers.",
+    },
+    {
+      q: "Why does driver-free printing matter on phones?",
+      a: "Installing model-specific printer software is awkward or impossible on many phones and tablets. Removing that step makes printing reliable and routine on those devices.",
     },
   ],
   related: [

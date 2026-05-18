@@ -56,6 +56,24 @@ const entry: GuideEntry = {
       title: "Why the connection sounds the way it does",
       text: "The distinctive tones at the start of a fax call are the two machines negotiating and synchronising before the page is sent.",
     },
+    {
+      kind: "heading",
+      level: 2,
+      text: "What a fax actually transmits",
+    },
+    {
+      kind: "paragraph",
+      text: "It is worth being precise about what travels over the line. The paper itself does not move; what is sent is a description of the page as a sequence of light and dark regions. The receiving machine uses that description to produce its own printed copy, which is why a fax is a reconstruction rather than the original document.",
+    },
+    {
+      kind: "heading",
+      level: 2,
+      text: "Fax compared with digital alternatives",
+    },
+    {
+      kind: "paragraph",
+      text: "Email and digital document exchange send a file that can be stored, searched, and reproduced exactly. A traditional fax instead reconstructs an image of a page at the destination. This difference in nature — an exact file versus a reconstructed page image — is part of why fax persisted for signed documents while losing ground for everyday correspondence.",
+    },
   ],
   faqs: [
     {
