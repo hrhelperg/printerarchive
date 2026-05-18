@@ -29,6 +29,7 @@ const entry: GlossaryEntry = {
   ],
   seeAlso: [
     { section: "guides", slug: "how-laser-printers-work" },
+    { section: "guides", slug: "laser-vs-inkjet-printers" },
     { section: "guides", slug: "how-inkjet-printers-work" },
   ],
   published: "2026-05-18",

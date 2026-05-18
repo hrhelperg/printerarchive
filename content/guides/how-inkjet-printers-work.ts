@@ -73,6 +73,8 @@ const entry: GuideEntry = {
   ],
   related: [
     { section: "guides", slug: "how-laser-printers-work" },
+    { section: "guides", slug: "laser-vs-inkjet-printers" },
+    { section: "history", slug: "evolution-of-inkjet-printers" },
     { section: "glossary", slug: "dpi" },
   ],
   published: "2026-05-18",

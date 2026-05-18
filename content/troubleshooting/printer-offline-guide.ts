@@ -76,6 +76,8 @@ const entry: TroubleshootingEntry = {
     },
   ],
   related: [
+    { section: "troubleshooting", slug: "printer-offline-windows-11" },
+    { section: "troubleshooting", slug: "printer-not-detected-on-windows" },
     { section: "mobile-printing", slug: "what-is-airprint" },
     { section: "guides", slug: "how-laser-printers-work" },
   ],

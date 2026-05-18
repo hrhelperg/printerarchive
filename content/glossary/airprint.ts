@@ -29,7 +29,8 @@ const entry: GlossaryEntry = {
   ],
   seeAlso: [
     { section: "mobile-printing", slug: "what-is-airprint" },
-    { section: "troubleshooting", slug: "printer-offline-guide" },
+    { section: "troubleshooting", slug: "airprint-not-working" },
+    { section: "workflows", slug: "print-from-iphone" },
   ],
   published: "2026-05-18",
   updated: "2026-05-18",

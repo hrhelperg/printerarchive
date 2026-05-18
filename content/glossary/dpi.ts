@@ -28,6 +28,7 @@ const entry: GlossaryEntry = {
     },
   ],
   seeAlso: [
+    { section: "guides", slug: "understanding-printer-resolution" },
     { section: "glossary", slug: "ppm" },
     { section: "guides", slug: "how-laser-printers-work" },
   ],
