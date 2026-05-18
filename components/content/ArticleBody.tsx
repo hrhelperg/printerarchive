@@ -18,26 +18,44 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
           case "heading": {
             const id = b.id ?? slugify(b.text);
             return b.level === 2 ? (
-              <h2 key={i} id={id}>
+              <h2
+                key={i}
+                id={id}
+                className="mt-12 mb-3 scroll-mt-24 font-serif text-2xl tracking-tight text-balance"
+              >
                 {b.text}
               </h2>
             ) : (
-              <h3 key={i} id={id}>
+              <h3
+                key={i}
+                id={id}
+                className="mt-8 mb-2 scroll-mt-24 font-serif text-xl text-balance"
+              >
                 {b.text}
               </h3>
             );
           }
           case "paragraph":
-            return <p key={i}>{b.text}</p>;
+            return (
+              <p key={i} className="my-5 text-pretty">
+                {b.text}
+              </p>
+            );
           case "list":
             return b.ordered ? (
-              <ol key={i}>
+              <ol
+                key={i}
+                className="my-5 list-decimal space-y-1.5 pl-6 text-pretty"
+              >
                 {b.items.map((t, j) => (
                   <li key={j}>{t}</li>
                 ))}
               </ol>
             ) : (
-              <ul key={i}>
+              <ul
+                key={i}
+                className="my-5 list-disc space-y-1.5 pl-6 text-pretty"
+              >
                 {b.items.map((t, j) => (
                   <li key={j}>{t}</li>
                 ))}

@@ -6,7 +6,6 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { Container } from "@/components/layout/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MetaBar } from "@/components/layout/MetaBar";
-import { Prose } from "@/components/content/Prose";
 import { ArticleBody } from "@/components/content/ArticleBody";
 import { FaqList } from "@/components/content/FaqList";
 import { SourcesList } from "@/components/content/SourcesList";
@@ -47,17 +46,17 @@ export function ArticlePage({
       <Breadcrumbs items={crumbs} />
       <article className="mt-6">
         <header>
-          <h1 className="font-serif text-4xl leading-tight tracking-tight">
+          <h1 className="font-serif text-4xl leading-tight tracking-tight text-balance">
             {e.title}
           </h1>
-          <p className="mt-4 font-serif text-xl text-ink-soft">
+          <p className="mt-4 font-serif text-xl text-ink-soft text-pretty">
             {e.summary}
           </p>
           <MetaBar author={e.author} editor={e.editor} updated={e.updated} />
         </header>
-        <Prose>
+        <div className="mt-2 font-serif text-[1.0625rem] leading-[1.75] text-ink">
           <ArticleBody blocks={e.body} />
-        </Prose>
+        </div>
         {e.faqs?.length ? <FaqList faqs={e.faqs} /> : null}
         {e.sources?.length ? <SourcesList sources={e.sources} /> : null}
         <RelatedLinks items={related} />

@@ -1,6 +1,6 @@
 import type { SectionId } from "@/lib/site";
 import { getSectionMeta } from "@/lib/site";
-import type { ContentEntry, ContentRef } from "@/lib/content/types";
+import type { ContentEntry } from "@/lib/content/types";
 import { allEntries } from "@/lib/content/registry";
 
 export const getSection = (section: SectionId): ContentEntry[] =>
@@ -13,9 +13,6 @@ export const getEntry = (
   slug: string,
 ): ContentEntry | undefined =>
   allEntries.find((e) => e.section === section && e.slug === slug);
-
-export const getAllRoutes = (): ContentRef[] =>
-  allEntries.map((e) => ({ section: e.section, slug: e.slug }));
 
 export function getRelated(entry: ContentEntry, limit = 4): ContentEntry[] {
   const explicit = (entry.related ?? [])

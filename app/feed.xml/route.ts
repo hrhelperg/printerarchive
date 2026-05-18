@@ -20,11 +20,19 @@ export function GET() {
     </item>`,
     )
     .join("\n");
+  const lastBuild =
+    [...allEntries]
+      .map((e) => e.updated)
+      .sort()
+      .reverse()[0] ?? new Date().toISOString().slice(0, 10);
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"><channel>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
     <title>${esc(site.name)}</title>
     <link>${site.url}</link>
+    <atom:link href="${site.url}/feed.xml" rel="self" type="application/rss+xml" />
     <description>${esc(site.description)}</description>
+    <language>en</language>
+    <lastBuildDate>${new Date(lastBuild).toUTCString()}</lastBuildDate>
 ${items}
 </channel></rss>`;
   return new Response(xml, {
