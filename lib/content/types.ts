@@ -39,7 +39,7 @@ export interface BaseEntry {
 }
 
 export interface GuideEntry extends BaseEntry {
-  section: "guides" | "mobile-printing";
+  section: "guides" | "mobile-printing" | "fax";
   difficulty: "introductory" | "intermediate" | "advanced";
   estimatedTime: string;
 }
