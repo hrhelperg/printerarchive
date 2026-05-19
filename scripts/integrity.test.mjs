@@ -78,6 +78,26 @@ test("figure block with non-positive dimensions -> issue", () => {
   assert.ok(issues.some((i) => i.includes("image width")));
 });
 
+test("figure image with credit entirely absent -> source and license issues", () => {
+  const e = {
+    ...base,
+    body: [
+      {
+        kind: "figure",
+        image: {
+          src: "/images/guides/z.webp",
+          alt: "Detail",
+          width: 1200,
+          height: 800,
+        },
+      },
+    ],
+  };
+  const issues = findContentIssues([e]);
+  assert.ok(issues.some((i) => i.includes("image credit.source")));
+  assert.ok(issues.some((i) => i.includes("image credit.license")));
+});
+
 test("fully valid hero + figure -> no issues", () => {
   const e = {
     ...base,
