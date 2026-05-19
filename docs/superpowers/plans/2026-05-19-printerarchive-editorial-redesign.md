@@ -229,9 +229,14 @@ In `package.json`, the `scripts` block becomes exactly:
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test:content": "node --experimental-strip-types scripts/check-content.mjs",
-    "test:unit": "node --test --experimental-strip-types scripts/"
+    "test:unit": "node --test --experimental-strip-types"
   },
 ```
+
+(Node 24: `node --test` with **no path** recursively discovers `*.test.*` files,
+ignores `node_modules`/`.next`, exits 0 with zero test files and runs them when
+present. A trailing `scripts/` path makes Node treat it as a module entrypoint
+and exit 1 — do not add a path.)
 
 - [ ] **Step 3: Create the image pipeline directory**
 
