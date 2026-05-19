@@ -3,6 +3,8 @@ import { Callout } from "./Callout";
 import { KeyTakeaways } from "./KeyTakeaways";
 import { StepList } from "./StepList";
 import { Timeline } from "./Timeline";
+import { Pullquote } from "./Pullquote";
+import { Figure } from "./Figure";
 
 const slugify = (s: string) =>
   s
@@ -21,7 +23,7 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
               <h2
                 key={i}
                 id={id}
-                className="mt-12 mb-3 scroll-mt-24 font-serif text-2xl tracking-tight text-balance"
+                className="mt-14 mb-3 scroll-mt-24 font-serif text-2xl tracking-tight text-balance"
               >
                 {b.text}
               </h2>
@@ -37,7 +39,10 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
           }
           case "paragraph":
             return (
-              <p key={i} className="my-5 text-pretty">
+              <p
+                key={i}
+                className={`my-5 text-pretty ${i === 0 ? "dropcap" : ""}`}
+              >
                 {b.text}
               </p>
             );
@@ -63,12 +68,7 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
             );
           case "callout":
             return (
-              <Callout
-                key={i}
-                tone={b.tone}
-                title={b.title}
-                text={b.text}
-              />
+              <Callout key={i} tone={b.tone} title={b.title} text={b.text} />
             );
           case "keyTakeaways":
             return <KeyTakeaways key={i} items={b.items} />;
@@ -76,6 +76,12 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
             return <StepList key={i} steps={b.steps} />;
           case "timeline":
             return <Timeline key={i} events={b.events} />;
+          case "pullquote":
+            return (
+              <Pullquote key={i} text={b.text} attribution={b.attribution} />
+            );
+          case "figure":
+            return <Figure key={i} image={b.image} />;
           case "table":
             return (
               <figure key={i} className="my-6 overflow-x-auto">
@@ -85,7 +91,7 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
                       {b.headers.map((h, j) => (
                         <th
                           key={j}
-                          className="border border-rule bg-black/[0.02] px-3 py-2 text-left font-sans"
+                          className="border border-rule bg-paper-raised px-3 py-2 text-left font-sans"
                         >
                           {h}
                         </th>
