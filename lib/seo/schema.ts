@@ -31,6 +31,7 @@ export const articleSchema = (e: ContentEntry) => ({
   publisher: { "@type": "Organization", name: site.publisher.name },
   mainEntityOfPage: `${site.url}/${e.section}/${e.slug}`,
   keywords: e.keywords.join(", "),
+  ...(e.hero ? { image: `${site.url}${e.hero.src}` } : {}),
 });
 
 export const breadcrumbSchema = (items: { name: string; href: string }[]) => ({
