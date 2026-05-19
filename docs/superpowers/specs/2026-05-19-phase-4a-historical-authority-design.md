@@ -22,19 +22,19 @@ Deepen genuine historical and technical authority so PrinterArchive.net reads li
 - Voice/identity unchanged: `author`/`editor` = `"PrinterArchive Editorial"`; calm archival register; publisher strings untouched.
 - Branch `feat/foundation-architecture`; logical commits; push; never merge `main`.
 
-## 3. Narrative Voice & Framing (editorial direction)
+## 3. Narrative Voice & Framing (editorial direction — enforceable)
 
-Every 4A page is written as **documentary, museum-grade technical editorial**, not a definitional explainer.
+Every 4A page is **documentary, museum-grade technical editorial** that communicates printing as **infrastructure of the information age**: technological evolution, office-culture transformation, workflow history, and historical systems analysis. Pages must not read like encyclopedia stubs or definitional explainers.
 
-**Prioritize:** technological transitions; workflow evolution; the concrete limitations of each era; historical context around office behavior; how printing changed human workflows.
+**Prioritize:** technological transitions; workflow evolution; concrete operational limitations of each era; office-culture and workplace-behavior change; historical trade-offs and technological constraints; *why* each technology replaced the previous generation; how printing reshaped human workflows.
 
-**Prefer:** contextual narratives; cross-era comparisons; practical historical realities; workflow-transformation stories; historically-grounded technical explanation.
+**Prefer:** contextual storytelling; era continuity; technological relationships; workflow cause-and-effect; cross-era comparison; practical historical realities; historically-grounded technical explanation.
 
-**Avoid:** repetitive "What is X" educational phrasing; keyword-first writing; generic SEO tone; shallow standalone definitions without context; listicles; affiliate framing; AI-filler.
+**Avoid (anti-patterns — a page exhibiting these fails review):** repetitive educational intros; SEO-definition phrasing; generic "X is a technology that…" / "What is X" openings; keyword-first writing; promotional tone; listicles; affiliate framing; AI-filler; shallow standalone pages disconnected from the broader evolution.
 
-Concrete implication: pages whose slug reads definitional (e.g. `how-dot-matrix-printers-work`) are still written transition-first — open with what the technology *enabled and constrained* and how it reshaped office work, then ground the mechanism in that context. The mechanism serves the narrative; the narrative is not a pretext for keywords.
+**Per-page structural rule (reviewable):** every page must (1) open with a transition/context hook — the operational reality or workplace problem of the era — *not* a definition; (2) explain the trade-offs and constraints that made the technology necessary and the cause-and-effect of what it superseded or was superseded by; (3) connect explicitly to adjacent eras/technologies and to ≥1 other archive page in-body (era continuity, not an island). Pages whose slug reads definitional (e.g. `how-dot-matrix-printers-work`) are still written transition-first: lead with what it *enabled and constrained* and how it changed office work; the mechanism serves the narrative, never the reverse.
 
-The register should feel like a technology museum's interpretive text crossed with a technical history journal: precise, calm, contextual, never promotional.
+Register: a technology museum's interpretive text crossed with a technical history journal — precise, calm, contextual, analytical, never promotional. This standard is a per-page acceptance gate in the implementation plan, reviewed per batch alongside the no-invented-facts rule.
 
 ## 4. Content Set (exact)
 
