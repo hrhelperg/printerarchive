@@ -72,9 +72,11 @@ const entry: HistoryEntry = {
     { section: "history", slug: "history-of-printers" },
     { section: "history", slug: "early-computer-printing" },
     { section: "guides", slug: "laser-vs-inkjet-printers" },
+    { section: "history", slug: "how-dot-matrix-printers-work" },
+    { section: "history", slug: "how-impact-printing-worked" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-19",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [

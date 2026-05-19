@@ -30,9 +30,10 @@ const entry: GlossaryEntry = {
   seeAlso: [
     { section: "glossary", slug: "print-queue" },
     { section: "guides", slug: "what-is-a-print-server" },
+    { section: "history", slug: "early-network-printing-systems" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-19",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["print spooler", "spooler", "print queue", "printing"],

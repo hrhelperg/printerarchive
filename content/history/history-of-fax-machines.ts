@@ -99,9 +99,11 @@ const entry: HistoryEntry = {
   related: [
     { section: "fax", slug: "how-fax-machines-work" },
     { section: "history", slug: "history-of-printers" },
+    { section: "fax", slug: "history-of-business-faxing" },
+    { section: "fax", slug: "why-fax-is-still-used" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-19",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["history of fax", "fax machine history", "image transmission"],

@@ -67,6 +67,11 @@ import brEpson from "@/content/brands/epson";
 import brBrother from "@/content/brands/brother";
 import brXerox from "@/content/brands/xerox";
 
+// Phase 4A — new brands
+import brandRicoh from "@/content/brands/ricoh";
+import brandKyocera from "@/content/brands/kyocera";
+import brandLexmark from "@/content/brands/lexmark";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -150,6 +155,9 @@ export const allEntries: ContentEntry[] = [
   brEpson,
   brBrother,
   brXerox,
+  brandRicoh,
+  brandKyocera,
+  brandLexmark,
   // Glossary
   gSpooler,
   gQueue,

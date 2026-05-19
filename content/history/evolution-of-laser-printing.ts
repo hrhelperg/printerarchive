@@ -74,9 +74,11 @@ const entry: HistoryEntry = {
     { section: "guides", slug: "how-laser-printers-work" },
     { section: "history", slug: "history-of-printers" },
     { section: "guides", slug: "laser-vs-inkjet-printers" },
+    { section: "history", slug: "how-early-laser-printers-worked" },
+    { section: "history", slug: "transition-from-impact-to-laser-printing" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-19",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
