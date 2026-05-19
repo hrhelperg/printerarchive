@@ -22,7 +22,7 @@ export function EraRail() {
             <li key={s.href} className="bg-sepia">
               <Link
                 href={s.href}
-                className="group flex h-full flex-col p-5 no-underline"
+                className="group flex h-full flex-col p-5 no-underline transition-colors"
               >
                 <span className="font-serif text-2xl leading-none text-rule-strong">
                   {String(i + 1).padStart(2, "0")}

@@ -9,7 +9,7 @@ export function CategoryGrid() {
       <hr className="rule-sep" />
       <p className="kicker mt-10">Browse the archive</p>
       <h2 className="mt-2 text-display-sm text-balance">
-        Eight ways into printing technology
+        {SECTIONS.length} ways into printing technology
       </h2>
       <ul className="mt-8 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
         {SECTIONS.map((s, i) => {
