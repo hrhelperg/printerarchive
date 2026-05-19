@@ -26,6 +26,13 @@ import histThermal from "@/content/history/thermal-printing-history";
 import hist1990s from "@/content/history/office-printing-in-the-1990s";
 import histEarlyComputer from "@/content/history/early-computer-printing";
 
+// Phase 4A — printing-evolution cluster
+import histTransitionImpactLaser from "@/content/history/transition-from-impact-to-laser-printing";
+import histEvoOfficePrinting from "@/content/history/evolution-of-office-printing";
+import histEvoColor from "@/content/history/evolution-of-color-printing";
+import histDesktopPublishing from "@/content/history/history-of-desktop-publishing";
+import histWirelessHistory from "@/content/history/history-of-wireless-printing";
+
 // Phase 3 — guides cluster
 import gdDuplex from "@/content/guides/what-is-duplex-printing";
 import gdPostscript from "@/content/guides/what-is-postscript-printing";
@@ -93,6 +100,11 @@ export const allEntries: ContentEntry[] = [
   histThermal,
   hist1990s,
   histEarlyComputer,
+  histTransitionImpactLaser,
+  histEvoOfficePrinting,
+  histEvoColor,
+  histDesktopPublishing,
+  histWirelessHistory,
   // Guides
   gdDuplex,
   gdPostscript,
