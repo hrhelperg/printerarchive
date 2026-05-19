@@ -84,6 +84,13 @@ import wfMobileOffice from "@/content/workflows/mobile-office-printing";
 // Phase 3 — mobile-printing cluster
 import mpChromebook from "@/content/mobile-printing/printing-from-a-chromebook";
 
+// Phase 4A — fax-history cluster
+import faxBizHistory from "@/content/fax/history-of-business-faxing";
+import faxAnalogVsDigital from "@/content/fax/analog-fax-vs-digital-fax";
+import faxBeforeEmail from "@/content/fax/fax-machines-before-email";
+import faxDecline from "@/content/fax/decline-of-office-fax-machines";
+import faxStillUsed from "@/content/fax/why-fax-is-still-used";
+
 export const allEntries: ContentEntry[] = [
   // Foundation
   historyOfPrinters,
@@ -157,4 +164,10 @@ export const allEntries: ContentEntry[] = [
   wfMobileOffice,
   // Mobile printing
   mpChromebook,
+  // Phase 4A — fax-history cluster
+  faxBizHistory,
+  faxAnalogVsDigital,
+  faxBeforeEmail,
+  faxDecline,
+  faxStillUsed,
 ];
