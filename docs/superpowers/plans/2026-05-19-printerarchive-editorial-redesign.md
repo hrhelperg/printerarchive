@@ -339,7 +339,7 @@ export function Header() {
 
 ```tsx
 import Link from "next/link";
-import { SECTIONS, FOOTER_GROUPS, site, getSectionMeta } from "@/lib/site";
+import { FOOTER_GROUPS, site, getSectionMeta } from "@/lib/site";
 import { Container } from "./Container";
 
 export function Footer() {
@@ -397,9 +397,6 @@ export function Footer() {
           </a>{" "}
           · © {new Date().getFullYear()} {site.publisher.name}. Educational
           reference content.
-        </p>
-        <p className="sr-only">
-          {SECTIONS.length} sections in the archive.
         </p>
       </Container>
     </footer>
