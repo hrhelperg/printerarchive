@@ -33,6 +33,15 @@ import histEvoColor from "@/content/history/evolution-of-color-printing";
 import histDesktopPublishing from "@/content/history/history-of-desktop-publishing";
 import histWirelessHistory from "@/content/history/history-of-wireless-printing";
 
+// Phase 4A — era + impact/early-digital clusters
+import hist1980s from "@/content/history/printing-in-the-1980s";
+import histDecade1990s from "@/content/history/printing-in-the-1990s";
+import histBeforeWifi from "@/content/history/office-printing-before-wifi";
+import histHowDotMatrix from "@/content/history/how-dot-matrix-printers-work";
+import histHowImpact from "@/content/history/how-impact-printing-worked";
+import histEarlyLaser from "@/content/history/how-early-laser-printers-worked";
+import histEarlyNetwork from "@/content/history/early-network-printing-systems";
+
 // Phase 3 — guides cluster
 import gdDuplex from "@/content/guides/what-is-duplex-printing";
 import gdPostscript from "@/content/guides/what-is-postscript-printing";
@@ -105,6 +114,13 @@ export const allEntries: ContentEntry[] = [
   histEvoColor,
   histDesktopPublishing,
   histWirelessHistory,
+  hist1980s,
+  histDecade1990s,
+  histBeforeWifi,
+  histHowDotMatrix,
+  histHowImpact,
+  histEarlyLaser,
+  histEarlyNetwork,
   // Guides
   gdDuplex,
   gdPostscript,
