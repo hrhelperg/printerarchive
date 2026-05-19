@@ -1,46 +1,56 @@
 import Link from "next/link";
-import { SECTIONS, site } from "@/lib/site";
+import { FOOTER_GROUPS, site, getSectionMeta } from "@/lib/site";
 import { Container } from "./Container";
 
 export function Footer() {
   return (
-    <footer className="mt-20 border-t border-rule py-12">
+    <footer className="mt-24 border-t border-rule py-14">
       <Container width="wide">
-        <p className="font-serif text-lg">{site.name}</p>
-        <p className="mt-1 max-w-prose text-sm text-ink-soft">
-          {site.description}
-        </p>
-        <nav aria-label="Sections" className="mt-6">
-          <ul className="flex flex-wrap gap-x-5 gap-y-2 font-sans text-sm text-ink-soft">
-            {SECTIONS.map((s) => (
-              <li key={s.id}>
-                <Link
-                  href={`/${s.id}`}
-                  className="no-underline hover:text-accent"
-                >
-                  {s.label}
-                </Link>
-              </li>
-            ))}
-            <li>
-              <Link
-                href="/about"
-                className="no-underline hover:text-accent"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="no-underline hover:text-accent"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <p className="mt-8 font-sans text-xs text-ink-faint">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+          <div>
+            <p className="font-serif text-lg text-ink">{site.name}</p>
+            <p className="mt-2 max-w-prose text-sm text-ink-soft">
+              {site.description}
+            </p>
+          </div>
+          {FOOTER_GROUPS.map((g) => (
+            <nav key={g.heading} aria-label={g.heading}>
+              <p className="kicker">{g.heading}</p>
+              <ul className="mt-3 space-y-1.5 font-sans text-sm text-ink-soft">
+                {g.ids.map((id) => (
+                  <li key={id}>
+                    <Link
+                      href={`/${id}`}
+                      className="no-underline transition-colors hover:text-accent"
+                    >
+                      {getSectionMeta(id).label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
+        </div>
+
+        <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-rule pt-6 font-sans text-xs text-ink-faint">
+          <Link href="/about" className="no-underline hover:text-accent">
+            About
+          </Link>
+          <Link href="/contact" className="no-underline hover:text-accent">
+            Contact
+          </Link>
+          <a href="/feed.xml" className="no-underline hover:text-accent">
+            RSS
+          </a>
+          <a href="/llms.txt" className="no-underline hover:text-accent">
+            llms.txt
+          </a>
+          <a href="/sitemap.xml" className="no-underline hover:text-accent">
+            Sitemap
+          </a>
+        </div>
+
+        <p className="mt-6 font-sans text-xs text-ink-faint">
           Published by {site.publisher.name} ·{" "}
           <a href={`mailto:${site.publisher.email}`}>
             {site.publisher.email}

@@ -1,5 +1,33 @@
 import type { ContentEntry } from "@/lib/content/types";
 
+function imageIssues(
+  key: string,
+  label: string,
+  img: {
+    src?: unknown;
+    alt?: unknown;
+    width?: unknown;
+    height?: unknown;
+    credit?: { source?: unknown; license?: unknown } | undefined;
+  },
+): string[] {
+  const out: string[] = [];
+  const nonEmpty = (v: unknown) => typeof v === "string" && v.trim().length > 0;
+  const posInt = (v: unknown) =>
+    typeof v === "number" && Number.isInteger(v) && v > 0;
+  if (!nonEmpty(img.src)) out.push(`${key}: ${label} image src missing`);
+  if (!nonEmpty(img.alt)) out.push(`${key}: ${label} image alt missing`);
+  if (!posInt(img.width))
+    out.push(`${key}: ${label} image width must be a positive integer`);
+  if (!posInt(img.height))
+    out.push(`${key}: ${label} image height must be a positive integer`);
+  if (!nonEmpty(img.credit?.source))
+    out.push(`${key}: ${label} image credit.source missing`);
+  if (!nonEmpty(img.credit?.license))
+    out.push(`${key}: ${label} image credit.license missing`);
+  return out;
+}
+
 /**
  * Pure content-integrity check. Returns a list of human-readable problems;
  * an empty array means the content set is valid. Used by the content check
@@ -44,6 +72,18 @@ export function findContentIssues(entries: ContentEntry[]): string[] {
 
     if (!Array.isArray(e.body) || e.body.length === 0) {
       issues.push(`${key}: body is empty`);
+    }
+
+    if (e.hero) {
+      issues.push(...imageIssues(key, "hero", e.hero));
+    }
+    if (Array.isArray(e.body)) {
+      e.body.forEach((b, idx) => {
+        if (b && (b as { kind?: string }).kind === "figure") {
+          const img = (b as { image?: Record<string, unknown> }).image ?? {};
+          issues.push(...imageIssues(key, `figure[${idx}]`, img));
+        }
+      });
     }
 
     for (const ref of e.related ?? []) {

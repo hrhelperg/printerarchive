@@ -2,12 +2,17 @@
 
 @theme {
   --color-paper: #fbfaf7;
+  --color-paper-raised: #f4f1e9;
   --color-ink: #1a1a1a;
+  --color-ink-display: #121211;
   --color-ink-soft: #4a4a46;
   --color-ink-faint: #5c5c54;
   --color-rule: #e3e0d8;
+  --color-rule-strong: #d8d4c8;
   --color-accent: #1f5d5a;
   --color-accent-hover: #15413f;
+  --color-sepia: #efe7d6;
+  --color-warn: #b45309;
   --font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-mono-font), ui-monospace, SFMono-Regular, monospace;
@@ -15,6 +20,8 @@
 
 :root {
   color-scheme: light;
+  /* Single kill-switch for the paper texture. Set to 0 to disable site-wide. */
+  --grain-opacity: 0.03;
 }
 
 html {
@@ -45,4 +52,63 @@ a:hover {
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
+}
+
+/* Editorial display + label scale (Source Serif 4 reused at display sizes) */
+.text-display {
+  font-family: var(--font-serif);
+  color: var(--color-ink-display);
+  font-size: clamp(2.4rem, 5.4vw, 4rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.text-display-sm {
+  font-family: var(--font-serif);
+  color: var(--color-ink-display);
+  font-size: clamp(1.9rem, 3.6vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.kicker {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-ink-faint);
+}
+
+/* Section separator */
+.rule-sep {
+  border: 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+/* Tasteful drop cap for an article's first paragraph (CSS only) */
+.dropcap::first-letter {
+  float: left;
+  font-family: var(--font-serif);
+  font-size: 3.3em;
+  line-height: 0.78;
+  padding-right: 0.08em;
+  color: var(--color-ink-display);
+}
+
+/* Whisper paper texture. Large surfaces only; never under body text.
+   Parent isolates a stacking context so the -1 layer sits above the
+   surface background but below all content children. */
+.surface-grain {
+  position: relative;
+  isolation: isolate;
+}
+.surface-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--grain-opacity, 0.03);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
 }

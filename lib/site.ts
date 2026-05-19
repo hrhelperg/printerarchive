@@ -97,3 +97,12 @@ export const getSectionMeta = (id: SectionId): SectionMeta => {
   if (!s) throw new Error(`Unknown section: ${id}`);
   return s;
 };
+
+export const FOOTER_GROUPS: { heading: string; ids: SectionId[] }[] = [
+  { heading: "Learn", ids: ["guides", "troubleshooting", "workflows"] },
+  { heading: "History", ids: ["history", "fax"] },
+  {
+    heading: "Reference",
+    ids: ["brands", "glossary", "tools", "mobile-printing"],
+  },
+];

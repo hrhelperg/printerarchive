@@ -1,5 +1,14 @@
 import type { SectionId } from "@/lib/site";
 
+export interface ArchiveImage {
+  src: string; // /images/<section>/<file>.<ext> committed under public/
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+  credit: { source: string; url?: string; license: string };
+}
+
 export interface ContentRef {
   section: SectionId;
   slug: string;
@@ -18,7 +27,9 @@ export type ContentBlock =
   | { kind: "table"; caption?: string; headers: string[]; rows: string[][] }
   | { kind: "keyTakeaways"; items: string[] }
   | { kind: "timeline"; events: { period: string; text: string }[] }
-  | { kind: "steps"; steps: { title: string; text: string }[] };
+  | { kind: "steps"; steps: { title: string; text: string }[] }
+  | { kind: "figure"; image: ArchiveImage }
+  | { kind: "pullquote"; text: string; attribution?: string };
 
 export interface BaseEntry {
   section: SectionId;
@@ -27,6 +38,7 @@ export interface BaseEntry {
   description: string; // <=160 chars, SEO meta
   summary: string; // lede paragraph
   body: ContentBlock[];
+  hero?: ArchiveImage;
   published: string; // ISO date (YYYY-MM-DD)
   updated: string; // ISO date (YYYY-MM-DD)
   author: string;
