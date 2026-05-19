@@ -43,6 +43,11 @@ export function ArticlePage({
   const related = getRelated(e);
   const schemas: object[] = [articleSchema(e), breadcrumbSchema(crumbs)];
   if (e.faqs?.length) schemas.push(faqSchema(e.faqs));
+  const sectionLabel = getSectionMeta(e.section).label;
+  const kick = entryKicker(e);
+  const showKick =
+    kick.toLowerCase() !== sectionLabel.toLowerCase() &&
+    kick.toLowerCase() !== sectionLabel.toLowerCase().replace(/s$/, "");
   return (
     <Container width="prose" className="py-12">
       <JsonLd data={schemas} />
@@ -50,7 +55,8 @@ export function ArticlePage({
       <article className="mt-6">
         <header>
           <p className="kicker">
-            {getSectionMeta(e.section).label} · {entryKicker(e)}
+            {sectionLabel}
+            {showKick ? ` · ${kick}` : ""}
           </p>
           <h1 className="mt-3 text-display-sm leading-tight text-balance">
             {e.title}
