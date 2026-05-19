@@ -10,13 +10,11 @@ export function Callout({
   const border =
     tone === "warning" ? "border-l-amber-700" : "border-l-accent";
   return (
-    <aside className={`my-6 border-l-2 ${border} bg-black/[0.02] px-4 py-3`}>
+    <aside className={`my-7 border-l-2 ${border} bg-paper-raised px-5 py-4`}>
       {title && (
-        <p className="font-sans text-xs font-semibold uppercase tracking-wide text-ink-soft">
-          {title}
-        </p>
+        <p className="kicker">{title}</p>
       )}
-      <p className="mt-1 text-ink-soft">{text}</p>
+      <p className="mt-1.5 text-ink-soft text-pretty">{text}</p>
     </aside>
   );
 }
