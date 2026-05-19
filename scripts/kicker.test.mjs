@@ -54,7 +54,7 @@ test("fax HistoryEntry -> era (not Guide)", () => {
   );
 });
 
-test("history HistoryEntry still -> era", () => {
+test("history with era uses the pre-switch era guard (not the History fallback)", () => {
   assert.equal(
     entryKicker({ section: "history", era: "Impact era" }),
     "Impact era",
