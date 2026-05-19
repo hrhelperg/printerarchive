@@ -1555,14 +1555,19 @@ export function SectionHub({ section }: { section: SectionId }) {
       {isHistory ? <EvolutionBand /> : null}
 
       <Container width="wide" className="py-14">
+        <JsonLd data={breadcrumbSchema(crumbs)} />
         {items.length === 0 ? (
           <p className="text-ink-faint">
             New entries are being added to this section.
           </p>
         ) : useGroups ? (
           [...groups.entries()].map(([key, list], idx) => (
-            <section key={key} className={idx > 0 ? "mt-14" : ""}>
-              <p className="kicker">
+            <section
+              key={key}
+              aria-labelledby={`group-${key}`}
+              className={idx > 0 ? "mt-14" : ""}
+            >
+              <p id={`group-${key}`} className="kicker">
                 {key === "__none__"
                   ? "More in this section"
                   : key.replace(/-/g, " ")}
