@@ -120,6 +120,10 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
                 )}
               </figure>
             );
+          default: {
+            const _exhausted: never = b;
+            return _exhausted;
+          }
         }
       })}
     </>
