@@ -1920,7 +1920,7 @@ export function CategoryGrid() {
       <hr className="rule-sep" />
       <p className="kicker mt-10">Browse the archive</p>
       <h2 className="mt-2 text-display-sm text-balance">
-        Eight ways into printing technology
+        {SECTIONS.length} ways into printing technology
       </h2>
       <ul className="mt-8 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
         {SECTIONS.map((s, i) => {
@@ -2032,7 +2032,7 @@ export function EraRail() {
             <li key={s.href} className="bg-sepia">
               <Link
                 href={s.href}
-                className="group flex h-full flex-col p-5 no-underline"
+                className="group flex h-full flex-col p-5 no-underline transition-colors"
               >
                 <span className="font-serif text-2xl leading-none text-rule-strong">
                   {String(i + 1).padStart(2, "0")}
