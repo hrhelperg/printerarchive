@@ -74,6 +74,7 @@
   --color-accent: #1f5d5a;
   --color-accent-hover: #15413f;
   --color-sepia: #efe7d6;
+  --color-warn: #b45309;
   --font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-mono-font), ui-monospace, SFMono-Regular, monospace;
@@ -1380,8 +1381,7 @@ export function Callout({
   title?: string;
   text: string;
 }) {
-  const border =
-    tone === "warning" ? "border-l-amber-700" : "border-l-accent";
+  const border = tone === "warning" ? "border-l-warn" : "border-l-accent";
   return (
     <aside className={`my-7 border-l-2 ${border} bg-paper-raised px-5 py-4`}>
       {title && (
