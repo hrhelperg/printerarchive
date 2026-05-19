@@ -764,7 +764,7 @@ export function ArchiveImage({
           style={{ aspectRatio: `${width} / ${height}` }}
         />
       </div>
-      {(caption || credit) && (
+      {(caption || credit.source) && (
         <figcaption className="mt-2 font-sans text-xs text-ink-faint">
           {caption ? <span className="text-ink-soft">{caption}</span> : null}
           {caption ? " — " : ""}
