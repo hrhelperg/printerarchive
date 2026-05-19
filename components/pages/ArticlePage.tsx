@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { SectionId } from "@/lib/site";
+import { getSectionMeta } from "@/lib/site";
 import { getEntry, getBreadcrumbs, getRelated } from "@/lib/content/queries";
+import { entryKicker } from "@/lib/content/kicker";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { Container } from "@/components/layout/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MetaBar } from "@/components/layout/MetaBar";
+import { ArchiveImage } from "@/components/content/ArchiveImage";
 import { ArticleBody } from "@/components/content/ArticleBody";
 import { FaqList } from "@/components/content/FaqList";
 import { SourcesList } from "@/components/content/SourcesList";
@@ -46,7 +49,10 @@ export function ArticlePage({
       <Breadcrumbs items={crumbs} />
       <article className="mt-6">
         <header>
-          <h1 className="font-serif text-4xl leading-tight tracking-tight text-balance">
+          <p className="kicker">
+            {getSectionMeta(e.section).label} · {entryKicker(e)}
+          </p>
+          <h1 className="mt-3 text-display-sm leading-tight text-balance">
             {e.title}
           </h1>
           <p className="mt-4 font-serif text-xl text-ink-soft text-pretty">
@@ -54,7 +60,15 @@ export function ArticlePage({
           </p>
           <MetaBar author={e.author} editor={e.editor} updated={e.updated} />
         </header>
-        <div className="mt-2 font-serif text-[1.0625rem] leading-[1.75] text-ink">
+        {e.hero ? (
+          <ArchiveImage
+            image={e.hero}
+            preload
+            sizes="(max-width: 768px) 100vw, 768px"
+            className="mt-8"
+          />
+        ) : null}
+        <div className="mt-8 font-serif text-[1.0625rem] leading-[1.75] text-ink">
           <ArticleBody blocks={e.body} />
         </div>
         {e.faqs?.length ? <FaqList faqs={e.faqs} /> : null}
