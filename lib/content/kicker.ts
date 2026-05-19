@@ -4,9 +4,10 @@ const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 // One short, typographic eyebrow per entry, derived from its typed shape.
 export function entryKicker(e: Partial<ContentEntry> & { section: string }): string {
+  if ("era" in e && e.era) return String(e.era);
   switch (e.section) {
     case "history":
-      return ("era" in e && e.era ? String(e.era) : "History");
+      return "History";
     case "guides":
     case "mobile-printing":
     case "fax":

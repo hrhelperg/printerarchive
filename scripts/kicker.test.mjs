@@ -46,3 +46,17 @@ test("glossary -> Definition", () => {
 test("unknown/empty -> section label fallback", () => {
   assert.equal(entryKicker({ section: "workflows" }), "Workflow");
 });
+
+test("fax HistoryEntry -> era (not Guide)", () => {
+  assert.equal(
+    entryKicker({ section: "fax", era: "The fax era" }),
+    "The fax era",
+  );
+});
+
+test("history HistoryEntry still -> era", () => {
+  assert.equal(
+    entryKicker({ section: "history", era: "Impact era" }),
+    "Impact era",
+  );
+});
