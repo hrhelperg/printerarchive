@@ -103,10 +103,26 @@ const entry: HistoryEntry = {
     { section: "fax", slug: "why-fax-is-still-used" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["history of fax", "fax machine history", "image transmission"],
+  sources: [
+    {
+      title: "Faxed: The Rise and Fall of the Fax Machine",
+      publisher: "Jonathan Coopersmith, Johns Hopkins University Press, 2015",
+    },
+    {
+      title: "Fax",
+      url: "https://en.wikipedia.org/wiki/Fax",
+      publisher: "Wikipedia",
+    },
+    {
+      title: "Telegraphy",
+      url: "https://en.wikipedia.org/wiki/Telegraphy",
+      publisher: "Wikipedia",
+    },
+  ],
   cluster: "printing-history",
 };
 

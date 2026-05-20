@@ -120,7 +120,7 @@ const entry: HistoryEntry = {
     { section: "history", slug: "evolution-of-office-printing" },
   ],
   published: "2026-05-19",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
@@ -129,6 +129,22 @@ const entry: HistoryEntry = {
     "laser printing adoption",
     "office printing history",
     "multi-part forms",
+  ],
+  sources: [
+    {
+      title: "Laser printing",
+      url: "https://en.wikipedia.org/wiki/Laser_printing",
+      publisher: "Wikipedia",
+    },
+    {
+      title: "Dot matrix printing",
+      url: "https://en.wikipedia.org/wiki/Dot_matrix_printing",
+      publisher: "Wikipedia",
+    },
+    {
+      title: "IBM 3800 laser printer collection",
+      publisher: "Computer History Museum",
+    },
   ],
   cluster: "printing-evolution",
 };
