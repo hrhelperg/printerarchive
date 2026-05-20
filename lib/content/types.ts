@@ -58,7 +58,8 @@ export type ContentBlock =
       rows: string[][];
       sources?: string[];
       figureNumber?: string;
-    };
+    }
+  | { kind: "researchInset"; title: string; items: string[] };
 
 export interface BaseEntry {
   section: SectionId;

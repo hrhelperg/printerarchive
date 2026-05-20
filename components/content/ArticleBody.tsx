@@ -12,6 +12,7 @@ import { TimelineBreak } from "./TimelineBreak";
 import { QuotePlate } from "./QuotePlate";
 import { FigurePair } from "./FigurePair";
 import { ArchivalTable } from "./ArchivalTable";
+import { ResearchInset } from "./ResearchInset";
 import { Figure } from "./Figure";
 import { ImageGroup } from "./ImageGroup";
 
@@ -144,6 +145,8 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
                 figureNumber={b.figureNumber}
               />
             );
+          case "researchInset":
+            return <ResearchInset key={i} title={b.title} items={b.items} />;
           case "figure":
             return <Figure key={i} image={b.image} />;
           case "table":
