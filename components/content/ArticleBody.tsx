@@ -5,6 +5,7 @@ import { KeyTakeaways } from "./KeyTakeaways";
 import { StepList } from "./StepList";
 import { Timeline } from "./Timeline";
 import { Pullquote } from "./Pullquote";
+import { FootnoteRef } from "./FootnoteRef";
 import { Figure } from "./Figure";
 import { ImageGroup } from "./ImageGroup";
 
@@ -94,7 +95,7 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
               <Pullquote key={i} text={b.text} attribution={b.attribution} />
             );
           case "footnoteRef":
-            return null;
+            return <FootnoteRef key={i} n={b.n} />;
           case "figure":
             return <Figure key={i} image={b.image} />;
           case "table":
