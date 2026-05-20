@@ -12,6 +12,7 @@ import { ArchivePlate } from "@/components/content/ArchivePlate";
 import { ArticleBody } from "@/components/content/ArticleBody";
 import { FaqList } from "@/components/content/FaqList";
 import { SourceTransparency } from "@/components/content/SourceTransparency";
+import { ArchiveFootnotes } from "@/components/content/ArchiveFootnotes";
 import { RelatedLinks } from "@/components/content/RelatedLinks";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/schema";
@@ -78,6 +79,7 @@ export function ArticlePage({
         </div>
         {e.faqs?.length ? <FaqList faqs={e.faqs} /> : null}
         {e.sources?.length ? <SourceTransparency sources={e.sources} /> : null}
+        {e.footnotes?.length ? <ArchiveFootnotes footnotes={e.footnotes} /> : null}
         <RelatedLinks items={related} />
       </article>
     </Container>
