@@ -37,7 +37,8 @@ export type ContentBlock =
       attribution: string;
       source?: { title: string; url?: string };
     }
-  | { kind: "editorialAside"; title?: string; text: string };
+  | { kind: "editorialAside"; title?: string; text: string }
+  | { kind: "timelineBreak"; era: string; year?: string };
 
 export interface BaseEntry {
   section: SectionId;

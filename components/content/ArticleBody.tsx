@@ -8,6 +8,7 @@ import { Pullquote } from "./Pullquote";
 import { FootnoteRef } from "./FootnoteRef";
 import { SourceCallout } from "./SourceCallout";
 import { EditorialAside } from "./EditorialAside";
+import { TimelineBreak } from "./TimelineBreak";
 import { Figure } from "./Figure";
 import { ImageGroup } from "./ImageGroup";
 
@@ -109,6 +110,8 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
             );
           case "editorialAside":
             return <EditorialAside key={i} title={b.title} text={b.text} />;
+          case "timelineBreak":
+            return <TimelineBreak key={i} era={b.era} year={b.year} />;
           case "figure":
             return <Figure key={i} image={b.image} />;
           case "table":
