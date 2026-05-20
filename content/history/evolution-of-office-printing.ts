@@ -122,7 +122,7 @@ const entry: HistoryEntry = {
   faqs: [
     {
       q: "Why frame office printing around sharing rather than around the machines?",
-      a: "Because the recurring force in the history is economic: a printer is too expensive to dedicate to one person and too useful not to share. Most developments — centralising, networking, fleet management — are responses to the friction that sharing creates, which the device-by-device view obscures.",
+      a: "Because the dominant pressure across the period was a cost problem about a useful object: a printer was too expensive to dedicate to one person and too valuable to leave unshared. Centralising, networking, and fleet management were each responses to the frictions that sharing then produced. A device-by-device chronology buries that pressure under hardware milestones; a category-and-era frame keeps it in view.",
     },
     {
       q: "What did networked printing actually change for workers?",
@@ -140,7 +140,7 @@ const entry: HistoryEntry = {
     { section: "history", slug: "history-of-printers" },
   ],
   published: "2026-05-19",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [

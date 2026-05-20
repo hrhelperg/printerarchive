@@ -88,7 +88,7 @@ const entry: HistoryEntry = {
     },
     {
       kind: "paragraph",
-      text: "The path forward was set by the same economics that defined the start. As the cost of the capability fell, the reason for centralising it weakened, and a resource that had to be shared because it was expensive could progressively be distributed because it no longer was. The access friction that had been the price of the early bargain was, in effect, refunded as the technology cheapened. The wider arc — and the office-side consequences of laser becoming the ordinary baseline — is treated in the archive's evolution of office printing. The throughline is consistent: early laser's history is the history of an expensive capability becoming a cheap one, which is why its story is economic before it is optical.",
+      text: "The path forward was set by the same economics that defined the start. As the cost of the capability fell, the reason for centralising it weakened, and a resource that had to be shared because it was expensive could progressively be distributed because it no longer was. The access friction that had been the price of the early bargain was, in effect, refunded as the technology cheapened. The wider arc — and the office-side consequences of laser becoming the ordinary baseline — is treated in the archive's evolution of office printing. Read in that frame, the operative shift is plain: an institutional capital asset migrated, over time, into an ordinary desk device, and the cheapening is what made the migration possible. When the price of producing such a page fell far enough, the organisational gatekeeping around it stopped being necessary, and a quality once secured by an institution's purchase became something an individual could simply use.",
     },
   ],
   faqs: [
@@ -112,7 +112,7 @@ const entry: HistoryEntry = {
     { section: "glossary", slug: "toner" },
   ],
   published: "2026-05-19",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [

@@ -92,7 +92,7 @@ const entry: HistoryEntry = {
     },
     {
       kind: "paragraph",
-      text: "The hardware of early network printing was superseded many times over, but its social product was not. Once people had learned that printing is a shared, queued, asynchronous act governed partly by courtesy and partly by a system, that understanding became the permanent default and every later arrangement inherited it. The expectation that one submits and waits rather than seizes, that large jobs are a collective consideration, that order is administered rather than grabbed — these outlived the specific spoolers and servers entirely. Early network printing's lasting contribution was not a technology but a settled set of norms about sharing a line, which is why its true history is social rather than mechanical.",
+      text: "The hardware of early network printing was superseded many times over, but its social product was not. Once people had learned that printing is a shared, queued, asynchronous act governed partly by courtesy and partly by a system, that understanding became the permanent default and every later arrangement inherited it. The expectation that one submits and waits rather than seizes, that large jobs are a collective consideration, that order is administered rather than grabbed — these outlived the specific spoolers and servers entirely. What the office kept, in the end, were the manners of the line: the deference toward someone else's job already in flight, the small habit of asking before sending two hundred pages, the acceptance that precedence belonged to the system. What it discarded was the hardware that first taught those manners.",
     },
   ],
   faqs: [
@@ -116,7 +116,7 @@ const entry: HistoryEntry = {
     { section: "history", slug: "office-printing-before-wifi" },
   ],
   published: "2026-05-19",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [

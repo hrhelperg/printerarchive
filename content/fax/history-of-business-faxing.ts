@@ -120,7 +120,7 @@ const entry: HistoryEntry = {
     },
     {
       kind: "paragraph",
-      text: "The erosion was not instantaneous, because the habit was load-bearing and the legal weight attached to a faxed signature did not transfer to email overnight. That uneven, slow displacement — and the specific niches where fax held its ground — is the subject of the archive's pages on the decline of office fax machines and on why fax is still used; read alongside the account of fax in the years before email, they show that what business adopted as a tempo solution it kept, for a while, as an evidentiary one. The history of business faxing is ultimately the history of a tool that solved its problem so completely that the problem became invisible — and a tool whose value, once invisible, was the hardest kind to retire.",
+      text: "The erosion was not instantaneous, because the habit was load-bearing and the legal weight attached to a faxed signature did not transfer to email overnight. That uneven, slow displacement — and the specific niches where fax held its ground — is the subject of the archive's pages on the decline of office fax machines and on why fax is still used; read alongside the account of fax in the years before email, they show that what business adopted as a tempo solution it kept, for a while, as an evidentiary one. The harder difficulty, in retiring it, was that fax had succeeded so thoroughly that the value it delivered had stopped being visible. A capability nobody notices is a capability nobody can plausibly cost or defend, and that invisibility — not the technology — was the real obstacle to letting it go.",
     },
   ],
   faqs: [
@@ -144,7 +144,7 @@ const entry: HistoryEntry = {
     { section: "workflows", slug: "scan-to-searchable-pdf" },
   ],
   published: "2026-05-19",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
