@@ -9,6 +9,20 @@ const entry: HistoryEntry = {
   summary:
     "The early laser printer is remembered as the start of sharp output. Its more consequential character was economic: it was expensive enough to be an institutional asset, so it changed not only how a page was formed but who, in an organisation, could command a page that looked professionally produced.",
   era: "The early laser era",
+  hero: {
+    src: "/images/history/how-early-laser-printers-worked.jpg",
+    alt: "IBM 3800 laser printer — a large floor-standing institutional unit from 1982",
+    width: 1600,
+    height: 789,
+    caption:
+      "IBM 3800 (1982) — an institutional-scale electrophotographic printer, room-resident infrastructure rather than a desk device.",
+    credit: {
+      source:
+        "International Business Machines, General Products Division (via Wikimedia Commons)",
+      url: "https://commons.wikimedia.org/wiki/File:IBM_3800.jpg",
+      license: "Public domain (US)",
+    },
+  },
   body: [
     {
       kind: "keyTakeaways",

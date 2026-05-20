@@ -58,6 +58,22 @@ const entry: HistoryEntry = {
       text: "Infrastructure is defined by what fails when it is gone, and by that test the office fax qualified. An organisation whose machine was out of paper or off the hook was not merely inconvenienced; it was, for the duration, partly unreachable for the purpose of closing business. The general arc by which fax reached this status and later receded is traced in the archive's history of fax machines, which situates the office adoption within the longer technical story.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/fax/history-of-business-faxing--panasonic-kx-f90.jpg",
+        alt: "Panasonic KX-F90 office fax machine with corded handset and paper output tray",
+        width: 1282,
+        height: 841,
+        caption:
+          "Panasonic KX-F90 — a typical 1980s/early-1990s compact office fax with integrated handset and thermal-roll output.",
+        credit: {
+          source: "Pittigrilli, cropped by Georgfotoart, Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Panasonic_KX-F90_(cropped).jpg",
+          license: "CC BY-SA 4.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "The workflow habits fax created",

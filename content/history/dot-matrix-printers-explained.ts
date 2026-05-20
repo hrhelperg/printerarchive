@@ -9,6 +9,19 @@ const entry: HistoryEntry = {
   summary:
     "Dot matrix printers form characters by striking an inked ribbon with a pattern of pins. This overview explains the mechanism, its trade-offs, and why it survived in particular settings.",
   era: "The impact-printing era and its lasting niches",
+  hero: {
+    src: "/images/history/dot-matrix-printers-explained.jpg",
+    alt: "Facit E560 dot matrix printer — full studio shot of the complete unit",
+    width: 1600,
+    height: 1067,
+    caption:
+      "Facit E560 — a representative office dot matrix printer of the late impact era.",
+    credit: {
+      source: "Corvair, Wikimedia Commons",
+      url: "https://commons.wikimedia.org/wiki/File:Facit_E560_dot_matrix_printer.jpg",
+      license: "CC BY-SA 4.0",
+    },
+  },
   body: [
     {
       kind: "keyTakeaways",
