@@ -1,3 +1,4 @@
+import type { ArchiveImage as ArchiveImageData } from "@/lib/content/types";
 import { HomeHero } from "@/components/home/HomeHero";
 import { ThenNow } from "@/components/home/ThenNow";
 import { CategoryGrid } from "@/components/home/CategoryGrid";
@@ -5,6 +6,20 @@ import { EraRail } from "@/components/home/EraRail";
 import { FeaturedBand } from "@/components/home/FeaturedBand";
 import { ClosingBand } from "@/components/home/ClosingBand";
 import { StorytellingBand } from "@/components/home/StorytellingBand";
+
+const ARCHIVAL_HIGHLIGHTS_IMAGE: ArchiveImageData = {
+  src: "/images/home/archival-highlights-bound-printout.jpg",
+  alt: "Bound stack of green-and-white-banded continuous-form computer printout",
+  width: 1232,
+  height: 1810,
+  caption:
+    "Bound continuous-form printout — the green-bar paper that defined two decades of office and data-center output.",
+  credit: {
+    source: "ArnoldReinhold, Wikimedia Commons",
+    url: "https://commons.wikimedia.org/wiki/File:Bound_computer_printout.agr.jpg",
+    license: "CC BY-SA 3.0",
+  },
+};
 
 export default function HomePage() {
   return (
@@ -26,6 +41,7 @@ export default function HomePage() {
         hrefLabel="Enter the archive →"
         direction="image-left"
         tone="raised"
+        image={ARCHIVAL_HIGHLIGHTS_IMAGE}
       />
       <ClosingBand />
     </>
