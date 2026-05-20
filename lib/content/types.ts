@@ -79,6 +79,11 @@ export interface BaseEntry {
   faqs?: { q: string; a: string }[];
   sources?: { title: string; url?: string; publisher?: string }[];
   footnotes?: { n: number; text: string }[];
+  essayLead?: {
+    kicker?: string;
+    standfirst: string;
+    byline?: string;
+  };
 }
 
 export interface GuideEntry extends BaseEntry {

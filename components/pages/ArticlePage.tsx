@@ -13,6 +13,7 @@ import { ArticleBody } from "@/components/content/ArticleBody";
 import { FaqList } from "@/components/content/FaqList";
 import { SourceTransparency } from "@/components/content/SourceTransparency";
 import { ArchiveFootnotes } from "@/components/content/ArchiveFootnotes";
+import { EssayLead } from "@/components/content/EssayLead";
 import { RelatedLinks } from "@/components/content/RelatedLinks";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/schema";
@@ -54,19 +55,28 @@ export function ArticlePage({
       <JsonLd data={schemas} />
       <Breadcrumbs items={crumbs} />
       <article className="mt-6 fade-up">
-        <header>
-          <p className="kicker">
-            {sectionLabel}
-            {showKick ? ` · ${kick}` : ""}
-          </p>
-          <h1 className="mt-3 text-display-sm leading-tight text-balance">
-            {e.title}
-          </h1>
-          <p className="mt-4 font-serif text-xl text-ink-soft text-pretty">
-            {e.summary}
-          </p>
-          <MetaBar author={e.author} editor={e.editor} updated={e.updated} />
-        </header>
+        {e.essayLead ? (
+          <EssayLead
+            kicker={e.essayLead.kicker ?? sectionLabel}
+            title={e.title}
+            standfirst={e.essayLead.standfirst}
+            byline={e.essayLead.byline}
+          />
+        ) : (
+          <header>
+            <p className="kicker">
+              {sectionLabel}
+              {showKick ? ` · ${kick}` : ""}
+            </p>
+            <h1 className="mt-3 text-display-sm leading-tight text-balance">
+              {e.title}
+            </h1>
+            <p className="mt-4 font-serif text-xl text-ink-soft text-pretty">
+              {e.summary}
+            </p>
+            <MetaBar author={e.author} editor={e.editor} updated={e.updated} />
+          </header>
+        )}
         {e.hero ? (
           <ArchivePlate
             image={e.hero}
