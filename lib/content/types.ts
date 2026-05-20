@@ -44,6 +44,12 @@ export type ContentBlock =
       text: string;
       attribution: string;
       citation?: string;
+    }
+  | {
+      kind: "figurePair";
+      left: ArchiveImage;
+      right: ArchiveImage;
+      caption?: string;
     };
 
 export interface BaseEntry {

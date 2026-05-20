@@ -10,6 +10,7 @@ import { SourceCallout } from "./SourceCallout";
 import { EditorialAside } from "./EditorialAside";
 import { TimelineBreak } from "./TimelineBreak";
 import { QuotePlate } from "./QuotePlate";
+import { FigurePair } from "./FigurePair";
 import { Figure } from "./Figure";
 import { ImageGroup } from "./ImageGroup";
 
@@ -120,6 +121,15 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
                 text={b.text}
                 attribution={b.attribution}
                 citation={b.citation}
+              />
+            );
+          case "figurePair":
+            return (
+              <FigurePair
+                key={i}
+                left={b.left}
+                right={b.right}
+                caption={b.caption}
               />
             );
           case "figure":
