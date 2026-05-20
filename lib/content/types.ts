@@ -38,7 +38,13 @@ export type ContentBlock =
       source?: { title: string; url?: string };
     }
   | { kind: "editorialAside"; title?: string; text: string }
-  | { kind: "timelineBreak"; era: string; year?: string };
+  | { kind: "timelineBreak"; era: string; year?: string }
+  | {
+      kind: "quotePlate";
+      text: string;
+      attribution: string;
+      citation?: string;
+    };
 
 export interface BaseEntry {
   section: SectionId;

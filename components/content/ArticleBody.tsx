@@ -9,6 +9,7 @@ import { FootnoteRef } from "./FootnoteRef";
 import { SourceCallout } from "./SourceCallout";
 import { EditorialAside } from "./EditorialAside";
 import { TimelineBreak } from "./TimelineBreak";
+import { QuotePlate } from "./QuotePlate";
 import { Figure } from "./Figure";
 import { ImageGroup } from "./ImageGroup";
 
@@ -112,6 +113,15 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
             return <EditorialAside key={i} title={b.title} text={b.text} />;
           case "timelineBreak":
             return <TimelineBreak key={i} era={b.era} year={b.year} />;
+          case "quotePlate":
+            return (
+              <QuotePlate
+                key={i}
+                text={b.text}
+                attribution={b.attribution}
+                citation={b.citation}
+              />
+            );
           case "figure":
             return <Figure key={i} image={b.image} />;
           case "table":
