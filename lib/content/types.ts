@@ -30,7 +30,13 @@ export type ContentBlock =
   | { kind: "steps"; steps: { title: string; text: string }[] }
   | { kind: "figure"; image: ArchiveImage }
   | { kind: "pullquote"; text: string; attribution?: string }
-  | { kind: "footnoteRef"; n: number };
+  | { kind: "footnoteRef"; n: number }
+  | {
+      kind: "sourceCallout";
+      text: string;
+      attribution: string;
+      source?: { title: string; url?: string };
+    };
 
 export interface BaseEntry {
   section: SectionId;

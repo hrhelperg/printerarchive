@@ -6,6 +6,7 @@ import { StepList } from "./StepList";
 import { Timeline } from "./Timeline";
 import { Pullquote } from "./Pullquote";
 import { FootnoteRef } from "./FootnoteRef";
+import { SourceCallout } from "./SourceCallout";
 import { Figure } from "./Figure";
 import { ImageGroup } from "./ImageGroup";
 
@@ -96,6 +97,15 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
             );
           case "footnoteRef":
             return <FootnoteRef key={i} n={b.n} />;
+          case "sourceCallout":
+            return (
+              <SourceCallout
+                key={i}
+                text={b.text}
+                attribution={b.attribution}
+                source={b.source}
+              />
+            );
           case "figure":
             return <Figure key={i} image={b.image} />;
           case "table":
