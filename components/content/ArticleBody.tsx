@@ -7,6 +7,7 @@ import { Timeline } from "./Timeline";
 import { Pullquote } from "./Pullquote";
 import { FootnoteRef } from "./FootnoteRef";
 import { SourceCallout } from "./SourceCallout";
+import { EditorialAside } from "./EditorialAside";
 import { Figure } from "./Figure";
 import { ImageGroup } from "./ImageGroup";
 
@@ -106,6 +107,8 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
                 source={b.source}
               />
             );
+          case "editorialAside":
+            return <EditorialAside key={i} title={b.title} text={b.text} />;
           case "figure":
             return <Figure key={i} image={b.image} />;
           case "table":
