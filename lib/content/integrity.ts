@@ -83,6 +83,18 @@ export function findContentIssues(entries: ContentEntry[]): string[] {
           const img = (b as { image?: Record<string, unknown> }).image ?? {};
           issues.push(...imageIssues(key, `figure[${idx}]`, img));
         }
+        if (b && (b as { kind?: string }).kind === "figurePair") {
+          const left = (b as { left?: Record<string, unknown> }).left ?? {};
+          const right = (b as { right?: Record<string, unknown> }).right ?? {};
+          issues.push(...imageIssues(key, `figurePair[${idx}].left`, left));
+          issues.push(...imageIssues(key, `figurePair[${idx}].right`, right));
+        }
+        if (b && (b as { kind?: string }).kind === "archivalTable") {
+          const caption = (b as { caption?: unknown }).caption;
+          if (typeof caption !== "string" || caption.trim().length === 0) {
+            issues.push(`${key}: archivalTable[${idx}] caption missing or empty`);
+          }
+        }
       });
     }
 
