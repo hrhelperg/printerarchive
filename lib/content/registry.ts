@@ -26,6 +26,22 @@ import histThermal from "@/content/history/thermal-printing-history";
 import hist1990s from "@/content/history/office-printing-in-the-1990s";
 import histEarlyComputer from "@/content/history/early-computer-printing";
 
+// Phase 4A — printing-evolution cluster
+import histTransitionImpactLaser from "@/content/history/transition-from-impact-to-laser-printing";
+import histEvoOfficePrinting from "@/content/history/evolution-of-office-printing";
+import histEvoColor from "@/content/history/evolution-of-color-printing";
+import histDesktopPublishing from "@/content/history/history-of-desktop-publishing";
+import histWirelessHistory from "@/content/history/history-of-wireless-printing";
+
+// Phase 4A — era + impact/early-digital clusters
+import hist1980s from "@/content/history/printing-in-the-1980s";
+import histDecade1990s from "@/content/history/printing-in-the-1990s";
+import histBeforeWifi from "@/content/history/office-printing-before-wifi";
+import histHowDotMatrix from "@/content/history/how-dot-matrix-printers-work";
+import histHowImpact from "@/content/history/how-impact-printing-worked";
+import histEarlyLaser from "@/content/history/how-early-laser-printers-worked";
+import histEarlyNetwork from "@/content/history/early-network-printing-systems";
+
 // Phase 3 — guides cluster
 import gdDuplex from "@/content/guides/what-is-duplex-printing";
 import gdPostscript from "@/content/guides/what-is-postscript-printing";
@@ -51,6 +67,11 @@ import brEpson from "@/content/brands/epson";
 import brBrother from "@/content/brands/brother";
 import brXerox from "@/content/brands/xerox";
 
+// Phase 4A — new brands
+import brandRicoh from "@/content/brands/ricoh";
+import brandKyocera from "@/content/brands/kyocera";
+import brandLexmark from "@/content/brands/lexmark";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -67,6 +88,13 @@ import wfMobileOffice from "@/content/workflows/mobile-office-printing";
 
 // Phase 3 — mobile-printing cluster
 import mpChromebook from "@/content/mobile-printing/printing-from-a-chromebook";
+
+// Phase 4A — fax-history cluster
+import faxBizHistory from "@/content/fax/history-of-business-faxing";
+import faxAnalogVsDigital from "@/content/fax/analog-fax-vs-digital-fax";
+import faxBeforeEmail from "@/content/fax/fax-machines-before-email";
+import faxDecline from "@/content/fax/decline-of-office-fax-machines";
+import faxStillUsed from "@/content/fax/why-fax-is-still-used";
 
 export const allEntries: ContentEntry[] = [
   // Foundation
@@ -93,6 +121,18 @@ export const allEntries: ContentEntry[] = [
   histThermal,
   hist1990s,
   histEarlyComputer,
+  histTransitionImpactLaser,
+  histEvoOfficePrinting,
+  histEvoColor,
+  histDesktopPublishing,
+  histWirelessHistory,
+  hist1980s,
+  histDecade1990s,
+  histBeforeWifi,
+  histHowDotMatrix,
+  histHowImpact,
+  histEarlyLaser,
+  histEarlyNetwork,
   // Guides
   gdDuplex,
   gdPostscript,
@@ -115,6 +155,9 @@ export const allEntries: ContentEntry[] = [
   brEpson,
   brBrother,
   brXerox,
+  brandRicoh,
+  brandKyocera,
+  brandLexmark,
   // Glossary
   gSpooler,
   gQueue,
@@ -129,4 +172,10 @@ export const allEntries: ContentEntry[] = [
   wfMobileOffice,
   // Mobile printing
   mpChromebook,
+  // Phase 4A — fax-history cluster
+  faxBizHistory,
+  faxAnalogVsDigital,
+  faxBeforeEmail,
+  faxDecline,
+  faxStillUsed,
 ];

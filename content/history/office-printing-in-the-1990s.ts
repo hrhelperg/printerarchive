@@ -74,9 +74,11 @@ const entry: HistoryEntry = {
     { section: "history", slug: "history-of-printers" },
     { section: "history", slug: "early-computer-printing" },
     { section: "guides", slug: "what-is-a-print-server" },
+    { section: "history", slug: "printing-in-the-1990s" },
+    { section: "history", slug: "evolution-of-office-printing" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-19",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
