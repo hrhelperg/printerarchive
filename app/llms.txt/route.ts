@@ -12,13 +12,23 @@ export function GET() {
     `Site: ${site.url}`,
     `Publisher: ${site.publisher.name}`,
     "",
+    "## About this archive",
+    "",
+    `- Editorial policy: ${site.url}/editorial-policy`,
+    `- Source policy: ${site.url}/source-policy`,
+    `- Methodology: ${site.url}/archive-methodology`,
+    `- Changelog: ${site.url}/changelog`,
+    `- About: ${site.url}/about`,
+    "",
     "## Sections",
     "",
   ];
   for (const s of SECTIONS) {
     lines.push(`### ${s.title}`, s.description);
     for (const e of getSection(s.id)) {
-      lines.push(`- ${e.title}: ${site.url}/${e.section}/${e.slug}`);
+      const sourceCount = e.sources?.length ?? 0;
+      const suffix = sourceCount > 0 ? ` [${sourceCount} sources]` : "";
+      lines.push(`- ${e.title}: ${site.url}/${e.section}/${e.slug}${suffix}`);
     }
     lines.push("");
   }
