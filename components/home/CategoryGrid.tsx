@@ -3,14 +3,20 @@ import { SECTIONS } from "@/lib/site";
 import { getSection } from "@/lib/content/queries";
 import { Container } from "@/components/layout/Container";
 
-export function CategoryGrid() {
+interface CategoryGridProps {
+  kicker?: string;
+  title?: string;
+}
+
+export function CategoryGrid({
+  kicker = "Browse the archive",
+  title = `${SECTIONS.length} ways into printing technology`,
+}: CategoryGridProps) {
   return (
     <Container width="wide" className="py-14">
       <hr className="rule-sep" />
-      <p className="kicker mt-10">Browse the archive</p>
-      <h2 className="mt-2 text-display-sm text-balance">
-        {SECTIONS.length} ways into printing technology
-      </h2>
+      <p className="kicker mt-10">{kicker}</p>
+      <h2 className="mt-2 text-display-sm text-balance">{title}</h2>
       <ul className="mt-8 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
         {SECTIONS.map((s, i) => {
           const count = getSection(s.id).length;
