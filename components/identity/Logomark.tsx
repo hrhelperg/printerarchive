@@ -8,21 +8,24 @@ interface LogomarkProps {
  * 24×24 viewBox. Decorative by default (aria-hidden); pass
  * `accessibleName` only when the mark is the link's accessible name.
  *
- * Geometry: a hairline 17×17 archival frame (a catalog plate) with a
- * solid 6×6 block anchored in the lower-right corner — a registration
- * stamp / printer's corner mark. The asymmetric solid block gives the
- * silhouette a distinctive, non-radially-symmetric shape so it cannot
- * be confused with a generic "rectangle with a border." The frame
- * reads as the archive's catalog plate; the corner block reads as the
- * impression of the press.
+ * Geometry — three structural ideas working together:
+ *   1. 17×17 hairline frame at (3.5, 3.5) — the "catalog plate"
+ *   2. Internal horizontal hairline rule at y=11 — the "header rule"
+ *      that real archival catalog cards carry; gives the silhouette
+ *      a second structural feature so the mark does not read as a
+ *      generic bordered box and provides an interior feature for the
+ *      eye to lock onto at favicon sizes.
+ *   3. 7×7 solid block at (13, 13) — the "press impression" stamp
+ *      in the lower-right region of the plate. Asymmetric placement
+ *      breaks radial symmetry; lower-right is the typical archival-
+ *      stamp convention on a catalog plate.
  *
- * 16px legibility: at 16×16, the 6×6 unit block renders as ~4×4 solid
- * pixels — solid enough to never dissolve at sub-pixel rendering and
- * large enough to anchor the eye to the corner immediately. The 17×17
- * hairline frame becomes ~11×11 inside the bitmap with a 1px stroke
- * (the favicon variant uses stroke-width 1.25 for extra crispness at
- * 16×16 and 32×32). The asymmetric composition survives anti-aliasing
- * because the dominant feature is the filled block, not the hairlines.
+ * 16px legibility: at 16×16 the 7×7 solid block renders as
+ * roughly 5×5 device pixels — anchored mass that survives sub-pixel
+ * rasterization. The horizontal rule at y=11 maps to ~y=7 in the
+ * bitmap, giving the eye a mid-glyph horizontal feature. The frame
+ * uses stroke-width 1.25 in the favicon variant (app/icon.svg) so
+ * the perimeter stays continuous at 16×16 and 32×32.
  */
 export function Logomark({ className = "", accessibleName }: LogomarkProps) {
   const a11y = accessibleName
@@ -45,7 +48,15 @@ export function Logomark({ className = "", accessibleName }: LogomarkProps) {
         strokeWidth="1"
         fill="none"
       />
-      <rect x="14" y="14" width="6" height="6" fill="currentColor" />
+      <line
+        x1="3.5"
+        y1="11"
+        x2="20.5"
+        y2="11"
+        stroke="currentColor"
+        strokeWidth="1"
+      />
+      <rect x="13" y="13" width="7" height="7" fill="currentColor" />
     </svg>
   );
 }
