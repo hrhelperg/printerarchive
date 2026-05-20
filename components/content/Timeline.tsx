@@ -10,10 +10,15 @@ interface TimelineProps {
  * `.timeline-dot` keyframe (gated by prefers-reduced-motion).
  */
 export function Timeline({ events, tone = "default" }: TimelineProps) {
-  const railColor =
-    tone === "sepia" ? "border-l-rule-strong" : "border-l-rule-strong";
-  const periodColor =
-    tone === "sepia" ? "text-ink-display" : "text-ink-display";
+  // The `tone` prop is accepted but the rail itself is intentionally
+  // tone-agnostic — the sepia tint is applied by the enclosing band
+  // (e.g. StorytellingBand or History Frontispiece) so the timeline's
+  // period label keeps the same AA-contrast colour against any tone.
+  // The prop threads tonal context for downstream consumers; do NOT
+  // re-introduce a ternary that would suggest a visual delta here.
+  void tone;
+  const railColor = "border-l-rule-strong";
+  const periodColor = "text-ink-display";
   return (
     <ol className={`my-8 border-l ${railColor}`}>
       {events.map((e, i) => (
