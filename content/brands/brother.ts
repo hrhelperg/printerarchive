@@ -55,7 +55,7 @@ const entry: BrandEntry = {
     {
       kind: "heading",
       level: 2,
-      text: "Printer categories",
+      text: "The hardware footprint in small offices and homes",
     },
     {
       kind: "paragraph",
@@ -96,7 +96,7 @@ const entry: BrandEntry = {
     { section: "history", slug: "early-network-printing-systems" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["brother printers", "brother printing", "small office printing", "printer brands"],

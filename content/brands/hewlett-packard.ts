@@ -78,7 +78,7 @@ const entry: BrandEntry = {
     },
     {
       kind: "paragraph",
-      text: "Because the same brand covers single-user home devices and shared office fleets, its troubleshooting profile is split. A home inkjet's problems are usually local — cartridges, heads, a single connection — whereas a shared office laser's most visible failure is reporting offline to networked users, where the cause is more often the queue, server, or network than the printer. Knowing how laser and inkjet printers work is the most useful background for separating the two.",
+      text: "Because the same brand covers single-user home devices and shared office fleets, its troubleshooting profile is split. A home inkjet's problems are usually local — cartridges, heads, a single connection — whereas on a shared office laser the visible symptom is typically that the device appears offline to some users, and the explanation usually sits one step away from the hardware: a stuck spool job, a driver or port mis-configuration on a workstation, or a print-server state that needs clearing rather than a part inside the machine. Knowing how laser and inkjet printers work is the most useful background for separating the two.",
     },
   ],
   related: [
@@ -89,7 +89,7 @@ const entry: BrandEntry = {
     { section: "history", slug: "how-early-laser-printers-worked" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["hp", "hewlett-packard", "printer brands"],

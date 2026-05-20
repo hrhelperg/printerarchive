@@ -55,7 +55,7 @@ const entry: BrandEntry = {
     {
       kind: "heading",
       level: 2,
-      text: "Printer categories",
+      text: "Where the brand's devices land in practice",
     },
     {
       kind: "paragraph",
@@ -97,7 +97,7 @@ const entry: BrandEntry = {
     { section: "history", slug: "evolution-of-inkjet-printers" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["epson printers", "epson printing", "inkjet", "printer brands"],

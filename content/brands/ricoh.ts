@@ -35,7 +35,7 @@ const entry: BrandEntry = {
     {
       kind: "heading",
       level: 2,
-      text: "Printer categories and typical deployment",
+      text: "What you typically see deployed under this name",
     },
     {
       kind: "paragraph",
@@ -75,7 +75,7 @@ const entry: BrandEntry = {
     },
     {
       kind: "paragraph",
-      text: "Because the device is networked and shared, the failures people notice are usually connectivity and queue problems rather than mechanical ones: a unit that reports offline to some users, jobs that stall in a shared queue, or authentication that blocks release. Diagnosing an offline shared device is a recurring task, and the cause is more often a network, server, or queue state than the printer itself.",
+      text: "Because the device is networked and shared, the failures people notice are usually connectivity and queue problems rather than mechanical ones: a unit that reports offline to some users, jobs that stall in a shared queue, or authentication that blocks release. On a managed fleet, the practical diagnostic chain runs back through the spool, the queue, and the network path that reaches the device, and the hardware on the floor is normally the last link to investigate rather than the first.",
     },
     {
       kind: "callout",
@@ -105,7 +105,7 @@ const entry: BrandEntry = {
     { section: "workflows", slug: "scan-to-searchable-pdf" },
   ],
   published: "2026-05-19",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [

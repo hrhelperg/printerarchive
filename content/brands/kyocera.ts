@@ -35,7 +35,7 @@ const entry: BrandEntry = {
     {
       kind: "heading",
       level: 2,
-      text: "Printer categories and typical deployment",
+      text: "The shapes the lineup tends to take in fleets",
     },
     {
       kind: "paragraph",
@@ -105,7 +105,7 @@ const entry: BrandEntry = {
     { section: "history", slug: "evolution-of-laser-printing" },
   ],
   published: "2026-05-19",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
