@@ -4,10 +4,10 @@ import { ThenNow } from "@/components/home/ThenNow";
 import { CategoryGrid } from "@/components/home/CategoryGrid";
 import { EraRail } from "@/components/home/EraRail";
 import { FeaturedBand } from "@/components/home/FeaturedBand";
+import { FeaturedStories } from "@/components/home/FeaturedStories";
 import { ClosingBand } from "@/components/home/ClosingBand";
-import { StorytellingBand } from "@/components/home/StorytellingBand";
 
-const ARCHIVAL_HIGHLIGHTS_IMAGE: ArchiveImageData = {
+const HERO_IMAGE: ArchiveImageData = {
   src: "/images/home/archival-highlights-bound-printout.jpg",
   alt: "Bound stack of green-and-white-banded continuous-form computer printout",
   width: 1232,
@@ -24,24 +24,16 @@ const ARCHIVAL_HIGHLIGHTS_IMAGE: ArchiveImageData = {
 export default function HomePage() {
   return (
     <>
-      <HomeHero />
+      <HomeHero image={HERO_IMAGE} />
       <ThenNow />
-      <CategoryGrid />
       <EraRail />
-      <FeaturedBand section="guides" />
-      <FeaturedBand section="troubleshooting" />
+      <FeaturedStories />
       <FeaturedBand section="history" />
-      <FeaturedBand section="mobile-printing" />
+      <FeaturedBand section="fax" />
       <FeaturedBand section="brands" />
-      <StorytellingBand
-        kicker="Archival highlights"
-        title="A documentary record of how printing reshaped office work"
-        lede="From shared department printers to driverless mobile output — printing reorganised the workday around itself, and the archive follows that trail."
-        href="/history"
-        hrefLabel="Enter the archive →"
-        direction="image-left"
-        tone="raised"
-        image={ARCHIVAL_HIGHLIGHTS_IMAGE}
+      <CategoryGrid
+        kicker="Continue browsing"
+        title="The whole archive in nine sections"
       />
       <ClosingBand />
     </>
