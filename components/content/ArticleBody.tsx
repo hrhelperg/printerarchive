@@ -93,6 +93,8 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
             return (
               <Pullquote key={i} text={b.text} attribution={b.attribution} />
             );
+          case "footnoteRef":
+            return null;
           case "figure":
             return <Figure key={i} image={b.image} />;
           case "table":
