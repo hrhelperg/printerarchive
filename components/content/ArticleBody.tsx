@@ -20,9 +20,9 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
     <>
       {processed.map((b, i) => {
         if (b.kind === "figure-group") {
-          const cols = b.figures.length >= 3 ? 3 : 2;
+          const cols: 2 | 3 = b.figures.length >= 3 ? 3 : 2;
           return (
-            <ImageGroup key={i} columns={cols as 2 | 3 | 4}>
+            <ImageGroup key={i} columns={cols}>
               {b.figures.map((f, j) => (
                 <Figure key={j} image={f.image} />
               ))}

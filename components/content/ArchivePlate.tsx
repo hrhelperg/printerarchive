@@ -7,6 +7,7 @@ interface ArchivePlateProps {
   sizes?: string;
   label?: string;
   raised?: boolean;
+  noMargin?: boolean;
   className?: string;
 }
 
@@ -18,6 +19,10 @@ interface ArchivePlateProps {
  * Outer is <div> (not <figure>) because the inner ArchiveImage already
  * owns the <figure>/<figcaption> semantics. Nesting figures would
  * leave the outer caption-less and add AT noise.
+ *
+ * `noMargin` suppresses the default `my-8` so the caller owns vertical
+ * spacing (mirrors the same prop on ArchiveImage; avoids fragile
+ * className-based utility overrides).
  */
 export function ArchivePlate({
   image,
@@ -25,11 +30,13 @@ export function ArchivePlate({
   sizes = "(max-width: 768px) 100vw, 768px",
   label,
   raised = false,
+  noMargin = false,
   className = "",
 }: ArchivePlateProps) {
+  const margin = noMargin ? "my-0" : "my-8";
   return (
     <div
-      className={`my-8 archival-placard${raised ? " archival-placard--raised" : ""} ${className}`}
+      className={`${margin} archival-placard${raised ? " archival-placard--raised" : ""} ${className}`}
     >
       {label ? (
         <p className="kicker mb-2">{label}</p>

@@ -53,7 +53,8 @@ export function Frontispiece({
               image={image}
               preload={preload}
               sizes="(max-width: 1024px) 100vw, 420px"
-              className="my-0 w-full max-w-md"
+              noMargin
+              className="w-full max-w-md"
             />
           ) : (
             <div

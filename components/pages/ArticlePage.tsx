@@ -71,7 +71,6 @@ export function ArticlePage({
             image={e.hero}
             preload
             sizes="(max-width: 768px) 100vw, 768px"
-            className="mt-8"
           />
         ) : null}
         <div className="mt-8 font-serif text-[1.0625rem] leading-[1.75] text-ink">
