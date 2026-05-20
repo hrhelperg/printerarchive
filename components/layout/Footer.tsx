@@ -36,6 +36,18 @@ export function Footer() {
           <Link href="/about" className="no-underline hover:text-accent">
             About
           </Link>
+          <Link href="/editorial-policy" className="no-underline hover:text-accent">
+            Editorial policy
+          </Link>
+          <Link href="/source-policy" className="no-underline hover:text-accent">
+            Source policy
+          </Link>
+          <Link href="/archive-methodology" className="no-underline hover:text-accent">
+            Methodology
+          </Link>
+          <Link href="/changelog" className="no-underline hover:text-accent">
+            Changelog
+          </Link>
           <Link href="/contact" className="no-underline hover:text-accent">
             Contact
           </Link>
