@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { Container } from "@/components/layout/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MetaBar } from "@/components/layout/MetaBar";
-import { ArchiveImage } from "@/components/content/ArchiveImage";
+import { ArchivePlate } from "@/components/content/ArchivePlate";
 import { ArticleBody } from "@/components/content/ArticleBody";
 import { FaqList } from "@/components/content/FaqList";
 import { SourcesList } from "@/components/content/SourcesList";
@@ -52,7 +52,7 @@ export function ArticlePage({
     <Container width="prose" className="py-12">
       <JsonLd data={schemas} />
       <Breadcrumbs items={crumbs} />
-      <article className="mt-6">
+      <article className="mt-6 fade-up">
         <header>
           <p className="kicker">
             {sectionLabel}
@@ -67,7 +67,7 @@ export function ArticlePage({
           <MetaBar author={e.author} editor={e.editor} updated={e.updated} />
         </header>
         {e.hero ? (
-          <ArchiveImage
+          <ArchivePlate
             image={e.hero}
             preload
             sizes="(max-width: 768px) 100vw, 768px"
