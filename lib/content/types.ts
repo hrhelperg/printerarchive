@@ -50,6 +50,14 @@ export type ContentBlock =
       left: ArchiveImage;
       right: ArchiveImage;
       caption?: string;
+    }
+  | {
+      kind: "archivalTable";
+      caption: string;
+      headers: string[];
+      rows: string[][];
+      sources?: string[];
+      figureNumber?: string;
     };
 
 export interface BaseEntry {

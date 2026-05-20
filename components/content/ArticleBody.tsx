@@ -11,6 +11,7 @@ import { EditorialAside } from "./EditorialAside";
 import { TimelineBreak } from "./TimelineBreak";
 import { QuotePlate } from "./QuotePlate";
 import { FigurePair } from "./FigurePair";
+import { ArchivalTable } from "./ArchivalTable";
 import { Figure } from "./Figure";
 import { ImageGroup } from "./ImageGroup";
 
@@ -130,6 +131,17 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
                 left={b.left}
                 right={b.right}
                 caption={b.caption}
+              />
+            );
+          case "archivalTable":
+            return (
+              <ArchivalTable
+                key={i}
+                caption={b.caption}
+                headers={b.headers}
+                rows={b.rows}
+                sources={b.sources}
+                figureNumber={b.figureNumber}
               />
             );
           case "figure":
