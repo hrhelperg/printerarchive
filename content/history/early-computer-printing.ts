@@ -32,6 +32,22 @@ const entry: HistoryEntry = {
       text: "Many early printers worked line by line and were mechanical and impact-based. They were built for volume and durability in computing environments rather than for fine graphics.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/early-computer-printing--ibm-1401-restoration-lab.jpg",
+        alt: "Restored IBM 1401 installation showing a line printer in the foreground with keypunch machines along one side and tape drives behind",
+        width: 1600,
+        height: 1066,
+        caption:
+          "The mainframe-era document-processing ecosystem — IBM 1403 line printer, IBM 026 keypunches, and IBM 729 tape drives in a single frame — preserved at the Computer History Museum.",
+        credit: {
+          source: "Marcin Wichary, Computer History Museum (via Wikimedia Commons / Flickr)",
+          url: "https://commons.wikimedia.org/wiki/File:IBM_1401_lab.jpg",
+          license: "CC BY 2.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Continuous paper",
@@ -39,6 +55,22 @@ const entry: HistoryEntry = {
     {
       kind: "paragraph",
       text: "Continuous fan-fold paper with tractor-feed holes was common, suited to long, uninterrupted runs of reports and data rather than individual cut sheets.",
+    },
+    {
+      kind: "figure",
+      image: {
+        src: "/images/history/early-computer-printing--1940-census-keypunch.jpg",
+        alt: "Black-and-white photograph of a 1940 US Census keypunch operator seated at a Hollerith pantograph machine with hands at the keys",
+        width: 1600,
+        height: 1260,
+        caption:
+          "1940 US Census keypunch operator at a Hollerith pantograph — the pre-electronic data-entry workforce whose punched output fed the line printer and defined the document pipeline before electronic printing.",
+        credit: {
+          source: "U.S. Bureau of the Census (via NARA, Wikimedia Commons)",
+          url: "https://commons.wikimedia.org/wiki/File:Card_puncher_-_NARA_-_513295.jpg",
+          license: "Public domain (U.S. Federal Government work)",
+        },
+      },
     },
     {
       kind: "heading",
@@ -70,7 +102,7 @@ const entry: HistoryEntry = {
     { section: "history", slug: "office-printing-in-the-1990s" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
