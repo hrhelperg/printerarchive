@@ -14,6 +14,10 @@ interface ArchivePlateProps {
  * Museum-placard frame for an archival image. Hairline outer frame +
  * paper-raised mat + optional kicker label + full caption block under
  * the image. Subtle 1–2px shadow opt-in via `raised`. Server Component.
+ *
+ * Outer is <div> (not <figure>) because the inner ArchiveImage already
+ * owns the <figure>/<figcaption> semantics. Nesting figures would
+ * leave the outer caption-less and add AT noise.
  */
 export function ArchivePlate({
   image,
@@ -24,7 +28,7 @@ export function ArchivePlate({
   className = "",
 }: ArchivePlateProps) {
   return (
-    <figure
+    <div
       className={`my-8 archival-placard${raised ? " archival-placard--raised" : ""} ${className}`}
     >
       {label ? (
@@ -34,8 +38,8 @@ export function ArchivePlate({
         image={image}
         preload={preload}
         sizes={sizes}
-        className="my-0"
+        noMargin
       />
-    </figure>
+    </div>
   );
 }

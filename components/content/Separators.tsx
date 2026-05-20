@@ -7,12 +7,12 @@ interface NumericSeparatorProps {
 
 /**
  * Richer separator: hairline · centered ordinal numeral · hairline.
- * Used between major homepage bands. Server Component.
+ * Used between major homepage bands. Decorative only (aria-hidden).
+ * Server Component.
  */
 export function NumericSeparator({ n, className = "" }: NumericSeparatorProps) {
   return (
     <div
-      role="separator"
       aria-hidden="true"
       className={`my-12 grid grid-cols-[1fr_auto_1fr] items-center gap-6 ${className}`}
     >
@@ -32,12 +32,11 @@ interface MarkSeparatorProps {
 /**
  * Richer separator: hairline · tiny abstract Motif glyph · hairline.
  * Used between article sections where a chapter break is meaningful.
- * Server Component.
+ * Decorative only (aria-hidden). Server Component.
  */
 export function MarkSeparator({ className = "" }: MarkSeparatorProps) {
   return (
     <div
-      role="separator"
       aria-hidden="true"
       className={`my-12 grid grid-cols-[1fr_auto_1fr] items-center gap-6 ${className}`}
     >

@@ -10,6 +10,7 @@ interface ArchiveImageProps {
   preload?: boolean;
   sizes?: string;
   className?: string;
+  noMargin?: boolean;
 }
 
 export function ArchiveImage({
@@ -17,11 +18,13 @@ export function ArchiveImage({
   preload = false,
   sizes = "(max-width: 768px) 100vw, 768px",
   className = "",
+  noMargin = false,
 }: ArchiveImageProps) {
   const { src, alt, width, height, caption, credit } = image;
+  const margin = noMargin ? "my-0" : "my-8";
   return (
     <figure
-      className={`my-8 transition-opacity duration-200 hover:opacity-95 ${className}`}
+      className={`${margin} motion-safe:transition-opacity motion-safe:duration-200 motion-safe:hover:opacity-95 ${className}`}
     >
       <div className="border border-rule-strong bg-paper-raised p-2">
         <Image
