@@ -11,7 +11,7 @@ import { MetaBar } from "@/components/layout/MetaBar";
 import { ArchivePlate } from "@/components/content/ArchivePlate";
 import { ArticleBody } from "@/components/content/ArticleBody";
 import { FaqList } from "@/components/content/FaqList";
-import { SourcesList } from "@/components/content/SourcesList";
+import { SourceTransparency } from "@/components/content/SourceTransparency";
 import { RelatedLinks } from "@/components/content/RelatedLinks";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/schema";
@@ -77,7 +77,7 @@ export function ArticlePage({
           <ArticleBody blocks={e.body} />
         </div>
         {e.faqs?.length ? <FaqList faqs={e.faqs} /> : null}
-        {e.sources?.length ? <SourcesList sources={e.sources} /> : null}
+        {e.sources?.length ? <SourceTransparency sources={e.sources} /> : null}
         <RelatedLinks items={related} />
       </article>
     </Container>
