@@ -94,6 +94,49 @@ export function findContentIssues(entries: ContentEntry[]): string[] {
       }
     }
 
+    // Footnotes integrity: collect refs from body, footnotes from entry-level field.
+    const refs: number[] = [];
+    const fnIndex = new Map<number, number>(); // n -> count, for uniqueness check
+    if (Array.isArray(e.body)) {
+      e.body.forEach((b) => {
+        if (b && (b as { kind?: string }).kind === "footnoteRef") {
+          const n = (b as { n?: unknown }).n;
+          if (typeof n === "number" && Number.isInteger(n) && n > 0) refs.push(n);
+          else issues.push(`${key}: footnoteRef n must be a positive integer`);
+        }
+      });
+    }
+    const fns = (e as { footnotes?: { n?: unknown; text?: unknown }[] }).footnotes;
+    if (Array.isArray(fns)) {
+      fns.forEach((f) => {
+        const n = f.n;
+        if (typeof n !== "number" || !Number.isInteger(n) || n <= 0) {
+          issues.push(`${key}: footnote n must be a positive integer`);
+          return;
+        }
+        fnIndex.set(n, (fnIndex.get(n) ?? 0) + 1);
+        if (typeof f.text !== "string" || f.text.trim().length === 0) {
+          issues.push(`${key}: footnote ${n} text missing`);
+        }
+      });
+      // Duplicates
+      for (const [n, count] of fnIndex) {
+        if (count > 1) issues.push(`${key}: duplicate footnote ${n} (x${count})`);
+      }
+    }
+    // Dangling refs (ref without matching footnote)
+    for (const n of refs) {
+      if (!fnIndex.has(n)) {
+        issues.push(`${key}: footnoteRef ${n} has no matching footnote`);
+      }
+    }
+    // Orphan footnotes (footnote without matching ref)
+    for (const [n] of fnIndex) {
+      if (!refs.includes(n)) {
+        issues.push(`${key}: orphan footnote ${n} (no footnoteRef in body)`);
+      }
+    }
+
     if (e.section === "glossary") {
       for (const ref of e.seeAlso ?? []) {
         if (!keys.has(`${ref.section}/${ref.slug}`)) {
