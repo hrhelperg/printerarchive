@@ -106,6 +106,18 @@ export function findContentIssues(entries: ContentEntry[]): string[] {
       }
     }
 
+    const deep = (e as { deepReading?: { ref?: { section?: string; slug?: string } }[] })
+      .deepReading;
+    if (Array.isArray(deep)) {
+      for (const item of deep) {
+        const r = item.ref;
+        const refKey = `${r?.section}/${r?.slug}`;
+        if (!r || !keys.has(refKey)) {
+          issues.push(`${key}: deepReading ref does not resolve -> ${refKey}`);
+        }
+      }
+    }
+
     // Footnotes integrity: collect refs from body, footnotes from entry-level field.
     const refs: number[] = [];
     const fnIndex = new Map<number, number>(); // n -> count, for uniqueness check

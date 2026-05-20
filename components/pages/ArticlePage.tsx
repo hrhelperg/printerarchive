@@ -14,6 +14,7 @@ import { FaqList } from "@/components/content/FaqList";
 import { SourceTransparency } from "@/components/content/SourceTransparency";
 import { ArchiveFootnotes } from "@/components/content/ArchiveFootnotes";
 import { EssayLead } from "@/components/content/EssayLead";
+import { DeepReadingLinks } from "@/components/content/DeepReadingLinks";
 import { RelatedLinks } from "@/components/content/RelatedLinks";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/schema";
@@ -90,6 +91,7 @@ export function ArticlePage({
         {e.faqs?.length ? <FaqList faqs={e.faqs} /> : null}
         {e.sources?.length ? <SourceTransparency sources={e.sources} /> : null}
         {e.footnotes?.length ? <ArchiveFootnotes footnotes={e.footnotes} /> : null}
+        {e.deepReading?.length ? <DeepReadingLinks items={e.deepReading} /> : null}
         <RelatedLinks items={related} />
       </article>
     </Container>

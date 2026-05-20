@@ -84,6 +84,7 @@ export interface BaseEntry {
     standfirst: string;
     byline?: string;
   };
+  deepReading?: { ref: ContentRef; note?: string }[];
 }
 
 export interface GuideEntry extends BaseEntry {
