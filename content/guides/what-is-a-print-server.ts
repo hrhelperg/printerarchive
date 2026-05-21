@@ -68,6 +68,7 @@ const entry: GuideEntry = {
   related: [
     { section: "glossary", slug: "print-spooler" },
     { section: "glossary", slug: "print-queue" },
+    { section: "history", slug: "print-servers-in-large-offices" },
     { section: "history", slug: "office-printing-in-the-1990s" },
   ],
   published: "2026-05-18",

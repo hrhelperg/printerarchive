@@ -96,6 +96,13 @@ import faxBeforeEmail from "@/content/fax/fax-machines-before-email";
 import faxDecline from "@/content/fax/decline-of-office-fax-machines";
 import faxStillUsed from "@/content/fax/why-fax-is-still-used";
 
+// Phase 8 — office-infrastructure cluster
+import histPrintRooms from "@/content/history/office-print-rooms";
+import histPrintServersLarge from "@/content/history/print-servers-in-large-offices";
+import histSpoolersQueues from "@/content/history/spoolers-and-print-queues";
+import histEnterpriseDocMgmt from "@/content/history/enterprise-document-management";
+import wfSharedPrinter from "@/content/workflows/shared-printer-workflows";
+
 export const allEntries: ContentEntry[] = [
   // Foundation
   historyOfPrinters,
@@ -178,4 +185,10 @@ export const allEntries: ContentEntry[] = [
   faxBeforeEmail,
   faxDecline,
   faxStillUsed,
+  // Phase 8 — office-infrastructure cluster
+  histPrintRooms,
+  histPrintServersLarge,
+  histSpoolersQueues,
+  histEnterpriseDocMgmt,
+  wfSharedPrinter,
 ];

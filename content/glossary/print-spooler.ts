@@ -30,6 +30,7 @@ const entry: GlossaryEntry = {
   seeAlso: [
     { section: "glossary", slug: "print-queue" },
     { section: "guides", slug: "what-is-a-print-server" },
+    { section: "history", slug: "spoolers-and-print-queues" },
     { section: "history", slug: "early-network-printing-systems" },
   ],
   published: "2026-05-18",

@@ -3,6 +3,7 @@ import { HomeHero } from "@/components/home/HomeHero";
 import { ThenNow } from "@/components/home/ThenNow";
 import { CategoryGrid } from "@/components/home/CategoryGrid";
 import { EraRail } from "@/components/home/EraRail";
+import { OfficeInfraRail } from "@/components/home/OfficeInfraRail";
 import { FeaturedBand } from "@/components/home/FeaturedBand";
 import { FeaturedStories } from "@/components/home/FeaturedStories";
 import { ClosingBand } from "@/components/home/ClosingBand";
@@ -31,6 +32,7 @@ export default function HomePage() {
       <FeaturedBand section="history" />
       <FeaturedBand section="fax" />
       <FeaturedBand section="brands" />
+      <OfficeInfraRail />
       <CategoryGrid
         kicker="Continue browsing"
         title="The whole archive in nine sections"
