@@ -85,6 +85,7 @@ export interface BaseEntry {
     byline?: string;
   };
   deepReading?: { ref: ContentRef; note?: string }[];
+  modernTools?: import("@/lib/products").ProductId[];
 }
 
 export interface GuideEntry extends BaseEntry {
