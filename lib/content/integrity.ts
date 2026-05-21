@@ -161,6 +161,29 @@ export function findContentIssues(entries: ContentEntry[]): string[] {
       }
     }
 
+    // modernTools integrity: each id must be a known product.
+    // Keep VALID_PRODUCT_IDS in sync with ProductId in lib/products.ts.
+    const VALID_PRODUCT_IDS = new Set([
+      "zip-rar",
+      "smart-printer",
+      "fax-app",
+      "pdf-editor",
+    ]);
+    const mt = (e as { modernTools?: unknown }).modernTools;
+    if (mt !== undefined) {
+      if (!Array.isArray(mt)) {
+        issues.push(`${key}: modernTools must be an array`);
+      } else {
+        for (const id of mt) {
+          if (typeof id !== "string" || !VALID_PRODUCT_IDS.has(id)) {
+            issues.push(
+              `${key}: modernTools id does not resolve -> ${String(id)}`,
+            );
+          }
+        }
+      }
+    }
+
     if (e.section === "glossary") {
       for (const ref of e.seeAlso ?? []) {
         if (!keys.has(`${ref.section}/${ref.slug}`)) {
