@@ -1,10 +1,20 @@
 import type { ContentBlock } from "@/lib/content/types";
+import { groupAdjacentFigures } from "@/lib/content/blocks";
 import { Callout } from "./Callout";
 import { KeyTakeaways } from "./KeyTakeaways";
 import { StepList } from "./StepList";
 import { Timeline } from "./Timeline";
 import { Pullquote } from "./Pullquote";
+import { FootnoteRef } from "./FootnoteRef";
+import { SourceCallout } from "./SourceCallout";
+import { EditorialAside } from "./EditorialAside";
+import { TimelineBreak } from "./TimelineBreak";
+import { QuotePlate } from "./QuotePlate";
+import { FigurePair } from "./FigurePair";
+import { ArchivalTable } from "./ArchivalTable";
+import { ResearchInset } from "./ResearchInset";
 import { Figure } from "./Figure";
+import { ImageGroup } from "./ImageGroup";
 
 const slugify = (s: string) =>
   s
@@ -13,9 +23,20 @@ const slugify = (s: string) =>
     .replace(/(^-|-$)/g, "");
 
 export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
+  const processed = groupAdjacentFigures(blocks);
   return (
     <>
-      {blocks.map((b, i) => {
+      {processed.map((b, i) => {
+        if (b.kind === "figure-group") {
+          const cols: 2 | 3 = b.figures.length >= 3 ? 3 : 2;
+          return (
+            <ImageGroup key={i} columns={cols}>
+              {b.figures.map((f, j) => (
+                <Figure key={j} image={f.image} />
+              ))}
+            </ImageGroup>
+          );
+        }
         switch (b.kind) {
           case "heading": {
             const id = b.id ?? slugify(b.text);
@@ -80,6 +101,52 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
             return (
               <Pullquote key={i} text={b.text} attribution={b.attribution} />
             );
+          case "footnoteRef":
+            return <FootnoteRef key={i} n={b.n} />;
+          case "sourceCallout":
+            return (
+              <SourceCallout
+                key={i}
+                text={b.text}
+                attribution={b.attribution}
+                source={b.source}
+              />
+            );
+          case "editorialAside":
+            return <EditorialAside key={i} title={b.title} text={b.text} />;
+          case "timelineBreak":
+            return <TimelineBreak key={i} era={b.era} year={b.year} />;
+          case "quotePlate":
+            return (
+              <QuotePlate
+                key={i}
+                text={b.text}
+                attribution={b.attribution}
+                citation={b.citation}
+              />
+            );
+          case "figurePair":
+            return (
+              <FigurePair
+                key={i}
+                left={b.left}
+                right={b.right}
+                caption={b.caption}
+              />
+            );
+          case "archivalTable":
+            return (
+              <ArchivalTable
+                key={i}
+                caption={b.caption}
+                headers={b.headers}
+                rows={b.rows}
+                sources={b.sources}
+                figureNumber={b.figureNumber}
+              />
+            );
+          case "researchInset":
+            return <ResearchInset key={i} title={b.title} items={b.items} />;
           case "figure":
             return <Figure key={i} image={b.image} />;
           case "table":
@@ -102,10 +169,7 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
                     {b.rows.map((r, j) => (
                       <tr key={j}>
                         {r.map((c, k) => (
-                          <td
-                            key={k}
-                            className="border border-rule px-3 py-2"
-                          >
+                          <td key={k} className="border border-rule px-3 py-2">
                             {c}
                           </td>
                         ))}

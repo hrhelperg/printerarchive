@@ -8,11 +8,15 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { Container } from "@/components/layout/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MetaBar } from "@/components/layout/MetaBar";
-import { ArchiveImage } from "@/components/content/ArchiveImage";
+import { ArchivePlate } from "@/components/content/ArchivePlate";
 import { ArticleBody } from "@/components/content/ArticleBody";
 import { FaqList } from "@/components/content/FaqList";
-import { SourcesList } from "@/components/content/SourcesList";
+import { SourceTransparency } from "@/components/content/SourceTransparency";
+import { ArchiveFootnotes } from "@/components/content/ArchiveFootnotes";
+import { EssayLead } from "@/components/content/EssayLead";
+import { DeepReadingLinks } from "@/components/content/DeepReadingLinks";
 import { RelatedLinks } from "@/components/content/RelatedLinks";
+import { ModernTools } from "@/components/content/ModernTools";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/schema";
 
@@ -52,34 +56,45 @@ export function ArticlePage({
     <Container width="prose" className="py-12">
       <JsonLd data={schemas} />
       <Breadcrumbs items={crumbs} />
-      <article className="mt-6">
-        <header>
-          <p className="kicker">
-            {sectionLabel}
-            {showKick ? ` · ${kick}` : ""}
-          </p>
-          <h1 className="mt-3 text-display-sm leading-tight text-balance">
-            {e.title}
-          </h1>
-          <p className="mt-4 font-serif text-xl text-ink-soft text-pretty">
-            {e.summary}
-          </p>
-          <MetaBar author={e.author} editor={e.editor} updated={e.updated} />
-        </header>
+      <article className="mt-6 fade-up">
+        {e.essayLead ? (
+          <EssayLead
+            kicker={e.essayLead.kicker ?? sectionLabel}
+            title={e.title}
+            standfirst={e.essayLead.standfirst}
+            byline={e.essayLead.byline}
+          />
+        ) : (
+          <header>
+            <p className="kicker">
+              {sectionLabel}
+              {showKick ? ` · ${kick}` : ""}
+            </p>
+            <h1 className="mt-3 text-display-sm leading-tight text-balance">
+              {e.title}
+            </h1>
+            <p className="mt-4 font-serif text-xl text-ink-soft text-pretty">
+              {e.summary}
+            </p>
+            <MetaBar author={e.author} editor={e.editor} updated={e.updated} />
+          </header>
+        )}
         {e.hero ? (
-          <ArchiveImage
+          <ArchivePlate
             image={e.hero}
             preload
             sizes="(max-width: 768px) 100vw, 768px"
-            className="mt-8"
           />
         ) : null}
         <div className="mt-8 font-serif text-[1.0625rem] leading-[1.75] text-ink">
           <ArticleBody blocks={e.body} />
         </div>
         {e.faqs?.length ? <FaqList faqs={e.faqs} /> : null}
-        {e.sources?.length ? <SourcesList sources={e.sources} /> : null}
+        {e.sources?.length ? <SourceTransparency sources={e.sources} /> : null}
+        {e.footnotes?.length ? <ArchiveFootnotes footnotes={e.footnotes} /> : null}
+        {e.deepReading?.length ? <DeepReadingLinks items={e.deepReading} /> : null}
         <RelatedLinks items={related} />
+        {e.modernTools?.length ? <ModernTools products={e.modernTools} /> : null}
       </article>
     </Container>
   );

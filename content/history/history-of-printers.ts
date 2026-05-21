@@ -130,7 +130,7 @@ const entry: HistoryEntry = {
     { section: "guides", slug: "how-inkjet-printers-work" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
@@ -138,6 +138,22 @@ const entry: HistoryEntry = {
     "printing history",
     "impact printing",
     "non-impact printing",
+  ],
+  sources: [
+    {
+      title: "History of printing",
+      url: "https://en.wikipedia.org/wiki/History_of_printing",
+      publisher: "Wikipedia",
+    },
+    {
+      title: "Printer (computing)",
+      url: "https://en.wikipedia.org/wiki/Printer_(computing)",
+      publisher: "Wikipedia",
+    },
+    {
+      title: "Computer History Museum collections",
+      publisher: "Computer History Museum",
+    },
   ],
   cluster: "printing-history",
 };

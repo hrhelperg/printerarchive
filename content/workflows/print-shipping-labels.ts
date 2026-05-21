@@ -43,10 +43,11 @@ const entry: WorkflowEntry = {
     { section: "guides", slug: "understanding-printer-resolution" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["print shipping labels", "shipping label printing", "barcode label", "thermal label"],
+  modernTools: ["smart-printer"],
   cluster: "document-workflows",
 };
 

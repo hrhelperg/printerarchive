@@ -58,6 +58,22 @@ const entry: HistoryEntry = {
       text: "This was a quiet transfer of authority. The queue did not only order jobs; it relocated the power to order them, from physical presence to systemic position — a shift whose broader workplace consequences the archive's evolution of office printing develops further.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/early-network-printing-systems--norad-computer-center.jpg",
+        alt: "Operators seated at terminal workstations inside the fluorescent-lit NORAD Computer Center command room, equipment racks lining the background",
+        width: 1600,
+        height: 1044,
+        caption:
+          "NORAD Computer Center, Cheyenne Mountain (1984) — operators at workstations in a defence-IT command room, the era's institutional register for shared computing infrastructure administered by a system rather than seized at the device.",
+        credit: {
+          source: "U.S. Air Force / SSGT Bob Simons (via National Archives, Wikimedia Commons)",
+          url: "https://commons.wikimedia.org/wiki/File:NORADComputerCenter1.jpg",
+          license: "Public domain (U.S. Federal Government work)",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "How sharing changed behavior and etiquette",

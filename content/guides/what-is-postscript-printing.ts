@@ -71,7 +71,7 @@ const entry: GuideEntry = {
     { section: "guides", slug: "understanding-printer-resolution" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
@@ -80,6 +80,7 @@ const entry: GuideEntry = {
     "postscript printing",
     "desktop publishing",
   ],
+  modernTools: ["pdf-editor"],
   cluster: "printing-technology",
 };
 

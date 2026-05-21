@@ -59,10 +59,11 @@ const entry: GuideEntry = {
     { section: "workflows", slug: "mobile-office-printing" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["printing from a chromebook", "chromebook printing", "chrome os printing", "mobile printing"],
+  modernTools: ["smart-printer"],
   cluster: "mobile-printing",
 };
 

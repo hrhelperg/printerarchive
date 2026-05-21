@@ -83,6 +83,18 @@ export function findContentIssues(entries: ContentEntry[]): string[] {
           const img = (b as { image?: Record<string, unknown> }).image ?? {};
           issues.push(...imageIssues(key, `figure[${idx}]`, img));
         }
+        if (b && (b as { kind?: string }).kind === "figurePair") {
+          const left = (b as { left?: Record<string, unknown> }).left ?? {};
+          const right = (b as { right?: Record<string, unknown> }).right ?? {};
+          issues.push(...imageIssues(key, `figurePair[${idx}].left`, left));
+          issues.push(...imageIssues(key, `figurePair[${idx}].right`, right));
+        }
+        if (b && (b as { kind?: string }).kind === "archivalTable") {
+          const caption = (b as { caption?: unknown }).caption;
+          if (typeof caption !== "string" || caption.trim().length === 0) {
+            issues.push(`${key}: archivalTable[${idx}] caption missing or empty`);
+          }
+        }
       });
     }
 
@@ -91,6 +103,84 @@ export function findContentIssues(entries: ContentEntry[]): string[] {
         issues.push(
           `${key}: related ref does not resolve -> ${ref.section}/${ref.slug}`,
         );
+      }
+    }
+
+    const deep = (e as { deepReading?: { ref?: { section?: string; slug?: string } }[] })
+      .deepReading;
+    if (Array.isArray(deep)) {
+      for (const item of deep) {
+        const r = item.ref;
+        const refKey = `${r?.section}/${r?.slug}`;
+        if (!r || !keys.has(refKey)) {
+          issues.push(`${key}: deepReading ref does not resolve -> ${refKey}`);
+        }
+      }
+    }
+
+    // Footnotes integrity: collect refs from body, footnotes from entry-level field.
+    const refs: number[] = [];
+    const fnIndex = new Map<number, number>(); // n -> count, for uniqueness check
+    if (Array.isArray(e.body)) {
+      e.body.forEach((b) => {
+        if (b && (b as { kind?: string }).kind === "footnoteRef") {
+          const n = (b as { n?: unknown }).n;
+          if (typeof n === "number" && Number.isInteger(n) && n > 0) refs.push(n);
+          else issues.push(`${key}: footnoteRef n must be a positive integer`);
+        }
+      });
+    }
+    const fns = (e as { footnotes?: { n?: unknown; text?: unknown }[] }).footnotes;
+    if (Array.isArray(fns)) {
+      fns.forEach((f) => {
+        const n = f.n;
+        if (typeof n !== "number" || !Number.isInteger(n) || n <= 0) {
+          issues.push(`${key}: footnote n must be a positive integer`);
+          return;
+        }
+        fnIndex.set(n, (fnIndex.get(n) ?? 0) + 1);
+        if (typeof f.text !== "string" || f.text.trim().length === 0) {
+          issues.push(`${key}: footnote ${n} text missing`);
+        }
+      });
+      // Duplicates
+      for (const [n, count] of fnIndex) {
+        if (count > 1) issues.push(`${key}: duplicate footnote ${n} (x${count})`);
+      }
+    }
+    // Dangling refs (ref without matching footnote)
+    for (const n of refs) {
+      if (!fnIndex.has(n)) {
+        issues.push(`${key}: footnoteRef ${n} has no matching footnote`);
+      }
+    }
+    // Orphan footnotes (footnote without matching ref)
+    for (const [n] of fnIndex) {
+      if (!refs.includes(n)) {
+        issues.push(`${key}: orphan footnote ${n} (no footnoteRef in body)`);
+      }
+    }
+
+    // modernTools integrity: each id must be a known product.
+    // Keep VALID_PRODUCT_IDS in sync with ProductId in lib/products.ts.
+    const VALID_PRODUCT_IDS = new Set([
+      "zip-rar",
+      "smart-printer",
+      "fax-app",
+      "pdf-editor",
+    ]);
+    const mt = (e as { modernTools?: unknown }).modernTools;
+    if (mt !== undefined) {
+      if (!Array.isArray(mt)) {
+        issues.push(`${key}: modernTools must be an array`);
+      } else {
+        for (const id of mt) {
+          if (typeof id !== "string" || !VALID_PRODUCT_IDS.has(id)) {
+            issues.push(
+              `${key}: modernTools id does not resolve -> ${String(id)}`,
+            );
+          }
+        }
       }
     }
 

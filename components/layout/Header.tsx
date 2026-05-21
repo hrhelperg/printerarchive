@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SECTIONS, site } from "@/lib/site";
 import { Container } from "./Container";
-import { Motif } from "@/components/content/Motif";
+import { Wordmark } from "@/components/identity/Wordmark";
 
 export function Header() {
   return (
@@ -12,18 +12,10 @@ export function Header() {
       >
         <Link
           href="/"
-          className="group flex items-center gap-3 no-underline"
+          className="group no-underline"
           aria-label={`${site.name} — home`}
         >
-          <Motif className="h-7 w-7 text-ink-faint" />
-          <span className="flex flex-col leading-none">
-            <span className="font-serif text-xl font-semibold tracking-tight text-ink">
-              {site.name}
-            </span>
-            <span className="mt-1 hidden font-sans text-[0.68rem] uppercase tracking-[0.18em] text-ink-faint sm:block">
-              {site.tagline}
-            </span>
-          </span>
+          <Wordmark tagline={site.tagline} />
         </Link>
         <nav aria-label="Primary">
           <ul className="flex flex-wrap gap-x-5 gap-y-2 font-sans text-sm text-ink-soft">

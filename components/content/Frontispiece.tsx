@@ -1,11 +1,24 @@
 import type { ArchiveImage as ArchiveImageData } from "@/lib/content/types";
-import { ArchiveImage } from "./ArchiveImage";
+import { ArchivePlate } from "./ArchivePlate";
 import { Motif } from "./Motif";
 
-// The default visual identity of a page. Complete and premium with ZERO
-// images (typographic composition + abstract motif). When a real, approved
-// image exists it is shown instead of the motif panel — same footprint,
-// no layout shift, no reserved empty gap.
+interface FrontispieceProps {
+  kicker?: string;
+  title: string;
+  lede?: string;
+  meta?: string;
+  image?: ArchiveImageData;
+  tone?: "default" | "sepia";
+  preload?: boolean;
+  titleClassName?: string;
+}
+
+/**
+ * The default visual identity of a page. Premium-with-zero-images:
+ * when no image, the motif panel renders in the same bounded frame
+ * — no reserved empty gap. When an image exists, ArchivePlate slots
+ * in at the same footprint (no CLS).
+ */
 export function Frontispiece({
   kicker,
   title,
@@ -15,21 +28,11 @@ export function Frontispiece({
   tone = "default",
   preload = false,
   titleClassName = "text-display",
-}: {
-  kicker?: string;
-  title: string;
-  lede?: string;
-  meta?: string;
-  image?: ArchiveImageData;
-  tone?: "default" | "sepia";
-  preload?: boolean;
-  titleClassName?: string;
-}) {
-  const surface =
-    tone === "sepia" ? "bg-sepia" : "bg-paper-raised";
+}: FrontispieceProps) {
+  const surface = tone === "sepia" ? "bg-sepia" : "bg-paper-raised";
   return (
     <section
-      className={`surface-grain ${surface} border-y border-rule-strong`}
+      className={`surface-grain ${surface} border-y border-rule-strong fade-up`}
     >
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-5 py-16 sm:px-6 lg:grid-cols-[1.5fr_1fr] lg:items-center lg:px-8 lg:py-20">
         <div>
@@ -46,16 +49,17 @@ export function Frontispiece({
         </div>
         <div className="lg:justify-self-end">
           {image ? (
-            <ArchiveImage
+            <ArchivePlate
               image={image}
               preload={preload}
               sizes="(max-width: 1024px) 100vw, 420px"
-              className="my-0 w-full max-w-md"
+              noMargin
+              className="w-full max-w-md"
             />
           ) : (
             <div
               aria-hidden
-              className="flex aspect-[4/3] w-full max-w-md items-center justify-center border border-rule-strong"
+              className="flex aspect-[4/3] w-full max-w-md items-center justify-center border border-rule-strong bg-paper-raised"
             >
               <Motif className="h-20 w-20 text-rule-strong" />
             </div>

@@ -44,10 +44,11 @@ const entry: ToolEntry = {
     { section: "workflows", slug: "scan-to-searchable-pdf" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["pdf", "portable document format", "document format"],
+  modernTools: ["pdf-editor", "zip-rar"],
   cluster: "document-workflows",
 };
 

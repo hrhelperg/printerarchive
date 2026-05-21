@@ -148,7 +148,7 @@ const entry: HistoryEntry = {
     { section: "history", slug: "history-of-fax-machines" },
   ],
   published: "2026-05-19",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
@@ -158,6 +158,7 @@ const entry: HistoryEntry = {
     "fax persistence",
     "fax obsolescence debate",
   ],
+  modernTools: ["fax-app"],
   cluster: "fax-history",
 };
 

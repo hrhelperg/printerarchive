@@ -29,7 +29,37 @@ export type ContentBlock =
   | { kind: "timeline"; events: { period: string; text: string }[] }
   | { kind: "steps"; steps: { title: string; text: string }[] }
   | { kind: "figure"; image: ArchiveImage }
-  | { kind: "pullquote"; text: string; attribution?: string };
+  | { kind: "pullquote"; text: string; attribution?: string }
+  | { kind: "footnoteRef"; n: number }
+  | {
+      kind: "sourceCallout";
+      text: string;
+      attribution: string;
+      source?: { title: string; url?: string };
+    }
+  | { kind: "editorialAside"; title?: string; text: string }
+  | { kind: "timelineBreak"; era: string; year?: string }
+  | {
+      kind: "quotePlate";
+      text: string;
+      attribution: string;
+      citation?: string;
+    }
+  | {
+      kind: "figurePair";
+      left: ArchiveImage;
+      right: ArchiveImage;
+      caption?: string;
+    }
+  | {
+      kind: "archivalTable";
+      caption: string;
+      headers: string[];
+      rows: string[][];
+      sources?: string[];
+      figureNumber?: string;
+    }
+  | { kind: "researchInset"; title: string; items: string[] };
 
 export interface BaseEntry {
   section: SectionId;
@@ -48,6 +78,14 @@ export interface BaseEntry {
   related?: ContentRef[];
   faqs?: { q: string; a: string }[];
   sources?: { title: string; url?: string; publisher?: string }[];
+  footnotes?: { n: number; text: string }[];
+  essayLead?: {
+    kicker?: string;
+    standfirst: string;
+    byline?: string;
+  };
+  deepReading?: { ref: ContentRef; note?: string }[];
+  modernTools?: import("@/lib/products").ProductId[];
 }
 
 export interface GuideEntry extends BaseEntry {

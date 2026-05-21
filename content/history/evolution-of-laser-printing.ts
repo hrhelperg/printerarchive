@@ -78,7 +78,7 @@ const entry: HistoryEntry = {
     { section: "history", slug: "transition-from-impact-to-laser-printing" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
@@ -86,6 +86,23 @@ const entry: HistoryEntry = {
     "laser printer history",
     "electrophotography",
     "office printing",
+  ],
+  sources: [
+    {
+      title: "Laser printing",
+      url: "https://en.wikipedia.org/wiki/Laser_printing",
+      publisher: "Wikipedia",
+    },
+    {
+      title: "HP LaserJet",
+      url: "https://en.wikipedia.org/wiki/HP_LaserJet",
+      publisher: "Wikipedia",
+    },
+    {
+      title: "Xerography",
+      url: "https://en.wikipedia.org/wiki/Xerography",
+      publisher: "Wikipedia",
+    },
   ],
   cluster: "printing-history",
 };

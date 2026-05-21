@@ -4,6 +4,7 @@ import "./globals.css";
 import { site } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { CookieConsent } from "@/components/consent/CookieConsent";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/seo/schema";
 
@@ -23,8 +24,15 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+// Build/deploy marker — emitted as <meta name="printerarchive-build">. Lets us
+// confirm which commit/build Netlify is actually serving (compare the meta tag
+// in production HTML against the latest commit). COMMIT_REF is set by Netlify
+// during the build; locally it falls back to "local". Evaluated at build time.
+const BUILD_MARKER = `${(process.env.COMMIT_REF ?? "local").slice(0, 12)} · ${new Date().toISOString()}`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  other: { "printerarchive-build": BUILD_MARKER },
   // Plain string (no template): every page sets an absolute title via
   // buildMetadata, so a template would double the site name. This value
   // is the default for pages that do not set their own (e.g. the home page).
@@ -33,6 +41,22 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     types: { "application/rss+xml": "/feed.xml" },
+  },
+  // Default Open Graph / Twitter for pages that do not set their own
+  // (the home page). Article and section pages override these via
+  // buildMetadata with page-specific values.
+  openGraph: {
+    title: `${site.name} — ${site.tagline}`,
+    description: site.description,
+    url: site.url,
+    siteName: site.name,
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.tagline}`,
+    description: site.description,
   },
   robots: { index: true, follow: true },
 };
@@ -58,6 +82,7 @@ export default function RootLayout({
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );

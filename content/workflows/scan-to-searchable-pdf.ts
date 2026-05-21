@@ -54,10 +54,11 @@ const entry: WorkflowEntry = {
     },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["scan to pdf", "searchable pdf", "ocr", "document workflow"],
+  modernTools: ["pdf-editor", "zip-rar"],
   cluster: "document-workflows",
 };
 

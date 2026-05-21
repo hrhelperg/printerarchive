@@ -32,6 +32,22 @@ const entry: HistoryEntry = {
       text: "That single fact propagated outward into the whole workspace. The machine needed a clear path for paper to enter and a clear path for it to exit and pile up, so it claimed a footprint disproportionate to the rest of the desk. Boxes of fan-fold stock had to be stored within reach. The result was that the document, far from being weightless, was one of the heaviest and most space-consuming objects a clerical worker dealt with daily.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/printing-in-the-1980s--hughes-aircraft-mainframe.jpg",
+        alt: "Three Hughes Aircraft employees in office attire in conversation directly in front of corporate mainframe equipment racks and tape units",
+        width: 1328,
+        height: 1866,
+        caption:
+          "Hughes Aircraft employees alongside corporate mainframe equipment, c.1979–1980 — the late-decade workplace in which printed output was not dispatched to a service but produced by an instrument on or adjacent to the desk.",
+        credit: {
+          source: "Hughes Aircraft Company (via Wikimedia Commons)",
+          url: "https://commons.wikimedia.org/wiki/File:Employees_having_conversation_in_front_of_mainframe_Hughes_Aircraft_Company.jpg",
+          license: "Public domain (U.S., published 1978–1989 without copyright notice)",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "What impact-era output dictated about work",
@@ -116,7 +132,7 @@ const entry: HistoryEntry = {
     { section: "history", slug: "printing-in-the-1990s" },
   ],
   published: "2026-05-19",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [

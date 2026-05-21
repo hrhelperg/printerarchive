@@ -141,7 +141,7 @@ const entry: HistoryEntry = {
     { section: "guides", slug: "understanding-printer-resolution" },
   ],
   published: "2026-05-19",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
@@ -150,6 +150,23 @@ const entry: HistoryEntry = {
     "typesetting to DTP",
     "page description model",
     "in-house publishing",
+  ],
+  sources: [
+    {
+      title: "Desktop publishing",
+      url: "https://en.wikipedia.org/wiki/Desktop_publishing",
+      publisher: "Wikipedia",
+    },
+    {
+      title: "PostScript",
+      url: "https://en.wikipedia.org/wiki/PostScript",
+      publisher: "Wikipedia",
+    },
+    {
+      title: "Aldus PageMaker",
+      url: "https://en.wikipedia.org/wiki/Aldus_PageMaker",
+      publisher: "Wikipedia",
+    },
   ],
   cluster: "printing-evolution",
 };

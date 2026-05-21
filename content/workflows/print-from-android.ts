@@ -42,10 +42,11 @@ const entry: WorkflowEntry = {
     { section: "troubleshooting", slug: "printer-wont-connect-to-wifi" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["print from android", "android printing", "mobile printing", "network printing"],
+  modernTools: ["smart-printer"],
   cluster: "mobile-printing",
 };
 
