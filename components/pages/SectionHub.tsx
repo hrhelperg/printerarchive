@@ -10,6 +10,8 @@ import { SectionList } from "@/components/content/SectionList";
 import { GlossaryIndex } from "@/components/content/GlossaryIndex";
 import { DiagnosticGroups } from "@/components/content/DiagnosticGroups";
 import { WorkflowGroups } from "@/components/content/WorkflowGroups";
+import { InfrastructureMap } from "@/components/content/InfrastructureMap";
+import { MobileHandoff } from "@/components/content/MobileHandoff";
 import { EvolutionBand } from "@/components/history/EvolutionBand";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/seo/schema";
@@ -232,6 +234,8 @@ export function SectionHub({ section }: { section: SectionId }) {
 
       <Container width="wide" className="py-14">
         <JsonLd data={breadcrumbSchema(crumbs)} />
+        {section === "tools" ? <InfrastructureMap /> : null}
+        {section === "mobile-printing" ? <MobileHandoff /> : null}
         {items.length === 0 ? (
           <p className="text-ink-faint">
             New entries are being added to this section.
