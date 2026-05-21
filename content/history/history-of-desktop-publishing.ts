@@ -32,6 +32,22 @@ const entry: HistoryEntry = {
       text: "This arrangement was not inefficiency for its own sake. Typesetting was a skilled trade with specialised equipment, and concentrating it made economic sense when the equipment was costly and the skill scarce. The structure was rational; it was simply slow and serial, and its seriality was the constraint.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/history-of-desktop-publishing--apple-laserwriter-ii.jpg",
+        alt: "Apple LaserWriter II laser printer, a beige 1980s desktop laser printer",
+        width: 800,
+        height: 600,
+        caption:
+          "The Apple LaserWriter II — the consumer laser printer that, paired with the Macintosh and page-layout software, collapsed the typesetting relay onto a single desk.",
+        credit: {
+          source: "All About Apple museum (allaboutapple.com), via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Apple_Laserwriter_II.jpg",
+          license: "CC BY-SA 3.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "The workflow bottleneck DTP removed",

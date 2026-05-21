@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { PRODUCTS, type ProductId } from "@/lib/products";
+import { ProductGlyph } from "./ProductGlyph";
 
 interface ModernToolsProps {
   products: ProductId[];
@@ -22,21 +24,41 @@ export function ModernTools({ products }: ModernToolsProps) {
         Contemporary apps for the same task, published by HELPERG LLC — the
         publisher of this archive.
       </p>
-      <ul className="mt-4 space-y-5">
+      <ul className="mt-5 grid gap-4 sm:grid-cols-2">
         {resolved.map((p) => (
-          <li key={p.id}>
-            <p className="font-serif text-base text-ink">{p.name}</p>
-            <p className="mt-0.5 text-sm text-ink-soft text-pretty">
+          <li
+            key={p.id}
+            className="flex h-full flex-col border border-rule bg-paper-raised p-5 transition-colors hover:border-rule-strong"
+          >
+            <div className="flex items-center gap-3">
+              {p.icon ? (
+                <Image
+                  src={p.icon}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 shrink-0 rounded-lg border border-rule"
+                />
+              ) : (
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-rule bg-paper text-ink-soft">
+                  <ProductGlyph id={p.id} className="h-5 w-5" />
+                </span>
+              )}
+              <p className="font-serif text-lg tracking-tight text-ink">
+                {p.name}
+              </p>
+            </div>
+            <p className="mt-1.5 flex-1 text-sm text-ink-soft text-pretty">
               {p.tagline}
             </p>
-            <p className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 font-sans text-sm">
+            <p className="mt-4 flex flex-wrap gap-2">
               {p.links.map((l) => (
                 <a
                   key={l.label}
                   href={l.href}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
-                  className="no-underline hover:underline"
+                  className="inline-flex items-center border border-rule bg-paper px-2.5 py-1 font-sans text-xs text-ink-soft no-underline transition-colors hover:border-ink hover:text-ink"
                 >
                   {l.label} ↗
                 </a>

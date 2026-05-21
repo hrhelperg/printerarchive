@@ -8,7 +8,7 @@ export function Header() {
     <header className="border-b border-rule">
       <Container
         width="wide"
-        className="flex flex-wrap items-center justify-between gap-y-3 py-5"
+        className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 py-5"
       >
         <Link
           href="/"
@@ -18,12 +18,12 @@ export function Header() {
           <Wordmark tagline={site.tagline} />
         </Link>
         <nav aria-label="Primary">
-          <ul className="flex flex-wrap gap-x-5 gap-y-2 font-sans text-sm text-ink-soft">
+          <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 font-sans text-sm font-medium text-ink-soft">
             {SECTIONS.map((s) => (
               <li key={s.id}>
                 <Link
                   href={`/${s.id}`}
-                  className="no-underline transition-colors hover:text-accent"
+                  className="no-underline underline-offset-4 transition-colors hover:text-accent hover:underline"
                 >
                   {s.label}
                 </Link>

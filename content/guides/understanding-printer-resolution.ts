@@ -24,6 +24,22 @@ const entry: GuideEntry = {
       text: "Printer resolution is commonly stated in dots per inch (DPI): how many individual dots the printer can place along an inch. It is an important factor in quality, but it is not the whole story.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/guides/understanding-printer-resolution--cmyk-halftone.png",
+        alt: "Magnified CMYK halftone screen showing cyan, magenta, yellow, and black dot rosettes",
+        width: 640,
+        height: 897,
+        caption:
+          "A magnified CMYK halftone screen — continuous tone is simulated by varying the size and spacing of printed dots.",
+        credit: {
+          source: "Yamo74, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Cmyk_AM_screen.png",
+          license: "CC BY-SA 4.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "What DPI tells you",

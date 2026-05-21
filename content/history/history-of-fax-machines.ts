@@ -28,6 +28,23 @@ const entry: HistoryEntry = {
       text: "The core idea behind fax — scanning an image line by line, sending a representation of it over a distance, and reconstructing it at the other end — was explored well before the familiar office machine existed. Early experiments demonstrated that images, not just signals, could be transmitted over wires.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/history-of-fax-machines--caselli-pantelegraph.png",
+        alt: "Engraving of Giovanni Caselli's pantelegraph, a tall 19th-century image-transmission apparatus with a pendulum frame",
+        width: 1000,
+        height: 1473,
+        caption:
+          "Caselli's pantelegraph (depicted 1873) — an early image-transmission device that sent a scanned page over telegraph lines, decades before the office fax machine.",
+        credit: {
+          source:
+            "Giovanni Caselli, from Die gesammten Naturwissenschaften (1873), via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Pantelegraph.png",
+          license: "Public domain",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "From experiment to practical device",
