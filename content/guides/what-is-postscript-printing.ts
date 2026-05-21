@@ -42,6 +42,22 @@ const entry: GuideEntry = {
       text: "PostScript became closely associated with desktop publishing and professional output, where precise, repeatable rendering of type and graphics is essential. It influenced how later printing pipelines were designed.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/guides/what-is-postscript-printing--apple-laserwriter-810.jpg",
+        alt: "An Apple LaserWriter laser printer photographed against a neutral background",
+        width: 1200,
+        height: 900,
+        caption:
+          "An Apple LaserWriter — the PostScript-equipped printer whose pairing with the Macintosh launched desktop publishing.",
+        credit: {
+          source: "Cfazzio, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Laserwriter810_large.jpg",
+          license: "CC BY-SA 3.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Relationship to PDF",

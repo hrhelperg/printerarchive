@@ -21,6 +21,22 @@ const entry: GlossaryEntry = {
       text: "During printing, toner is attracted to areas of an electrostatically charged drum that correspond to the image, transferred to the page, and then bonded permanently by a heated fuser. This is why pages leaving a laser printer are often warm.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/glossary/toner--laser-toner-cartridge.jpg",
+        alt: "A laser printer toner cartridge photographed on a neutral background",
+        width: 1600,
+        height: 822,
+        caption:
+          "A laser-printer toner cartridge — the sealed unit that holds and meters the marking powder.",
+        credit: {
+          source: "W.carter, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Samsung_laser_toner_cartridge_front_view.jpg",
+          license: "CC BY-SA 4.0",
+        },
+      },
+    },
+    {
       kind: "callout",
       tone: "note",
       title: "Toner vs ink",

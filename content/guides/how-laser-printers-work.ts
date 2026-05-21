@@ -42,6 +42,22 @@ const entry: GuideEntry = {
       text: "A laser, steered across the drum, selectively changes the charge wherever the page should carry toner. This produces an invisible electrostatic pattern on the drum that corresponds to the text and graphics of the page.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/guides/how-laser-printers-work--laserwriter-mechanism.jpg",
+        alt: "Labeled photograph of the laser-generation assembly removed from an Apple LaserWriter, showing the laser unit and mirror path",
+        width: 1600,
+        height: 1200,
+        caption:
+          "The laser-generation assembly from a dismantled Apple LaserWriter — the unit that steers the beam across the drum.",
+        credit: {
+          source: "Megodenas, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:LaserimprimanteLegendee.jpg",
+          license: "Public domain",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Developing with toner",

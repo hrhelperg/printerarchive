@@ -33,6 +33,22 @@ const entry: GuideEntry = {
       text: "The print head contains many tiny nozzles. As the head moves across the width of the page, it fires droplets on demand while the paper is advanced step by step beneath it, so the image is built up in bands.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/guides/how-inkjet-printers-work--inkjet-printhead.jpg",
+        alt: "Close-up of an inkjet printer's print head, ink tray, and control panel with the cover removed",
+        width: 1224,
+        height: 1632,
+        caption:
+          "An inkjet print head with its ink tray and controls exposed — the nozzles that fire droplets onto the page.",
+        credit: {
+          source: "Snewkirk7953, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Printer_head,_ink_tray,_and_control_panel.JPG",
+          license: "CC BY-SA 3.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Placing droplets accurately",

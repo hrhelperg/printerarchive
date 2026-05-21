@@ -16,6 +16,22 @@ const entry: BrandEntry = {
       text: "Epson is one of the widely recognised names in printing, particularly associated with inkjet technology. Its range spans home document and photo printers through to office and multifunction devices.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/brands/epson--epson-lx800.png",
+        alt: "Epson LX-800 dot matrix printer, a beige 1980s impact printer with a paper guide",
+        width: 615,
+        height: 376,
+        caption:
+          "Epson LX-800 — a representative unit from Epson's dot-matrix line, the impact printers that established the brand before its inkjet era.",
+        credit: {
+          source: "Oguenther, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Epson-lx800.png",
+          license: "CC BY-SA 3.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Role in printing",
