@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FOOTER_GROUPS, site, getSectionMeta } from "@/lib/site";
 import { PRODUCTS } from "@/lib/products";
 import { Logomark } from "@/components/identity/Logomark";
@@ -44,8 +45,17 @@ export function Footer() {
                     href={p.links[0].href}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
-                    className="no-underline transition-colors hover:text-accent"
+                    className="group flex items-center gap-2 no-underline transition-colors hover:text-accent"
                   >
+                    {p.icon ? (
+                      <Image
+                        src={p.icon}
+                        alt=""
+                        width={18}
+                        height={18}
+                        className="h-[18px] w-[18px] shrink-0 rounded border border-rule"
+                      />
+                    ) : null}
                     {p.name}
                   </a>
                 </li>

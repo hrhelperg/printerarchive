@@ -9,6 +9,8 @@ export interface Product {
   id: ProductId;
   name: string;
   tagline: string;
+  /** Optional square app icon under public/images/products/. */
+  icon?: string;
   links: ProductLink[];
 }
 
@@ -43,6 +45,7 @@ export const PRODUCTS: Record<ProductId, Product> = {
     id: "fax-app",
     name: "Fax App",
     tagline: "Send a document as a fax from a phone, without a fax machine.",
+    icon: "/images/products/fax-app.jpg",
     links: [
       {
         label: "Android",

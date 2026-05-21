@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PRODUCTS, type ProductId } from "@/lib/products";
 
 interface ModernToolsProps {
@@ -28,9 +29,20 @@ export function ModernTools({ products }: ModernToolsProps) {
             key={p.id}
             className="flex h-full flex-col border border-rule bg-paper-raised p-5 transition-colors hover:border-rule-strong"
           >
-            <p className="font-serif text-lg tracking-tight text-ink">
-              {p.name}
-            </p>
+            <div className="flex items-center gap-3">
+              {p.icon ? (
+                <Image
+                  src={p.icon}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 shrink-0 rounded-lg border border-rule"
+                />
+              ) : null}
+              <p className="font-serif text-lg tracking-tight text-ink">
+                {p.name}
+              </p>
+            </div>
             <p className="mt-1.5 flex-1 text-sm text-ink-soft text-pretty">
               {p.tagline}
             </p>
