@@ -294,6 +294,19 @@ test("deepReading ref does not resolve -> issue", () => {
   );
 });
 
+test("modernTools with unknown id -> issue", () => {
+  const e = { ...base, modernTools: ["not-a-real-product"] };
+  const issues = findContentIssues([e]);
+  assert.ok(
+    issues.some((i) => i.includes("modernTools id does not resolve")),
+  );
+});
+
+test("modernTools with valid ids -> no issues", () => {
+  const e = { ...base, modernTools: ["smart-printer", "pdf-editor"] };
+  assert.deepEqual(findContentIssues([e]), []);
+});
+
 test("valid essay exercising all new variants -> no issues", () => {
   // A self-referencing entry that exercises every new block kind + new
   // BaseEntry field added in Phase 5.2. The deepReading entry points
