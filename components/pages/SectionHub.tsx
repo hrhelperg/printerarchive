@@ -13,6 +13,7 @@ import { breadcrumbSchema } from "@/lib/seo/schema";
 
 interface HubProfile {
   framing: string;
+  significance: string;
   image?: ArchiveImageData;
   tone?: "default" | "sepia";
   preload?: boolean;
@@ -22,6 +23,8 @@ const HUB_PROFILE: Record<SectionId, HubProfile> = {
   history: {
     framing:
       "How printing reached paper — from impact-era mechanical systems to the laser-driven desk and the shared-printer office. Entries are organised around the operational character of each era rather than around specific dates.",
+    significance:
+      "Printing history is the spine of the archive: nearly every device, format, and office habit documented elsewhere descends from a decision made in one of these eras. Reading it is how the rest of the catalogue acquires its context.",
     image: {
       src: "/images/home/archival-highlights-bound-printout.jpg",
       alt: "Bound stack of green-and-white-banded continuous-form computer printout",
@@ -41,6 +44,8 @@ const HUB_PROFILE: Record<SectionId, HubProfile> = {
   guides: {
     framing:
       "Clear explanations of how printing, scanning, and document technologies actually work. Each entry leads with the mechanism and the trade-off; jargon is defined inline rather than assumed.",
+    significance:
+      "The guides are where the archive does its explaining. A reader who understands how a mechanism works can weigh every historical claim and troubleshooting step that depends on it — which is why the explainers sit upstream of almost everything else.",
     image: {
       src: "/images/history/early-computer-printing--ibm-1401-restoration-lab.jpg",
       alt: "Restored IBM 1401 installation showing a line printer in the foreground with keypunch machines along one side and tape drives behind",
@@ -59,6 +64,8 @@ const HUB_PROFILE: Record<SectionId, HubProfile> = {
   troubleshooting: {
     framing:
       "Structured diagnostic procedures. Each entry isolates a symptom, walks the likely causes in order of probability, and gives a sequence of verifiable checks rather than a fix-list.",
+    significance:
+      "Most printing failures are not mysteries but ordered sequences of likely causes. This section matters because it converts frustration into a procedure: the difference between guessing and diagnosing.",
     image: {
       src: "/images/history/dot-matrix-printers-explained.jpg",
       alt: "Facit E560 dot matrix printer — full studio shot of the complete unit",
@@ -76,6 +83,8 @@ const HUB_PROFILE: Record<SectionId, HubProfile> = {
   brands: {
     framing:
       "Reference overviews of the manufacturers that shaped office printing. What each company built, what it changed about the desk, and where in the archive its lineage is documented.",
+    significance:
+      "The manufacturers are the actors in the archive's history. Knowing what each company built, and when, is what lets the eras and devices documented elsewhere resolve into a connected lineage rather than a list of objects.",
     image: {
       src: "/images/home/now-hp-laserjet-i.jpg",
       alt: "Original HP LaserJet laser printer photographed against a neutral background",
@@ -93,6 +102,8 @@ const HUB_PROFILE: Record<SectionId, HubProfile> = {
   workflows: {
     framing:
       "Repeatable document processes — scan, print, archive, fax. Described as procedures with re-runnable steps, not as one-off task lists.",
+    significance:
+      "A workflow is the unit of real document work — the thing an office actually repeats. This section matters because it treats scanning, printing, and faxing as procedures to be re-run reliably, not one-off tasks rediscovered each time.",
     image: {
       src: "/images/history/early-computer-printing--1940-census-keypunch.jpg",
       alt: "Black-and-white photograph of a 1940 US Census keypunch operator seated at a Hollerith pantograph machine with hands at the keys",
@@ -110,6 +121,8 @@ const HUB_PROFILE: Record<SectionId, HubProfile> = {
   tools: {
     framing:
       "Reference pages on document-system formats, queues, and protocols. The infrastructure layer that the printer connects to and the document moves through.",
+    significance:
+      "Formats, queues, and protocols are the infrastructure the visible printer sits on top of. This section matters because the document's real journey — how it is encoded, queued, and moved — happens in this layer, mostly out of sight.",
     image: {
       src: "/images/home/then-tractor-feed.jpg",
       alt: "Folded sheet of continuous-form computer paper with perforated sprocket strips along both edges",
@@ -127,14 +140,20 @@ const HUB_PROFILE: Record<SectionId, HubProfile> = {
   glossary: {
     framing:
       "An alphabetic index of printing and document terminology. Definitions are short; each links onward to the entry where the concept does the real work.",
+    significance:
+      "Precise terminology is what keeps the rest of the archive honest. A shared, exact vocabulary is the precondition for every claim made elsewhere; the definitions here are deliberately short and link to where each term does its real work.",
   },
   "mobile-printing": {
     framing:
       "Wireless printing standards and the device-to-printer workflows they support. How a phone or tablet reaches a printer without a driver in the conventional sense.",
+    significance:
+      "Mobile printing is where the archive's history reaches the present. The driverless, wireless handoff from a phone to a printer is the current form of a problem the rest of the catalogue traces from its mechanical origins.",
   },
   fax: {
     framing:
       "Document transmission technology — how a signed page moved across distance in minutes, and why that mattered for commercial tempo. Treated as both a historical and a technical subject.",
+    significance:
+      "Fax is the archive's clearest case of a technology that became infrastructure, receded, and persisted anyway. Its arc — urgency, ubiquity, decline, survival — is a template for reading the rest of the document-technology story.",
     image: {
       src: "/images/fax/history-of-business-faxing--panasonic-kx-f90.jpg",
       alt: "Panasonic KX-F90 office fax machine with corded handset and paper output tray",
@@ -198,6 +217,12 @@ export function SectionHub({ section }: { section: SectionId }) {
         <p className="font-serif text-lg text-ink-soft text-pretty">
           {profile.framing}
         </p>
+        <aside className="mt-8 border-l-2 border-rule-strong bg-paper-raised px-6 py-5">
+          <p className="kicker">Why this section matters</p>
+          <p className="mt-2 text-ink-soft text-pretty">
+            {profile.significance}
+          </p>
+        </aside>
       </Container>
 
       {isHistory ? <EvolutionBand /> : null}
