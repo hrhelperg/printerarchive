@@ -24,6 +24,22 @@ const entry: GuideEntry = {
       text: "A fax machine sends a copy of a physical page to another machine over a telephone connection. Conceptually it scans, transmits, and then reprints the page at the destination.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/fax/how-fax-machines-work--sharp-ux-d63cl.jpg",
+        alt: "A Sharp UX-D63CL desktop fax machine with a document feeder, handset, and numeric keypad",
+        width: 1600,
+        height: 900,
+        caption:
+          "A desktop fax machine combines the scanner, modem, and printer that the scan, transmit, and reconstruct steps require into a single unit.",
+        credit: {
+          source: "Mr.ちゅらさん, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:SHARP_Fax_UX-D63CL.jpg",
+          license: "CC BY-SA 4.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Scanning the page",

@@ -41,6 +41,22 @@ const entry: HistoryEntry = {
       text: "A dot matrix printer forms each character from a small grid of points, struck onto the page by a column of fine pins driven through an inked ribbon. The detail that mattered operationally is the word struck. Because the image is made by force transmitted into and through the paper, that force can pass through an interleaved set of sheets and mark each one. The printer does not copy a document after making it; it makes the copies in the act of printing the original.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/how-dot-matrix-printers-work--fujitsu-dl3300.jpg",
+        alt: "A Fujitsu DL3300 dot matrix printer with continuous tractor-feed paper loaded",
+        width: 1600,
+        height: 1200,
+        caption:
+          "A dot matrix printer with continuous tractor-feed stationery — the durable, low-cost stock on which one pass could mark an interleaved multi-part set.",
+        credit: {
+          source: "Corvair, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Fujitsu_DL3300_dot_matrix_printer.JPG",
+          license: "CC BY-SA 4.0",
+        },
+      },
+    },
+    {
       kind: "paragraph",
       text: "Day to day, this collapsed a multi-step clerical task into a single machine operation. The same property is treated from the broader mechanical angle in the archive's account of how impact printing worked; here the point is narrower and procedural — the strike was not a means of forming a letter so much as a means of producing a set.",
     },

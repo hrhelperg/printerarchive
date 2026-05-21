@@ -32,6 +32,22 @@ const entry: HistoryEntry = {
       text: "An inkjet printer forms images by placing very small droplets of liquid ink in precise positions as a print head moves across the page and paper advances beneath it. The principle has stayed consistent while precision and reliability improved.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/evolution-of-inkjet-printers--inkjet-mechanism.jpg",
+        alt: "An inkjet printer with its covers removed, exposing the carriage rail, print head, and paper-feed rollers",
+        width: 1600,
+        height: 1200,
+        caption:
+          "An inkjet printer with its covers removed: the print head rides a carriage across the page while rollers advance the paper beneath it.",
+        credit: {
+          source: "Snewkirk7953, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Inkjet_printer_with_covers_removed.JPG",
+          license: "CC BY-SA 3.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Why it succeeded in the home",
