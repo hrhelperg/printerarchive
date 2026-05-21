@@ -71,7 +71,7 @@ const entry: GuideEntry = {
     { section: "mobile-printing", slug: "what-is-airprint" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
@@ -80,6 +80,7 @@ const entry: GuideEntry = {
     "printer discovery",
     "network printing",
   ],
+  modernTools: ["smart-printer"],
   cluster: "printing-fundamentals",
 };
 

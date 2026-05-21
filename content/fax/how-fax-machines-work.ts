@@ -94,10 +94,11 @@ const entry: GuideEntry = {
     { section: "history", slug: "history-of-printers" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["how fax machines work", "fax", "fax transmission", "scanning"],
+  modernTools: ["fax-app"],
   cluster: "printing-history",
 };
 

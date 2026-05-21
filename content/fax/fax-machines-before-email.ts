@@ -149,7 +149,7 @@ const entry: HistoryEntry = {
     { section: "workflows", slug: "scan-to-searchable-pdf" },
   ],
   published: "2026-05-19",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
@@ -159,6 +159,7 @@ const entry: HistoryEntry = {
     "document delivery before email",
     "history of office fax",
   ],
+  modernTools: ["fax-app"],
   cluster: "fax-history",
 };
 

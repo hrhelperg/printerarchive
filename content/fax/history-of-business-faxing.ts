@@ -170,6 +170,7 @@ const entry: HistoryEntry = {
     "office fax infrastructure",
     "fax workflow history",
   ],
+  modernTools: ["fax-app"],
   cluster: "fax-history",
 };
 

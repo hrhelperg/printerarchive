@@ -32,10 +32,11 @@ const entry: GlossaryEntry = {
     { section: "tools", slug: "what-is-pdf" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["ocr", "optical character recognition", "searchable pdf"],
+  modernTools: ["pdf-editor"],
   cluster: "document-workflows",
 };
 

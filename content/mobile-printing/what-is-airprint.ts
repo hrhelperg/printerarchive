@@ -99,7 +99,7 @@ const entry: GuideEntry = {
     { section: "troubleshooting", slug: "printer-offline-guide" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
@@ -108,6 +108,7 @@ const entry: GuideEntry = {
     "mobile printing",
     "apple printing",
   ],
+  modernTools: ["smart-printer"],
   cluster: "mobile-printing",
 };
 

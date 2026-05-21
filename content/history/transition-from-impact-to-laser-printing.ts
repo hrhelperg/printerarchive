@@ -130,6 +130,7 @@ const entry: HistoryEntry = {
     "office printing history",
     "multi-part forms",
   ],
+  modernTools: ["smart-printer"],
   sources: [
     {
       title: "Laser printing",

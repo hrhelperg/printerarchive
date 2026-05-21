@@ -42,10 +42,11 @@ const entry: WorkflowEntry = {
     { section: "workflows", slug: "mobile-office-printing" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["print from iphone", "airprint", "mobile printing", "iphone printing"],
+  modernTools: ["smart-printer"],
   cluster: "mobile-printing",
 };
 

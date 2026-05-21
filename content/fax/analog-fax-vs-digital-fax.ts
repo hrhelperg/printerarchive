@@ -153,7 +153,7 @@ const entry: HistoryEntry = {
     { section: "fax", slug: "why-fax-is-still-used" },
   ],
   published: "2026-05-19",
-  updated: "2026-05-19",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: [
@@ -163,6 +163,7 @@ const entry: HistoryEntry = {
     "fax carrier transition",
     "fax reliability trade-offs",
   ],
+  modernTools: ["fax-app"],
   cluster: "fax-history",
 };
 

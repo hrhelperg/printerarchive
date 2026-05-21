@@ -43,10 +43,11 @@ const entry: WorkflowEntry = {
     { section: "guides", slug: "how-wireless-printing-works" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["mobile office printing", "office mobile printing", "network printing", "byod printing"],
+  modernTools: ["smart-printer"],
   cluster: "mobile-printing",
 };
 

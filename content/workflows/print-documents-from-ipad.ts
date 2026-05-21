@@ -42,10 +42,11 @@ const entry: WorkflowEntry = {
     { section: "troubleshooting", slug: "airprint-not-working" },
   ],
   published: "2026-05-18",
-  updated: "2026-05-18",
+  updated: "2026-05-20",
   author: "PrinterArchive Editorial",
   editor: "PrinterArchive Editorial",
   keywords: ["print from ipad", "ipad printing", "airprint", "document printing"],
+  modernTools: ["smart-printer"],
   cluster: "mobile-printing",
 };
 
