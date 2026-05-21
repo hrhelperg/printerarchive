@@ -20,6 +20,7 @@ export const PRODUCTS: Record<ProductId, Product> = {
     name: "ZIP & RAR",
     tagline:
       "Open, create, and extract ZIP and RAR archives on a phone or tablet.",
+    icon: "/images/products/zip-rar.jpg",
     links: [
       {
         label: "Android",
@@ -33,6 +34,7 @@ export const PRODUCTS: Record<ProductId, Product> = {
     name: "Smart Printer",
     tagline:
       "Print documents and photos from a phone or tablet to a connected printer.",
+    icon: "/images/products/smart-printer.jpg",
     links: [
       {
         label: "Android",
@@ -58,6 +60,7 @@ export const PRODUCTS: Record<ProductId, Product> = {
     id: "pdf-editor",
     name: "PDF Editor & Convert",
     tagline: "Edit, convert, and combine PDF documents in a web browser.",
+    icon: "/images/products/pdf-editor.jpg",
     links: [
       { label: "Open on the web", href: "https://www.pdfeditconvert.top" },
     ],
