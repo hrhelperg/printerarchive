@@ -24,8 +24,15 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+// Build/deploy marker — emitted as <meta name="printerarchive-build">. Lets us
+// confirm which commit/build Netlify is actually serving (compare the meta tag
+// in production HTML against the latest commit). COMMIT_REF is set by Netlify
+// during the build; locally it falls back to "local". Evaluated at build time.
+const BUILD_MARKER = `${(process.env.COMMIT_REF ?? "local").slice(0, 12)} · ${new Date().toISOString()}`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  other: { "printerarchive-build": BUILD_MARKER },
   // Plain string (no template): every page sets an absolute title via
   // buildMetadata, so a template would double the site name. This value
   // is the default for pages that do not set their own (e.g. the home page).
