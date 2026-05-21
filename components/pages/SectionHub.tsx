@@ -7,6 +7,9 @@ import { Container } from "@/components/layout/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Frontispiece } from "@/components/content/Frontispiece";
 import { SectionList } from "@/components/content/SectionList";
+import { GlossaryIndex } from "@/components/content/GlossaryIndex";
+import { DiagnosticGroups } from "@/components/content/DiagnosticGroups";
+import { WorkflowGroups } from "@/components/content/WorkflowGroups";
 import { EvolutionBand } from "@/components/history/EvolutionBand";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/seo/schema";
@@ -233,6 +236,12 @@ export function SectionHub({ section }: { section: SectionId }) {
           <p className="text-ink-faint">
             New entries are being added to this section.
           </p>
+        ) : section === "glossary" ? (
+          <GlossaryIndex items={items} />
+        ) : section === "troubleshooting" ? (
+          <DiagnosticGroups items={items} />
+        ) : section === "workflows" ? (
+          <WorkflowGroups items={items} />
         ) : useGroups ? (
           [...groups.entries()].map(([key, list], idx) => (
             <section
