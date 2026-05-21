@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FOOTER_GROUPS, site, getSectionMeta } from "@/lib/site";
 import { PRODUCTS } from "@/lib/products";
+import { ProductGlyph } from "@/components/content/ProductGlyph";
 import { Logomark } from "@/components/identity/Logomark";
 import { Container } from "./Container";
 
@@ -55,7 +56,11 @@ export function Footer() {
                         height={18}
                         className="h-[18px] w-[18px] shrink-0 rounded border border-rule"
                       />
-                    ) : null}
+                    ) : (
+                      <span className="flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded border border-rule text-ink-soft">
+                        <ProductGlyph id={p.id} className="h-3 w-3" />
+                      </span>
+                    )}
                     {p.name}
                   </a>
                 </li>

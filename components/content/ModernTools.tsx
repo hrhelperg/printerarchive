@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PRODUCTS, type ProductId } from "@/lib/products";
+import { ProductGlyph } from "./ProductGlyph";
 
 interface ModernToolsProps {
   products: ProductId[];
@@ -38,7 +39,11 @@ export function ModernTools({ products }: ModernToolsProps) {
                   height={40}
                   className="h-10 w-10 shrink-0 rounded-lg border border-rule"
                 />
-              ) : null}
+              ) : (
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-rule bg-paper text-ink-soft">
+                  <ProductGlyph id={p.id} className="h-5 w-5" />
+                </span>
+              )}
               <p className="font-serif text-lg tracking-tight text-ink">
                 {p.name}
               </p>
