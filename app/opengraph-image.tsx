@@ -46,35 +46,34 @@ export default function Image() {
           }}
         />
 
-        {/* Logomark — 17×17 frame, mid rule, lower-right press block */}
+        {/* Logomark — document sheet + text rules + output-tray bar
+            (24-unit grid scaled ×4 to a 96px box) */}
         <div style={{ position: "relative", width: "96px", height: "96px", display: "flex" }}>
+          {/* document sheet */}
           <div
             style={{
               position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              border: `5px solid ${INK}`,
+              left: "26px",
+              top: "12px",
+              width: "44px",
+              height: "50px",
+              border: `4px solid ${INK}`,
+              borderRadius: "2px",
             }}
           />
+          {/* text rules */}
+          <div style={{ position: "absolute", left: "36px", top: "26px", width: "24px", height: "4px", backgroundColor: INK }} />
+          <div style={{ position: "absolute", left: "36px", top: "37px", width: "24px", height: "4px", backgroundColor: INK }} />
+          <div style={{ position: "absolute", left: "36px", top: "48px", width: "14px", height: "4px", backgroundColor: INK }} />
+          {/* output-tray bar */}
           <div
             style={{
               position: "absolute",
-              left: 0,
-              right: 0,
-              top: "46px",
-              height: "5px",
-              backgroundColor: INK,
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              right: 0,
-              bottom: 0,
-              width: "30px",
-              height: "30px",
+              left: "14px",
+              bottom: "14px",
+              width: "68px",
+              height: "11px",
+              borderRadius: "3px",
               backgroundColor: INK,
             }}
           />
