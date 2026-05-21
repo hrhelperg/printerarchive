@@ -17,6 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/contact",
+    "/editorial-policy",
+    "/source-policy",
+    "/archive-methodology",
+    "/changelog",
     ...SECTIONS.map((s) => `/${s.id}`),
   ];
   const statics = staticPaths.map((p) => ({

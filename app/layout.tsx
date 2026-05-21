@@ -34,6 +34,22 @@ export const metadata: Metadata = {
     canonical: "/",
     types: { "application/rss+xml": "/feed.xml" },
   },
+  // Default Open Graph / Twitter for pages that do not set their own
+  // (the home page). Article and section pages override these via
+  // buildMetadata with page-specific values.
+  openGraph: {
+    title: `${site.name} — ${site.tagline}`,
+    description: site.description,
+    url: site.url,
+    siteName: site.name,
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.tagline}`,
+    description: site.description,
+  },
   robots: { index: true, follow: true },
 };
 
