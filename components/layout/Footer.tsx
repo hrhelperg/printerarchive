@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FOOTER_GROUPS, site, getSectionMeta } from "@/lib/site";
 import { PRODUCTS } from "@/lib/products";
+import { Logomark } from "@/components/identity/Logomark";
 import { Container } from "./Container";
 
 export function Footer() {
@@ -9,7 +10,10 @@ export function Footer() {
       <Container width="wide">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
           <div>
-            <p className="font-serif text-lg text-ink">{site.name}</p>
+            <p className="flex items-center gap-2.5 font-serif text-lg text-ink">
+              <Logomark className="h-6 w-6 text-ink" />
+              {site.name}
+            </p>
             <p className="mt-2 max-w-prose text-sm text-ink-soft">
               {site.description}
             </p>
@@ -66,6 +70,12 @@ export function Footer() {
           <Link href="/changelog" className="no-underline hover:text-accent">
             Changelog
           </Link>
+          <Link href="/cookie-policy" className="no-underline hover:text-accent">
+            Cookie policy
+          </Link>
+          <a href="#cookie-preferences" className="no-underline hover:text-accent">
+            Cookie preferences
+          </a>
           <Link href="/contact" className="no-underline hover:text-accent">
             Contact
           </Link>
