@@ -16,6 +16,7 @@ import { ArchiveFootnotes } from "@/components/content/ArchiveFootnotes";
 import { EssayLead } from "@/components/content/EssayLead";
 import { DeepReadingLinks } from "@/components/content/DeepReadingLinks";
 import { RelatedLinks } from "@/components/content/RelatedLinks";
+import { ModernTools } from "@/components/content/ModernTools";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/schema";
 
@@ -93,6 +94,7 @@ export function ArticlePage({
         {e.footnotes?.length ? <ArchiveFootnotes footnotes={e.footnotes} /> : null}
         {e.deepReading?.length ? <DeepReadingLinks items={e.deepReading} /> : null}
         <RelatedLinks items={related} />
+        {e.modernTools?.length ? <ModernTools products={e.modernTools} /> : null}
       </article>
     </Container>
   );
