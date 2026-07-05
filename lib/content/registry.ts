@@ -96,6 +96,33 @@ import tech_continuous_inkjet_printing from "@/content/guides/continuous-inkjet-
 import tech_page_wide_printing from "@/content/guides/page-wide-printing";
 import tech_electrostatic_printing from "@/content/guides/electrostatic-printing";
 
+// Phase 13 — print languages, standards & protocols encyclopedia (tools)
+import std_postscript from "@/content/tools/postscript";
+import std_pcl from "@/content/tools/pcl";
+import std_esc_p from "@/content/tools/esc-p";
+import std_esc_pos from "@/content/tools/esc-pos";
+import std_hp_gl from "@/content/tools/hp-gl";
+import std_pjl from "@/content/tools/pjl";
+import std_xps from "@/content/tools/xps";
+import std_afp from "@/content/tools/afp";
+import std_ipp from "@/content/tools/ipp";
+import std_lpd_lpr from "@/content/tools/lpd-lpr";
+import std_jetdirect from "@/content/tools/jetdirect";
+import std_airprint from "@/content/tools/airprint";
+import std_mopria from "@/content/tools/mopria";
+import std_cups from "@/content/tools/cups";
+import std_smb_printing from "@/content/tools/smb-printing";
+import std_bonjour_mdns_printing from "@/content/tools/bonjour-mdns-printing";
+import std_pdf_a from "@/content/tools/pdf-a";
+import std_pdf_x from "@/content/tools/pdf-x";
+import std_pdf_ua from "@/content/tools/pdf-ua";
+import std_iso_32000 from "@/content/tools/iso-32000";
+import std_tiff from "@/content/tools/tiff";
+import std_icc_profiles from "@/content/tools/icc-profiles";
+import std_cmyk from "@/content/tools/cmyk";
+import std_halftoning from "@/content/tools/halftoning";
+import std_raster_image_processor from "@/content/tools/raster-image-processor";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -211,6 +238,32 @@ export const allEntries: ContentEntry[] = [
   tech_continuous_inkjet_printing,
   tech_page_wide_printing,
   tech_electrostatic_printing,
+  // Phase 13 — print languages, standards & protocols
+  std_postscript,
+  std_pcl,
+  std_esc_p,
+  std_esc_pos,
+  std_hp_gl,
+  std_pjl,
+  std_xps,
+  std_afp,
+  std_ipp,
+  std_lpd_lpr,
+  std_jetdirect,
+  std_airprint,
+  std_mopria,
+  std_cups,
+  std_smb_printing,
+  std_bonjour_mdns_printing,
+  std_pdf_a,
+  std_pdf_x,
+  std_pdf_ua,
+  std_iso_32000,
+  std_tiff,
+  std_icc_profiles,
+  std_cmyk,
+  std_halftoning,
+  std_raster_image_processor,
   // Glossary
   gSpooler,
   gQueue,

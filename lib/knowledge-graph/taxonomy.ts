@@ -994,12 +994,6 @@ export const TAXONOMY: KgCluster[] = [
         "angle": "The ISO PDF/X family as a print-ready file exchange standard, complementing the existing what-is-pdf page."
       },
       {
-        "slug": "cmyk",
-        "title": "CMYK",
-        "section": "glossary",
-        "angle": "Concise glossary definition of the four process colors."
-      },
-      {
         "slug": "halftone",
         "title": "Halftone",
         "section": "glossary",
@@ -2701,12 +2695,6 @@ export const TAXONOMY: KgCluster[] = [
         "title": "Printing Receipts from a Tablet POS",
         "section": "workflows",
         "angle": "How tablet-based POS apps drive Bluetooth or network receipt printers, and the role of ESC/POS."
-      },
-      {
-        "slug": "esc-pos",
-        "title": "ESC/POS",
-        "section": "glossary",
-        "angle": "Short glossary definition of the ESC/POS command set."
       },
       {
         "slug": "receipt-roll",
@@ -5183,28 +5171,10 @@ export const TAXONOMY: KgCluster[] = [
         "angle": "From LPD and raw sockets toward IPP and driverless standards over the decades."
       },
       {
-        "slug": "cups",
-        "title": "CUPS",
-        "section": "glossary",
-        "angle": "Glossary definition of the Common UNIX Printing System as a term."
-      },
-      {
-        "slug": "ipp",
-        "title": "IPP (Internet Printing Protocol)",
-        "section": "glossary",
-        "angle": "Concise glossary entry for the IPP protocol term."
-      },
-      {
         "slug": "lpd",
         "title": "LPD (Line Printer Daemon)",
         "section": "glossary",
         "angle": "Concise glossary entry for the LPD/LPR term and RFC 1179."
-      },
-      {
-        "slug": "jetdirect",
-        "title": "JetDirect",
-        "section": "glossary",
-        "angle": "Glossary entry for the JetDirect print-server networking name and raw port 9100 association."
       }
     ],
     "crossLinks": [
@@ -5633,12 +5603,6 @@ export const TAXONOMY: KgCluster[] = [
         "angle": "Glossary definition of PostScript Printer Description file."
       },
       {
-        "slug": "pcl",
-        "title": "PCL",
-        "section": "glossary",
-        "angle": "Glossary definition of Printer Command Language."
-      },
-      {
         "slug": "page-description-language",
         "title": "Page Description Language",
         "section": "glossary",
@@ -5770,7 +5734,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "standard"
       }
     ],
-    "livePages": 1,
+    "livePages": 9,
     "capacity": {
       "conservative": 24,
       "ambitious": 38
@@ -5847,18 +5811,6 @@ export const TAXONOMY: KgCluster[] = [
         "title": "What Is PostScript Emulation?",
         "section": "guides",
         "angle": "How compatible interpreters implement PostScript-like behavior without Adobe's original interpreter."
-      },
-      {
-        "slug": "raster-image-processor",
-        "title": "Raster Image Processor (RIP)",
-        "section": "glossary",
-        "angle": "Short glossary entry defining a RIP and where it sits in the pipeline."
-      },
-      {
-        "slug": "postscript",
-        "title": "PostScript",
-        "section": "glossary",
-        "angle": "Glossary definition of PostScript as a page description and programming language for printing."
       },
       {
         "slug": "origins-of-postscript-and-adobe",
@@ -7707,22 +7659,10 @@ export const TAXONOMY: KgCluster[] = [
         "angle": "How microforms preserved records before digitization and their continued archival role"
       },
       {
-        "slug": "pdf-a",
-        "title": "PDF/A",
-        "section": "glossary",
-        "angle": "Concise glossary definition of the ISO-standardized archival PDF subset"
-      },
-      {
         "slug": "checksum",
         "title": "Checksum",
         "section": "glossary",
         "angle": "Concise definition of a checksum/hash and its use in integrity verification"
-      },
-      {
-        "slug": "tiff",
-        "title": "TIFF",
-        "section": "glossary",
-        "angle": "Concise definition of the Tagged Image File Format and its archival relevance"
       },
       {
         "slug": "oais",
@@ -8296,7 +8236,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "format"
       }
     ],
-    "livePages": 1,
+    "livePages": 6,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
@@ -8706,7 +8646,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "A standards-first reference cluster explaining the durable specifications that govern printing, imaging, color, and document exchange — the printing protocols (IPP, PWG Raster), page-description languages (PostScript, PCL), paper-size and color standards (ISO 216, ICC, sRGB, CMYK), and archival/exchange document formats (PDF/A, PDF/X, PDF/UA, TIFF, XPS). Each page describes what a published standard defines and how it fits into printing workflows, citing the responsible standards body, without inventing figures, dates, or performance claims.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "Internet Printing Protocol (IPP)",
@@ -8789,7 +8729,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "standard"
       }
     ],
-    "livePages": 0,
+    "livePages": 12,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
@@ -9277,12 +9217,6 @@ export const TAXONOMY: KgCluster[] = [
         "title": "CMYK Color Model",
         "section": "glossary",
         "angle": "Defines the subtractive cyan-magenta-yellow-key color model used in printing and why it differs from RGB screen color."
-      },
-      {
-        "slug": "halftoning",
-        "title": "Halftoning",
-        "section": "glossary",
-        "angle": "Explains how continuous tones are simulated with patterns of variably sized or spaced dots on devices that print only solid ink."
       },
       {
         "slug": "dithering",
