@@ -72,6 +72,10 @@ import brandRicoh from "@/content/brands/ricoh";
 import brandKyocera from "@/content/brands/kyocera";
 import brandLexmark from "@/content/brands/lexmark";
 
+// Phase 11 — flagship manufacturer encyclopedia (new brand pages)
+import brIbm from "@/content/brands/ibm";
+import brKonicaMinolta from "@/content/brands/konica-minolta";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -165,6 +169,9 @@ export const allEntries: ContentEntry[] = [
   brandRicoh,
   brandKyocera,
   brandLexmark,
+  // Phase 11 — flagship manufacturers (new)
+  brIbm,
+  brKonicaMinolta,
   // Glossary
   gSpooler,
   gQueue,
