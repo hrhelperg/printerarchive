@@ -126,6 +126,7 @@ const entry: HistoryEntry = {
     },
   ],
   related: [
+    { section: "history", slug: "spoolers-and-print-queues" },
     { section: "guides", slug: "what-is-a-print-server" },
     { section: "glossary", slug: "print-spooler" },
     { section: "glossary", slug: "print-queue" },

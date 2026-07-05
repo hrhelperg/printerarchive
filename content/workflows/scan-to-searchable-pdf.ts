@@ -46,6 +46,7 @@ const entry: WorkflowEntry = {
   related: [
     { section: "glossary", slug: "ocr" },
     { section: "tools", slug: "what-is-pdf" },
+    { section: "history", slug: "enterprise-document-management" },
   ],
   faqs: [
     {

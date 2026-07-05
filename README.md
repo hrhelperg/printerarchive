@@ -43,6 +43,17 @@ npm run build        # production build — source of truth
 Adding a page is adding one typed module to a section folder and
 registering it — the architecture scales without structural change.
 
+The full content taxonomy — the clusters, entities, and page capacity the
+architecture is designed to reach — is documented in
+[`docs/superpowers/specs/2026-07-05-phase9-knowledge-graph.md`](docs/superpowers/specs/2026-07-05-phase9-knowledge-graph.md)
+and encoded as data in [`lib/knowledge-graph/`](lib/knowledge-graph/).
+
+## Search indexing (IndexNow)
+
+Published URLs are submitted to [IndexNow](https://www.indexnow.org/) after each
+deploy so search engines recrawl sooner. See [`docs/indexnow.md`](docs/indexnow.md)
+for the key file, the `npm run indexnow` submitter, and the deploy trigger.
+
 ## Publisher
 
 Published by HELPERG LLC. Editorial questions and corrections:

@@ -134,6 +134,7 @@ const entry: HistoryEntry = {
     },
   ],
   related: [
+    { section: "history", slug: "office-print-rooms" },
     { section: "history", slug: "office-printing-in-the-1990s" },
     { section: "history", slug: "transition-from-impact-to-laser-printing" },
     { section: "guides", slug: "what-is-a-print-server" },

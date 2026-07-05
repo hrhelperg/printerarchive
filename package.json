@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test:content": "node --experimental-strip-types scripts/check-content.mjs",
     "test:unit": "node --test --experimental-strip-types",
-    "check:routes": "node scripts/check-routes.mjs"
+    "check:routes": "node scripts/check-routes.mjs",
+    "indexnow": "node scripts/indexnow-submit.mjs"
   },
   "dependencies": {
     "next": "16.2.6",

@@ -29,6 +29,7 @@ const entry: GlossaryEntry = {
   ],
   seeAlso: [
     { section: "glossary", slug: "print-spooler" },
+    { section: "history", slug: "spoolers-and-print-queues" },
     { section: "troubleshooting", slug: "printer-offline-guide" },
     { section: "history", slug: "early-network-printing-systems" },
   ],

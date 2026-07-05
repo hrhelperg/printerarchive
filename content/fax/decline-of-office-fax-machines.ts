@@ -32,6 +32,22 @@ const entry: HistoryEntry = {
       text: "This is the structure that makes the later decline worth studying. A capability held in place by mutual expectation does not fall when a better option appears; it falls when the expectations themselves come apart. The peak fax office was not a technology at its best so much as a convention at its most entrenched, and conventions decay differently from devices.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/fax/decline-of-office-fax-machines--office-fax.jpg",
+        alt: "A telefax machine sitting on an office surface with paper loaded in the feeder",
+        width: 1600,
+        height: 1066,
+        caption:
+          "The office fax machine in the corner — the shared default whose universality was itself a reason not to question keeping it.",
+        credit: {
+          source: "Tumi-1983, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Telefax.JPG",
+          license: "CC BY-SA 3.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "What digital workflows made redundant",

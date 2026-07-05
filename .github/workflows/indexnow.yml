@@ -1,0 +1,53 @@
+name: IndexNow submit
+
+# Notifies IndexNow (Bing, Yandex, Seznam, …) about published URLs so they
+# recrawl sooner. It reads the *live* sitemap, so it must run AFTER a deploy.
+#
+# Triggers:
+#   - deployment_status: fires when a host's GitHub integration (Netlify /
+#     Vercel) reports a successful production deployment — the true
+#     "after deployment" hook. Non-success states and previews are ignored.
+#   - workflow_dispatch: manual run from the Actions tab.
+#
+# Setup (one time): add a repository secret named INDEXNOW_KEY equal to the
+# stem of the committed key file public/<key>.txt. Without the secret the job
+# no-ops instead of failing.
+
+on:
+  deployment_status:
+  workflow_dispatch:
+    inputs:
+      site_url:
+        description: "Canonical origin to submit (defaults to production)"
+        required: false
+        default: "https://printerarchive.net"
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    # Only run for successful production deploys, or manual dispatch.
+    # Netlify reports the environment as "production"; Vercel as "Production".
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'deployment_status' &&
+       github.event.deployment_status.state == 'success' &&
+       (github.event.deployment.environment == 'production' ||
+        github.event.deployment.environment == 'Production'))
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Submit live sitemap to IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          SITE_URL: ${{ github.event.inputs.site_url || 'https://printerarchive.net' }}
+        run: |
+          if [ -z "${INDEXNOW_KEY}" ]; then
+            echo "INDEXNOW_KEY secret not set — skipping IndexNow submission."
+            exit 0
+          fi
+          node scripts/indexnow-submit.mjs
