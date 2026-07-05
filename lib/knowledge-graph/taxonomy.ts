@@ -1373,18 +1373,12 @@ export const TAXONOMY: KgCluster[] = [
         "type": "brand"
       }
     ],
-    "livePages": 8,
+    "livePages": 10,
     "capacity": {
       "conservative": 28,
       "ambitious": 55
     },
     "planned": [
-      {
-        "slug": "ibm",
-        "title": "IBM: Printing and Imaging Heritage",
-        "section": "brands",
-        "angle": "IBM's line-printer, Selectric typewriter, and early laser printing history, and the 1991 spin-off that became Lexmark."
-      },
       {
         "slug": "oki",
         "title": "OKI: Printer Manufacturer Overview",
@@ -1402,12 +1396,6 @@ export const TAXONOMY: KgCluster[] = [
         "title": "Panasonic: Printing Product Heritage",
         "section": "brands",
         "angle": "Panasonic's KX-P dot-matrix and later laser and multifunction office devices."
-      },
-      {
-        "slug": "konica-minolta",
-        "title": "Konica Minolta: Manufacturer Overview",
-        "section": "brands",
-        "angle": "The 2003 merger of Konica and Minolta and the combined firm's office multifunction and production-print lineage."
       },
       {
         "slug": "samsung-printers",
