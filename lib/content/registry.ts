@@ -76,6 +76,26 @@ import brandLexmark from "@/content/brands/lexmark";
 import brIbm from "@/content/brands/ibm";
 import brKonicaMinolta from "@/content/brands/konica-minolta";
 
+// Phase 12 — printing technology encyclopedia (guides)
+import tech_laser_printing from "@/content/guides/laser-printing";
+import tech_inkjet_printing from "@/content/guides/inkjet-printing";
+import tech_electrophotography from "@/content/guides/electrophotography";
+import tech_xerography from "@/content/guides/xerography";
+import tech_dot_matrix_printing from "@/content/guides/dot-matrix-printing";
+import tech_daisy_wheel_printing from "@/content/guides/daisy-wheel-printing";
+import tech_line_printing from "@/content/guides/line-printing";
+import tech_impact_printing from "@/content/guides/impact-printing";
+import tech_thermal_transfer_printing from "@/content/guides/thermal-transfer-printing";
+import tech_direct_thermal_printing from "@/content/guides/direct-thermal-printing";
+import tech_led_printing from "@/content/guides/led-printing";
+import tech_solid_ink_printing from "@/content/guides/solid-ink-printing";
+import tech_dye_sublimation_printing from "@/content/guides/dye-sublimation-printing";
+import tech_thermal_inkjet_printing from "@/content/guides/thermal-inkjet-printing";
+import tech_piezoelectric_inkjet_printing from "@/content/guides/piezoelectric-inkjet-printing";
+import tech_continuous_inkjet_printing from "@/content/guides/continuous-inkjet-printing";
+import tech_page_wide_printing from "@/content/guides/page-wide-printing";
+import tech_electrostatic_printing from "@/content/guides/electrostatic-printing";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -172,6 +192,25 @@ export const allEntries: ContentEntry[] = [
   // Phase 11 — flagship manufacturers (new)
   brIbm,
   brKonicaMinolta,
+  // Phase 12 — printing technology encyclopedia
+  tech_laser_printing,
+  tech_inkjet_printing,
+  tech_electrophotography,
+  tech_xerography,
+  tech_dot_matrix_printing,
+  tech_daisy_wheel_printing,
+  tech_line_printing,
+  tech_impact_printing,
+  tech_thermal_transfer_printing,
+  tech_direct_thermal_printing,
+  tech_led_printing,
+  tech_solid_ink_printing,
+  tech_dye_sublimation_printing,
+  tech_thermal_inkjet_printing,
+  tech_piezoelectric_inkjet_printing,
+  tech_continuous_inkjet_printing,
+  tech_page_wide_printing,
+  tech_electrostatic_printing,
   // Glossary
   gSpooler,
   gQueue,

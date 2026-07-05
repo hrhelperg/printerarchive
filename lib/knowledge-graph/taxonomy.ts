@@ -1750,12 +1750,6 @@ export const TAXONOMY: KgCluster[] = [
         "title": "Fuser Unit",
         "section": "glossary",
         "angle": "Defines the heated assembly that bonds toner to the page."
-      },
-      {
-        "slug": "electrophotography",
-        "title": "Electrophotography",
-        "section": "glossary",
-        "angle": "Defines the charge-and-light imaging principle underlying copiers and laser printers."
       }
     ],
     "crossLinks": [
@@ -1866,7 +1860,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "organization"
       }
     ],
-    "livePages": 13,
+    "livePages": 29,
     "capacity": {
       "conservative": 26,
       "ambitious": 44
@@ -2341,7 +2335,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 1,
+    "livePages": 3,
     "capacity": {
       "conservative": 26,
       "ambitious": 42
