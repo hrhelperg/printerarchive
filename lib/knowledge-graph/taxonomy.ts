@@ -41,14 +41,13 @@ export const LIVE_PRODUCTS: ProductId[] = [
   "smart-printer",
   "fax-app",
   "pdf-editor",
-];
-
-/** HELPERG app anchors proposed here that still need real store metadata. */
-export const PROPOSED_PRODUCTS: ProposedProductId[] = [
   "cv-resume",
   "invoice-maker",
   "pocket-manager",
 ];
+
+/** No app anchors remain proposed — all graduated to live ProductIds in Phase 15B. */
+export const PROPOSED_PRODUCTS: ProposedProductId[] = [];
 
 export const TAXONOMY: KgCluster[] = [
   {

@@ -168,6 +168,9 @@ export function findContentIssues(entries: ContentEntry[]): string[] {
       "smart-printer",
       "fax-app",
       "pdf-editor",
+      "cv-resume",
+      "invoice-maker",
+      "pocket-manager",
     ]);
     const mt = (e as { modernTools?: unknown }).modernTools;
     if (mt !== undefined) {
