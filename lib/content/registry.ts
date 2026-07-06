@@ -194,6 +194,23 @@ import oc_ocr_for_healthcare from "@/content/workflows/ocr-for-healthcare";
 import oc_ocr_for_archives from "@/content/workflows/ocr-for-archives";
 import oc_ocr_workflow from "@/content/workflows/ocr-workflow";
 
+// Phase 15 Wave C — image preprocessing
+import ip_image_deskew from "@/content/guides/image-deskew";
+import ip_image_despeckle from "@/content/guides/image-despeckle";
+import ip_image_binarization from "@/content/guides/image-binarization";
+import ip_image_thresholding from "@/content/guides/image-thresholding";
+import ip_image_noise_reduction from "@/content/guides/image-noise-reduction";
+import ip_contrast_enhancement from "@/content/guides/contrast-enhancement";
+import ip_morphological_operations from "@/content/guides/morphological-operations";
+import ip_document_cleanup from "@/content/guides/document-cleanup";
+import ip_compression_before_ocr from "@/content/guides/compression-before-ocr";
+import ip_orientation_detection from "@/content/guides/orientation-detection";
+import ip_color_normalization from "@/content/guides/color-normalization";
+import ip_border_removal from "@/content/guides/border-removal";
+import ip_blank_page_detection from "@/content/guides/blank-page-detection";
+import ip_barcode_recognition from "@/content/guides/barcode-recognition";
+import ip_qr_code_recognition from "@/content/guides/qr-code-recognition";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -403,6 +420,22 @@ export const allEntries: ContentEntry[] = [
   oc_ocr_for_healthcare,
   oc_ocr_for_archives,
   oc_ocr_workflow,
+  // Phase 15 Wave C — image preprocessing
+  ip_image_deskew,
+  ip_image_despeckle,
+  ip_image_binarization,
+  ip_image_thresholding,
+  ip_image_noise_reduction,
+  ip_contrast_enhancement,
+  ip_morphological_operations,
+  ip_document_cleanup,
+  ip_compression_before_ocr,
+  ip_orientation_detection,
+  ip_color_normalization,
+  ip_border_removal,
+  ip_blank_page_detection,
+  ip_barcode_recognition,
+  ip_qr_code_recognition,
   // Glossary
   gSpooler,
   gQueue,
