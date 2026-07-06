@@ -123,6 +123,33 @@ import std_cmyk from "@/content/tools/cmyk";
 import std_halftoning from "@/content/tools/halftoning";
 import std_raster_image_processor from "@/content/tools/raster-image-processor";
 
+// Phase 14 — operating systems, drivers & print-pipeline encyclopedia (guides)
+import os_windows_printing from "@/content/guides/windows-printing";
+import os_windows_print_spooler from "@/content/guides/windows-print-spooler";
+import os_windows_print_processor from "@/content/guides/windows-print-processor";
+import os_windows_printer_drivers from "@/content/guides/windows-printer-drivers";
+import os_windows_gdi_printing from "@/content/guides/windows-gdi-printing";
+import os_windows_xps_print_pipeline from "@/content/guides/windows-xps-print-pipeline";
+import os_macos_printing from "@/content/guides/macos-printing";
+import os_cups_architecture from "@/content/guides/cups-architecture";
+import os_linux_printing from "@/content/guides/linux-printing";
+import os_openprinting from "@/content/guides/openprinting";
+import os_printer_drivers from "@/content/guides/printer-drivers";
+import os_universal_print_drivers from "@/content/guides/universal-print-drivers";
+import os_driverless_printing from "@/content/guides/driverless-printing";
+import os_print_rendering_pipeline from "@/content/guides/print-rendering-pipeline";
+import os_spooling_architecture from "@/content/guides/spooling-architecture";
+import os_print_queue_lifecycle from "@/content/guides/print-queue-lifecycle";
+import os_print_job_lifecycle from "@/content/guides/print-job-lifecycle";
+import os_printer_discovery from "@/content/guides/printer-discovery";
+import os_snmp_printer_monitoring from "@/content/guides/snmp-printer-monitoring";
+import os_enterprise_print_servers from "@/content/guides/enterprise-print-servers";
+import os_print_management from "@/content/guides/print-management";
+import os_secure_printing from "@/content/guides/secure-printing";
+import os_pull_printing from "@/content/guides/pull-printing";
+import os_print_job_accounting from "@/content/guides/print-job-accounting";
+import os_cloud_print_architectures from "@/content/guides/cloud-print-architectures";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -264,6 +291,32 @@ export const allEntries: ContentEntry[] = [
   std_cmyk,
   std_halftoning,
   std_raster_image_processor,
+  // Phase 14 — operating systems, drivers & print pipeline
+  os_windows_printing,
+  os_windows_print_spooler,
+  os_windows_print_processor,
+  os_windows_printer_drivers,
+  os_windows_gdi_printing,
+  os_windows_xps_print_pipeline,
+  os_macos_printing,
+  os_cups_architecture,
+  os_linux_printing,
+  os_openprinting,
+  os_printer_drivers,
+  os_universal_print_drivers,
+  os_driverless_printing,
+  os_print_rendering_pipeline,
+  os_spooling_architecture,
+  os_print_queue_lifecycle,
+  os_print_job_lifecycle,
+  os_printer_discovery,
+  os_snmp_printer_monitoring,
+  os_enterprise_print_servers,
+  os_print_management,
+  os_secure_printing,
+  os_pull_printing,
+  os_print_job_accounting,
+  os_cloud_print_architectures,
   // Glossary
   gSpooler,
   gQueue,
