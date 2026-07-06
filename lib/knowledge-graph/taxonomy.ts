@@ -616,7 +616,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "organization"
       }
     ],
-    "livePages": 1,
+    "livePages": 5,
     "capacity": {
       "conservative": 30,
       "ambitious": 52
@@ -4503,7 +4503,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "A knowledge-graph cluster covering cloud and internet-based printing: how print jobs travel over networks and the internet to reach devices, the open standards that make driverless and mobile cloud printing possible (IPP, IPP Everywhere, Mopria, Wi-Fi Direct), pull/secure print-release models, cloud print management approaches such as Microsoft Universal Print, and the history of deprecated services like Google Cloud Print. Content is vendor-neutral, standards-first, and explanatory rather than promotional.",
     "appAnchor": "smart-printer",
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "Cloud printing",
@@ -4586,7 +4586,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "format"
       }
     ],
-    "livePages": 0,
+    "livePages": 1,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
@@ -4827,7 +4827,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 1,
+    "livePages": 3,
     "capacity": {
       "conservative": 26,
       "ambitious": 40
@@ -5062,7 +5062,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "technology"
       }
     ],
-    "livePages": 2,
+    "livePages": 3,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
@@ -5284,7 +5284,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "protocol"
       }
     ],
-    "livePages": 1,
+    "livePages": 5,
     "capacity": {
       "conservative": 25,
       "ambitious": 38
@@ -5524,7 +5524,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 1,
+    "livePages": 5,
     "capacity": {
       "conservative": 30,
       "ambitious": 58
@@ -5933,7 +5933,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "technology"
       }
     ],
-    "livePages": 1,
+    "livePages": 10,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
@@ -9319,12 +9319,6 @@ export const TAXONOMY: KgCluster[] = [
         "title": "Collation",
         "section": "glossary",
         "angle": "Defines collated versus uncollated output when printing multiple copies of a multi-page document."
-      },
-      {
-        "slug": "snmp-printer-monitoring",
-        "title": "SNMP (Printer Monitoring)",
-        "section": "glossary",
-        "angle": "Defines how the SNMP protocol and standard printer MIBs are used to report printer status and supply levels."
       },
       {
         "slug": "borderless-printing",
