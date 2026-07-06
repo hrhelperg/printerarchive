@@ -211,6 +211,21 @@ import ip_blank_page_detection from "@/content/guides/blank-page-detection";
 import ip_barcode_recognition from "@/content/guides/barcode-recognition";
 import ip_qr_code_recognition from "@/content/guides/qr-code-recognition";
 
+// Phase 15 Wave D — enterprise document capture
+import ec_enterprise_document_capture from "@/content/guides/enterprise-document-capture";
+import ec_capture_servers from "@/content/guides/capture-servers";
+import ec_document_indexing from "@/content/guides/document-indexing";
+import ec_capture_metadata from "@/content/guides/capture-metadata";
+import ec_records_management from "@/content/guides/records-management";
+import ec_digital_preservation from "@/content/guides/digital-preservation";
+import ec_microfilm_digitization from "@/content/guides/microfilm-digitization";
+import ec_batch_scanning from "@/content/workflows/batch-scanning";
+import ec_capture_workflow from "@/content/workflows/capture-workflow";
+import ec_legal_document_archives from "@/content/workflows/legal-document-archives";
+import ec_medical_record_archives from "@/content/workflows/medical-record-archives";
+import ec_government_records_archives from "@/content/workflows/government-records-archives";
+import ec_records_compliance from "@/content/workflows/records-compliance";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -436,6 +451,20 @@ export const allEntries: ContentEntry[] = [
   ip_blank_page_detection,
   ip_barcode_recognition,
   ip_qr_code_recognition,
+  // Phase 15 Wave D — enterprise document capture
+  ec_enterprise_document_capture,
+  ec_capture_servers,
+  ec_document_indexing,
+  ec_capture_metadata,
+  ec_records_management,
+  ec_digital_preservation,
+  ec_microfilm_digitization,
+  ec_batch_scanning,
+  ec_capture_workflow,
+  ec_legal_document_archives,
+  ec_medical_record_archives,
+  ec_government_records_archives,
+  ec_records_compliance,
   // Glossary
   gSpooler,
   gQueue,

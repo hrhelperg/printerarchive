@@ -7068,7 +7068,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "product"
       }
     ],
-    "livePages": 1,
+    "livePages": 7,
     "capacity": {
       "conservative": 42,
       "ambitious": 75
@@ -7243,7 +7243,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "Vendor-neutral, standards-first coverage of how organizations move paper and digital documents through repeatable office processes: capture and scanning, approval routing, indexing and metadata, records retention, archival formats, redaction, and electronic signing. Focused on durable concepts and published standards rather than any specific product or software.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "ISO 15489",
@@ -7326,7 +7326,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "organization"
       }
     ],
-    "livePages": 0,
+    "livePages": 2,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
@@ -7454,7 +7454,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "An encyclopedic cluster on long-term digital document preservation: archival file formats (PDF/A, TIFF, JPEG 2000), file integrity and fixity checking, format obsolescence and migration, preservation metadata, and the standards and reference models (ISO 19005, ISO 14721/OAIS) that underpin trustworthy digital archives. It centers on durable, vendor-neutral practices for keeping scanned and born-digital documents readable over decades.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "PDF/A",
@@ -7537,7 +7537,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "technology"
       }
     ],
-    "livePages": 0,
+    "livePages": 2,
     "capacity": {
       "conservative": 26,
       "ambitious": 42
@@ -7693,7 +7693,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "Practical and historical coverage of building and organising digital document archives from scanned and born-digital files: folder and naming conventions, descriptive metadata, preservation-grade formats, integrity verification, retention, backup, and retrieval. It treats a document as a record with a lifecycle and focuses on the durable problem of finding and trusting a file years after it was stored, grounded in real preservation and records-management standards.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "PDF/A (ISO 19005)",
@@ -7776,7 +7776,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "technology"
       }
     ],
-    "livePages": 0,
+    "livePages": 3,
     "capacity": {
       "conservative": 26,
       "ambitious": 42
