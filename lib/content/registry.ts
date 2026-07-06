@@ -173,6 +173,27 @@ import sc_scan_to_email from "@/content/workflows/scan-to-email";
 import sc_scan_to_folder from "@/content/workflows/scan-to-folder";
 import sc_scan_to_cloud from "@/content/workflows/scan-to-cloud";
 
+// Phase 15 Wave B — OCR & recognition
+import oc_history_of_ocr from "@/content/guides/history-of-ocr";
+import oc_optical_character_recognition from "@/content/guides/optical-character-recognition";
+import oc_icr from "@/content/guides/icr";
+import oc_omr from "@/content/guides/omr";
+import oc_handwriting_recognition from "@/content/guides/handwriting-recognition";
+import oc_ocr_engines from "@/content/guides/ocr-engines";
+import oc_ocr_accuracy from "@/content/guides/ocr-accuracy";
+import oc_ocr_preprocessing from "@/content/guides/ocr-preprocessing";
+import oc_ocr_layout_analysis from "@/content/guides/ocr-layout-analysis";
+import oc_ocr_limitations from "@/content/guides/ocr-limitations";
+import oc_ocr_for_forms from "@/content/workflows/ocr-for-forms";
+import oc_ocr_for_invoices from "@/content/workflows/ocr-for-invoices";
+import oc_ocr_for_receipts from "@/content/workflows/ocr-for-receipts";
+import oc_ocr_for_books from "@/content/workflows/ocr-for-books";
+import oc_ocr_for_newspapers from "@/content/workflows/ocr-for-newspapers";
+import oc_ocr_for_legal_documents from "@/content/workflows/ocr-for-legal-documents";
+import oc_ocr_for_healthcare from "@/content/workflows/ocr-for-healthcare";
+import oc_ocr_for_archives from "@/content/workflows/ocr-for-archives";
+import oc_ocr_workflow from "@/content/workflows/ocr-workflow";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -362,6 +383,26 @@ export const allEntries: ContentEntry[] = [
   sc_scan_to_email,
   sc_scan_to_folder,
   sc_scan_to_cloud,
+  // Phase 15 Wave B — OCR & recognition
+  oc_history_of_ocr,
+  oc_optical_character_recognition,
+  oc_icr,
+  oc_omr,
+  oc_handwriting_recognition,
+  oc_ocr_engines,
+  oc_ocr_accuracy,
+  oc_ocr_preprocessing,
+  oc_ocr_layout_analysis,
+  oc_ocr_limitations,
+  oc_ocr_for_forms,
+  oc_ocr_for_invoices,
+  oc_ocr_for_receipts,
+  oc_ocr_for_books,
+  oc_ocr_for_newspapers,
+  oc_ocr_for_legal_documents,
+  oc_ocr_for_healthcare,
+  oc_ocr_for_archives,
+  oc_ocr_workflow,
   // Glossary
   gSpooler,
   gQueue,

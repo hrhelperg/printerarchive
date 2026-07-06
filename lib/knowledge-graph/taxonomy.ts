@@ -6745,7 +6745,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "An encyclopedic cluster explaining optical character recognition: how the recognition pipeline turns scanned page images into machine-readable text, what governs accuracy, how searchable output and text layers are produced, and how languages, scripts, and layout are handled. Standards-first and vendor-neutral, covering OCR output formats (searchable PDF text layers, hOCR, ALTO XML) and adjacent recognition types (ICR, OMR) without benchmarks, rankings, or invented accuracy figures.",
     "appAnchor": "pdf-editor",
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "Optical Character Recognition",
@@ -6828,7 +6828,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 0,
+    "livePages": 19,
     "capacity": {
       "conservative": 26,
       "ambitious": 42
