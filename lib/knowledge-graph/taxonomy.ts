@@ -6540,7 +6540,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "1-2 sentence factual description of the cluster's scope",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "TWAIN",
@@ -6623,7 +6623,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "standard"
       }
     ],
-    "livePages": 0,
+    "livePages": 21,
     "capacity": {
       "conservative": 28,
       "ambitious": 46
@@ -9265,12 +9265,6 @@ export const TAXONOMY: KgCluster[] = [
         "title": "Automatic Document Feeder (ADF)",
         "section": "glossary",
         "angle": "Defines the ADF as the mechanism that feeds multi-page originals into a scanner or copier automatically."
-      },
-      {
-        "slug": "twain",
-        "title": "TWAIN",
-        "section": "glossary",
-        "angle": "Defines the TWAIN standard interface between imaging software and scanners or capture devices."
       },
       {
         "slug": "wia-windows-image-acquisition",

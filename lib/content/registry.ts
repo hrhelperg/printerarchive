@@ -150,6 +150,29 @@ import os_pull_printing from "@/content/guides/pull-printing";
 import os_print_job_accounting from "@/content/guides/print-job-accounting";
 import os_cloud_print_architectures from "@/content/guides/cloud-print-architectures";
 
+// Phase 15 Wave A — scanning, drivers & scan-to workflows
+import sc_history_of_scanning from "@/content/guides/history-of-scanning";
+import sc_flatbed_scanners from "@/content/guides/flatbed-scanners";
+import sc_sheet_fed_scanners from "@/content/guides/sheet-fed-scanners";
+import sc_adf_scanners from "@/content/guides/adf-scanners";
+import sc_book_scanners from "@/content/guides/book-scanners";
+import sc_drum_scanners from "@/content/guides/drum-scanners";
+import sc_film_scanners from "@/content/guides/film-scanners";
+import sc_portable_scanners from "@/content/guides/portable-scanners";
+import sc_network_scanners from "@/content/guides/network-scanners";
+import sc_document_scanners from "@/content/guides/document-scanners";
+import sc_multifunction_scanning from "@/content/guides/multifunction-scanning";
+import sc_scanner_driver_architecture from "@/content/guides/scanner-driver-architecture";
+import sc_twain from "@/content/tools/twain";
+import sc_wia from "@/content/tools/wia";
+import sc_sane from "@/content/tools/sane";
+import sc_ica from "@/content/tools/ica";
+import sc_escl from "@/content/tools/escl";
+import sc_isis from "@/content/tools/isis";
+import sc_scan_to_email from "@/content/workflows/scan-to-email";
+import sc_scan_to_folder from "@/content/workflows/scan-to-folder";
+import sc_scan_to_cloud from "@/content/workflows/scan-to-cloud";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -317,6 +340,28 @@ export const allEntries: ContentEntry[] = [
   os_pull_printing,
   os_print_job_accounting,
   os_cloud_print_architectures,
+  // Phase 15 Wave A — scanning, drivers & scan-to workflows
+  sc_history_of_scanning,
+  sc_flatbed_scanners,
+  sc_sheet_fed_scanners,
+  sc_adf_scanners,
+  sc_book_scanners,
+  sc_drum_scanners,
+  sc_film_scanners,
+  sc_portable_scanners,
+  sc_network_scanners,
+  sc_document_scanners,
+  sc_multifunction_scanning,
+  sc_scanner_driver_architecture,
+  sc_twain,
+  sc_wia,
+  sc_sane,
+  sc_ica,
+  sc_escl,
+  sc_isis,
+  sc_scan_to_email,
+  sc_scan_to_folder,
+  sc_scan_to_cloud,
   // Glossary
   gSpooler,
   gQueue,
