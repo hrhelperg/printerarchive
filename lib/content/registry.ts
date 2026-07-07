@@ -226,6 +226,22 @@ import ec_medical_record_archives from "@/content/workflows/medical-record-archi
 import ec_government_records_archives from "@/content/workflows/government-records-archives";
 import ec_records_compliance from "@/content/workflows/records-compliance";
 
+// Phase 16 Wave A — color science & color management
+import cl_color_management from "@/content/guides/color-management";
+import cl_rgb_color_model from "@/content/guides/rgb-color-model";
+import cl_lab_color from "@/content/guides/lab-color";
+import cl_xyz_color from "@/content/guides/xyz-color";
+import cl_color_spaces from "@/content/guides/color-spaces";
+import cl_rendering_intents from "@/content/guides/rendering-intents";
+import cl_gamut_mapping from "@/content/guides/gamut-mapping";
+import cl_device_independent_color from "@/content/guides/device-independent-color";
+import cl_color_calibration from "@/content/guides/color-calibration";
+import cl_printer_profiling from "@/content/guides/printer-profiling";
+import cl_soft_proofing from "@/content/guides/soft-proofing";
+import cl_hard_proofing from "@/content/guides/hard-proofing";
+import cl_monitor_to_printer_matching from "@/content/guides/monitor-to-printer-matching";
+import cl_rgb_to_cmyk_conversion from "@/content/guides/rgb-to-cmyk-conversion";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -465,6 +481,21 @@ export const allEntries: ContentEntry[] = [
   ec_medical_record_archives,
   ec_government_records_archives,
   ec_records_compliance,
+  // Phase 16 Wave A — color science & color management
+  cl_color_management,
+  cl_rgb_color_model,
+  cl_lab_color,
+  cl_xyz_color,
+  cl_color_spaces,
+  cl_rendering_intents,
+  cl_gamut_mapping,
+  cl_device_independent_color,
+  cl_color_calibration,
+  cl_printer_profiling,
+  cl_soft_proofing,
+  cl_hard_proofing,
+  cl_monitor_to_printer_matching,
+  cl_rgb_to_cmyk_conversion,
   // Glossary
   gSpooler,
   gQueue,
