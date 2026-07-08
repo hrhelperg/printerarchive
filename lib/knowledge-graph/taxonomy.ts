@@ -1853,7 +1853,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "organization"
       }
     ],
-    "livePages": 29,
+    "livePages": 37,
     "capacity": {
       "conservative": 26,
       "ambitious": 44

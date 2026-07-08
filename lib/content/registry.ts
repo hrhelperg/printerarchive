@@ -242,6 +242,16 @@ import cl_hard_proofing from "@/content/guides/hard-proofing";
 import cl_monitor_to_printer_matching from "@/content/guides/monitor-to-printer-matching";
 import cl_rgb_to_cmyk_conversion from "@/content/guides/rgb-to-cmyk-conversion";
 
+// Phase 16 Wave B — screening & print imaging
+import im_amplitude_modulation_screening from "@/content/tools/amplitude-modulation-screening";
+import im_frequency_modulation_screening from "@/content/tools/frequency-modulation-screening";
+import im_error_diffusion from "@/content/tools/error-diffusion";
+import im_ordered_dithering from "@/content/tools/ordered-dithering";
+import im_screen_angles from "@/content/tools/screen-angles";
+import im_moire_patterns from "@/content/tools/moire-patterns";
+import im_dot_gain from "@/content/tools/dot-gain";
+import im_black_generation from "@/content/tools/black-generation";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -496,6 +506,15 @@ export const allEntries: ContentEntry[] = [
   cl_hard_proofing,
   cl_monitor_to_printer_matching,
   cl_rgb_to_cmyk_conversion,
+  // Phase 16 Wave B — screening & print imaging
+  im_amplitude_modulation_screening,
+  im_frequency_modulation_screening,
+  im_error_diffusion,
+  im_ordered_dithering,
+  im_screen_angles,
+  im_moire_patterns,
+  im_dot_gain,
+  im_black_generation,
   // Glossary
   gSpooler,
   gQueue,
