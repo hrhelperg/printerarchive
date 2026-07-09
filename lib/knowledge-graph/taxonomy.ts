@@ -4015,7 +4015,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "An encyclopedic reference on keeping printers and scanners in good working order: cleaning print heads and scanner glass, calibrating and aligning, caring for and replacing consumables (ink, toner, drum, fuser), and preventive maintenance routines. Scope is care and upkeep, distinct from connectivity or device-not-found troubleshooting.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "ISO",
@@ -4098,7 +4098,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 0,
+    "livePages": 15,
     "capacity": {
       "conservative": 26,
       "ambitious": 44

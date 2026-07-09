@@ -252,6 +252,23 @@ import im_moire_patterns from "@/content/tools/moire-patterns";
 import im_dot_gain from "@/content/tools/dot-gain";
 import im_black_generation from "@/content/tools/black-generation";
 
+// Phase 16 Wave C — print-quality & defects
+import pq_print_banding from "@/content/guides/print-banding";
+import pq_ghosting from "@/content/guides/ghosting";
+import pq_print_registration from "@/content/guides/print-registration";
+import pq_ink_bleeding from "@/content/guides/ink-bleeding";
+import pq_print_mottle from "@/content/guides/print-mottle";
+import pq_streaking from "@/content/guides/streaking";
+import pq_toner_adhesion from "@/content/guides/toner-adhesion";
+import pq_nozzle_clogging from "@/content/guides/nozzle-clogging";
+import pq_paper_curl from "@/content/guides/paper-curl";
+import pq_show_through from "@/content/guides/show-through";
+import pq_gloss_differential from "@/content/guides/gloss-differential";
+import pq_color_cast from "@/content/guides/color-cast";
+import pq_background_fogging from "@/content/guides/background-fogging";
+import pq_print_quality_assessment from "@/content/guides/print-quality-assessment";
+import pq_smearing_and_set_off from "@/content/guides/smearing-and-set-off";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -515,6 +532,22 @@ export const allEntries: ContentEntry[] = [
   im_moire_patterns,
   im_dot_gain,
   im_black_generation,
+  // Phase 16 Wave C — print-quality & defects
+  pq_print_banding,
+  pq_ghosting,
+  pq_print_registration,
+  pq_ink_bleeding,
+  pq_print_mottle,
+  pq_streaking,
+  pq_toner_adhesion,
+  pq_nozzle_clogging,
+  pq_paper_curl,
+  pq_show_through,
+  pq_gloss_differential,
+  pq_color_cast,
+  pq_background_fogging,
+  pq_print_quality_assessment,
+  pq_smearing_and_set_off,
   // Glossary
   gSpooler,
   gQueue,
