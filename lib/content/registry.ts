@@ -326,6 +326,29 @@ import pm_paper_grades_and_standards from "@/content/guides/paper-grades-and-sta
 // Phase 18 Wave 0 — printer models (pilot)
 import mdl_hp_laserjet_original from "@/content/models/hp-laserjet-original";
 
+// Phase 18 Wave 1 — flagship printer models
+import mdl_apple_laserwriter from "@/content/models/apple-laserwriter";
+import mdl_canon_lbp_cx_print_engine from "@/content/models/canon-lbp-cx-print-engine";
+import mdl_ibm_3800 from "@/content/models/ibm-3800";
+import mdl_xerox_9700 from "@/content/models/xerox-9700";
+import mdl_xerox_docutech from "@/content/models/xerox-docutech";
+import mdl_ibm_1403 from "@/content/models/ibm-1403";
+import mdl_diablo_630 from "@/content/models/diablo-630";
+import mdl_teletype_model_33 from "@/content/models/teletype-model-33";
+import mdl_centronics_101 from "@/content/models/centronics-101";
+import mdl_epson_mx_80 from "@/content/models/epson-mx-80";
+import mdl_epson_fx_80 from "@/content/models/epson-fx-80";
+import mdl_okidata_microline from "@/content/models/okidata-microline";
+import mdl_star_micronics_nl_10 from "@/content/models/star-micronics-nl-10";
+import mdl_apple_imagewriter from "@/content/models/apple-imagewriter";
+import mdl_hp_thinkjet from "@/content/models/hp-thinkjet";
+import mdl_hp_deskjet_original from "@/content/models/hp-deskjet-original";
+import mdl_canon_bubble_jet_bj from "@/content/models/canon-bubble-jet-bj";
+import mdl_hp_laserjet_4 from "@/content/models/hp-laserjet-4";
+import mdl_tektronix_phaser_solid_ink from "@/content/models/tektronix-phaser-solid-ink";
+import mdl_hp_7475a_plotter from "@/content/models/hp-7475a-plotter";
+import mdl_hp_officejet_original from "@/content/models/hp-officejet-original";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -658,6 +681,28 @@ export const allEntries: ContentEntry[] = [
   pm_paper_grades_and_standards,
   // Phase 18 Wave 0 — printer models (pilot)
   mdl_hp_laserjet_original,
+  // Phase 18 Wave 1 — flagship printer models
+  mdl_apple_laserwriter,
+  mdl_canon_lbp_cx_print_engine,
+  mdl_ibm_3800,
+  mdl_xerox_9700,
+  mdl_xerox_docutech,
+  mdl_ibm_1403,
+  mdl_diablo_630,
+  mdl_teletype_model_33,
+  mdl_centronics_101,
+  mdl_epson_mx_80,
+  mdl_epson_fx_80,
+  mdl_okidata_microline,
+  mdl_star_micronics_nl_10,
+  mdl_apple_imagewriter,
+  mdl_hp_thinkjet,
+  mdl_hp_deskjet_original,
+  mdl_canon_bubble_jet_bj,
+  mdl_hp_laserjet_4,
+  mdl_tektronix_phaser_solid_ink,
+  mdl_hp_7475a_plotter,
+  mdl_hp_officejet_original,
   // Glossary
   gSpooler,
   gQueue,
