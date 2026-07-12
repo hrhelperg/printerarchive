@@ -3253,7 +3253,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "An encyclopedic reference on the paper and print media consumed by printers, copiers, and fax machines: how paper weight is measured (GSM vs. basis weight), the ISO 216 and North American sizing systems, surface finishes and coatings, and specialty media such as cardstock, photo paper, labels, and transparency film. Scope is the substrate itself and its measurable, standards-defined properties, not printing mechanisms.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "ISO 216",
@@ -3336,7 +3336,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 0,
+    "livePages": 12,
     "capacity": {
       "conservative": 32,
       "ambitious": 58
@@ -3373,22 +3373,10 @@ export const TAXONOMY: KgCluster[] = [
         "angle": "Documents the ANSI/ASME Y14.1 and traditional US loose sizes and their nominal dimensions."
       },
       {
-        "slug": "coated-vs-uncoated-paper",
-        "title": "Coated vs. Uncoated Paper",
-        "section": "guides",
-        "angle": "Explains coatings, how they affect ink holdout and surface, without brand or product claims."
-      },
-      {
         "slug": "paper-finishes-matte-satin-glossy",
         "title": "Paper Finishes: Matte, Satin, and Glossy",
         "section": "guides",
         "angle": "Describes common surface finishes and where each is typically used."
-      },
-      {
-        "slug": "paper-brightness-and-whiteness",
-        "title": "Paper Brightness and Whiteness Explained",
-        "section": "guides",
-        "angle": "Distinguishes ISO 2470 brightness from CIE whiteness and the role of optical brighteners."
       },
       {
         "slug": "paper-opacity-and-show-through",

@@ -309,6 +309,20 @@ import cn_polymerized_toner from "@/content/guides/polymerized-toner";
 import cn_micr_toner from "@/content/guides/micr-toner";
 import cn_liquid_toner from "@/content/guides/liquid-toner";
 
+// Phase 17 Wave C — media & paper
+import pm_paper_weight_and_caliper from "@/content/guides/paper-weight-and-caliper";
+import pm_paper_grain from "@/content/guides/paper-grain";
+import pm_coated_vs_uncoated_paper from "@/content/guides/coated-vs-uncoated-paper";
+import pm_paper_finish from "@/content/guides/paper-finish";
+import pm_paper_brightness_and_whiteness from "@/content/guides/paper-brightness-and-whiteness";
+import pm_paper_opacity from "@/content/guides/paper-opacity";
+import pm_inkjet_photo_paper from "@/content/guides/inkjet-photo-paper";
+import pm_cardstock_and_cover_stock from "@/content/guides/cardstock-and-cover-stock";
+import pm_label_and_tag_media from "@/content/guides/label-and-tag-media";
+import pm_synthetic_and_specialty_media from "@/content/guides/synthetic-and-specialty-media";
+import pm_paper_sizes from "@/content/guides/paper-sizes";
+import pm_paper_grades_and_standards from "@/content/guides/paper-grades-and-standards";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -626,6 +640,19 @@ export const allEntries: ContentEntry[] = [
   cn_polymerized_toner,
   cn_micr_toner,
   cn_liquid_toner,
+  // Phase 17 Wave C — media & paper
+  pm_paper_weight_and_caliper,
+  pm_paper_grain,
+  pm_coated_vs_uncoated_paper,
+  pm_paper_finish,
+  pm_paper_brightness_and_whiteness,
+  pm_paper_opacity,
+  pm_inkjet_photo_paper,
+  pm_cardstock_and_cover_stock,
+  pm_label_and_tag_media,
+  pm_synthetic_and_specialty_media,
+  pm_paper_sizes,
+  pm_paper_grades_and_standards,
   // Glossary
   gSpooler,
   gQueue,
