@@ -1737,12 +1737,6 @@ export const TAXONOMY: KgCluster[] = [
         "title": "Photoconductor",
         "section": "glossary",
         "angle": "Defines the light-sensitive material central to electrophotographic imaging."
-      },
-      {
-        "slug": "fuser-unit",
-        "title": "Fuser Unit",
-        "section": "glossary",
-        "angle": "Defines the heated assembly that bonds toner to the page."
       }
     ],
     "crossLinks": [
@@ -1853,10 +1847,10 @@ export const TAXONOMY: KgCluster[] = [
         "type": "organization"
       }
     ],
-    "livePages": 37,
+    "livePages": 55,
     "capacity": {
-      "conservative": 26,
-      "ambitious": 44
+      "conservative": 55,
+      "ambitious": 70
     },
     "planned": [
       {
@@ -3977,12 +3971,6 @@ export const TAXONOMY: KgCluster[] = [
         "title": "Page Yield",
         "section": "glossary",
         "angle": "Concise glossary definition of rated page yield and its relationship to standardized test conditions."
-      },
-      {
-        "slug": "developer-unit",
-        "title": "Developer Unit",
-        "section": "glossary",
-        "angle": "Concise glossary definition of the developer subsystem that charges and delivers toner to the drum."
       },
       {
         "slug": "waste-toner",

@@ -269,6 +269,26 @@ import pq_background_fogging from "@/content/guides/background-fogging";
 import pq_print_quality_assessment from "@/content/guides/print-quality-assessment";
 import pq_smearing_and_set_off from "@/content/guides/smearing-and-set-off";
 
+// Phase 17 Wave A — printer components
+import cp_developer_unit from "@/content/guides/developer-unit";
+import cp_drum_cleaning_and_waste_toner from "@/content/guides/drum-cleaning-and-waste-toner";
+import cp_fuser_unit from "@/content/guides/fuser-unit";
+import cp_photoconductor_drum from "@/content/guides/photoconductor-drum";
+import cp_transfer_unit from "@/content/guides/transfer-unit";
+import cp_laser_scanner_unit from "@/content/guides/laser-scanner-unit";
+import cp_thermal_printhead from "@/content/guides/thermal-printhead";
+import cp_inkjet_printhead from "@/content/guides/inkjet-printhead";
+import cp_platen_roller from "@/content/guides/platen-roller";
+import cp_charge_roller from "@/content/guides/charge-roller";
+import cp_registration_assembly from "@/content/guides/registration-assembly";
+import cp_printhead_service_station from "@/content/guides/printhead-service-station";
+import cp_printer_control_electronics from "@/content/guides/printer-control-electronics";
+import cp_duplexing_unit from "@/content/guides/duplexing-unit";
+import cp_output_and_finishing from "@/content/guides/output-and-finishing";
+import cp_carriage_and_encoder from "@/content/guides/carriage-and-encoder";
+import cp_paper_feed_rollers from "@/content/guides/paper-feed-rollers";
+import cp_ink_delivery_system from "@/content/guides/ink-delivery-system";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -548,6 +568,25 @@ export const allEntries: ContentEntry[] = [
   pq_background_fogging,
   pq_print_quality_assessment,
   pq_smearing_and_set_off,
+  // Phase 17 Wave A — printer components
+  cp_developer_unit,
+  cp_drum_cleaning_and_waste_toner,
+  cp_fuser_unit,
+  cp_photoconductor_drum,
+  cp_transfer_unit,
+  cp_laser_scanner_unit,
+  cp_thermal_printhead,
+  cp_inkjet_printhead,
+  cp_platen_roller,
+  cp_charge_roller,
+  cp_registration_assembly,
+  cp_printhead_service_station,
+  cp_printer_control_electronics,
+  cp_duplexing_unit,
+  cp_output_and_finishing,
+  cp_carriage_and_encoder,
+  cp_paper_feed_rollers,
+  cp_ink_delivery_system,
   // Glossary
   gSpooler,
   gQueue,
