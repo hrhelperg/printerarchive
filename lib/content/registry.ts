@@ -173,6 +173,159 @@ import sc_scan_to_email from "@/content/workflows/scan-to-email";
 import sc_scan_to_folder from "@/content/workflows/scan-to-folder";
 import sc_scan_to_cloud from "@/content/workflows/scan-to-cloud";
 
+// Phase 15 Wave B — OCR & recognition
+import oc_history_of_ocr from "@/content/guides/history-of-ocr";
+import oc_optical_character_recognition from "@/content/guides/optical-character-recognition";
+import oc_icr from "@/content/guides/icr";
+import oc_omr from "@/content/guides/omr";
+import oc_handwriting_recognition from "@/content/guides/handwriting-recognition";
+import oc_ocr_engines from "@/content/guides/ocr-engines";
+import oc_ocr_accuracy from "@/content/guides/ocr-accuracy";
+import oc_ocr_preprocessing from "@/content/guides/ocr-preprocessing";
+import oc_ocr_layout_analysis from "@/content/guides/ocr-layout-analysis";
+import oc_ocr_limitations from "@/content/guides/ocr-limitations";
+import oc_ocr_for_forms from "@/content/workflows/ocr-for-forms";
+import oc_ocr_for_invoices from "@/content/workflows/ocr-for-invoices";
+import oc_ocr_for_receipts from "@/content/workflows/ocr-for-receipts";
+import oc_ocr_for_books from "@/content/workflows/ocr-for-books";
+import oc_ocr_for_newspapers from "@/content/workflows/ocr-for-newspapers";
+import oc_ocr_for_legal_documents from "@/content/workflows/ocr-for-legal-documents";
+import oc_ocr_for_healthcare from "@/content/workflows/ocr-for-healthcare";
+import oc_ocr_for_archives from "@/content/workflows/ocr-for-archives";
+import oc_ocr_workflow from "@/content/workflows/ocr-workflow";
+
+// Phase 15 Wave C — image preprocessing
+import ip_image_deskew from "@/content/guides/image-deskew";
+import ip_image_despeckle from "@/content/guides/image-despeckle";
+import ip_image_binarization from "@/content/guides/image-binarization";
+import ip_image_thresholding from "@/content/guides/image-thresholding";
+import ip_image_noise_reduction from "@/content/guides/image-noise-reduction";
+import ip_contrast_enhancement from "@/content/guides/contrast-enhancement";
+import ip_morphological_operations from "@/content/guides/morphological-operations";
+import ip_document_cleanup from "@/content/guides/document-cleanup";
+import ip_compression_before_ocr from "@/content/guides/compression-before-ocr";
+import ip_orientation_detection from "@/content/guides/orientation-detection";
+import ip_color_normalization from "@/content/guides/color-normalization";
+import ip_border_removal from "@/content/guides/border-removal";
+import ip_blank_page_detection from "@/content/guides/blank-page-detection";
+import ip_barcode_recognition from "@/content/guides/barcode-recognition";
+import ip_qr_code_recognition from "@/content/guides/qr-code-recognition";
+
+// Phase 15 Wave D — enterprise document capture
+import ec_enterprise_document_capture from "@/content/guides/enterprise-document-capture";
+import ec_capture_servers from "@/content/guides/capture-servers";
+import ec_document_indexing from "@/content/guides/document-indexing";
+import ec_capture_metadata from "@/content/guides/capture-metadata";
+import ec_records_management from "@/content/guides/records-management";
+import ec_digital_preservation from "@/content/guides/digital-preservation";
+import ec_microfilm_digitization from "@/content/guides/microfilm-digitization";
+import ec_batch_scanning from "@/content/workflows/batch-scanning";
+import ec_capture_workflow from "@/content/workflows/capture-workflow";
+import ec_legal_document_archives from "@/content/workflows/legal-document-archives";
+import ec_medical_record_archives from "@/content/workflows/medical-record-archives";
+import ec_government_records_archives from "@/content/workflows/government-records-archives";
+import ec_records_compliance from "@/content/workflows/records-compliance";
+
+// Phase 16 Wave A — color science & color management
+import cl_color_management from "@/content/guides/color-management";
+import cl_rgb_color_model from "@/content/guides/rgb-color-model";
+import cl_lab_color from "@/content/guides/lab-color";
+import cl_xyz_color from "@/content/guides/xyz-color";
+import cl_color_spaces from "@/content/guides/color-spaces";
+import cl_rendering_intents from "@/content/guides/rendering-intents";
+import cl_gamut_mapping from "@/content/guides/gamut-mapping";
+import cl_device_independent_color from "@/content/guides/device-independent-color";
+import cl_color_calibration from "@/content/guides/color-calibration";
+import cl_printer_profiling from "@/content/guides/printer-profiling";
+import cl_soft_proofing from "@/content/guides/soft-proofing";
+import cl_hard_proofing from "@/content/guides/hard-proofing";
+import cl_monitor_to_printer_matching from "@/content/guides/monitor-to-printer-matching";
+import cl_rgb_to_cmyk_conversion from "@/content/guides/rgb-to-cmyk-conversion";
+
+// Phase 16 Wave B — screening & print imaging
+import im_amplitude_modulation_screening from "@/content/tools/amplitude-modulation-screening";
+import im_frequency_modulation_screening from "@/content/tools/frequency-modulation-screening";
+import im_error_diffusion from "@/content/tools/error-diffusion";
+import im_ordered_dithering from "@/content/tools/ordered-dithering";
+import im_screen_angles from "@/content/tools/screen-angles";
+import im_moire_patterns from "@/content/tools/moire-patterns";
+import im_dot_gain from "@/content/tools/dot-gain";
+import im_black_generation from "@/content/tools/black-generation";
+
+// Phase 16 Wave C — print-quality & defects
+import pq_print_banding from "@/content/guides/print-banding";
+import pq_ghosting from "@/content/guides/ghosting";
+import pq_print_registration from "@/content/guides/print-registration";
+import pq_ink_bleeding from "@/content/guides/ink-bleeding";
+import pq_print_mottle from "@/content/guides/print-mottle";
+import pq_streaking from "@/content/guides/streaking";
+import pq_toner_adhesion from "@/content/guides/toner-adhesion";
+import pq_nozzle_clogging from "@/content/guides/nozzle-clogging";
+import pq_paper_curl from "@/content/guides/paper-curl";
+import pq_show_through from "@/content/guides/show-through";
+import pq_gloss_differential from "@/content/guides/gloss-differential";
+import pq_color_cast from "@/content/guides/color-cast";
+import pq_background_fogging from "@/content/guides/background-fogging";
+import pq_print_quality_assessment from "@/content/guides/print-quality-assessment";
+import pq_smearing_and_set_off from "@/content/guides/smearing-and-set-off";
+
+// Phase 17 Wave A — printer components
+import cp_developer_unit from "@/content/guides/developer-unit";
+import cp_drum_cleaning_and_waste_toner from "@/content/guides/drum-cleaning-and-waste-toner";
+import cp_fuser_unit from "@/content/guides/fuser-unit";
+import cp_photoconductor_drum from "@/content/guides/photoconductor-drum";
+import cp_transfer_unit from "@/content/guides/transfer-unit";
+import cp_laser_scanner_unit from "@/content/guides/laser-scanner-unit";
+import cp_thermal_printhead from "@/content/guides/thermal-printhead";
+import cp_inkjet_printhead from "@/content/guides/inkjet-printhead";
+import cp_platen_roller from "@/content/guides/platen-roller";
+import cp_charge_roller from "@/content/guides/charge-roller";
+import cp_registration_assembly from "@/content/guides/registration-assembly";
+import cp_printhead_service_station from "@/content/guides/printhead-service-station";
+import cp_printer_control_electronics from "@/content/guides/printer-control-electronics";
+import cp_duplexing_unit from "@/content/guides/duplexing-unit";
+import cp_output_and_finishing from "@/content/guides/output-and-finishing";
+import cp_carriage_and_encoder from "@/content/guides/carriage-and-encoder";
+import cp_paper_feed_rollers from "@/content/guides/paper-feed-rollers";
+import cp_ink_delivery_system from "@/content/guides/ink-delivery-system";
+
+// Phase 17 Wave B — consumables & ink/toner types
+import cn_toner_cartridge from "@/content/guides/toner-cartridge";
+import cn_imaging_unit from "@/content/guides/imaging-unit";
+import cn_ink_cartridge from "@/content/guides/ink-cartridge";
+import cn_ink_tank_system from "@/content/guides/ink-tank-system";
+import cn_thermal_transfer_ribbon from "@/content/guides/thermal-transfer-ribbon";
+import cn_dot_matrix_ribbon from "@/content/guides/dot-matrix-ribbon";
+import cn_maintenance_kit from "@/content/guides/maintenance-kit";
+import cn_waste_toner_container from "@/content/guides/waste-toner-container";
+import cn_dye_based_ink from "@/content/guides/dye-based-ink";
+import cn_pigment_based_ink from "@/content/guides/pigment-based-ink";
+import cn_solvent_ink from "@/content/guides/solvent-ink";
+import cn_latex_ink from "@/content/guides/latex-ink";
+import cn_uv_curable_ink from "@/content/guides/uv-curable-ink";
+import cn_sublimation_ink from "@/content/guides/sublimation-ink";
+import cn_toner_composition from "@/content/guides/toner-composition";
+import cn_polymerized_toner from "@/content/guides/polymerized-toner";
+import cn_micr_toner from "@/content/guides/micr-toner";
+import cn_liquid_toner from "@/content/guides/liquid-toner";
+
+// Phase 17 Wave C — media & paper
+import pm_paper_weight_and_caliper from "@/content/guides/paper-weight-and-caliper";
+import pm_paper_grain from "@/content/guides/paper-grain";
+import pm_coated_vs_uncoated_paper from "@/content/guides/coated-vs-uncoated-paper";
+import pm_paper_finish from "@/content/guides/paper-finish";
+import pm_paper_brightness_and_whiteness from "@/content/guides/paper-brightness-and-whiteness";
+import pm_paper_opacity from "@/content/guides/paper-opacity";
+import pm_inkjet_photo_paper from "@/content/guides/inkjet-photo-paper";
+import pm_cardstock_and_cover_stock from "@/content/guides/cardstock-and-cover-stock";
+import pm_label_and_tag_media from "@/content/guides/label-and-tag-media";
+import pm_synthetic_and_specialty_media from "@/content/guides/synthetic-and-specialty-media";
+import pm_paper_sizes from "@/content/guides/paper-sizes";
+import pm_paper_grades_and_standards from "@/content/guides/paper-grades-and-standards";
+
+// Phase 18 Wave 0 — printer models (pilot)
+import mdl_hp_laserjet_original from "@/content/models/hp-laserjet-original";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -362,6 +515,149 @@ export const allEntries: ContentEntry[] = [
   sc_scan_to_email,
   sc_scan_to_folder,
   sc_scan_to_cloud,
+  // Phase 15 Wave B — OCR & recognition
+  oc_history_of_ocr,
+  oc_optical_character_recognition,
+  oc_icr,
+  oc_omr,
+  oc_handwriting_recognition,
+  oc_ocr_engines,
+  oc_ocr_accuracy,
+  oc_ocr_preprocessing,
+  oc_ocr_layout_analysis,
+  oc_ocr_limitations,
+  oc_ocr_for_forms,
+  oc_ocr_for_invoices,
+  oc_ocr_for_receipts,
+  oc_ocr_for_books,
+  oc_ocr_for_newspapers,
+  oc_ocr_for_legal_documents,
+  oc_ocr_for_healthcare,
+  oc_ocr_for_archives,
+  oc_ocr_workflow,
+  // Phase 15 Wave C — image preprocessing
+  ip_image_deskew,
+  ip_image_despeckle,
+  ip_image_binarization,
+  ip_image_thresholding,
+  ip_image_noise_reduction,
+  ip_contrast_enhancement,
+  ip_morphological_operations,
+  ip_document_cleanup,
+  ip_compression_before_ocr,
+  ip_orientation_detection,
+  ip_color_normalization,
+  ip_border_removal,
+  ip_blank_page_detection,
+  ip_barcode_recognition,
+  ip_qr_code_recognition,
+  // Phase 15 Wave D — enterprise document capture
+  ec_enterprise_document_capture,
+  ec_capture_servers,
+  ec_document_indexing,
+  ec_capture_metadata,
+  ec_records_management,
+  ec_digital_preservation,
+  ec_microfilm_digitization,
+  ec_batch_scanning,
+  ec_capture_workflow,
+  ec_legal_document_archives,
+  ec_medical_record_archives,
+  ec_government_records_archives,
+  ec_records_compliance,
+  // Phase 16 Wave A — color science & color management
+  cl_color_management,
+  cl_rgb_color_model,
+  cl_lab_color,
+  cl_xyz_color,
+  cl_color_spaces,
+  cl_rendering_intents,
+  cl_gamut_mapping,
+  cl_device_independent_color,
+  cl_color_calibration,
+  cl_printer_profiling,
+  cl_soft_proofing,
+  cl_hard_proofing,
+  cl_monitor_to_printer_matching,
+  cl_rgb_to_cmyk_conversion,
+  // Phase 16 Wave B — screening & print imaging
+  im_amplitude_modulation_screening,
+  im_frequency_modulation_screening,
+  im_error_diffusion,
+  im_ordered_dithering,
+  im_screen_angles,
+  im_moire_patterns,
+  im_dot_gain,
+  im_black_generation,
+  // Phase 16 Wave C — print-quality & defects
+  pq_print_banding,
+  pq_ghosting,
+  pq_print_registration,
+  pq_ink_bleeding,
+  pq_print_mottle,
+  pq_streaking,
+  pq_toner_adhesion,
+  pq_nozzle_clogging,
+  pq_paper_curl,
+  pq_show_through,
+  pq_gloss_differential,
+  pq_color_cast,
+  pq_background_fogging,
+  pq_print_quality_assessment,
+  pq_smearing_and_set_off,
+  // Phase 17 Wave A — printer components
+  cp_developer_unit,
+  cp_drum_cleaning_and_waste_toner,
+  cp_fuser_unit,
+  cp_photoconductor_drum,
+  cp_transfer_unit,
+  cp_laser_scanner_unit,
+  cp_thermal_printhead,
+  cp_inkjet_printhead,
+  cp_platen_roller,
+  cp_charge_roller,
+  cp_registration_assembly,
+  cp_printhead_service_station,
+  cp_printer_control_electronics,
+  cp_duplexing_unit,
+  cp_output_and_finishing,
+  cp_carriage_and_encoder,
+  cp_paper_feed_rollers,
+  cp_ink_delivery_system,
+  // Phase 17 Wave B — consumables & ink/toner types
+  cn_toner_cartridge,
+  cn_imaging_unit,
+  cn_ink_cartridge,
+  cn_ink_tank_system,
+  cn_thermal_transfer_ribbon,
+  cn_dot_matrix_ribbon,
+  cn_maintenance_kit,
+  cn_waste_toner_container,
+  cn_dye_based_ink,
+  cn_pigment_based_ink,
+  cn_solvent_ink,
+  cn_latex_ink,
+  cn_uv_curable_ink,
+  cn_sublimation_ink,
+  cn_toner_composition,
+  cn_polymerized_toner,
+  cn_micr_toner,
+  cn_liquid_toner,
+  // Phase 17 Wave C — media & paper
+  pm_paper_weight_and_caliper,
+  pm_paper_grain,
+  pm_coated_vs_uncoated_paper,
+  pm_paper_finish,
+  pm_paper_brightness_and_whiteness,
+  pm_paper_opacity,
+  pm_inkjet_photo_paper,
+  pm_cardstock_and_cover_stock,
+  pm_label_and_tag_media,
+  pm_synthetic_and_specialty_media,
+  pm_paper_sizes,
+  pm_paper_grades_and_standards,
+  // Phase 18 Wave 0 — printer models (pilot)
+  mdl_hp_laserjet_original,
   // Glossary
   gSpooler,
   gQueue,

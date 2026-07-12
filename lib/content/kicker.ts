@@ -4,6 +4,12 @@ const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 // One short, typographic eyebrow per entry, derived from its typed shape.
 export function entryKicker(e: Partial<ContentEntry> & { section: string }): string {
+  // Model pages prefer the manufacturer as their eyebrow, even when a
+  // source-backed `era` is also present.
+  if (e.section === "models")
+    return "manufacturer" in e && e.manufacturer
+      ? String(e.manufacturer)
+      : "Model";
   // `era` is present only on HistoryEntry; check shape before section
   // because section "fax" maps to both GuideEntry and HistoryEntry.
   if ("era" in e && e.era) return String(e.era);

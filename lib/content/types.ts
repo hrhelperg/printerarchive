@@ -129,6 +129,36 @@ export interface ToolEntry extends BaseEntry {
   purpose: string;
 }
 
+/**
+ * A reference page for a specific printer or fax machine model. Every spec-like
+ * field is OPTIONAL so a page can omit anything it cannot verify against an
+ * authoritative source — the source policy forbids inventing specifications.
+ * The only field made mandatory beyond BaseEntry is `sources`.
+ */
+export interface ModelEntry extends BaseEntry {
+  section: "models";
+  /** Manufacturer as printed on the device / spec sheet. Omit if unverified. */
+  manufacturer?: string;
+  /** Device class, e.g. "Laser printer", "Dot-matrix printer", "Fax machine". */
+  category?: string;
+  /** Operational-era label (e.g. "Early laser era"). Source-backed only. */
+  era?: string;
+  /** Market-introduction year/date — include ONLY if source-backed. */
+  introduced?: string;
+  /** Discontinuation year/date — include ONLY if source-backed. */
+  discontinued?: string;
+  /** Other names / model numbers the same machine shipped under. */
+  alsoKnownAs?: string[];
+  /**
+   * Flexible, self-citing spec list — preferred over fixed spec columns so any
+   * unknown spec is simply omitted. Every pair names its own source; never
+   * fabricate a value to fill a column.
+   */
+  specs?: { label: string; value: string; source: string }[];
+  /** Mandatory on model pages: at least one authoritative source. */
+  sources: { title: string; url?: string; publisher?: string }[];
+}
+
 export type ContentEntry =
   | GuideEntry
   | TroubleshootingEntry
@@ -136,4 +166,5 @@ export type ContentEntry =
   | GlossaryEntry
   | BrandEntry
   | WorkflowEntry
-  | ToolEntry;
+  | ToolEntry
+  | ModelEntry;

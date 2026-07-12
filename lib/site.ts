@@ -7,7 +7,8 @@ export type SectionId =
   | "tools"
   | "glossary"
   | "mobile-printing"
-  | "fax";
+  | "fax"
+  | "models";
 
 export interface SectionMeta {
   id: SectionId;
@@ -79,6 +80,13 @@ export const SECTIONS: SectionMeta[] = [
     title: "Fax Technology",
     description: "How fax technology works and how it evolved.",
   },
+  {
+    id: "models",
+    label: "Models",
+    title: "Printer & Fax Models",
+    description:
+      "Reference pages on specific printer and fax machine models, built only from sourced, verifiable facts.",
+  },
 ];
 
 export const site = {
@@ -103,6 +111,6 @@ export const FOOTER_GROUPS: { heading: string; ids: SectionId[] }[] = [
   { heading: "History", ids: ["history", "fax"] },
   {
     heading: "Reference",
-    ids: ["brands", "glossary", "tools", "mobile-printing"],
+    ids: ["brands", "glossary", "tools", "mobile-printing", "models"],
   },
 ];

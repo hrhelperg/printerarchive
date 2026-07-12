@@ -168,6 +168,9 @@ export function findContentIssues(entries: ContentEntry[]): string[] {
       "smart-printer",
       "fax-app",
       "pdf-editor",
+      "cv-resume",
+      "invoice-maker",
+      "pocket-manager",
     ]);
     const mt = (e as { modernTools?: unknown }).modernTools;
     if (mt !== undefined) {
@@ -190,6 +193,35 @@ export function findContentIssues(entries: ContentEntry[]): string[] {
           issues.push(
             `${key}: seeAlso ref does not resolve -> ${ref.section}/${ref.slug}`,
           );
+        }
+      }
+    }
+
+    if (e.section === "models") {
+      const src = (e as { sources?: unknown }).sources;
+      if (!Array.isArray(src) || src.length === 0) {
+        issues.push(`${key}: models entry must cite at least one source`);
+      }
+      const specs = (e as { specs?: unknown }).specs;
+      if (specs !== undefined) {
+        if (!Array.isArray(specs)) {
+          issues.push(`${key}: specs must be an array`);
+        } else {
+          for (const s of specs) {
+            if (
+              !s ||
+              typeof s !== "object" ||
+              typeof (s as { label?: unknown }).label !== "string" ||
+              typeof (s as { value?: unknown }).value !== "string" ||
+              typeof (s as { source?: unknown }).source !== "string" ||
+              !(s as { source: string }).source.trim()
+            ) {
+              issues.push(
+                `${key}: each spec must have non-empty label, value, and source`,
+              );
+              break;
+            }
+          }
         }
       }
     }

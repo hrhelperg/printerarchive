@@ -1,4 +1,11 @@
-export type ProductId = "zip-rar" | "smart-printer" | "fax-app" | "pdf-editor";
+export type ProductId =
+  | "zip-rar"
+  | "smart-printer"
+  | "fax-app"
+  | "pdf-editor"
+  | "cv-resume"
+  | "invoice-maker"
+  | "pocket-manager";
 
 export interface ProductLink {
   label: string;
@@ -59,10 +66,45 @@ export const PRODUCTS: Record<ProductId, Product> = {
   "pdf-editor": {
     id: "pdf-editor",
     name: "PDF Editor & Convert",
-    tagline: "Edit, convert, and combine PDF documents in a web browser.",
+    tagline: "Edit, convert, combine, and OCR PDF documents.",
     icon: "/images/products/pdf-editor.jpg",
     links: [
+      {
+        label: "Android",
+        href: "https://play.google.com/store/apps/details?id=com.helperg.editor.documents",
+      },
+      { label: "iOS", href: "https://apps.apple.com/app/id6747341672" },
       { label: "Open on the web", href: "https://www.pdfeditconvert.top" },
+    ],
+  },
+  "cv-resume": {
+    id: "cv-resume",
+    name: "CV Resume",
+    tagline: "Build and export a resume or CV as a PDF from a phone or tablet.",
+    links: [{ label: "iOS", href: "https://apps.apple.com/app/id6745150815" }],
+  },
+  "invoice-maker": {
+    id: "invoice-maker",
+    name: "Invoice Maker",
+    tagline: "Create invoices and billing documents and export them as PDFs.",
+    links: [
+      {
+        label: "Android",
+        href: "https://play.google.com/store/apps/details?id=com.helperg.invoicer",
+      },
+      { label: "iOS", href: "https://apps.apple.com/app/id6747311276" },
+    ],
+  },
+  "pocket-manager": {
+    id: "pocket-manager",
+    name: "Pocket Manager",
+    tagline: "Track receipts, expenses, and financial documents on a phone.",
+    links: [
+      {
+        label: "Android",
+        href: "https://play.google.com/store/apps/details?id=com.helperg.money",
+      },
+      { label: "iOS", href: "https://apps.apple.com/app/id6743084126" },
     ],
   },
 };

@@ -30,10 +30,11 @@ export const LIVE_SECTIONS: SectionId[] = [
   "glossary",
   "mobile-printing",
   "fax",
+  "models",
 ];
 
 /** Sections this taxonomy proposes but that are not yet built as routes. */
-export const PROPOSED_SECTIONS: ProposedSectionId[] = ["models"];
+export const PROPOSED_SECTIONS: ProposedSectionId[] = [];
 
 /** Products already wired into lib/products.ts. */
 export const LIVE_PRODUCTS: ProductId[] = [
@@ -41,14 +42,13 @@ export const LIVE_PRODUCTS: ProductId[] = [
   "smart-printer",
   "fax-app",
   "pdf-editor",
-];
-
-/** HELPERG app anchors proposed here that still need real store metadata. */
-export const PROPOSED_PRODUCTS: ProposedProductId[] = [
   "cv-resume",
   "invoice-maker",
   "pocket-manager",
 ];
+
+/** No app anchors remain proposed — all graduated to live ProductIds in Phase 15B. */
+export const PROPOSED_PRODUCTS: ProposedProductId[] = [];
 
 export const TAXONOMY: KgCluster[] = [
   {
@@ -1738,12 +1738,6 @@ export const TAXONOMY: KgCluster[] = [
         "title": "Photoconductor",
         "section": "glossary",
         "angle": "Defines the light-sensitive material central to electrophotographic imaging."
-      },
-      {
-        "slug": "fuser-unit",
-        "title": "Fuser Unit",
-        "section": "glossary",
-        "angle": "Defines the heated assembly that bonds toner to the page."
       }
     ],
     "crossLinks": [
@@ -1854,10 +1848,10 @@ export const TAXONOMY: KgCluster[] = [
         "type": "organization"
       }
     ],
-    "livePages": 29,
+    "livePages": 56,
     "capacity": {
-      "conservative": 26,
-      "ambitious": 44
+      "conservative": 56,
+      "ambitious": 72
     },
     "planned": [
       {
@@ -3260,7 +3254,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "An encyclopedic reference on the paper and print media consumed by printers, copiers, and fax machines: how paper weight is measured (GSM vs. basis weight), the ISO 216 and North American sizing systems, surface finishes and coatings, and specialty media such as cardstock, photo paper, labels, and transparency film. Scope is the substrate itself and its measurable, standards-defined properties, not printing mechanisms.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "ISO 216",
@@ -3343,7 +3337,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 0,
+    "livePages": 12,
     "capacity": {
       "conservative": 32,
       "ambitious": 58
@@ -3380,22 +3374,10 @@ export const TAXONOMY: KgCluster[] = [
         "angle": "Documents the ANSI/ASME Y14.1 and traditional US loose sizes and their nominal dimensions."
       },
       {
-        "slug": "coated-vs-uncoated-paper",
-        "title": "Coated vs. Uncoated Paper",
-        "section": "guides",
-        "angle": "Explains coatings, how they affect ink holdout and surface, without brand or product claims."
-      },
-      {
         "slug": "paper-finishes-matte-satin-glossy",
         "title": "Paper Finishes: Matte, Satin, and Glossy",
         "section": "guides",
         "angle": "Describes common surface finishes and where each is typically used."
-      },
-      {
-        "slug": "paper-brightness-and-whiteness",
-        "title": "Paper Brightness and Whiteness Explained",
-        "section": "guides",
-        "angle": "Distinguishes ISO 2470 brightness from CIE whiteness and the role of optical brighteners."
       },
       {
         "slug": "paper-opacity-and-show-through",
@@ -3530,7 +3512,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "An encyclopedic, vendor-neutral cluster explaining the ink and colorant technologies used in consumer and office printing: dye-based versus pigment-based inks, cartridge versus refillable-tank delivery systems, and the underlying chemistry of how ink is formulated, deposited, dries, and lasts on paper. It centers on durable, standards-referenced knowledge (colorants, vehicles, droplet formation, permanence) rather than product comparisons, prices, or brand claims.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "Dye-based ink",
@@ -3613,7 +3595,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 0,
+    "livePages": 10,
     "capacity": {
       "conservative": 24,
       "ambitious": 38
@@ -3770,7 +3752,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "An encyclopedic guides-and-glossary cluster explaining how dry electrophotographic toner works: its physical composition, how it is charged and developed, transferred, and fused to paper, plus the cartridge, drum, and cleaning subsystems that store and meter it. It also covers durable yield concepts grounded in published ISO/IEC standards and vendor-neutral terminology, without prices, brand rankings, or fabricated specifications.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "Toner",
@@ -3853,7 +3835,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 0,
+    "livePages": 7,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
@@ -3980,12 +3962,6 @@ export const TAXONOMY: KgCluster[] = [
         "angle": "Concise glossary definition of rated page yield and its relationship to standardized test conditions."
       },
       {
-        "slug": "developer-unit",
-        "title": "Developer Unit",
-        "section": "glossary",
-        "angle": "Concise glossary definition of the developer subsystem that charges and delivers toner to the drum."
-      },
-      {
         "slug": "waste-toner",
         "title": "Waste Toner",
         "section": "glossary",
@@ -4016,7 +3992,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "An encyclopedic reference on keeping printers and scanners in good working order: cleaning print heads and scanner glass, calibrating and aligning, caring for and replacing consumables (ink, toner, drum, fuser), and preventive maintenance routines. Scope is care and upkeep, distinct from connectivity or device-not-found troubleshooting.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "ISO",
@@ -4099,7 +4075,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 0,
+    "livePages": 15,
     "capacity": {
       "conservative": 26,
       "ambitious": 44
@@ -6746,7 +6722,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "An encyclopedic cluster explaining optical character recognition: how the recognition pipeline turns scanned page images into machine-readable text, what governs accuracy, how searchable output and text layers are produced, and how languages, scripts, and layout are handled. Standards-first and vendor-neutral, covering OCR output formats (searchable PDF text layers, hOCR, ALTO XML) and adjacent recognition types (ICR, OMR) without benchmarks, rankings, or invented accuracy figures.",
     "appAnchor": "pdf-editor",
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "Optical Character Recognition",
@@ -6829,7 +6805,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 0,
+    "livePages": 34,
     "capacity": {
       "conservative": 26,
       "ambitious": 42
@@ -7069,7 +7045,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "product"
       }
     ],
-    "livePages": 1,
+    "livePages": 7,
     "capacity": {
       "conservative": 42,
       "ambitious": 75
@@ -7244,7 +7220,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "Vendor-neutral, standards-first coverage of how organizations move paper and digital documents through repeatable office processes: capture and scanning, approval routing, indexing and metadata, records retention, archival formats, redaction, and electronic signing. Focused on durable concepts and published standards rather than any specific product or software.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "ISO 15489",
@@ -7327,7 +7303,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "organization"
       }
     ],
-    "livePages": 0,
+    "livePages": 2,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
@@ -7455,7 +7431,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "An encyclopedic cluster on long-term digital document preservation: archival file formats (PDF/A, TIFF, JPEG 2000), file integrity and fixity checking, format obsolescence and migration, preservation metadata, and the standards and reference models (ISO 19005, ISO 14721/OAIS) that underpin trustworthy digital archives. It centers on durable, vendor-neutral practices for keeping scanned and born-digital documents readable over decades.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "PDF/A",
@@ -7538,7 +7514,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "technology"
       }
     ],
-    "livePages": 0,
+    "livePages": 2,
     "capacity": {
       "conservative": 26,
       "ambitious": 42
@@ -7694,7 +7670,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "Practical and historical coverage of building and organising digital document archives from scanned and born-digital files: folder and naming conventions, descriptive metadata, preservation-grade formats, integrity verification, retention, backup, and retrieval. It treats a document as a record with a lifecycle and focuses on the durable problem of finding and trusting a file years after it was stored, grounded in real preservation and records-management standards.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "PDF/A (ISO 19005)",
@@ -7777,7 +7753,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "technology"
       }
     ],
-    "livePages": 0,
+    "livePages": 3,
     "capacity": {
       "conservative": 26,
       "ambitious": 42
@@ -8729,7 +8705,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "standard"
       }
     ],
-    "livePages": 12,
+    "livePages": 26,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
@@ -9766,7 +9742,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "Neutral, encyclopedic reference overviews of historically notable printers and print engines — each covering only durable, well-documented facts (printing method, interface, role in printing history) with no reviews, ratings, prices, or performance benchmarks. These pages populate a proposed new \"models\" section and interlink with the existing brands and history sections.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "HP LaserJet",
@@ -9849,18 +9825,12 @@ export const TAXONOMY: KgCluster[] = [
         "type": "technology"
       }
     ],
-    "livePages": 0,
+    "livePages": 1,
     "capacity": {
       "conservative": 26,
       "ambitious": 44
     },
     "planned": [
-      {
-        "slug": "hp-laserjet-original",
-        "title": "HP LaserJet (Original)",
-        "section": "models",
-        "angle": "The first widely adopted desktop laser printer and its role in bringing laser output to offices, described conceptually with method and interface only."
-      },
       {
         "slug": "apple-laserwriter",
         "title": "Apple LaserWriter",

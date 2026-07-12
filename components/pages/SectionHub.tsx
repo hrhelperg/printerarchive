@@ -174,6 +174,12 @@ const HUB_PROFILE: Record<SectionId, HubProfile> = {
     },
     tone: "sepia",
   },
+  models: {
+    framing:
+      "Reference pages for individual printer and fax machine models. Each page records only what can be verified against an authoritative source — manufacturer spec sheets, museum and archive records, or standards documentation — and omits any figure it cannot cite.",
+    significance:
+      "Model pages are where the archive's brands, technologies, and eras converge on a specific object. They anchor the general history to the machines people actually used, without inventing a single unverified specification.",
+  },
 };
 
 export function hubMetadata(section: SectionId): Metadata {
