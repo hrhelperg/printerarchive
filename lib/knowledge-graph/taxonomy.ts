@@ -30,10 +30,11 @@ export const LIVE_SECTIONS: SectionId[] = [
   "glossary",
   "mobile-printing",
   "fax",
+  "models",
 ];
 
 /** Sections this taxonomy proposes but that are not yet built as routes. */
-export const PROPOSED_SECTIONS: ProposedSectionId[] = ["models"];
+export const PROPOSED_SECTIONS: ProposedSectionId[] = [];
 
 /** Products already wired into lib/products.ts. */
 export const LIVE_PRODUCTS: ProductId[] = [
@@ -9741,7 +9742,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "Neutral, encyclopedic reference overviews of historically notable printers and print engines — each covering only durable, well-documented facts (printing method, interface, role in printing history) with no reviews, ratings, prices, or performance benchmarks. These pages populate a proposed new \"models\" section and interlink with the existing brands and history sections.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "HP LaserJet",
@@ -9824,18 +9825,12 @@ export const TAXONOMY: KgCluster[] = [
         "type": "technology"
       }
     ],
-    "livePages": 0,
+    "livePages": 1,
     "capacity": {
       "conservative": 26,
       "ambitious": 44
     },
     "planned": [
-      {
-        "slug": "hp-laserjet-original",
-        "title": "HP LaserJet (Original)",
-        "section": "models",
-        "angle": "The first widely adopted desktop laser printer and its role in bringing laser output to offices, described conceptually with method and interface only."
-      },
       {
         "slug": "apple-laserwriter",
         "title": "Apple LaserWriter",

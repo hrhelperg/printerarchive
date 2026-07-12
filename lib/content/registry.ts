@@ -323,6 +323,9 @@ import pm_synthetic_and_specialty_media from "@/content/guides/synthetic-and-spe
 import pm_paper_sizes from "@/content/guides/paper-sizes";
 import pm_paper_grades_and_standards from "@/content/guides/paper-grades-and-standards";
 
+// Phase 18 Wave 0 — printer models (pilot)
+import mdl_hp_laserjet_original from "@/content/models/hp-laserjet-original";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -653,6 +656,8 @@ export const allEntries: ContentEntry[] = [
   pm_synthetic_and_specialty_media,
   pm_paper_sizes,
   pm_paper_grades_and_standards,
+  // Phase 18 Wave 0 — printer models (pilot)
+  mdl_hp_laserjet_original,
   // Glossary
   gSpooler,
   gQueue,
