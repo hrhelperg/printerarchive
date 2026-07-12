@@ -28,16 +28,16 @@ function isTrouble(e: ContentEntry): e is TroubleshootingEntry {
 
 function Card({ e }: { e: TroubleshootingEntry }) {
   return (
-    <li className="bg-paper">
+    <li>
       <Link
         href={`/troubleshooting/${e.slug}`}
-        className="group flex h-full flex-col p-6 no-underline transition-colors hover:bg-paper-raised"
+        className="premium-card-sm group flex h-full flex-col p-6 no-underline transition hover:border-rule-strong"
       >
-        <span className="text-sm text-ink-soft text-pretty">{e.symptom}</span>
-        <span className="mt-3 font-serif text-base tracking-tight text-ink group-hover:text-accent">
+        <span className="text-sm leading-6 text-ink-soft text-pretty">{e.symptom}</span>
+        <span className="mt-3 font-sans text-base font-semibold leading-6 text-ink-display group-hover:text-accent">
           {e.title}
         </span>
-        <span className="mt-2 font-sans text-xs uppercase tracking-wide text-ink-faint">
+        <span className="mt-3 font-sans text-xs font-semibold text-ink-faint">
           Read the guide &rarr;
         </span>
       </Link>
@@ -62,7 +62,7 @@ export function DiagnosticGroups({ items }: { items: ContentEntry[] }) {
         return (
           <section key={g.label} aria-label={g.label}>
             <p className="kicker">{g.label}</p>
-            <ul className="mt-4 grid gap-px border border-rule bg-rule sm:grid-cols-2">
+            <ul className="mt-4 grid gap-4 sm:grid-cols-2">
               {groupEntries.map((e) => (
                 <Card key={e.slug} e={e} />
               ))}
@@ -73,7 +73,7 @@ export function DiagnosticGroups({ items }: { items: ContentEntry[] }) {
       {unmapped.length > 0 ? (
         <section aria-label="More troubleshooting">
           <p className="kicker">More troubleshooting</p>
-          <ul className="mt-4 grid gap-px border border-rule bg-rule sm:grid-cols-2">
+          <ul className="mt-4 grid gap-4 sm:grid-cols-2">
             {unmapped.map((e) => (
               <Card key={e.slug} e={e} />
             ))}

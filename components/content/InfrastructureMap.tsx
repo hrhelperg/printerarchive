@@ -60,17 +60,17 @@ export function InfrastructureMap() {
         These reference entries document the infrastructure beneath the
         visible printer.
       </p>
-      <ul className="mt-8 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {MAP.map((m) => (
-          <li key={m.href} className="bg-paper">
+          <li key={m.href}>
             <Link
               href={m.href}
-              className="group flex h-full flex-col p-6 no-underline transition-colors hover:bg-paper-raised"
+              className="premium-card-sm group flex h-full flex-col p-6 no-underline transition hover:border-rule-strong"
             >
-              <span className="font-serif text-lg tracking-tight text-ink group-hover:text-accent">
+              <span className="font-sans text-base font-semibold leading-6 text-ink-display group-hover:text-accent">
                 {m.label}
               </span>
-              <span className="mt-1.5 text-sm text-ink-soft text-pretty">
+              <span className="mt-2 text-sm leading-6 text-ink-soft text-pretty">
                 {m.note}
               </span>
             </Link>

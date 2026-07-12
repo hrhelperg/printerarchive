@@ -32,19 +32,21 @@ export function Frontispiece({
   const surface = tone === "sepia" ? "bg-sepia" : "bg-paper-raised";
   return (
     <section
-      className={`surface-grain ${surface} border-y border-rule-strong fade-up`}
+      className={`${surface} border-y border-rule fade-up`}
     >
-      <div className="mx-auto grid w-full max-w-6xl gap-8 px-5 py-16 sm:px-6 lg:grid-cols-[1.5fr_1fr] lg:items-center lg:px-8 lg:py-20">
+      <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1.35fr_0.95fr] lg:items-center lg:px-8 lg:py-16">
         <div>
           {kicker ? <p className="kicker">{kicker}</p> : null}
           <h1 className={`mt-3 text-balance ${titleClassName}`}>{title}</h1>
           {lede ? (
-            <p className="mt-5 max-w-2xl font-serif text-lg text-ink-soft text-pretty">
+            <p className="mt-5 max-w-3xl font-serif text-xl leading-8 text-ink-soft text-pretty">
               {lede}
             </p>
           ) : null}
           {meta ? (
-            <p className="mt-5 font-sans text-xs text-ink-faint">{meta}</p>
+            <p className="mt-6 inline-flex rounded-full border border-rule bg-paper px-3 py-1.5 font-sans text-xs font-semibold text-ink-faint shadow-[0_1px_2px_rgb(15_23_42_/_0.04)]">
+              {meta}
+            </p>
           ) : null}
         </div>
         <div className="lg:justify-self-end">
@@ -54,12 +56,13 @@ export function Frontispiece({
               preload={preload}
               sizes="(max-width: 1024px) 100vw, 420px"
               noMargin
-              className="w-full max-w-md"
+              raised
+              className="w-full max-w-lg"
             />
           ) : (
             <div
               aria-hidden
-              className="flex aspect-[4/3] w-full max-w-md items-center justify-center border border-rule-strong bg-paper-raised"
+              className="premium-card flex aspect-[4/3] w-full max-w-lg items-center justify-center"
             >
               <Motif className="h-20 w-20 text-rule-strong" />
             </div>

@@ -44,7 +44,7 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
               <h2
                 key={i}
                 id={id}
-                className="mt-14 mb-3 scroll-mt-24 font-serif text-2xl tracking-tight text-balance"
+                className="mt-16 mb-4 scroll-mt-32 font-serif text-3xl leading-tight text-ink-display text-balance"
               >
                 {b.text}
               </h2>
@@ -52,7 +52,7 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
               <h3
                 key={i}
                 id={id}
-                className="mt-8 mb-2 scroll-mt-24 font-serif text-xl text-balance"
+                className="mt-9 mb-3 scroll-mt-32 font-serif text-2xl leading-tight text-ink-display text-balance"
               >
                 {b.text}
               </h3>
@@ -151,14 +151,14 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
             return <Figure key={i} image={b.image} />;
           case "table":
             return (
-              <figure key={i} className="my-6 overflow-x-auto">
+              <figure key={i} className="premium-card-sm my-8 overflow-x-auto p-3">
                 <table className="w-full border-collapse text-sm">
                   <thead>
                     <tr>
                       {b.headers.map((h, j) => (
                         <th
                           key={j}
-                          className="border border-rule bg-paper-raised px-3 py-2 text-left font-sans"
+                          className="border border-rule bg-sepia px-3 py-2 text-left font-sans"
                         >
                           {h}
                         </th>

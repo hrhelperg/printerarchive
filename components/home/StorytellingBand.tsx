@@ -63,7 +63,10 @@ export function StorytellingBand({
               </p>
             ))}
             <p className="mt-6 font-sans text-sm">
-              <Link href={href} className="no-underline hover:underline">
+              <Link
+                href={href}
+                className="inline-flex rounded-lg border border-rule bg-paper-raised px-4 py-2 font-semibold text-ink-soft no-underline shadow-[0_1px_2px_rgb(15_23_42_/_0.04)] transition-colors hover:border-accent hover:text-accent"
+              >
                 {hrefLabel}
               </Link>
             </p>
@@ -74,6 +77,7 @@ export function StorytellingBand({
                 image={image}
                 sizes="(max-width: 1024px) 100vw, 480px"
                 noMargin
+                raised
                 className="w-full max-w-md"
               />
             ) : (

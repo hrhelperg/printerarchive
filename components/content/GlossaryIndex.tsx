@@ -20,15 +20,15 @@ export function GlossaryIndex({ items }: { items: ContentEntry[] }) {
   return (
     <div className="mt-10">
       <p className="kicker">A&ndash;Z reference index</p>
-      <div className="mt-6 divide-y divide-rule border-y border-rule">
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
         {letters.map((letter) => (
           <section
             key={letter}
             aria-label={`Terms starting with ${letter}`}
-            className="grid gap-4 py-6 md:grid-cols-[3rem_1fr]"
+            className="premium-card-sm grid gap-4 p-5 md:grid-cols-[3rem_1fr]"
           >
             <p
-              className="font-serif text-3xl leading-none text-rule-strong"
+              className="font-sans text-3xl font-semibold leading-none text-accent"
               aria-hidden
             >
               {letter}
@@ -45,12 +45,12 @@ export function GlossaryIndex({ items }: { items: ContentEntry[] }) {
                         href={`/glossary/${t.slug}`}
                         className="group no-underline"
                       >
-                        <span className="font-serif text-lg tracking-tight text-ink group-hover:text-accent">
+                        <span className="font-sans text-base font-semibold text-ink-display group-hover:text-accent">
                           {t.term}
                         </span>
                       </Link>
                     </dt>
-                    <dd className="mt-1 text-sm text-ink-soft text-pretty">
+                    <dd className="mt-1 text-sm leading-6 text-ink-soft text-pretty">
                       {t.shortDefinition}
                     </dd>
                   </div>

@@ -1,24 +1,26 @@
 import type { ArchiveImage as ArchiveImageData } from "@/lib/content/types";
 import { HomeHero } from "@/components/home/HomeHero";
-import { ThenNow } from "@/components/home/ThenNow";
+import { HomeArchivePanels } from "@/components/home/HomeArchivePanels";
 import { CategoryGrid } from "@/components/home/CategoryGrid";
 import { EraRail } from "@/components/home/EraRail";
 import { OfficeInfraRail } from "@/components/home/OfficeInfraRail";
 import { FeaturedBand } from "@/components/home/FeaturedBand";
 import { FeaturedStories } from "@/components/home/FeaturedStories";
+import { ProductEcosystem } from "@/components/home/ProductEcosystem";
+import { ThenNow } from "@/components/home/ThenNow";
 import { ClosingBand } from "@/components/home/ClosingBand";
 
 const HERO_IMAGE: ArchiveImageData = {
-  src: "/images/home/archival-highlights-bound-printout.jpg",
-  alt: "Bound stack of green-and-white-banded continuous-form computer printout",
-  width: 1232,
-  height: 1810,
+  src: "/images/home/now-hp-laserjet-i.jpg",
+  alt: "Original HP LaserJet laser printer photographed against a neutral background",
+  width: 1600,
+  height: 1066,
   caption:
-    "Bound continuous-form printout — the green-bar paper that defined two decades of office and data-center output.",
+    "HP LaserJet (1984) — the inflection point at which laser printing became a desk-side technology.",
   credit: {
-    source: "ArnoldReinhold, Wikimedia Commons",
-    url: "https://commons.wikimedia.org/wiki/File:Bound_computer_printout.agr.jpg",
-    license: "CC BY-SA 3.0",
+    source: "Atomic Taco, Wikimedia Commons",
+    url: "https://commons.wikimedia.org/wiki/File:HP_LaserJet_I_(12935740974).jpg",
+    license: "CC BY-SA 2.0",
   },
 };
 
@@ -26,17 +28,20 @@ export default function HomePage() {
   return (
     <>
       <HomeHero image={HERO_IMAGE} />
-      <ThenNow />
+      <HomeArchivePanels />
+      <CategoryGrid
+        kicker="Browse by category"
+        title="Ten ways into printing, scanning, fax, and document systems"
+      />
       <EraRail />
       <FeaturedStories />
+      <ThenNow />
       <FeaturedBand section="history" />
+      <FeaturedBand section="guides" />
       <FeaturedBand section="fax" />
       <FeaturedBand section="brands" />
       <OfficeInfraRail />
-      <CategoryGrid
-        kicker="Continue browsing"
-        title="The whole archive in nine sections"
-      />
+      <ProductEcosystem />
       <ClosingBand />
     </>
   );

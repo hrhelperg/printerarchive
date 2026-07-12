@@ -34,16 +34,16 @@ export function MobileHandoff() {
         Mobile printing replaced the installed driver with network discovery.
         The document still reaches paper; the path it takes is what changed.
       </p>
-      <ol className="mt-8 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-4">
+      <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {STAGES.map((s) => (
-          <li key={s.n} className="flex h-full flex-col bg-paper p-6">
-            <span className="font-serif text-2xl leading-none text-rule-strong">
+          <li key={s.n} className="premium-card-sm flex h-full flex-col p-6">
+            <span className="font-sans text-2xl font-semibold leading-none text-accent">
               {String(s.n).padStart(2, "0")}
             </span>
-            <span className="mt-3 font-serif text-base tracking-tight text-ink">
+            <span className="mt-3 font-sans text-base font-semibold leading-6 text-ink-display">
               {s.label}
             </span>
-            <span className="mt-1.5 text-sm text-ink-soft text-pretty">
+            <span className="mt-2 text-sm leading-6 text-ink-soft text-pretty">
               {s.text}
             </span>
           </li>
