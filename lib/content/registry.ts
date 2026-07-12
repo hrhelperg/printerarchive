@@ -349,6 +349,26 @@ import mdl_tektronix_phaser_solid_ink from "@/content/models/tektronix-phaser-so
 import mdl_hp_7475a_plotter from "@/content/models/hp-7475a-plotter";
 import mdl_hp_officejet_original from "@/content/models/hp-officejet-original";
 
+// Phase 18 Wave 2 — additional well-documented printer models
+import mdl_hp_laserjet_iii from "@/content/models/hp-laserjet-iii";
+import mdl_hp_laserjet_5 from "@/content/models/hp-laserjet-5";
+import mdl_apple_laserwriter_ii from "@/content/models/apple-laserwriter-ii";
+import mdl_hp_deskjet_500 from "@/content/models/hp-deskjet-500";
+import mdl_epson_stylus_color from "@/content/models/epson-stylus-color";
+import mdl_canon_bjc_4000 from "@/content/models/canon-bjc-4000";
+import mdl_hp_designjet_original from "@/content/models/hp-designjet-original";
+import mdl_ibm_proprinter from "@/content/models/ibm-proprinter";
+import mdl_epson_lq_1500 from "@/content/models/epson-lq-1500";
+import mdl_nec_spinwriter from "@/content/models/nec-spinwriter";
+import mdl_ibm_1443 from "@/content/models/ibm-1443";
+import mdl_hp_7550a_plotter from "@/content/models/hp-7550a-plotter";
+import mdl_lexmark_optra from "@/content/models/lexmark-optra";
+import mdl_oki_okipage from "@/content/models/oki-okipage";
+import mdl_star_gemini_10x from "@/content/models/star-gemini-10x";
+import mdl_panasonic_kx_p1124 from "@/content/models/panasonic-kx-p1124";
+import mdl_hp_color_laserjet_original from "@/content/models/hp-color-laserjet-original";
+import mdl_hp_laserjet_1100 from "@/content/models/hp-laserjet-1100";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -703,6 +723,25 @@ export const allEntries: ContentEntry[] = [
   mdl_tektronix_phaser_solid_ink,
   mdl_hp_7475a_plotter,
   mdl_hp_officejet_original,
+  // Phase 18 Wave 2 — additional well-documented printer models
+  mdl_hp_laserjet_iii,
+  mdl_hp_laserjet_5,
+  mdl_apple_laserwriter_ii,
+  mdl_hp_deskjet_500,
+  mdl_epson_stylus_color,
+  mdl_canon_bjc_4000,
+  mdl_hp_designjet_original,
+  mdl_ibm_proprinter,
+  mdl_epson_lq_1500,
+  mdl_nec_spinwriter,
+  mdl_ibm_1443,
+  mdl_hp_7550a_plotter,
+  mdl_lexmark_optra,
+  mdl_oki_okipage,
+  mdl_star_gemini_10x,
+  mdl_panasonic_kx_p1124,
+  mdl_hp_color_laserjet_original,
+  mdl_hp_laserjet_1100,
   // Glossary
   gSpooler,
   gQueue,
