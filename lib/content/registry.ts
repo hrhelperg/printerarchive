@@ -289,6 +289,26 @@ import cp_carriage_and_encoder from "@/content/guides/carriage-and-encoder";
 import cp_paper_feed_rollers from "@/content/guides/paper-feed-rollers";
 import cp_ink_delivery_system from "@/content/guides/ink-delivery-system";
 
+// Phase 17 Wave B — consumables & ink/toner types
+import cn_toner_cartridge from "@/content/guides/toner-cartridge";
+import cn_imaging_unit from "@/content/guides/imaging-unit";
+import cn_ink_cartridge from "@/content/guides/ink-cartridge";
+import cn_ink_tank_system from "@/content/guides/ink-tank-system";
+import cn_thermal_transfer_ribbon from "@/content/guides/thermal-transfer-ribbon";
+import cn_dot_matrix_ribbon from "@/content/guides/dot-matrix-ribbon";
+import cn_maintenance_kit from "@/content/guides/maintenance-kit";
+import cn_waste_toner_container from "@/content/guides/waste-toner-container";
+import cn_dye_based_ink from "@/content/guides/dye-based-ink";
+import cn_pigment_based_ink from "@/content/guides/pigment-based-ink";
+import cn_solvent_ink from "@/content/guides/solvent-ink";
+import cn_latex_ink from "@/content/guides/latex-ink";
+import cn_uv_curable_ink from "@/content/guides/uv-curable-ink";
+import cn_sublimation_ink from "@/content/guides/sublimation-ink";
+import cn_toner_composition from "@/content/guides/toner-composition";
+import cn_polymerized_toner from "@/content/guides/polymerized-toner";
+import cn_micr_toner from "@/content/guides/micr-toner";
+import cn_liquid_toner from "@/content/guides/liquid-toner";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -587,6 +607,25 @@ export const allEntries: ContentEntry[] = [
   cp_carriage_and_encoder,
   cp_paper_feed_rollers,
   cp_ink_delivery_system,
+  // Phase 17 Wave B — consumables & ink/toner types
+  cn_toner_cartridge,
+  cn_imaging_unit,
+  cn_ink_cartridge,
+  cn_ink_tank_system,
+  cn_thermal_transfer_ribbon,
+  cn_dot_matrix_ribbon,
+  cn_maintenance_kit,
+  cn_waste_toner_container,
+  cn_dye_based_ink,
+  cn_pigment_based_ink,
+  cn_solvent_ink,
+  cn_latex_ink,
+  cn_uv_curable_ink,
+  cn_sublimation_ink,
+  cn_toner_composition,
+  cn_polymerized_toner,
+  cn_micr_toner,
+  cn_liquid_toner,
   // Glossary
   gSpooler,
   gQueue,

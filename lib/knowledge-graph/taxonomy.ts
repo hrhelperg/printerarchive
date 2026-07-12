@@ -1847,10 +1847,10 @@ export const TAXONOMY: KgCluster[] = [
         "type": "organization"
       }
     ],
-    "livePages": 55,
+    "livePages": 56,
     "capacity": {
-      "conservative": 55,
-      "ambitious": 70
+      "conservative": 56,
+      "ambitious": 72
     },
     "planned": [
       {
@@ -3523,7 +3523,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "An encyclopedic, vendor-neutral cluster explaining the ink and colorant technologies used in consumer and office printing: dye-based versus pigment-based inks, cartridge versus refillable-tank delivery systems, and the underlying chemistry of how ink is formulated, deposited, dries, and lasts on paper. It centers on durable, standards-referenced knowledge (colorants, vehicles, droplet formation, permanence) rather than product comparisons, prices, or brand claims.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "Dye-based ink",
@@ -3606,7 +3606,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 0,
+    "livePages": 10,
     "capacity": {
       "conservative": 24,
       "ambitious": 38
@@ -3763,7 +3763,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "An encyclopedic guides-and-glossary cluster explaining how dry electrophotographic toner works: its physical composition, how it is charged and developed, transferred, and fused to paper, plus the cartridge, drum, and cleaning subsystems that store and meter it. It also covers durable yield concepts grounded in published ISO/IEC standards and vendor-neutral terminology, without prices, brand rankings, or fabricated specifications.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "Toner",
@@ -3846,7 +3846,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 0,
+    "livePages": 7,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
