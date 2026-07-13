@@ -41,7 +41,7 @@ export function FeaturedStories() {
   if (!lead) return null;
 
   return (
-    <section className="border-t border-rule">
+    <section className="border-t border-rule bg-paper-raised">
       <Container width="wide" className="py-16">
         <p className="kicker">Featured archival stories</p>
         <h2 className="mt-2 text-display-sm text-balance">
@@ -62,7 +62,7 @@ export function FeaturedStories() {
           >
             <div>
               <span className="kicker">{entryKicker(lead)}</span>
-              <h3 className="mt-2 font-serif text-2xl tracking-tight text-ink group-hover:text-accent md:text-3xl">
+              <h3 className="mt-2 font-serif text-2xl text-ink-display group-hover:text-accent md:text-3xl">
                 {lead.title}
               </h3>
               <p className="mt-3 max-w-xl text-ink-soft text-pretty">
@@ -72,7 +72,7 @@ export function FeaturedStories() {
                 Read the story →
               </p>
             </div>
-            <div className="relative aspect-[3/2] w-full overflow-hidden border border-rule bg-paper-raised">
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-lg border border-rule bg-paper">
               <Image
                 src={LEAD_THUMB.src}
                 alt={LEAD_THUMB.alt}
@@ -86,15 +86,15 @@ export function FeaturedStories() {
         </div>
 
         {/* Secondary cards (text-only) */}
-        <ul className="mt-6 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {rest.map((e) => (
-            <li key={`${e.section}/${e.slug}`} className="bg-paper">
+            <li key={`${e.section}/${e.slug}`}>
               <Link
                 href={`/${e.section}/${e.slug}`}
-                className="group flex h-full flex-col p-6 no-underline transition-colors hover:bg-paper-raised"
+                className="premium-card-sm group flex h-full flex-col p-6 no-underline transition hover:border-rule-strong"
               >
                 <span className="kicker">{entryKicker(e)}</span>
-                <span className="mt-2 font-serif text-lg tracking-tight text-ink group-hover:text-accent">
+                <span className="mt-2 font-sans text-lg font-semibold leading-6 text-ink-display group-hover:text-accent">
                   {e.title}
                 </span>
                 <span className="mt-1.5 text-sm text-ink-soft text-pretty">

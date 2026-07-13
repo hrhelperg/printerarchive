@@ -6,7 +6,7 @@ interface SourceCalloutProps {
 
 export function SourceCallout({ text, attribution, source }: SourceCalloutProps) {
   return (
-    <aside className="my-8 border-l-2 border-rule-strong bg-paper-raised px-6 py-5">
+    <aside className="premium-card-sm my-8 border-l-2 border-l-accent px-6 py-5">
       <p className="font-serif text-lg italic leading-snug text-ink text-pretty">
         &ldquo;{text}&rdquo;
       </p>

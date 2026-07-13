@@ -4,25 +4,9 @@ interface LogomarkProps {
 }
 
 /**
- * Primary PrinterArchive mark. Single-colour SVG (uses currentColor).
- * 24×24 viewBox. Decorative by default (aria-hidden); pass
- * `accessibleName` only when the mark is the link's accessible name.
- *
- * Geometry — printer/document archive identity in three elements:
- *   1. A document sheet (11×12.5 rounded rect at 6.5,3) — "document
- *      framing", the archived page.
- *   2. Three text rules inside the sheet (the last ragged-short) — the
- *      page carries text, reading clearly as a document rather than a
- *      blank card.
- *   3. A solid output-tray bar (17 wide at the base) — "output tray /
- *      paper feed": the sheet sits on the platen the printed page
- *      emerges onto. The solid mass anchors the mark at favicon sizes.
- *
- * 16px legibility: the solid base bar maps to ~5×11 device pixels of
- * anchored mass that survives sub-pixel rasterisation; the favicon
- * variant (app/icon.svg) drops to two heavier text rules so the
- * interior never muddies at 16/32px. Monochrome-first, no gradient,
- * no glow — premium archival register.
+ * Primary PrinterArchive mark. Single-colour SVG using currentColor:
+ * stacked sheets, a printer body, and an output tray. It reads as
+ * archive + printer without becoming illustrative.
  */
 export function Logomark({ className = "", accessibleName }: LogomarkProps) {
   const a11y = accessibleName
@@ -36,23 +20,34 @@ export function Logomark({ className = "", accessibleName }: LogomarkProps) {
       className={className}
       {...a11y}
     >
-      <rect
-        x="6.5"
-        y="3"
-        width="11"
-        height="12.5"
-        rx="0.5"
+      <path
+        d="M7.25 3.75h7.6l2.9 2.9v3.1H7.25z"
         stroke="currentColor"
-        strokeWidth="1.5"
-        fill="none"
+        strokeWidth="1.45"
+        strokeLinejoin="round"
       />
       <path
-        d="M9 6.75h6M9 9.5h6M9 12.25h3.5"
+        d="M14.85 3.75v2.9h2.9"
         stroke="currentColor"
-        strokeWidth="1.3"
+        strokeWidth="1.45"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5.4 9.6h13.2a2 2 0 0 1 2 2v5.15H3.4V11.6a2 2 0 0 1 2-2Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7.4 16.75h9.2v3.5H7.4z"
+        fill="currentColor"
+      />
+      <path
+        d="M8.6 12.55h6.8M6.65 19.95h10.7"
+        stroke="currentColor"
+        strokeWidth="1.35"
         strokeLinecap="round"
       />
-      <rect x="3.5" y="17.75" width="17" height="2.75" rx="0.75" fill="currentColor" />
     </svg>
   );
 }

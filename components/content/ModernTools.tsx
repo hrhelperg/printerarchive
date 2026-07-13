@@ -12,15 +12,15 @@ export function ModernTools({ products }: ModernToolsProps) {
   return (
     <section
       aria-labelledby="modern-tools"
-      className="mt-12 border-t border-rule pt-8"
+      className="mt-14 border-t border-rule pt-8"
     >
       <h2
         id="modern-tools"
-        className="font-sans text-xs font-semibold uppercase tracking-wider text-ink-soft"
+        className="font-serif text-3xl leading-tight text-ink-display"
       >
         Modern tools
       </h2>
-      <p className="mt-2 text-sm text-ink-faint text-pretty">
+      <p className="mt-2 text-sm leading-6 text-ink-faint text-pretty">
         Contemporary apps for the same task, published by HELPERG LLC — the
         publisher of this archive.
       </p>
@@ -28,7 +28,7 @@ export function ModernTools({ products }: ModernToolsProps) {
         {resolved.map((p) => (
           <li
             key={p.id}
-            className="flex h-full flex-col border border-rule bg-paper-raised p-5 transition-colors hover:border-rule-strong"
+            className="premium-card-sm flex h-full flex-col p-5 transition hover:border-rule-strong hover:shadow-[0_10px_26px_rgb(15_23_42_/_0.08)]"
           >
             <div className="flex items-center gap-3">
               {p.icon ? (
@@ -44,11 +44,11 @@ export function ModernTools({ products }: ModernToolsProps) {
                   <ProductGlyph id={p.id} className="h-5 w-5" />
                 </span>
               )}
-              <p className="font-serif text-lg tracking-tight text-ink">
+              <p className="font-sans text-lg font-semibold text-ink-display">
                 {p.name}
               </p>
             </div>
-            <p className="mt-1.5 flex-1 text-sm text-ink-soft text-pretty">
+            <p className="mt-3 flex-1 text-sm leading-6 text-ink-soft text-pretty">
               {p.tagline}
             </p>
             <p className="mt-4 flex flex-wrap gap-2">
@@ -58,7 +58,7 @@ export function ModernTools({ products }: ModernToolsProps) {
                   href={l.href}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
-                  className="inline-flex items-center border border-rule bg-paper px-2.5 py-1 font-sans text-xs text-ink-soft no-underline transition-colors hover:border-ink hover:text-ink"
+                  className="inline-flex items-center rounded-md border border-rule bg-paper px-3 py-1.5 font-sans text-xs font-semibold text-ink-soft no-underline transition-colors hover:border-accent hover:text-accent"
                 >
                   {l.label} ↗
                 </a>

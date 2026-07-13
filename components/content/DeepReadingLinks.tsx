@@ -27,24 +27,26 @@ export function DeepReadingLinks({ items }: DeepReadingLinksProps) {
     >
       <h2
         id="deep-reading"
-        className="font-sans text-xs font-semibold uppercase tracking-wider text-ink-soft"
+        className="font-serif text-3xl leading-tight text-ink-display"
       >
         Continue reading
       </h2>
-      <ul className="mt-4 space-y-5">
+      <ul className="mt-5 grid gap-4 sm:grid-cols-2">
         {resolved.map(({ entry, note }) => (
           <li key={`${entry.section}/${entry.slug}`}>
             <Link
               href={`/${entry.section}/${entry.slug}`}
-              className="group block no-underline"
+              className="premium-card-sm group block h-full p-5 no-underline transition hover:border-rule-strong"
             >
-              <span className="font-serif text-lg tracking-tight text-ink group-hover:text-accent">
+              <span className="font-sans text-base font-semibold leading-6 text-ink-display group-hover:text-accent">
                 {entry.title}
               </span>
+              {note ? (
+                <span className="mt-2 block text-sm leading-6 text-ink-soft text-pretty">
+                  {note}
+                </span>
+              ) : null}
             </Link>
-            {note ? (
-              <p className="mt-1 text-sm text-ink-soft text-pretty">{note}</p>
-            ) : null}
           </li>
         ))}
       </ul>

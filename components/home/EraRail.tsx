@@ -11,24 +11,24 @@ const ERAS = [
 
 export function EraRail() {
   return (
-    <section className="surface-grain border-y border-rule-strong bg-sepia">
+    <section className="border-y border-rule bg-paper-raised">
       <Container width="wide" className="py-14">
         <p className="kicker">A short history</p>
         <h2 className="mt-2 text-display-sm text-balance">
           Five eras of putting marks on a page
         </h2>
-        <ol className="mt-8 grid gap-px border border-rule-strong bg-rule-strong sm:grid-cols-2 lg:grid-cols-5">
+        <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {ERAS.map((s, i) => (
-            <li key={s.href} className="bg-sepia">
+            <li key={s.href}>
               <Link
                 href={s.href}
-                className="group flex h-full flex-col p-5 no-underline transition-colors"
+                className="premium-card-sm group flex h-full min-h-40 flex-col p-5 no-underline transition hover:border-rule-strong"
               >
-                <span className="font-serif text-2xl leading-none text-rule-strong">
+                <span className="font-sans text-2xl font-semibold leading-none text-accent">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="kicker mt-3">{s.era}</span>
-                <span className="mt-1.5 font-serif text-base tracking-tight text-ink group-hover:text-accent">
+                <span className="mt-2 font-sans text-base font-semibold leading-6 text-ink-display group-hover:text-accent">
                   {s.title}
                 </span>
               </Link>

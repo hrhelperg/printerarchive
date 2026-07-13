@@ -13,29 +13,29 @@ export function FeaturedBand({ section }: { section: SectionId }) {
       <div className="flex items-baseline justify-between gap-4">
         <div>
           <p className="kicker">{meta.label}</p>
-          <h2 className="mt-2 font-serif text-2xl tracking-tight">
+          <h2 className="mt-2 font-serif text-3xl leading-tight text-ink-display">
             {meta.title}
           </h2>
         </div>
         <Link
           href={`/${section}`}
-          className="shrink-0 font-sans text-sm no-underline hover:underline"
+          className="shrink-0 font-sans text-sm font-semibold no-underline hover:underline"
         >
           All {meta.label.toLowerCase()} →
         </Link>
       </div>
-      <ul className="mt-7 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((e) => (
-          <li key={e.slug} className="bg-paper">
+          <li key={e.slug}>
             <Link
               href={`/${e.section}/${e.slug}`}
-              className="group flex h-full flex-col p-6 no-underline transition-colors hover:bg-paper-raised"
+              className="premium-card-sm group flex h-full flex-col p-6 no-underline transition hover:border-rule-strong hover:shadow-[0_10px_26px_rgb(15_23_42_/_0.08)]"
             >
               <span className="kicker">{entryKicker(e)}</span>
-              <span className="mt-2 font-serif text-lg tracking-tight text-ink group-hover:text-accent">
+              <span className="mt-2 font-sans text-lg font-semibold leading-6 text-ink-display group-hover:text-accent">
                 {e.title}
               </span>
-              <span className="mt-1.5 text-sm text-ink-soft text-pretty">
+              <span className="mt-2 text-sm leading-6 text-ink-soft text-pretty">
                 {e.description}
               </span>
             </Link>

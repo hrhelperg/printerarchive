@@ -147,12 +147,38 @@ const HUB_PROFILE: Record<SectionId, HubProfile> = {
       "An alphabetic index of printing and document terminology. Definitions are short; each links onward to the entry where the concept does the real work.",
     significance:
       "Precise terminology is what keeps the rest of the archive honest. A shared, exact vocabulary is the precondition for every claim made elsewhere; the definitions here are deliberately short and link to where each term does its real work.",
+    image: {
+      src: "/images/glossary/toner--laser-toner-cartridge.jpg",
+      alt: "Black laser toner cartridge photographed on a neutral background",
+      width: 1600,
+      height: 822,
+      caption:
+        "Laser toner cartridge — a common term whose meaning depends on the full electrophotographic system around it.",
+      credit: {
+        source: "W.carter, via Wikimedia Commons",
+        url: "https://commons.wikimedia.org/wiki/File:Samsung_laser_toner_cartridge_front_view.jpg",
+        license: "CC BY-SA 4.0",
+      },
+    },
   },
   "mobile-printing": {
     framing:
       "Wireless printing standards and the device-to-printer workflows they support. How a phone or tablet reaches a printer without a driver in the conventional sense.",
     significance:
       "Mobile printing is where the archive's history reaches the present. The driverless, wireless handoff from a phone to a printer is the current form of a problem the rest of the catalogue traces from its mechanical origins.",
+    image: {
+      src: "/images/home/now-hp-laserjet-i.jpg",
+      alt: "Original HP LaserJet laser printer photographed against a neutral background",
+      width: 1600,
+      height: 1066,
+      caption:
+        "The desktop laser printer made the later phone-to-printer handoff worth standardising.",
+      credit: {
+        source: "Atomic Taco, Wikimedia Commons",
+        url: "https://commons.wikimedia.org/wiki/File:HP_LaserJet_I_(12935740974).jpg",
+        license: "CC BY-SA 2.0",
+      },
+    },
   },
   fax: {
     framing:
@@ -179,6 +205,19 @@ const HUB_PROFILE: Record<SectionId, HubProfile> = {
       "Reference pages for individual printer and fax machine models. Each page records only what can be verified against an authoritative source — manufacturer spec sheets, museum and archive records, or standards documentation — and omits any figure it cannot cite.",
     significance:
       "Model pages are where the archive's brands, technologies, and eras converge on a specific object. They anchor the general history to the machines people actually used, without inventing a single unverified specification.",
+    image: {
+      src: "/images/home/now-hp-laserjet-i.jpg",
+      alt: "Original HP LaserJet laser printer photographed against a neutral background",
+      width: 1600,
+      height: 1066,
+      caption:
+        "HP LaserJet (1984) — the first model page in a catalogue designed around sourced device records.",
+      credit: {
+        source: "Atomic Taco, Wikimedia Commons",
+        url: "https://commons.wikimedia.org/wiki/File:HP_LaserJet_I_(12935740974).jpg",
+        license: "CC BY-SA 2.0",
+      },
+    },
   },
 };
 
@@ -224,16 +263,18 @@ export function SectionHub({ section }: { section: SectionId }) {
         />
       </div>
 
-      <Container width="prose" className="mt-12">
-        <p className="font-serif text-lg text-ink-soft text-pretty">
+      <Container width="wide" className="mt-10">
+        <div className="grid gap-6 lg:grid-cols-[1fr_0.72fr]">
+          <p className="font-serif text-xl leading-8 text-ink-soft text-pretty">
           {profile.framing}
-        </p>
-        <aside className="mt-8 border-l-2 border-rule-strong bg-paper-raised px-6 py-5">
-          <p className="kicker">Why this section matters</p>
-          <p className="mt-2 text-ink-soft text-pretty">
-            {profile.significance}
           </p>
-        </aside>
+          <aside className="premium-card-sm border-l-2 border-l-accent px-6 py-5">
+            <p className="kicker">Why this section matters</p>
+            <p className="mt-2 text-sm leading-6 text-ink-soft text-pretty">
+              {profile.significance}
+            </p>
+          </aside>
+        </div>
       </Container>
 
       {isHistory ? <EvolutionBand /> : null}

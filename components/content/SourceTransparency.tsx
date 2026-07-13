@@ -17,27 +17,27 @@ export function SourceTransparency({ sources }: SourceTransparencyProps) {
   return (
     <section
       aria-labelledby="source-transparency"
-      className="mt-12 border-t border-rule pt-8"
+      className="mt-14 border-t border-rule pt-8"
     >
       <h2
         id="source-transparency"
-        className="font-sans text-xs font-semibold uppercase tracking-wider text-ink-soft"
+        className="font-serif text-3xl leading-tight text-ink-display"
       >
         Source transparency{" "}
-        <span className="text-ink-faint">
+        <span className="font-sans text-sm font-semibold text-ink-faint">
           ({count} {count === 1 ? "source" : "sources"})
         </span>
       </h2>
-      <p className="mt-3 text-sm text-ink-soft text-pretty">
+      <p className="mt-3 text-sm leading-6 text-ink-soft text-pretty">
         These references support claims made in this entry. The archive uses
         verified institutional and public-domain sources only; see{" "}
         <Link href="/source-policy">Source policy</Link>.
       </p>
-      <details className="mt-4">
-        <summary className="cursor-pointer font-sans text-sm text-ink-soft hover:text-ink">
+      <details className="premium-card-sm mt-5 p-5">
+        <summary className="cursor-pointer font-sans text-sm font-semibold text-ink-display hover:text-accent">
           Sources consulted ({count})
         </summary>
-        <ul className="mt-3 space-y-2 text-sm text-ink-soft">
+        <ul className="mt-4 space-y-3 text-sm leading-6 text-ink-soft">
           {sources.map((s, i) => (
             <li key={i}>
               {s.url ? (

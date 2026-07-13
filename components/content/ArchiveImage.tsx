@@ -3,7 +3,7 @@ import type { ArchiveImage as ArchiveImageData } from "@/lib/content/types";
 
 // Paper-toned 1×1 placeholder; avoids per-image blur tooling.
 const PLACEHOLDER =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect width='1' height='1' fill='%23f4f1e9'/%3E%3C/svg%3E";
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect width='1' height='1' fill='%23fafbfc'/%3E%3C/svg%3E";
 
 interface ArchiveImageProps {
   image: ArchiveImageData;
@@ -26,7 +26,7 @@ export function ArchiveImage({
     <figure
       className={`${margin} motion-safe:transition-opacity motion-safe:duration-200 motion-safe:hover:opacity-95 ${className}`}
     >
-      <div className="border border-rule-strong bg-paper-raised p-2">
+      <div className="overflow-hidden rounded-lg border border-rule bg-paper">
         <Image
           src={src}
           alt={alt}
@@ -40,7 +40,7 @@ export function ArchiveImage({
         />
       </div>
       {(caption || credit.source) && (
-        <figcaption className="mt-3 font-sans text-xs text-ink-faint">
+        <figcaption className="mt-3 px-1 font-sans text-xs leading-5 text-ink-faint">
           {caption ? (
             <span className="block text-ink-soft">{caption}</span>
           ) : null}

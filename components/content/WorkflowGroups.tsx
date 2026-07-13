@@ -17,18 +17,18 @@ const GROUPS: { label: string; slugs: string[] }[] = [
 
 function Card({ e }: { e: ContentEntry }) {
   return (
-    <li className="bg-paper">
+    <li>
       <Link
         href={`/workflows/${e.slug}`}
-        className="group flex h-full flex-col p-6 no-underline transition-colors hover:bg-paper-raised"
+        className="premium-card-sm group flex h-full flex-col p-6 no-underline transition hover:border-rule-strong"
       >
-        <span className="font-serif text-base tracking-tight text-ink group-hover:text-accent">
+        <span className="font-sans text-base font-semibold leading-6 text-ink-display group-hover:text-accent">
           {e.title}
         </span>
-        <span className="mt-1.5 text-sm text-ink-soft text-pretty">
+        <span className="mt-2 line-clamp-3 text-sm leading-6 text-ink-soft text-pretty">
           {e.summary}
         </span>
-        <span className="mt-2 font-sans text-xs uppercase tracking-wide text-ink-faint">
+        <span className="mt-3 font-sans text-xs font-semibold text-ink-faint">
           Open the workflow &rarr;
         </span>
       </Link>
@@ -53,7 +53,7 @@ export function WorkflowGroups({ items }: { items: ContentEntry[] }) {
         return (
           <section key={g.label} aria-label={g.label}>
             <p className="kicker">{g.label}</p>
-            <ul className="mt-4 grid gap-px border border-rule bg-rule sm:grid-cols-2">
+            <ul className="mt-4 grid gap-4 sm:grid-cols-2">
               {groupEntries.map((e) => (
                 <Card key={e.slug} e={e} />
               ))}
@@ -64,7 +64,7 @@ export function WorkflowGroups({ items }: { items: ContentEntry[] }) {
       {unmapped.length > 0 ? (
         <section aria-label="More workflows">
           <p className="kicker">More workflows</p>
-          <ul className="mt-4 grid gap-px border border-rule bg-rule sm:grid-cols-2">
+          <ul className="mt-4 grid gap-4 sm:grid-cols-2">
             {unmapped.map((e) => (
               <Card key={e.slug} e={e} />
             ))}

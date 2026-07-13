@@ -11,8 +11,8 @@ export function Container({
     width === "prose"
       ? "max-w-[72ch]"
       : width === "wide"
-        ? "max-w-6xl"
-        : "max-w-4xl";
+        ? "max-w-7xl"
+        : "max-w-5xl";
   return (
     <div className={`mx-auto w-full ${w} px-5 sm:px-6 lg:px-8 ${className}`}>
       {children}
