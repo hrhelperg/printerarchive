@@ -387,6 +387,21 @@ import fxm_panasonic_kx_fax_series from "@/content/models/panasonic-kx-fax-serie
 import fxm_sharp_ux_fax_series from "@/content/models/sharp-ux-fax-series";
 import fxm_muratec_fax_machines from "@/content/models/muratec-fax-machines";
 
+// Phase 20 — error-code / maintenance / safety concept guides
+import mn_understanding_printer_error_codes from "@/content/guides/understanding-printer-error-codes";
+import mn_printer_error_code_categories from "@/content/guides/printer-error-code-categories";
+import mn_printer_safety_hazards from "@/content/guides/printer-safety-hazards";
+import mn_toner_safety_and_handling from "@/content/guides/toner-safety-and-handling";
+import mn_when_to_call_a_printer_technician from "@/content/guides/when-to-call-a-printer-technician";
+import mn_printer_preventive_maintenance from "@/content/guides/printer-preventive-maintenance";
+import mn_printer_service_documentation from "@/content/guides/printer-service-documentation";
+import mn_safe_paper_jam_clearing from "@/content/guides/safe-paper-jam-clearing";
+import mn_printer_maintenance_messages from "@/content/guides/printer-maintenance-messages";
+import mn_laser_printer_safety from "@/content/guides/laser-printer-safety";
+import mn_inkjet_printhead_maintenance from "@/content/guides/inkjet-printhead-maintenance";
+import mn_printer_self_test_and_diagnostics from "@/content/guides/printer-self-test-and-diagnostics";
+import mn_printer_emissions_and_ozone_safety from "@/content/guides/printer-emissions-and-ozone-safety";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -777,6 +792,20 @@ export const allEntries: ContentEntry[] = [
   fxm_panasonic_kx_fax_series,
   fxm_sharp_ux_fax_series,
   fxm_muratec_fax_machines,
+  // Phase 20 — error-code / maintenance / safety concept guides
+  mn_understanding_printer_error_codes,
+  mn_printer_error_code_categories,
+  mn_printer_safety_hazards,
+  mn_toner_safety_and_handling,
+  mn_when_to_call_a_printer_technician,
+  mn_printer_preventive_maintenance,
+  mn_printer_service_documentation,
+  mn_safe_paper_jam_clearing,
+  mn_printer_maintenance_messages,
+  mn_laser_printer_safety,
+  mn_inkjet_printhead_maintenance,
+  mn_printer_self_test_and_diagnostics,
+  mn_printer_emissions_and_ozone_safety,
   // Glossary
   gSpooler,
   gQueue,
