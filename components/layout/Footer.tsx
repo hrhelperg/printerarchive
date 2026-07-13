@@ -79,6 +79,9 @@ export function Footer() {
           >
             Knowledge Graph
           </Link>
+          <Link href="/timeline" className="no-underline hover:text-accent">
+            Timeline
+          </Link>
           <Link href="/editorial-policy" className="no-underline hover:text-accent">
             Editorial policy
           </Link>

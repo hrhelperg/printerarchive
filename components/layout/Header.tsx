@@ -37,6 +37,14 @@ export function Header() {
                 Knowledge Graph
               </Link>
             </li>
+            <li key="timeline">
+              <Link
+                href="/timeline"
+                className="no-underline underline-offset-4 transition-colors hover:text-accent hover:underline"
+              >
+                Timeline
+              </Link>
+            </li>
           </ul>
         </nav>
       </Container>

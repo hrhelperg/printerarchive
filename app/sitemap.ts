@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/cookie-policy",
     "/knowledge-graph",
     ...TAXONOMY.map((c) => `/knowledge-graph/${c.id}`),
+    "/timeline",
     ...SECTIONS.map((s) => `/${s.id}`),
   ];
   const statics = staticPaths.map((p) => ({
