@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site, SECTIONS } from "@/lib/site";
 import { allEntries } from "@/lib/content/registry";
 import { findContentIssues } from "@/lib/content/integrity";
+import { TAXONOMY } from "@/lib/knowledge-graph/taxonomy";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Build-time integrity gate: a violation fails `next build`.
@@ -22,6 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/archive-methodology",
     "/changelog",
     "/cookie-policy",
+    "/knowledge-graph",
+    ...TAXONOMY.map((c) => `/knowledge-graph/${c.id}`),
     ...SECTIONS.map((s) => `/${s.id}`),
   ];
   const statics = staticPaths.map((p) => ({
