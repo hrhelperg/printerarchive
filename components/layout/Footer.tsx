@@ -17,6 +17,8 @@ export function Footer() {
     { href: "/contact", label: "Contact" },
   ];
   const resourceLinks = [
+    { href: "/knowledge-graph", label: "Knowledge Graph" },
+    { href: "/timeline", label: "Timeline" },
     { href: "/changelog", label: "Changelog" },
     { href: "/feed.xml", label: "RSS" },
     { href: "/llms.txt", label: "llms.txt" },

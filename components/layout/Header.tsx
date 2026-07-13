@@ -44,6 +44,22 @@ export function Header() {
                   </Link>
                 </li>
               ))}
+              <li key="knowledge-graph" className="shrink-0">
+                <Link
+                  href="/knowledge-graph"
+                  className="block whitespace-nowrap rounded-full px-2.5 py-2 no-underline transition-colors hover:bg-paper-raised hover:text-accent"
+                >
+                  Knowledge Graph
+                </Link>
+              </li>
+              <li key="timeline" className="shrink-0">
+                <Link
+                  href="/timeline"
+                  className="block whitespace-nowrap rounded-full px-2.5 py-2 no-underline transition-colors hover:bg-paper-raised hover:text-accent"
+                >
+                  Timeline
+                </Link>
+              </li>
             </ul>
           </nav>
           <form

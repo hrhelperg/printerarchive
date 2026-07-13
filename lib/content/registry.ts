@@ -349,6 +349,59 @@ import mdl_tektronix_phaser_solid_ink from "@/content/models/tektronix-phaser-so
 import mdl_hp_7475a_plotter from "@/content/models/hp-7475a-plotter";
 import mdl_hp_officejet_original from "@/content/models/hp-officejet-original";
 
+// Phase 18 Wave 2 — additional well-documented printer models
+import mdl_hp_laserjet_iii from "@/content/models/hp-laserjet-iii";
+import mdl_hp_laserjet_5 from "@/content/models/hp-laserjet-5";
+import mdl_apple_laserwriter_ii from "@/content/models/apple-laserwriter-ii";
+import mdl_hp_deskjet_500 from "@/content/models/hp-deskjet-500";
+import mdl_epson_stylus_color from "@/content/models/epson-stylus-color";
+import mdl_canon_bjc_4000 from "@/content/models/canon-bjc-4000";
+import mdl_hp_designjet_original from "@/content/models/hp-designjet-original";
+import mdl_ibm_proprinter from "@/content/models/ibm-proprinter";
+import mdl_epson_lq_1500 from "@/content/models/epson-lq-1500";
+import mdl_nec_spinwriter from "@/content/models/nec-spinwriter";
+import mdl_ibm_1443 from "@/content/models/ibm-1443";
+import mdl_hp_7550a_plotter from "@/content/models/hp-7550a-plotter";
+import mdl_lexmark_optra from "@/content/models/lexmark-optra";
+import mdl_oki_okipage from "@/content/models/oki-okipage";
+import mdl_star_gemini_10x from "@/content/models/star-gemini-10x";
+import mdl_panasonic_kx_p1124 from "@/content/models/panasonic-kx-p1124";
+import mdl_hp_color_laserjet_original from "@/content/models/hp-color-laserjet-original";
+import mdl_hp_laserjet_1100 from "@/content/models/hp-laserjet-1100";
+
+// Phase 19 Wave 1 — fax model classes / standards / series
+import fxm_group_3_fax_machines from "@/content/models/group-3-fax-machines";
+import fxm_group_4_fax_machines from "@/content/models/group-4-fax-machines";
+import fxm_super_g3_fax_machines from "@/content/models/super-g3-fax-machines";
+import fxm_thermal_paper_fax_machines from "@/content/models/thermal-paper-fax-machines";
+import fxm_plain_paper_fax_machines from "@/content/models/plain-paper-fax-machines";
+import fxm_laser_fax_machines from "@/content/models/laser-fax-machines";
+import fxm_inkjet_fax_machines from "@/content/models/inkjet-fax-machines";
+import fxm_multifunction_fax_machines from "@/content/models/multifunction-fax-machines";
+import fxm_fax_copier_combination_machines from "@/content/models/fax-copier-combination-machines";
+import fxm_roll_feed_vs_cut_sheet_fax_machines from "@/content/models/roll-feed-vs-cut-sheet-fax-machines";
+import fxm_desktop_vs_console_fax_machines from "@/content/models/desktop-vs-console-fax-machines";
+import fxm_brother_fax_machine_series from "@/content/models/brother-fax-machine-series";
+import fxm_canon_faxphone_series from "@/content/models/canon-faxphone-series";
+import fxm_panasonic_kx_fax_series from "@/content/models/panasonic-kx-fax-series";
+import fxm_sharp_ux_fax_series from "@/content/models/sharp-ux-fax-series";
+import fxm_muratec_fax_machines from "@/content/models/muratec-fax-machines";
+
+// Phase 20 — error-code / maintenance / safety concept guides
+import mn_understanding_printer_error_codes from "@/content/guides/understanding-printer-error-codes";
+import mn_printer_error_code_categories from "@/content/guides/printer-error-code-categories";
+import mn_printer_safety_hazards from "@/content/guides/printer-safety-hazards";
+import mn_toner_safety_and_handling from "@/content/guides/toner-safety-and-handling";
+import mn_when_to_call_a_printer_technician from "@/content/guides/when-to-call-a-printer-technician";
+import mn_printer_preventive_maintenance from "@/content/guides/printer-preventive-maintenance";
+import mn_printer_service_documentation from "@/content/guides/printer-service-documentation";
+import mn_safe_paper_jam_clearing from "@/content/guides/safe-paper-jam-clearing";
+import mn_printer_maintenance_messages from "@/content/guides/printer-maintenance-messages";
+import mn_laser_printer_safety from "@/content/guides/laser-printer-safety";
+import mn_inkjet_printhead_maintenance from "@/content/guides/inkjet-printhead-maintenance";
+import mn_printer_self_test_and_diagnostics from "@/content/guides/printer-self-test-and-diagnostics";
+import mn_printer_emissions_and_ozone_safety from "@/content/guides/printer-emissions-and-ozone-safety";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -703,6 +756,56 @@ export const allEntries: ContentEntry[] = [
   mdl_tektronix_phaser_solid_ink,
   mdl_hp_7475a_plotter,
   mdl_hp_officejet_original,
+  // Phase 18 Wave 2 — additional well-documented printer models
+  mdl_hp_laserjet_iii,
+  mdl_hp_laserjet_5,
+  mdl_apple_laserwriter_ii,
+  mdl_hp_deskjet_500,
+  mdl_epson_stylus_color,
+  mdl_canon_bjc_4000,
+  mdl_hp_designjet_original,
+  mdl_ibm_proprinter,
+  mdl_epson_lq_1500,
+  mdl_nec_spinwriter,
+  mdl_ibm_1443,
+  mdl_hp_7550a_plotter,
+  mdl_lexmark_optra,
+  mdl_oki_okipage,
+  mdl_star_gemini_10x,
+  mdl_panasonic_kx_p1124,
+  mdl_hp_color_laserjet_original,
+  mdl_hp_laserjet_1100,
+  // Phase 19 Wave 1 — fax model classes / standards / series
+  fxm_group_3_fax_machines,
+  fxm_group_4_fax_machines,
+  fxm_super_g3_fax_machines,
+  fxm_thermal_paper_fax_machines,
+  fxm_plain_paper_fax_machines,
+  fxm_laser_fax_machines,
+  fxm_inkjet_fax_machines,
+  fxm_multifunction_fax_machines,
+  fxm_fax_copier_combination_machines,
+  fxm_roll_feed_vs_cut_sheet_fax_machines,
+  fxm_desktop_vs_console_fax_machines,
+  fxm_brother_fax_machine_series,
+  fxm_canon_faxphone_series,
+  fxm_panasonic_kx_fax_series,
+  fxm_sharp_ux_fax_series,
+  fxm_muratec_fax_machines,
+  // Phase 20 — error-code / maintenance / safety concept guides
+  mn_understanding_printer_error_codes,
+  mn_printer_error_code_categories,
+  mn_printer_safety_hazards,
+  mn_toner_safety_and_handling,
+  mn_when_to_call_a_printer_technician,
+  mn_printer_preventive_maintenance,
+  mn_printer_service_documentation,
+  mn_safe_paper_jam_clearing,
+  mn_printer_maintenance_messages,
+  mn_laser_printer_safety,
+  mn_inkjet_printhead_maintenance,
+  mn_printer_self_test_and_diagnostics,
+  mn_printer_emissions_and_ozone_safety,
   // Glossary
   gSpooler,
   gQueue,
