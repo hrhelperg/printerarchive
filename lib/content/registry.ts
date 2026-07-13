@@ -369,6 +369,24 @@ import mdl_panasonic_kx_p1124 from "@/content/models/panasonic-kx-p1124";
 import mdl_hp_color_laserjet_original from "@/content/models/hp-color-laserjet-original";
 import mdl_hp_laserjet_1100 from "@/content/models/hp-laserjet-1100";
 
+// Phase 19 Wave 1 — fax model classes / standards / series
+import fxm_group_3_fax_machines from "@/content/models/group-3-fax-machines";
+import fxm_group_4_fax_machines from "@/content/models/group-4-fax-machines";
+import fxm_super_g3_fax_machines from "@/content/models/super-g3-fax-machines";
+import fxm_thermal_paper_fax_machines from "@/content/models/thermal-paper-fax-machines";
+import fxm_plain_paper_fax_machines from "@/content/models/plain-paper-fax-machines";
+import fxm_laser_fax_machines from "@/content/models/laser-fax-machines";
+import fxm_inkjet_fax_machines from "@/content/models/inkjet-fax-machines";
+import fxm_multifunction_fax_machines from "@/content/models/multifunction-fax-machines";
+import fxm_fax_copier_combination_machines from "@/content/models/fax-copier-combination-machines";
+import fxm_roll_feed_vs_cut_sheet_fax_machines from "@/content/models/roll-feed-vs-cut-sheet-fax-machines";
+import fxm_desktop_vs_console_fax_machines from "@/content/models/desktop-vs-console-fax-machines";
+import fxm_brother_fax_machine_series from "@/content/models/brother-fax-machine-series";
+import fxm_canon_faxphone_series from "@/content/models/canon-faxphone-series";
+import fxm_panasonic_kx_fax_series from "@/content/models/panasonic-kx-fax-series";
+import fxm_sharp_ux_fax_series from "@/content/models/sharp-ux-fax-series";
+import fxm_muratec_fax_machines from "@/content/models/muratec-fax-machines";
+
 // Phase 3 — glossary expansion
 import gSpooler from "@/content/glossary/print-spooler";
 import gQueue from "@/content/glossary/print-queue";
@@ -742,6 +760,23 @@ export const allEntries: ContentEntry[] = [
   mdl_panasonic_kx_p1124,
   mdl_hp_color_laserjet_original,
   mdl_hp_laserjet_1100,
+  // Phase 19 Wave 1 — fax model classes / standards / series
+  fxm_group_3_fax_machines,
+  fxm_group_4_fax_machines,
+  fxm_super_g3_fax_machines,
+  fxm_thermal_paper_fax_machines,
+  fxm_plain_paper_fax_machines,
+  fxm_laser_fax_machines,
+  fxm_inkjet_fax_machines,
+  fxm_multifunction_fax_machines,
+  fxm_fax_copier_combination_machines,
+  fxm_roll_feed_vs_cut_sheet_fax_machines,
+  fxm_desktop_vs_console_fax_machines,
+  fxm_brother_fax_machine_series,
+  fxm_canon_faxphone_series,
+  fxm_panasonic_kx_fax_series,
+  fxm_sharp_ux_fax_series,
+  fxm_muratec_fax_machines,
   // Glossary
   gSpooler,
   gQueue,

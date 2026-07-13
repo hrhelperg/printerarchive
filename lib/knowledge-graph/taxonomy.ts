@@ -9851,7 +9851,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "Neutral, encyclopedic reference overviews of notable fax machine model classes, product lines, and form factors — organized by the ITU-T fax standard class (Group 3, Group 4, Super G3) and by printing technology (thermal, laser, inkjet, plain-paper, multifunction). Each page explains what a class or line is, the standards it implements, and its typical design, without inventing per-model specifications, prices, or dates.",
     "appAnchor": null,
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "ITU-T",
@@ -9934,72 +9934,12 @@ export const TAXONOMY: KgCluster[] = [
         "type": "product"
       }
     ],
-    "livePages": 0,
+    "livePages": 16,
     "capacity": {
       "conservative": 20,
       "ambitious": 32
     },
     "planned": [
-      {
-        "slug": "group-3-fax-machines",
-        "title": "Group 3 Fax Machines Explained",
-        "section": "models",
-        "angle": "The class of fax machines implementing the ITU-T Group 3 standards (T.4 image coding, T.30 call handling) over ordinary telephone lines — the dominant fax class for desktop machines."
-      },
-      {
-        "slug": "group-4-fax-machines",
-        "title": "Group 4 Fax Machines Explained",
-        "section": "models",
-        "angle": "Digital fax machines built for ISDN using the T.6 coding scheme — what set them apart from Group 3 and why they stayed a niche class."
-      },
-      {
-        "slug": "super-g3-fax-machines",
-        "title": "Super G3 Fax Machines",
-        "section": "models",
-        "angle": "The later Group 3 machines that adopted the V.34 modem standard for faster page transfer, described as a class rather than by vendor spec claims."
-      },
-      {
-        "slug": "thermal-paper-fax-machines",
-        "title": "Thermal-Paper Fax Machines",
-        "section": "models",
-        "angle": "The roll-fed thermal-paper class of fax machine: how the print method shaped their form factor, output handling, and limitations."
-      },
-      {
-        "slug": "plain-paper-fax-machines",
-        "title": "Plain-Paper Fax Machines",
-        "section": "models",
-        "angle": "The category of fax machines that print onto standard cut-sheet paper instead of thermal rolls, and the printing technologies used to achieve it."
-      },
-      {
-        "slug": "laser-fax-machines",
-        "title": "Laser Fax Machines",
-        "section": "models",
-        "angle": "Fax machines that use a laser print engine — a plain-paper subclass, its typical office positioning and shared components with laser printers."
-      },
-      {
-        "slug": "inkjet-fax-machines",
-        "title": "Inkjet Fax Machines",
-        "section": "models",
-        "angle": "The inkjet-based plain-paper fax class often marketed for home and small-office use, and how the print method influenced their design."
-      },
-      {
-        "slug": "multifunction-fax-machines",
-        "title": "Multifunction Fax Machines (Fax MFPs)",
-        "section": "models",
-        "angle": "Devices combining fax with print, copy, and scan in one unit — how faxing became a feature of the MFP rather than a standalone product class."
-      },
-      {
-        "slug": "fax-copier-combination-machines",
-        "title": "Fax and Copier Combination Machines",
-        "section": "models",
-        "angle": "Combination units that paired a fax with a walk-up copier, a common office form before the general-purpose MFP."
-      },
-      {
-        "slug": "desktop-vs-console-fax-machines",
-        "title": "Desktop vs. Console Fax Machines",
-        "section": "models",
-        "angle": "A form-factor reference contrasting compact desktop fax units with floor-standing console machines built for higher office volume."
-      },
       {
         "slug": "fax-machines-with-built-in-telephones",
         "title": "Fax Machines With Built-In Telephones",
@@ -10013,36 +9953,6 @@ export const TAXONOMY: KgCluster[] = [
         "angle": "Computer-hosted fax hardware that sent and received faxes without a standalone machine, positioned as a model class alongside physical units."
       },
       {
-        "slug": "brother-fax-machine-series",
-        "title": "Brother FAX and MFC Fax Series (Overview)",
-        "section": "models",
-        "angle": "A neutral overview of Brother's long-running fax and fax-capable MFC product lines and where they sit among fax classes."
-      },
-      {
-        "slug": "canon-faxphone-series",
-        "title": "Canon FAXPHONE Series (Overview)",
-        "section": "models",
-        "angle": "A neutral reference overview of Canon's FAXPHONE line of combined fax-and-telephone machines."
-      },
-      {
-        "slug": "panasonic-kx-fax-series",
-        "title": "Panasonic KX Fax Series (Overview)",
-        "section": "models",
-        "angle": "A neutral overview of Panasonic's KX-series fax machines and how they fit the thermal and plain-paper classes."
-      },
-      {
-        "slug": "sharp-ux-fax-series",
-        "title": "Sharp UX Fax Series (Overview)",
-        "section": "models",
-        "angle": "A neutral reference overview of Sharp's UX line of desktop fax machines."
-      },
-      {
-        "slug": "muratec-fax-machines",
-        "title": "Muratec Fax Machines (Overview)",
-        "section": "models",
-        "angle": "A neutral overview of Muratec as a fax-focused office equipment line and the classes of machine it produced."
-      },
-      {
         "slug": "xerox-telecopier-early-fax-models",
         "title": "The Xerox Telecopier and Early Desktop Fax Models",
         "section": "history",
@@ -10053,12 +9963,6 @@ export const TAXONOMY: KgCluster[] = [
         "title": "How to Identify a Fax Machine's Class",
         "section": "models",
         "angle": "A reference for telling apart fax classes (Group 3/4, thermal vs. plain-paper, standalone vs. MFP) from observable, durable characteristics."
-      },
-      {
-        "slug": "roll-feed-vs-cut-sheet-fax-machines",
-        "title": "Roll-Feed vs. Cut-Sheet Fax Machines",
-        "section": "models",
-        "angle": "A paper-handling reference contrasting roll-fed thermal designs with cut-sheet plain-paper designs across fax model classes."
       }
     ],
     "crossLinks": [
