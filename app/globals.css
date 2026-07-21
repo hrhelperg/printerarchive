@@ -21,6 +21,10 @@
 :root {
   color-scheme: light;
   --grain-opacity: 0;
+  /* Canonical global sticky offset. The ecosystem banner is exactly this tall,
+     and every element that sticks beneath it offsets by this variable — the
+     number is never repeated as a literal anywhere else. */
+  --ecosystem-banner-height: 48px;
   --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 10px 30px rgb(15 23 42 / 0.06);
   --shadow-card: 0 1px 2px rgb(15 23 42 / 0.05), 0 18px 45px rgb(15 23 42 / 0.07);
 }
@@ -28,6 +32,11 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Compensate in-page anchor targets for the banner only. Article headings
+     already carry scroll-mt-32, which was sized for the header alone; adding
+     just the banner height keeps that allowance correct instead of
+     double-counting it. */
+  scroll-padding-top: var(--ecosystem-banner-height);
 }
 
 body {
@@ -241,4 +250,538 @@ a:hover {
 .tracking-widest,
 [class*="tracking-"] {
   letter-spacing: 0;
+}
+
+/* ============================================================
+   HELPERG ecosystem banner (components/ecosystem/*)
+   ============================================================
+   Rules below sit outside Tailwind's cascade layers, so they win over
+   utilities regardless of specificity — which is what makes `[hidden]` on the
+   panel reliable. Height lives in --ecosystem-banner-height (:root above); the
+   sticky header offsets against that same variable. */
+
+@media (min-width: 768px) {
+  :root {
+    --ecosystem-banner-height: 56px;
+  }
+}
+
+.eco-banner {
+  position: sticky;
+  top: 0;
+  /* The banner is positioned with a z-index, so it forms a stacking context:
+     everything inside it — including the directory panel — is clamped to this
+     value. It must therefore sit above the cookie-consent bar (z-50), or the
+     open panel would be painted over by it on mobile. The focused skip link
+     (z-70) still outranks this. */
+  z-index: 60;
+  height: var(--ecosystem-banner-height);
+  background: var(--color-paper-raised);
+  border-bottom: 1px solid var(--color-rule);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+.eco-banner-inner {
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+  min-width: 0;
+  max-width: 80rem;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .eco-banner-inner {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .eco-banner-inner {
+    padding: 0 2rem;
+    gap: 1rem;
+  }
+}
+
+/* ---------- left: ecosystem identity ---------- */
+
+.eco-identity {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.eco-identity-mark {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  color: var(--color-accent);
+}
+
+.eco-identity-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.eco-identity-name {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--color-ink-display);
+  white-space: nowrap;
+}
+
+.eco-identity-sub {
+  display: none;
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  color: var(--color-ink-faint);
+  white-space: nowrap;
+}
+
+@media (min-width: 1280px) {
+  .eco-identity-sub {
+    display: block;
+  }
+}
+
+/* Below ~400px only the essential HELPERG identity is kept. */
+@media (max-width: 399px) {
+  .eco-identity-word {
+    display: none;
+  }
+}
+
+/* ---------- centre: company timeline ---------- */
+
+.eco-timeline-nav {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.eco-timeline {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* Vertical room for the 2px focus ring (plus its 2px offset); without it the
+     track's overflow clips the keyboard focus indicator. */
+  padding-block: 0.3125rem;
+  overscroll-behavior-x: contain;
+  /* Keep a keyboard-focused product clear of the track edges when the browser
+     scrolls it into view. */
+  scroll-padding-inline: 1.25rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.eco-timeline::-webkit-scrollbar {
+  display: none;
+}
+
+.eco-tl-item {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+/* Timeline connector between consecutive products. */
+.eco-tl-item + .eco-tl-item::before {
+  content: "";
+  width: 0.75rem;
+  height: 1px;
+  flex: 0 0 auto;
+  background: var(--color-rule-strong);
+}
+
+.eco-tl-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .eco-tl-link,
+  .eco-trigger,
+  .eco-card,
+  .eco-platform-link {
+    transition:
+      color 160ms ease-out,
+      border-color 160ms ease-out,
+      background-color 160ms ease-out;
+  }
+}
+
+.eco-tl-link:hover {
+  border-color: var(--color-rule);
+  background: var(--color-paper);
+  color: var(--color-accent);
+}
+
+.eco-tl-monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  border: 1px solid var(--color-rule);
+  border-radius: 0.25rem;
+  background: var(--color-paper);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  color: var(--color-ink-faint);
+}
+
+.eco-tl-name {
+  min-width: 0;
+}
+
+/* Current product — restrained filled accent pill, no animation. */
+.eco-tl-link--current {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.eco-tl-link--current:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  color: #ffffff;
+}
+
+.eco-tl-link--current .eco-tl-monogram {
+  /* Kept thin: a heavier white wash lightens the composite behind the white
+     glyph and drops it below the 4.5:1 contrast floor. */
+  background: rgb(255 255 255 / 0.1);
+  border-color: rgb(255 255 255 / 0.55);
+  color: #ffffff;
+}
+
+.eco-tl-current {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.0625rem 0.25rem;
+  border-radius: 0.1875rem;
+  /* Kept thin: a heavier white wash lightens the composite behind the white
+     label and drops it below the 4.5:1 contrast floor. */
+  background: rgb(255 255 255 / 0.1);
+  color: #ffffff;
+}
+
+/* Below ~360px the timeline track is narrower than the current item with its
+   chip, so the chip is dropped. The current state is still carried by the
+   filled accent pill, aria-current, and the "— current site" accessible name. */
+@media (max-width: 359px) {
+  .eco-tl-current {
+    display: none;
+  }
+}
+
+.eco-tl-link--inert {
+  color: var(--color-ink-faint);
+  cursor: default;
+}
+
+/* ---------- right: explore products ---------- */
+
+.eco-trigger {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.3125rem 0.625rem;
+  border: 1px solid var(--color-rule);
+  border-radius: 0.5rem;
+  background: var(--color-paper-raised);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-ink-soft);
+  cursor: pointer;
+}
+
+.eco-trigger:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.eco-trigger-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex: 0 0 auto;
+}
+
+.eco-close-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Narrow screens: the label stays in the accessible name (it is only visually
+   hidden, never display:none) while the icon carries the visual affordance. */
+@media (max-width: 639px) {
+  .eco-trigger-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+/* ---------- ecosystem directory panel ---------- */
+
+.eco-panel {
+  position: fixed;
+  z-index: 60;
+  top: calc(var(--ecosystem-banner-height) + 0.5rem);
+  /* Align with the right edge of the 80rem content container (the trigger's
+     own position) rather than the viewport edge on ultra-wide screens. */
+  right: max(1rem, calc((100vw - 80rem) / 2 + 1.5rem));
+  width: min(38rem, calc(100vw - 2rem));
+  max-height: calc(100vh - var(--ecosystem-banner-height) - 1.5rem);
+  max-height: calc(100dvh - var(--ecosystem-banner-height) - 1.5rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-rule-strong);
+  border-radius: 0.625rem;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Must beat any utility display value: closed means removed from the tab
+   order and the accessibility tree, not merely invisible. */
+.eco-panel[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .eco-panel:not([hidden]) {
+    animation: fade-up 180ms ease-out both;
+  }
+}
+
+.eco-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0.875rem;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.eco-panel-title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  color: var(--color-ink-display);
+}
+
+.eco-panel-sub {
+  margin: 0.125rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  color: var(--color-ink-faint);
+}
+
+.eco-panel-close {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 1.875rem;
+  height: 1.875rem;
+  border: 1px solid var(--color-rule);
+  border-radius: 0.375rem;
+  background: var(--color-paper-raised);
+  color: var(--color-ink-soft);
+  cursor: pointer;
+}
+
+.eco-panel-close:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.eco-panel-body {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.875rem;
+  padding-bottom: calc(0.875rem + env(safe-area-inset-bottom));
+}
+
+/* Mobile: anchored bottom sheet, viewport-aware, internally scrolling. */
+@media (max-width: 639px) {
+  .eco-panel {
+    top: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    max-height: calc(100vh - var(--ecosystem-banner-height) - 0.5rem);
+    max-height: min(
+      85dvh,
+      calc(100dvh - var(--ecosystem-banner-height) - 0.5rem)
+    );
+    border-radius: 0.75rem 0.75rem 0 0;
+    border-bottom: 0;
+  }
+}
+
+/* ---------- directory content ---------- */
+
+.eco-dir-section {
+  margin-top: 1.125rem;
+}
+
+.eco-dir-heading {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+.eco-dir-grid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.eco-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  height: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--color-rule);
+  border-radius: 0.5rem;
+  background: var(--color-paper-raised);
+  text-decoration: none;
+}
+
+a.eco-card:hover {
+  border-color: var(--color-rule-strong);
+  background: var(--color-paper);
+}
+
+.eco-card--current {
+  border-color: var(--color-accent);
+  background: var(--color-sepia);
+}
+
+.eco-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.eco-card-monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.375rem;
+  height: 1.375rem;
+  flex: 0 0 auto;
+  border: 1px solid var(--color-rule);
+  border-radius: 0.3125rem;
+  background: var(--color-paper);
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--color-ink-faint);
+}
+
+.eco-card-name {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  color: var(--color-ink-display);
+}
+
+.eco-card-current {
+  font-family: var(--font-sans);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.0625rem 0.25rem;
+  border-radius: 0.1875rem;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+}
+
+.eco-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--color-ink-soft);
+}
+
+.eco-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 0.25rem;
+}
+
+.eco-platform-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  border: 1px solid var(--color-rule);
+  border-radius: 0.375rem;
+  background: var(--color-paper);
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+}
+
+.eco-platform-link:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.eco-platform-missing {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  color: var(--color-ink-faint);
 }
