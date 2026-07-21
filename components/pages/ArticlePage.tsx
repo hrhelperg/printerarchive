@@ -131,7 +131,9 @@ export function ArticlePage({
         </article>
 
         <aside className="hidden xl:block">
-          <div className="sticky top-32 space-y-4">
+          {/* Offset by the global ecosystem banner on top of the existing
+              header allowance, so the sidebar never slides under either. */}
+          <div className="sticky top-[calc(8rem+var(--ecosystem-banner-height))] space-y-4">
             {toc.length ? (
               <nav
                 aria-labelledby="article-toc"

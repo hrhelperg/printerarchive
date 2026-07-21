@@ -5,7 +5,9 @@ import { Wordmark } from "@/components/identity/Wordmark";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-rule bg-paper/95 shadow-[0_1px_2px_rgb(15_23_42_/_0.04)] backdrop-blur">
+    // Sticks directly beneath the global ecosystem banner. The offset is the
+    // banner's own height variable, never a duplicated literal.
+    <header className="sticky top-[var(--ecosystem-banner-height)] z-40 border-b border-rule bg-paper/95 shadow-[0_1px_2px_rgb(15_23_42_/_0.04)] backdrop-blur">
       <Container
         width="wide"
         className="flex flex-col gap-4 py-4 lg:flex-row lg:items-center lg:justify-between lg:py-5"
