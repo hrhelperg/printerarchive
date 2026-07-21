@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Source_Serif_4, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
+import { EcosystemBanner } from "@/components/ecosystem/EcosystemBanner";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/consent/CookieConsent";
@@ -74,11 +75,18 @@ export default function RootLayout({
       <body>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-paper focus:px-3 focus:py-2"
+          // z-[70] keeps the focused skip link above the sticky ecosystem
+          // banner, which is z-60 so that its directory panel can outrank the
+          // fixed cookie-consent bar (z-50).
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:bg-paper focus:px-3 focus:py-2"
         >
           Skip to content
         </a>
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
+        {/* Stacking order: ecosystem banner, then the site header, then page
+            content. Both are sticky; the header offsets by the banner's
+            --ecosystem-banner-height so they never overlap. */}
+        <EcosystemBanner />
         <Header />
         <main id="main">{children}</main>
         <Footer />

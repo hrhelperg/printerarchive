@@ -1,3 +1,16 @@
+// App-store product data for the home page, footer, and end-of-article
+// "Modern tools" blocks.
+//
+// Store URLs are NOT stored here. They are derived from the single ecosystem
+// registry (lib/ecosystem/product-registry.ts) so that every external HELPERG
+// URL exists in exactly one place. The relative import is deliberate: this
+// module is loaded directly by `node --test`, which resolves neither the "@/"
+// path alias nor an extensionless specifier.
+import {
+  ECOSYSTEM_APPLICATIONS,
+  type EcosystemProduct,
+} from "./ecosystem/product-registry.ts";
+
 export type ProductId =
   | "zip-rar"
   | "smart-printer"
@@ -21,6 +34,32 @@ export interface Product {
   links: ProductLink[];
 }
 
+/**
+ * Store links for a product, in the established display order:
+ * Android, iOS, then the web entry point. Only platforms marked "available"
+ * with a real URL are emitted, so an unknown platform can never render as an
+ * active link.
+ */
+function linksFor(id: ProductId): ProductLink[] {
+  const entry: EcosystemProduct | undefined = ECOSYSTEM_APPLICATIONS.find(
+    (p) => p.id === id,
+  );
+  if (!entry) {
+    throw new Error(`No ecosystem registry entry for product "${id}".`);
+  }
+  const links: ProductLink[] = [];
+  if (entry.androidStatus === "available" && entry.androidUrl) {
+    links.push({ label: "Android", href: entry.androidUrl });
+  }
+  if (entry.iosStatus === "available" && entry.iosUrl) {
+    links.push({ label: "iOS", href: entry.iosUrl });
+  }
+  if (entry.websiteStatus === "available" && entry.websiteUrl) {
+    links.push({ label: "Open on the web", href: entry.websiteUrl });
+  }
+  return links;
+}
+
 export const PRODUCTS: Record<ProductId, Product> = {
   "zip-rar": {
     id: "zip-rar",
@@ -28,13 +67,7 @@ export const PRODUCTS: Record<ProductId, Product> = {
     tagline:
       "Open, create, and extract ZIP and RAR archives on a phone or tablet.",
     icon: "/images/products/zip-rar.jpg",
-    links: [
-      {
-        label: "Android",
-        href: "https://play.google.com/store/apps/details?id=com.ziparchivator.zip",
-      },
-      { label: "iOS", href: "https://apps.apple.com/app/id6753772583" },
-    ],
+    links: linksFor("zip-rar"),
   },
   "smart-printer": {
     id: "smart-printer",
@@ -42,69 +75,38 @@ export const PRODUCTS: Record<ProductId, Product> = {
     tagline:
       "Print documents and photos from a phone or tablet to a connected printer.",
     icon: "/images/products/smart-printer.jpg",
-    links: [
-      {
-        label: "Android",
-        href: "https://play.google.com/store/apps/details?id=com.helperg.smart.printer",
-      },
-      { label: "iOS", href: "https://apps.apple.com/app/id6746067890" },
-    ],
+    links: linksFor("smart-printer"),
   },
   "fax-app": {
     id: "fax-app",
     name: "Fax App",
     tagline: "Send a document as a fax from a phone, without a fax machine.",
     icon: "/images/products/fax-app.jpg",
-    links: [
-      {
-        label: "Android",
-        href: "https://play.google.com/store/apps/details?id=com.helperg.fax.app",
-      },
-      { label: "iOS", href: "https://apps.apple.com/app/id6760895885" },
-    ],
+    links: linksFor("fax-app"),
   },
   "pdf-editor": {
     id: "pdf-editor",
     name: "PDF Editor & Convert",
     tagline: "Edit, convert, combine, and OCR PDF documents.",
     icon: "/images/products/pdf-editor.jpg",
-    links: [
-      {
-        label: "Android",
-        href: "https://play.google.com/store/apps/details?id=com.helperg.editor.documents",
-      },
-      { label: "iOS", href: "https://apps.apple.com/app/id6747341672" },
-      { label: "Open on the web", href: "https://www.pdfeditconvert.top" },
-    ],
+    links: linksFor("pdf-editor"),
   },
   "cv-resume": {
     id: "cv-resume",
     name: "CV Resume",
     tagline: "Build and export a resume or CV as a PDF from a phone or tablet.",
-    links: [{ label: "iOS", href: "https://apps.apple.com/app/id6745150815" }],
+    links: linksFor("cv-resume"),
   },
   "invoice-maker": {
     id: "invoice-maker",
     name: "Invoice Maker",
     tagline: "Create invoices and billing documents and export them as PDFs.",
-    links: [
-      {
-        label: "Android",
-        href: "https://play.google.com/store/apps/details?id=com.helperg.invoicer",
-      },
-      { label: "iOS", href: "https://apps.apple.com/app/id6747311276" },
-    ],
+    links: linksFor("invoice-maker"),
   },
   "pocket-manager": {
     id: "pocket-manager",
     name: "Pocket Manager",
     tagline: "Track receipts, expenses, and financial documents on a phone.",
-    links: [
-      {
-        label: "Android",
-        href: "https://play.google.com/store/apps/details?id=com.helperg.money",
-      },
-      { label: "iOS", href: "https://apps.apple.com/app/id6743084126" },
-    ],
+    links: linksFor("pocket-manager"),
   },
 };
