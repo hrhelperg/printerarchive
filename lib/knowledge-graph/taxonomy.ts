@@ -45,6 +45,7 @@ export const LIVE_PRODUCTS: ProductId[] = [
   "cv-resume",
   "invoice-maker",
   "pocket-manager",
+  "esimky",
 ];
 
 /** No app anchors remain proposed — all graduated to live ProductIds in Phase 15B. */

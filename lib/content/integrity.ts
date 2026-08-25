@@ -171,6 +171,7 @@ export function findContentIssues(entries: ContentEntry[]): string[] {
       "cv-resume",
       "invoice-maker",
       "pocket-manager",
+      "esimky",
     ]);
     const mt = (e as { modernTools?: unknown }).modernTools;
     if (mt !== undefined) {
