@@ -78,6 +78,21 @@ const entry: BrandEntry = {
       ]
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/brands/hewlett-packard--hp-thinkjet-1984.jpg",
+        "alt": "HP ThinkJet, a small beige 1980s desktop printer with a fold-down paper path and a simple control panel",
+        "width": 1920,
+        "height": 1280,
+        "caption": "The HP ThinkJet (HP 2225), introduced in 1984 \u2014 HP's early thermal inkjet product, and the commercial expression of the drop-on-demand work that later became the DeskJet line.",
+        "credit": {
+          "source": "Shelby Jueden, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Hp-thinkjet-a.jpg",
+          "license": "CC BY 4.0"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "Printing technologies"

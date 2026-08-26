@@ -74,6 +74,21 @@ const entry: GuideEntry = {
       "text": "3. Transport and imaging. Transport rollers move the isolated sheet at a controlled speed past the imaging station, where a contact image sensor (CIS) or CCD array reads a line at a time; the sheet's motion supplies the second (page-length) dimension of the image. Additional rollers and an exit tray eject the scanned sheet. Skew correction, page-edge detection, and optionally multi-feed sensing occur along this path."
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/guides/adf-scanners--adf-unit-assembly.jpg",
+        "alt": "Automatic document feeder assembly removed from a machine and photographed on a neutral background, showing feed rollers on a drive shaft, a separation section, gear train, stepper motor and wiring harness",
+        "width": 1920,
+        "height": 1080,
+        "caption": "An automatic document feeder removed from a multifunction machine. The pick and feed rollers, the separation section that keeps a stack from double-feeding, and the drive train are the whole of the mechanism.",
+        "credit": {
+          "source": "Raimond Spekking, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Xerox_WorkCentre_6605_-_ADF_unit-0099.jpg",
+          "license": "CC BY-SA 4.0"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "Architecture"

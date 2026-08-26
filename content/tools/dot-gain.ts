@@ -72,6 +72,21 @@ const entry: ToolEntry = {
       "text": "Because the dot's physical size is unchanged and only its effective absorbance rises, some references treat optical gain as distinct from \"true\" (mechanical) dot gain, even though a reflection densitometer records the two together. Since optical gain is a property of light and paper rather than of ink coverage, it cannot be removed by simply printing \"lighter\"; it is instead accounted for in measurement and in the compensation applied upstream."
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/tools/dot-gain--tone-value-transfer-curve.png",
+        "alt": "Line chart plotting printed tone value against requested tone value, with the plotted curve bowing above the straight reference line and the gap widest around the midtones",
+        "width": 1280,
+        "height": 906,
+        "caption": "A characteristic curve for standardised offset printing on coated paper. The printed tone value runs above the requested value across the range, and the gap is widest through the midtones \u2014 the shape that makes dot gain a curve rather than a single number.",
+        "credit": {
+          "source": "Inkman, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Druck-Kennlinie.svg",
+          "license": "CC BY-SA 3.0"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "Measuring dot gain"

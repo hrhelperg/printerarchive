@@ -157,6 +157,21 @@ const entry: GuideEntry = {
       text: "These two are conflated constantly and they are different products. CFB is coated front and back — developer facing up, capsules facing down — and copies onto the sheet below it. Self-contained (also sold as self-copying) paper carries capsules and developer on the same face, so pressure develops an image on that sheet itself, with no receiving ply involved at all.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/guides/carbonless-paper--us2730456-green-schleicher-capsule-coating.png",
+        alt: "Patent drawing: a sheet of paper with one corner turned up to expose its underside, a leader line from the exposed coating labelled coating of microscopic hydrophilic complex colloid rupturable capsules containing printing fluid",
+        width: 1170,
+        height: 1300,
+        caption: "US 2,730,456, \u201cManifold record material\u201d (Barrett K. Green and Lowell Schleicher, filed 30 June 1953, granted 10 January 1956). The label names the mechanism directly: a coating of rupturable capsules holding printing fluid on the back of the sheet. The patent claims this record material, not microencapsulation in general.",
+        credit: {
+          source: "US Patent and Trademark Office, via Google Patents",
+          url: "https://patents.google.com/patent/US2730456A/en",
+          license: "Public domain (US patent drawing)",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Where the mechanism came from — and what it did not invent",

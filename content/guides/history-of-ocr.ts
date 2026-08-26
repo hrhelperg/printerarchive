@@ -49,6 +49,21 @@ const entry: GuideEntry = {
       "text": "Statistical and neural OCR (late 1980s–present). Around 1989, Yann LeCun and colleagues at AT&T Bell Labs applied backpropagation-trained convolutional networks (the LeNet lineage) to handwritten ZIP-code digits for the U.S. Postal Service — foundational work for modern deep learning and handwriting recognition. Tesseract was developed at Hewlett-Packard between roughly 1985 and 1994, open-sourced by HP in 2005, and sponsored by Google from about 2006 to 2018; Tesseract 4 (c. 2018) added an LSTM neural line-recognition engine alongside the legacy engine, and Tesseract 5.0.0 was released November 30, 2021. Since the 2010s the field has moved from hand-engineered features toward end-to-end neural sequence models, including transformer-based recognizers."
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/guides/history-of-ocr--optophone-reading-device.jpg",
+        "alt": "Photograph from about 1921 of a man demonstrating the optophone, a reading device for blind users, seated at an apparatus with an optical head over a page",
+        "width": 1920,
+        "height": 1133,
+        "caption": "The optophone, invented by E. E. Fournier d'Albe, demonstrated in use around 1921. It scanned print and produced tones rather than characters \u2014 recognition of the mark on the page, before recognition of the letter.",
+        "credit": {
+          "source": "Wellcome Collection, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:The_%27Optophone%27,_a_reading_device_for_the_blind_Wellcome_V0048477.jpg",
+          "license": "CC BY 4.0"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "How it works"

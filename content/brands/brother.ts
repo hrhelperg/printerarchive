@@ -136,6 +136,21 @@ const entry: BrandEntry = {
       ]
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/brands/brother--brother-ep-44-1984.jpg",
+        "alt": "Brother EP-44, a small flat 1984 portable electronic typewriter and thermal printer with a full keyboard and a narrow display strip",
+        "width": 1920,
+        "height": 1474,
+        "caption": "The Brother EP-44 (1984) \u2014 a portable electronic typewriter that is also a thermal printer, from the typewriter business Brother carried into printing and fax.",
+        "credit": {
+          "source": "Wolfgang Stief, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Brother_EP-44_Schreibmaschine_Drucker_(1984)_(24493897618).jpg",
+          "license": "CC0"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "Printing technologies"

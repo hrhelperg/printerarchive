@@ -52,6 +52,21 @@ const entry: GuideEntry = {
       text: "What the pool was made of varied, and the distinction matters here only for what a pool could be. At one end is the single-line fax modem, which presents an AT-style command interface and splits the T.30 work between host and modem according to a service class. At the other is the multi-channel fax board, a different animal: the Computer History Museum's GammaLink publicity photographs show both a single-line PC fax board and the multi-line MLCP-4, and boards of that family carried their own signal processors and multiple line interfaces rather than exposing a modem command set at all. The same number of pooled lines might therefore be an array of single-line modems or a small number of boards, with quite different host software behind them. The service classes themselves — Class 1 against Class 2 and 2.0, and why pre-standard Class 2 modems interoperated badly — are covered on their own page and not rehearsed here. Channel densities were board- and generation-specific and are not worth stating as general facts.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/guides/fax-servers-and-inbound-routing--us6396597-fig1-server-mailboxes.png",
+        alt: "Patent drawing FIG. 1: a central server computer with CPU, modem and a stack of numbered per-user mailboxes, connected to several desktop workstations and a printer, alongside a separate store-and-forward service computer holding its own bank of ten mailboxes",
+        width: 974,
+        height: 1400,
+        caption: "FIG. 1 of US 6,396,597 B1 (Catherine R. Marshall, filed 10 February 1993, granted 28 May 2002). The numbered boxes on both machines are per-user mailboxes: the drawing makes the inbound problem visible, because a fax arriving on a shared line has to be assigned to one of them from information the page itself does not carry.",
+        credit: {
+          source: "US Patent and Trademark Office, via Google Patents",
+          url: "https://patents.google.com/patent/US6396597B1/en",
+          license: "Public domain (US patent drawing)",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "The half that did not: nothing on the page says who it is for",

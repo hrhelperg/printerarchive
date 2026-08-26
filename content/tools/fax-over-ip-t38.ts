@@ -92,6 +92,21 @@ const entry: ToolEntry = {
       text: "The bandwidth difference is not marginal. A patent filed in February 1999 for real-time facsimile over data networks describes packetising the recovered signal at roughly one-twentieth the bandwidth of carrying the same call as VoIP audio — a figure from a period filing rather than a measured benchmark, but one that explains why relay was pursued at all. It was cheaper as well as more robust.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/tools/fax-over-ip-t38--us6483600-fig1b-gateway-relay.png",
+        alt: "Patent drawing FIG. 1B: a transmitting facsimile device and re-dialler connected to a transmitting gateway, which links across a cloud labelled Internet to a receiving gateway and receiving facsimile device, with an Internet telephony server also attached to the cloud",
+        width: 1500,
+        height: 1092,
+        caption: "FIG. 1B of US 6,483,600 B1 (Schuster, McCallister and Fendt, filed 26 February 1999, granted 19 November 2002). A contemporaneous commercial implementation of the same architecture T.38 describes: each fax machine talks to a gateway over the telephone side, and only the gateways speak to the packet network. The patent is one vendor's system, not the standard.",
+        credit: {
+          source: "US Patent and Trademark Office, via Google Patents",
+          url: "https://patents.google.com/patent/US6483600B1/en",
+          license: "Public domain (US patent drawing)",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "The gateway mechanism",

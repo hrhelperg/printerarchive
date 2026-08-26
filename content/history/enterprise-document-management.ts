@@ -32,6 +32,21 @@ const entry: HistoryEntry = {
       text: "The filing cabinet fails quietly and then all at once. While an organisation is small, the person who needs a document is often the person who filed it, and shared conventions — this drawer, that colour, this naming — hold the system together. As volume grows and staff turn over, those conventions decay: folders are mislabelled, documents filed under one logic are sought under another, and the knowledge of where things are walks out the door with the people who held it. The motivation for a managed system is precisely this decay. A system replaces personal memory and local convention with an explicit, durable structure that does not depend on any individual still being present to find anything.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/enterprise-document-management--ssb-records-office-1938.jpg",
+        alt: "1938 photograph of a vast records office: rows of workers standing at long banks of filing units that stretch away down the room",
+        width: 1920,
+        height: 2374,
+        caption: "The Social Security Board Records Office, Baltimore, 1938, handling applications for account numbers. Retrieval at this scale is a staffing and indexing problem long before it is a computing one.",
+        credit: {
+          source: "Library of Congress, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:The_millions_of_applications_for_social_security_account_numbers_are_handled_in_orderly_manner_in_the_Social_Security_Board_Records_Office._After_the_hour_and_date,_and_the_number_of_each_LCCN2016878120.jpg",
+          license: "Public domain"
+        }
+      }
+    },
+    {
       kind: "heading",
       level: 2,
       text: "The document lifecycle",

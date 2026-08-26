@@ -94,6 +94,21 @@ const entry: BrandEntry = {
       ]
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/brands/ibm--ibm-selectric-i.jpg",
+        "alt": "IBM Selectric electric typewriter with its dust cover, ribbon cassette and eraser accessories",
+        "width": 1920,
+        "height": 1386,
+        "caption": "An IBM Selectric electric typewriter (model 72). The Selectric replaced the typebar basket with a single moving type element \u2014 the formed-character principle that IBM's office printing descended from.",
+        "credit": {
+          "source": "Nils Salander, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:IBM_Selectric_I_(1).jpg",
+          "license": "CC BY 4.0"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "Printing technologies"
