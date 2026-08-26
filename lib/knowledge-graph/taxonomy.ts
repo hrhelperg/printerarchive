@@ -45,6 +45,7 @@ export const LIVE_PRODUCTS: ProductId[] = [
   "cv-resume",
   "invoice-maker",
   "pocket-manager",
+  "esimky",
 ];
 
 /** No app anchors remain proposed — all graduated to live ProductIds in Phase 15B. */
@@ -389,7 +390,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "brand"
       }
     ],
-    "livePages": 5,
+    "livePages": 6,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
@@ -616,7 +617,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "organization"
       }
     ],
-    "livePages": 5,
+    "livePages": 6,
     "capacity": {
       "conservative": 30,
       "ambitious": 52
@@ -3337,7 +3338,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 12,
+    "livePages": 13,
     "capacity": {
       "conservative": 32,
       "ambitious": 58
@@ -4327,7 +4328,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "technology"
       }
     ],
-    "livePages": 7,
+    "livePages": 9,
     "capacity": {
       "conservative": 22,
       "ambitious": 34
@@ -6120,7 +6121,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 6,
+    "livePages": 9,
     "capacity": {
       "conservative": 30,
       "ambitious": 48
@@ -7303,7 +7304,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "organization"
       }
     ],
-    "livePages": 2,
+    "livePages": 3,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
@@ -8212,7 +8213,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "format"
       }
     ],
-    "livePages": 6,
+    "livePages": 8,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
@@ -8364,7 +8365,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "An encyclopedic reference on archive file formats (ZIP, RAR, 7z, TAR, gzip) and the lossless data-compression concepts behind them, covering how the formats and algorithms work, their history, and practical use for backup and file transfer. Vendor-neutral and standards-first, grounded in public specifications rather than product marketing.",
     "appAnchor": "zip-rar",
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "ZIP",
@@ -8447,7 +8448,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "product"
       }
     ],
-    "livePages": 0,
+    "livePages": 3,
     "capacity": {
       "conservative": 26,
       "ambitious": 44
@@ -8705,7 +8706,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "standard"
       }
     ],
-    "livePages": 26,
+    "livePages": 27,
     "capacity": {
       "conservative": 24,
       "ambitious": 40
@@ -10198,7 +10199,7 @@ export const TAXONOMY: KgCluster[] = [
     ],
     "description": "A document-centric cluster covering resume and CV file formats, ATS-parseable document structure, PDF export and preservation, and job-application document preparation. It treats resumes strictly as documents (formatting, file formats, portability, archiving, printing) and makes no career-coaching, hiring-outcome, or \"how to get a job\" claims.",
     "appAnchor": "cv-resume",
-    "status": "planned",
+    "status": "expand",
     "entities": [
       {
         "name": "PDF (Portable Document Format)",
@@ -10281,7 +10282,7 @@ export const TAXONOMY: KgCluster[] = [
         "type": "concept"
       }
     ],
-    "livePages": 0,
+    "livePages": 1,
     "capacity": {
       "conservative": 22,
       "ambitious": 34

@@ -213,16 +213,21 @@ export const ECOSYSTEM_WEBSITES: EcosystemProduct[] = [
     id: "twin-phone",
     name: "Twin Phone",
     shortName: "Twin Phone",
+    // The website and the iOS listing are NOT the same proposition: the site
+    // sells browser calling ("no app, SIM, or contract"), while the App Store
+    // listing is "TwinPhone: Second Phone Number" (published by HRHELPERG LLC).
+    // The description therefore covers both and drops the site's "no app"
+    // claim, which the existence of the iOS listing contradicts.
     description:
-      "International calling from a browser — no app, SIM, or contract required.",
+      "International calling from a browser, and a second phone number on iPhone.",
     category: "website",
     monogram: "TW",
     websiteUrl: "https://twin-phone.com",
     websiteStatus: "available",
     webAppUrl: null,
     webAppStatus: "unknown",
-    iosUrl: null,
-    iosStatus: "unknown",
+    iosUrl: "https://apps.apple.com/app/id6792280945",
+    iosStatus: "available",
     androidUrl: null,
     androidStatus: "unknown",
     timelineOrder: 8,
@@ -400,6 +405,32 @@ export const ECOSYSTEM_WEBSITES: EcosystemProduct[] = [
       "globalcityintelligence.com",
       "www.globalcityintelligence.com",
     ],
+  },
+  {
+    id: "esimky",
+    name: "Esimky",
+    shortName: "Esimky",
+    // Paraphrased from the site's own published title/description on
+    // 2026-08-26. The site states "No app" explicitly, so ios/android stay
+    // "unknown" and can never render as links.
+    description:
+      "Travel eSIM rental: prepaid data plans compared by price per GB, with the QR delivered by email.",
+    category: "website",
+    monogram: "EK",
+    websiteUrl: "https://esimky.com",
+    websiteStatus: "available",
+    webAppUrl: null,
+    webAppStatus: "unknown",
+    iosUrl: null,
+    iosStatus: "unknown",
+    androidUrl: null,
+    androidStatus: "unknown",
+    // Deliberately NOT placed in the company timeline: no launch date has been
+    // verified, and the timeline is an approved chronological order. Inserting
+    // it at a guessed position would invent chronology. Directory only.
+    showInTimeline: false,
+    showInDirectory: true,
+    currentSiteDomains: ["esimky.com", "www.esimky.com"],
   },
 ];
 

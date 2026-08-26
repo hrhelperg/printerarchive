@@ -7,7 +7,7 @@
 // module is loaded directly by `node --test`, which resolves neither the "@/"
 // path alias nor an extensionless specifier.
 import {
-  ECOSYSTEM_APPLICATIONS,
+  ECOSYSTEM_PRODUCTS,
   type EcosystemProduct,
 } from "./ecosystem/product-registry.ts";
 
@@ -18,7 +18,8 @@ export type ProductId =
   | "pdf-editor"
   | "cv-resume"
   | "invoice-maker"
-  | "pocket-manager";
+  | "pocket-manager"
+  | "esimky";
 
 export interface ProductLink {
   label: string;
@@ -41,7 +42,10 @@ export interface Product {
  * active link.
  */
 function linksFor(id: ProductId): ProductLink[] {
-  const entry: EcosystemProduct | undefined = ECOSYSTEM_APPLICATIONS.find(
+  // Searches every ecosystem product, not just the applications: a product
+  // surfaced in a "Modern tools" block may be a web service with no app
+  // (Esimky), and its single web entry point is still the honest link.
+  const entry: EcosystemProduct | undefined = ECOSYSTEM_PRODUCTS.find(
     (p) => p.id === id,
   );
   if (!entry) {
@@ -108,5 +112,14 @@ export const PRODUCTS: Record<ProductId, Product> = {
     name: "Pocket Manager",
     tagline: "Track receipts, expenses, and financial documents on a phone.",
     links: linksFor("pocket-manager"),
+  },
+  esimky: {
+    id: "esimky",
+    name: "Esimky",
+    // Web service, not an app: the site states "No app" outright, so no store
+    // link exists to claim. The tagline paraphrases the site's own copy.
+    tagline:
+      "Rent a travel eSIM and receive the activation QR by email, without a physical SIM.",
+    links: linksFor("esimky"),
   },
 };

@@ -76,6 +76,7 @@ const EXPECTED_WEBSITE_URLS = {
   printerarchive: "https://printerarchive.net",
   "virtue-and-power": "https://virtueandpower.com",
   globalcityintelligence: "https://globalcityintelligence.com",
+  esimky: "https://esimky.com",
 };
 
 /** The approved application links. Absent platform = no verified link. */
@@ -115,10 +116,10 @@ const EXPECTED_APPS = {
 
 // ---------------------------------------------------------------- structure
 
-test("registry has 16 websites and 7 applications", () => {
-  assert.equal(ECOSYSTEM_WEBSITES.length, 16);
+test("registry has 17 websites and 7 applications", () => {
+  assert.equal(ECOSYSTEM_WEBSITES.length, 17);
   assert.equal(ECOSYSTEM_APPLICATIONS.length, 7);
-  assert.equal(ECOSYSTEM_PRODUCTS.length, 23);
+  assert.equal(ECOSYSTEM_PRODUCTS.length, 24);
 });
 
 test("product ids are unique", () => {
@@ -142,12 +143,21 @@ test("every product has the required display fields", () => {
 // ----------------------------------------------------------------- timeline
 
 test("timeline order is contiguous 1..16 with no duplicates", () => {
-  const orders = ECOSYSTEM_WEBSITES.map((p) => p.timelineOrder);
+  // Only websites that opt into the timeline carry an order. A website with a
+  // verified URL but no verified launch date (Esimky) is directory-only rather
+  // than inserted at a guessed position, so it holds no timelineOrder at all.
+  const timelined = ECOSYSTEM_WEBSITES.filter((p) => p.showInTimeline);
+  const orders = timelined.map((p) => p.timelineOrder);
   assert.equal(new Set(orders).size, orders.length, "duplicate timelineOrder");
   assert.deepEqual(
     [...orders].sort((a, b) => a - b),
     Array.from({ length: 16 }, (_, i) => i + 1),
   );
+  for (const p of ECOSYSTEM_WEBSITES) {
+    if (!p.showInTimeline) {
+      assert.equal(p.timelineOrder, undefined, `${p.id} has timelineOrder`);
+    }
+  }
 });
 
 test("timeline renders in exactly the approved order", () => {
@@ -174,7 +184,7 @@ test("website URLs are exactly the approved set", () => {
   assert.deepEqual(actual, EXPECTED_WEBSITE_URLS);
 });
 
-test("all 16 websites are marked available", () => {
+test("all 17 websites are marked available", () => {
   for (const p of ECOSYSTEM_WEBSITES) {
     assert.equal(p.websiteStatus, "available", `${p.id}`);
   }
@@ -387,7 +397,7 @@ test("every application URL is nofollowed on every surface it appears", () => {
 });
 
 test("directory exposes every supplied product", () => {
-  assert.equal(directoryWebsites().length, 16);
+  assert.equal(directoryWebsites().length, 17);
   assert.equal(directoryApplications().length, 7);
 });
 
@@ -401,11 +411,27 @@ test("lib/products.ts hard-codes no URLs of its own", () => {
   );
 });
 
-test("lib/products.ts ids match the registry's application ids", () => {
-  assert.deepEqual(
-    Object.keys(PRODUCTS).sort(),
-    ECOSYSTEM_APPLICATIONS.map((p) => p.id).sort(),
-  );
+test("every lib/products.ts id resolves to a registry entry", () => {
+  // PRODUCTS is a superset of the applications: a "Modern tools" block may
+  // surface a web service that ships no app (Esimky). Every id must still
+  // resolve to a real registry entry, and every application must appear.
+  const registryIds = new Set(ECOSYSTEM_PRODUCTS.map((p) => p.id));
+  for (const id of Object.keys(PRODUCTS)) {
+    assert.ok(registryIds.has(id), `PRODUCTS id not in registry: ${id}`);
+  }
+  for (const app of ECOSYSTEM_APPLICATIONS) {
+    assert.ok(PRODUCTS[app.id], `application missing from PRODUCTS: ${app.id}`);
+  }
+});
+
+test("website-category products in PRODUCTS expose only their web link", () => {
+  for (const id of Object.keys(PRODUCTS)) {
+    const entry = ECOSYSTEM_PRODUCTS.find((p) => p.id === id);
+    if (entry.category !== "website") continue;
+    assert.deepEqual(PRODUCTS[id].links, [
+      { label: "Open on the web", href: entry.websiteUrl },
+    ]);
+  }
 });
 
 test("derived product links match the registry exactly", () => {
