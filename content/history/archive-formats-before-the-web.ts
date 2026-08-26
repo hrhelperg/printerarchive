@@ -47,6 +47,21 @@ const entry: HistoryEntry = {
       text: "The medium's own history is likewise more segmented than the usual retelling. Sony introduced a 3.5-inch microfloppy in 1981, a Microfloppy Industry Committee specification standardised the mechanics the following year, and the high-density variant that yields 1,474,560 bytes belongs to a later generation again — the period documented in Ecma International's 1987 standard for 90 mm flexible disk cartridges, with an ISO counterpart following in 1989. Compressing three developments into one sentence about Sony inventing the 1.44 MB disk is the standard error here, and the Computer History Museum's storage timeline is the corrective.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/archive-formats-before-the-web--sony-3-5-inch-floppy-pack.jpg",
+        alt: "Sealed retail pack of ten Sony 3.5-inch 2HD floppy disks",
+        width: 800,
+        height: 700,
+        caption: "A sealed pack of ten Sony 3.5-inch 2HD diskettes \u2014 the capacity ceiling as it was actually bought, one box at a time.",
+        credit: {
+          source: "User:Iswoar, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Package_of_ten_3.5-inch_floppy_disks_(2HD)_from_Sony.jpg",
+          license: "CC BY 3.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "The diskette written into the specification",

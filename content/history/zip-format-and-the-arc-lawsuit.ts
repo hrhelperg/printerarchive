@@ -70,6 +70,21 @@ const entry: HistoryEntry = {
       text: "Even the name is softer than it looks. The account that Bob Mahoney, sysop of the EXEC-PC bulletin board, suggested \"ZIP\" for its connotation of speed rests on a single phone conversation recorded by Jason Scott. It is sourced, which is more than most origin stories manage, but it is sourced once.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/zip-format-and-the-arc-lawsuit--pkzip-distribution-floppy.jpg",
+        alt: "Blue 3.5-inch floppy disk with a PKZIP DOS label reading PKZIP, PKUNZIP and PKSFX, with zipper artwork and a copyright line dated 1989 to 1994",
+        width: 1920,
+        height: 1920,
+        caption: "PKZIP for DOS on its distribution floppy. The label names the three programs shipped together \u2014 PKZIP, PKUNZIP and PKSFX \u2014 and carries a \u00a91989\u201394 PKWARE line.",
+        credit: {
+          source: "Blake Patterson, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:PKZIP_floppy.jpg",
+          license: "CC BY 2.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "The APPNOTE is the mechanism",

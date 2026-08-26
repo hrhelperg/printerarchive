@@ -246,6 +246,21 @@ const entry: HistoryEntry = {
       text: "The security-domain machinery that makes multiple isolated profiles possible is GlobalPlatform's, defined for post-issuance application management on smart cards generally. The card platform beneath it is ETSI TS 102 221. The requirements for an embedded UICC are ETSI TS 103 383. GSMA's contribution was to specify the provisioning protocols, define the server roles, and — crucially — govern who is allowed to occupy them. That is a real and difficult contribution. It is not the invention of the underlying mechanism, and crediting it that way erases two decades of smart-card platform work.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/from-sim-card-to-esim--sim-form-factors-2ff-to-mff2.png",
+        alt: "Diagram comparing four SIM form factors by size \u2014 mini SIM 2FF, micro SIM 3FF, nano SIM 4FF \u2014 beside a much smaller MFF2 embedded SIM chip",
+        width: 1920,
+        height: 1440,
+        caption: "Successive plug-in form factors \u2014 2FF, 3FF and 4FF \u2014 beside MFF2, the surface-mount package. Each step removed plastic around an unchanged contact field; MFF2 removes the card entirely. The original full-size 1FF card is not shown.",
+        credit: {
+          source: "Jbond2018, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:SIM_card_sizes.png",
+          license: "CC0 1.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Embedded does not mean soldered",

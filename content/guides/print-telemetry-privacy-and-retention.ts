@@ -164,6 +164,21 @@ const entry: GuideEntry = {
       text: "There is no established first printer, first date, or named inventor for machine identification codes in the published record. Claims that a particular 1980s or 1990s model was the first, that a secret arrangement with a national law-enforcement agency mandates the practice, or that a central-bank counterfeit-deterrence body requires dot marking, are widely repeated and unsupported by any primary document. No patent number can be attached to the practice on the strength of the public record as it stands. Separately, the 2017 prosecution that made this subject briefly famous is usually retold as a case of microdots catching a leaker; the charging affidavit filed in the case, rather than the dot decoding, is where the investigative narrative actually sits — the decoding was performed afterwards by outside researchers working from the published scan. The case is a fair illustration of the moment printer telemetry entered public awareness. It is not evidence about investigative method.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/guides/print-telemetry-privacy-and-retention--machine-identification-dots.jpg",
+        alt: "Enlarged view of a printed page showing a sparse grid of small yellow dots against paper, with a centimetre ruler along one edge for scale",
+        width: 1400,
+        height: 1346,
+        caption: "Machine identification dots on a printed page, shown against a centimetre scale. The pattern is laid down by many colour laser printers and is readable without any cooperation from the print queue \u2014 identification carried on the sheet rather than in a log.",
+        credit: {
+          source: "Parhamr, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Printer_Steganography_Illustration.png",
+          license: "Public domain",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Retention is the part the standards declined to decide",

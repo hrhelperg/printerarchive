@@ -10,6 +10,19 @@ const entry: HistoryEntry = {
   summary:
     "Every account of the paperless office starts in the same place: a Business Week feature from the summer of 1975 that is said to have predicted the death of paper. The article is real. The prediction attributed to it is softer, more contested and far worse sourced than almost anything written about it admits — and the laboratory that supplied its most-quoted interview is the same laboratory that built the machine which made office paper output explode.\n\nThis page argues two things. First, that the forecast failed for a quarter of a century largely because of what the office-of-the-future project itself shipped. Second, that it has since started coming partly true, for reasons its authors did not name. Where the historical record is genuinely disputed — and on this topic it is disputed almost everywhere — the disputes are marked rather than quietly resolved in favour of the better story.",
   era: "From the office of the future to the electronic record",
+  hero: {
+    src: "/images/history/paperless-office-prediction--xerox-9700-1977.jpg",
+    alt: "1977 black-and-white publicity photograph of the Xerox 9700 Electronic Printing System, an L-shaped run of cabinets with an operator console at one end, a person standing beside it holding a stack of printed output",
+    width: 1920,
+    height: 1375,
+    caption:
+      "The Xerox 9700 Electronic Printing System in a 1977 Xerox publicity photograph. The laboratory whose stated goal was the office of the future is the same laboratory whose laser-printing work produced this machine — and the stack of paper in the photograph is the point.",
+    credit: {
+      source: "Xerox, via Wikimedia Commons",
+      url: "https://commons.wikimedia.org/wiki/File:Woman_with_Xerox_9700_printer.jpg",
+      license: "Public domain",
+    },
+  },
   body: [
     {
       kind: "keyTakeaways",
@@ -166,6 +179,21 @@ const entry: HistoryEntry = {
         "\"Office paper use doubled between 1980 and 2000\" — likewise a reported figure passed through an intermediary, not an established general law.",
         "\"Business Week said paper would be gone by 1995\" — no source inspected here supports a single crisp deadline in the article.",
       ],
+    },
+    {
+      kind: "figure",
+      image: {
+        src: "/images/history/paperless-office-prediction--nara-cut-off-your-files-1990.jpg",
+        alt: "1990 records-management poster showing an office worker climbing a wall of filing cabinets encircled by stacked storage boxes, captioned Cut off your files before they cut you off",
+        width: 1280,
+        height: 1646,
+        caption: "A US National Archives records-management poster, 1990 (NI Poster #7). Fifteen years after the forecast, the federal records programme was still campaigning about offices disappearing under their own paper.",
+        credit: {
+          source: "National Archives and Records Administration, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:%22Cut_off%22_your_files_-before_they_cut_you_off%5E_-_NARA_-_518157.jpg",
+          license: "Public domain",
+        },
+      },
     },
     {
       kind: "heading",

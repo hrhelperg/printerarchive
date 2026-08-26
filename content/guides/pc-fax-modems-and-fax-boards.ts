@@ -33,6 +33,21 @@ const entry: GuideEntry = {
       text: "A fax card supplied the line interface unambiguously. Who supplied T.30 was a design decision, and it was negotiated across a serial interface between the host (the DTE) and the modem (the DCE). The command framework was the AT convention inherited from the Hayes Smartmodem, eventually standardised by the ITU as Recommendation V.250; the fax extensions live in that framework as the +F commands. TIA's Class 1 standard is written for exactly this arrangement, assuming a serial asynchronous connection over EIA/TIA-232-E (ITU-T V.24).",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/guides/pc-fax-modems-and-fax-boards--pci-v92-fax-modem-card.jpg",
+        alt: "Internal PCI fax/data modem expansion card photographed on a plain background, showing its edge connector, RJ-11 sockets and surface-mounted components",
+        width: 1920,
+        height: 1445,
+        caption: "A PCI V.92 fax/data modem card \u2014 the internal form of the hardware whose split with the host is what the service classes define.",
+        credit: {
+          source: "Jonathan Zander (Digon3), via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:PCI_V.92_Fax_Modem_Card_Digon3.jpg",
+          license: "CC BY-SA 3.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "What the service classes actually divide",
@@ -110,6 +125,21 @@ const entry: GuideEntry = {
     {
       kind: "paragraph",
       text: "This is legible in how fax software was written. Packages such as HylaFAX carry their own T.30 implementation and their own body of per-modem knowledge, and class is the attribute their documentation records for every modem: the project's supported-modems page lists each model against a Class 1, Class 2 and Class 2.0 column, and notes that a modem supporting several classes can be configured to use any single one of them but not more than one. Class had to be settled before anything else about a modem mattered, because it determined which program was responsible when a fax failed.",
+    },
+    {
+      kind: "figure",
+      image: {
+        src: "/images/guides/pc-fax-modems-and-fax-boards--rockwell-c5902-fax-controller.jpg",
+        alt: "Macro photograph of a square surface-mounted controller chip on a green circuit board, marked C5902-14, ROCKWELL 92, 9602, A93972-2, MEXICO",
+        width: 1400,
+        height: 1400,
+        caption: "The controller on a Psion Dacom Gold Card V32bis + Fax, marked \u201cC5902-14 / \u00a9ROCKWELL 92\u201d with a 9602 date code. Silicon like this is the part of the card that could run the timing-critical half of a fax session \u2014 which is precisely what a softmodem later moved onto the host processor.",
+        credit: {
+          source: "Raimond Spekking, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Psion_Dacom_Gold_Card_V32bis_%2B_Fax_-_controller_-_Rockwell_C5902-14-4540.jpg",
+          license: "CC BY-SA 4.0",
+        },
+      },
     },
     {
       kind: "heading",

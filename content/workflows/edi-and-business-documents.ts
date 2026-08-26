@@ -94,6 +94,21 @@ const entry: WorkflowEntry = {
       text: "The point of laying these out side by side is not pedantry. It is that the disagreements cluster precisely where the commercial histories are most confident, and the confident dates are the ones with the weakest paper behind them. An article that picks a single number for any row above is choosing which unsourced tradition to join.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/workflows/edi-and-business-documents--teleprinter-1938-loc.jpg",
+        alt: "1938 photograph of a teleprinter with its mechanism exposed, showing keyboard, type mechanism, paper roll and drive motor, with a desk telephone behind it",
+        width: 1920,
+        height: 1410,
+        caption: "A teleprinter in institutional service at the Jerusalem Department of Health, June 1938. Machine-to-machine document exchange over a telegraph or telephone circuit predates the computer by decades; EDI's contribution was to agree on what the characters meant.",
+        credit: {
+          source: "Matson Photo Service, Library of Congress, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Teleprinter,_June_1938,_Jerusalem_Dept._of_Health_LOC_matpc.08709.jpg",
+          license: "Public domain",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "How the bits actually moved",

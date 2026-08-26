@@ -73,6 +73,21 @@ const entry: GuideEntry = {
       ],
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/guides/carbonless-paper--cb-cfb-cf-ply-cross-section.jpg",
+        alt: "Labelled cross-section diagram of three carbonless sheets under a pen, showing microcapsules on the underside of the upper sheets rupturing and releasing ink onto the reactive coating of the sheet below",
+        width: 1920,
+        height: 1022,
+        caption: "A three-part set under a pen: capsules on the back of each upper sheet rupture under the writing pressure and release their contents onto the receiving coat of the sheet beneath. The diagram labels that coat a \u201creactive clay layer\u201d, one common developer chemistry among several.",
+        credit: {
+          source: "\u042e\u043a\u0430\u0442\u0430\u043d, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Carbonless_copy_paper-en.svg",
+          license: "CC BY-SA 3.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "The developer ply, and why the halves are kept apart",

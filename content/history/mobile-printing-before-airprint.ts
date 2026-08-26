@@ -128,6 +128,21 @@ const entry: HistoryEntry = {
       text: "What defeated infrared was its physical layer, not its protocol design. The link needed an unobstructed sightline between two ports held close together and roughly aimed at each other, and survived only as long as that geometry held — which made printing a posture, a handheld held still at the right height and angle for the duration of the transfer. Published figures for range, beam angle and data rate vary between sources and between specification versions, and none is quoted here. The technology is best described now as dormant and superseded; a formal dissolution of the association is not something this page can verify, and it claims none.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/mobile-printing-before-airprint--docomo-infrared-port.jpg",
+        alt: "Top edge of a 2005 NTT DoCoMo clamshell phone, its infrared window emitting a faint violet glow captured by a digital camera",
+        width: 1400,
+        height: 1050,
+        caption: "The infrared port of an NTT DoCoMo D901iS transmitting, photographed on 23 October 2005. Near-infrared is invisible to the eye; the violet cast is an artefact of the camera sensor's sensitivity beyond the visible range. IrDA carried a documented printing path \u2014 IrLPT \u2014 but its line-of-sight geometry is what kept it from becoming a default.",
+        credit: {
+          source: "FOMALHAUT, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Mobile-infrared.jpeg",
+          license: "Public domain",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Bluetooth: the profile that existed and the profiles that got used",

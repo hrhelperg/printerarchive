@@ -121,6 +121,21 @@ const entry: GuideEntry = {
       text: "Two claims about LZWDecode circulate with more confidence than the record supports. The first is a single tidy patent-expiry date: the Unisys LZW patents lapsed in the early 2000s, but the United States and the non-US jurisdictions ran to different dates, and the figures are widely misquoted — check them against the patent record, not secondary write-ups. The second is that LZWDecode was removed from PDF. It was not: it is defined in ISO 32000-1 clause 7.4, and consumers still have to decode it. Whether later revisions formally deprecate it is a question for the standard's own text — it has certainly not been deleted. For the exact status language, read the standard alongside the PDF Association's published errata for clause 7.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/guides/pdf-stream-filters-and-file-size--jpeg-quality-vs-file-size.png",
+        alt: "Comparison grid of the same photograph saved at five JPEG compression settings, each row showing the full image and two 10:1 close-ups alongside its file size",
+        width: 1060,
+        height: 870,
+        caption: "The same photograph saved at five JPEG compression settings, from 33.6 KB down to 2.1 KB, with 10:1 close-ups. The blocking visible in the lower rows is the 8\u00d78 transform grid of the DCT \u2014 the same coding DCTDecode applies inside a PDF, which is why the filter chosen for an image stream, not a document-level setting, decides the size.",
+        credit: {
+          source: "Marek \u015alusarczyk (Tupungato), via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:01_JPEG_JPG_compression_image_quality_degradation_-_comparison_of_photo_quality_and_file_size_saved_with_different_quality_settings.png",
+          license: "CC BY 3.0",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Version is not a detail",
