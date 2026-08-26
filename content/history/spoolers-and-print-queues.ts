@@ -45,6 +45,21 @@ const entry: HistoryEntry = {
       text: "This is indirection in its purest form: a layer interposed between a producer and a consumer that runs at incompatible rates, absorbing the difference so neither has to match the other. The buffer does not make the printer faster; it makes the printer's slowness someone else's problem — the spooler's — rather than the user's.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/spoolers-and-print-queues--hasp-job-log-1979.jpg",
+        alt: "Greenbar continuous-form printout showing repeated banner lines naming a job number, time and site, then a HASP system log listing the job starting, failing with an abend, and ending, followed by job statistics",
+        width: 1920,
+        height: 1440,
+        caption: "HASP output from a batch job at New York University's 370 computer centre, 13 April 1979. The banner lines identify the job at the shared printer; the log shows it admitted, executed under an initiator and class, and ended; the statistics line records 456 lines printed and 0.71 minutes residence time. The queue, printed on its own output.",
+        credit: {
+          source: "Jonathan Schilling, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Listing_page_for_HASP_as_run_on_IBM_370_at_New_York_University_in_1979.jpg",
+          license: "CC BY-SA 4.0"
+        }
+      }
+    },
+    {
       kind: "heading",
       level: 2,
       text: "The queue as a scheduling structure",

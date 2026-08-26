@@ -39,6 +39,21 @@ const entry: ToolEntry = {
       "text": "Before halftoning, photographs could not be printed in the same press pass as text; illustrations had to be hand-engraved or reproduced by separate continuous-tone processes that were slow and unsuited to high-volume relief/letterpress and, later, offset workflows. Halftoning converts continuous tone into a purely bi-level dot pattern that a standard press or bi-level printer can reproduce, letting photographs and text share the same plate and print run. This is the enabling technology behind the illustrated newspaper, magazine, and modern commercial print."
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/tools/halftoning--postscript-screened-cmyk-photomicrograph.jpg",
+        "alt": "Magnified photograph of a printed CMYK halftone screen with a one millimetre scale bar, showing cyan, magenta, yellow and black dots forming rosettes and growing larger from light areas to dark",
+        "width": 1920,
+        "height": 772,
+        "caption": "A printed CMYK halftone screen under magnification, with a 1 mm scale bar. Tone is carried by dot size on a fixed grid, and the four screens interleave into the rosette pattern visible across the field.",
+        "credit": {
+          "source": "Nico H\u00e4hnlein, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Postscript-Druckraster.jpg",
+          "license": "Copyrighted free use"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "How it works"

@@ -52,6 +52,21 @@ const entry: ToolEntry = {
       "text": "The per-pixel quantization at the heart of the loop is itself a thresholding operation — the same nearest-level decision described in the Image Thresholding reference. What distinguishes error diffusion is the feedback path that plain thresholding lacks: the residual is not thrown away but transported to nearby pixels. A consequence is that each output value depends on the accumulated decisions of all previously processed pixels, making the computation recursive and order-dependent rather than a set of independent per-pixel choices."
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/tools/error-diffusion--floyd-steinberg-dithered-photograph.jpg",
+        "alt": "Photograph of a cat reduced to pure black and white pixels, with grain-like clusters standing in for continuous grey tones",
+        "width": 914,
+        "height": 610,
+        "caption": "A grayscale photograph reduced to one bit per pixel using the Floyd\u2013Steinberg kernel. No grey remains: the appearance of tone comes entirely from how the quantisation error was pushed into neighbouring pixels.",
+        "credit": {
+          "source": "Conansc, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Dithered_Cat.jpg",
+          "license": "CC BY-SA 4.0"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "The Floyd–Steinberg kernel and its origin"

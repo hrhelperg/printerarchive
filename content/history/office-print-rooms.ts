@@ -36,6 +36,21 @@ const entry: HistoryEntry = {
       text: "Seen this way, the room was the same kind of institution as the centralised mainframe or the typing pool: a scarce, capital-intensive resource concentrated and shared because concentrating it was cheaper than replicating it. The economics, not a preference for back rooms, put the machines together.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/office-print-rooms--helsinki-duplicating-room-1969.jpg",
+        alt: "Colour photograph of a 1969 office duplicating room: a worker at a duplicating machine surrounded by paper stock, output trays and shelving",
+        width: 1920,
+        height: 1310,
+        caption: "The duplicating room (monistamo) of the Helsinki City Transport head office at Ilmala, 1969. Reproduction here is a room with machines, stock and staff \u2014 not a device beside a desk.",
+        credit: {
+          source: "Unto Laitila, Helsinki City Museum, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Liikennelaitoksen_Ilmalan_p%C3%A4%C3%A4konttorin_monistamo_-_DHKL-111_-_hkm.HKMS000005-km0025q7.jpg",
+          license: "CC BY 4.0"
+        }
+      }
+    },
+    {
       kind: "heading",
       level: 2,
       text: "The print room as a department",

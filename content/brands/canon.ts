@@ -108,6 +108,21 @@ const entry: BrandEntry = {
       ]
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/brands/canon--canon-bj-10v-lite.jpg",
+        "alt": "Canon BJ-10v Lite portable Bubble Jet printer photographed beside a ruler for scale, with its inner cover detached and placed in front",
+        "width": 1611,
+        "height": 1514,
+        "caption": "A Canon BJ-10v Lite (1993), the lighter follow-on to the 1990 BJ-10v, shown with a scale. The portable Bubble Jet line carried Canon's thermal inkjet method into machines small enough to travel.",
+        "credit": {
+          "source": "Namazu-tron, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Canon_BJ-10v_Lite_inkjet_printer_with_Scale.JPG",
+          "license": "CC BY-SA 3.0"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "Printing technologies"

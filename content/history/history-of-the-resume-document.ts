@@ -193,6 +193,21 @@ const entry: HistoryEntry = {
       text: "By early 1993 the technology had reached federal practice. The United States General Accounting Office reported that the incoming administration acquired a Resumix system on a sole-source basis in February 1993, on urgency grounds, having judged it superior for entering résumés, searching for candidates and compiling lists. Whatever one makes of the procurement itself, the report is durable archival evidence that within four years a federal office could treat scanning-and-extraction as the obvious way to handle a stack of résumés — and could argue urgency for it.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/history-of-the-resume-document--us5164899-fig5-sample-resume.png",
+        alt: "Patent drawing FIG. 5: a monospaced typewritten resume showing a JOB OBJECTIVE line, a SUMMARY OF QUALIFICATIONS list, and an EXPERIENCE section in which employment dates sit in a narrow left-hand column beside indented job descriptions",
+        width: 1400,
+        height: 1386,
+        caption: "Part of FIG. 5 of US 5,164,899 (Sobotka, Leung, Inn and Tokuda, assigned to Resumix, filed 1 May 1989, granted 17 November 1992) \u2014 the sample document the patent's parser is demonstrated on. Its abstract names resumes first among the \u201cminimally formatted\u201d documents it handles, and the specification argues that a resume is understood through \u201cspatial and textual analysis\u201d rather than grammar. The contact block above this crop has been omitted.",
+        credit: {
+          source: "US Patent and Trademark Office, via Google Patents",
+          url: "https://patents.google.com/patent/US5164899A/en",
+          license: "Public domain (US patent drawing)",
+        },
+      },
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Writing for the scanner",

@@ -45,6 +45,21 @@ const entry: HistoryEntry = {
       text: "So the mechanics served the workflow not by being sophisticated but by being indifferent — to humidity, to dust, to a ribbon past its best, to a building that was too hot or too cold. The blunt instrument was the point.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/how-impact-printing-worked--daisy-wheel-print-head.jpg",
+        alt: "Close view of a daisy-wheel print head: a spoked wheel of type petals behind a ribbon cartridge, with the hammer positioned at the print point",
+        width: 1920,
+        height: 1280,
+        caption: "The print head and daisy wheel of a Xerox/Diablo D-25. Every character is a moulded petal struck through a ribbon \u2014 which is why the mechanism is fully formed-character, and why changing typeface meant changing the wheel.",
+        credit: {
+          source: "Chiffre01, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Diablo_D-25_print-head.jpg",
+          license: "CC BY-SA 4.0"
+        }
+      }
+    },
+    {
       kind: "heading",
       level: 2,
       text: "What impact made reliable and cheap",

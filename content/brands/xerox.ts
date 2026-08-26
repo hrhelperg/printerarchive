@@ -135,6 +135,21 @@ const entry: BrandEntry = {
       ]
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/brands/xerox--xerox-model-d-haer.jpg",
+        "alt": "Large early xerographic flat-plate copier, a cabinet-sized machine with an operator panel and exposed processing sections",
+        "width": 1920,
+        "height": 1370,
+        "caption": "A Xerox Model D flat-plate copier \u2014 one of the first production units, recorded still in use in 1985 at the Battelle Memorial Institute, where the xerographic process was developed into a product.",
+        "credit": {
+          "source": "Historic American Engineering Record, Library of Congress, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Xerox_Model_D_copier,_one_of_the_first_production_units._Still_in_use_in_1985_-_Battelle_Memorial_Institute,_Xerography,_505_King_Avenue,_Ohio_State_University,_Columbus,_HAER_OHIO,25-COLB,38A-2.tif",
+          "license": "Public domain"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "Printing technologies"

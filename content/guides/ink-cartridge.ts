@@ -57,6 +57,21 @@ const entry: GuideEntry = {
       "text": "The container. The cartridge body is the packaging that keeps this ink clean, sealed, and presented to the printer in the right condition. In general terms a cartridge provides a reservoir holding the ink; a means of maintaining a slight negative (back-)pressure at the outlet so ink does not weep out — commonly a capillary foam or sponge, or a free-ink chamber with a spring-loaded bag or valve; a controlled vent or labyrinth that admits air to replace ink as it is drawn, without letting ink leak; an outlet or septum that mates to the printer's ink feed or, in integrated designs, feeds directly into the cartridge's own printhead; and, in many products, an electronic memory or identification chip that reports information such as ink-level estimates and cartridge identity to the printer. The physics of the back-pressure that keeps the nozzle meniscus stable belongs to the ink delivery system and is only summarised here."
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/guides/ink-cartridge--cartridge-underside-contacts-and-nozzles.jpg",
+        "alt": "Underside of an inkjet cartridge showing a gold electrical contact pad at one end and the nozzle plate and chip area at the other",
+        "width": 1920,
+        "height": 1280,
+        "caption": "The underside of an inkjet cartridge: an electrical contact pad at one end and the nozzle area at the other. On an integrated cartridge the printhead is part of the consumable, which is why replacing it replaces the nozzles too.",
+        "credit": {
+          "source": "Mediatrotter, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Druckerpatrone_Ansicht_Unterseite.JPG",
+          "license": "CC BY-SA 4.0"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "Main types of ink cartridge"

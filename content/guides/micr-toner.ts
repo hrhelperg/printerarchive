@@ -56,6 +56,21 @@ const entry: GuideEntry = {
       "text": "Exact formulations, iron-oxide loadings, and particle characteristics are proprietary and vary by manufacturer; this reference does not state any specific product's composition figures."
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/guides/micr-toner--cheque-micr-line.jpg",
+        "alt": "Early cheque photographed above an enlarged reproduction of its magnetic character line, with leader lines labelling the A.B.A. number, branch number, check digit, account number, transaction code and amount",
+        "width": 1920,
+        "height": 1158,
+        "caption": "An early cheque demonstrating magnetic ink character recognition, with the code line enlarged and each field labelled. Wikimedia Commons records the font as similar to E-13B but probably its predecessor E-13A, whose transit symbol was later changed because readers confused it with the figure 8.",
+        "credit": {
+          "source": "SRI International, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Check_with_MICR.jpg",
+          "license": "CC BY-SA 3.0"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "How it works and where it fits"

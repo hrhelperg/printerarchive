@@ -25,6 +25,21 @@ const entry: GuideEntry = {
       "text": "The 2000s brought mass digitization and purpose-built, high-throughput machines. Project Gutenberg (founded 1971) established the idea of digital full text, initially by re-keying rather than scanning. The Million Book Project (launched 2001) drove large-scale scanning. Google announced its Books Library Project in December 2004 to scan library collections, and holds a patent, US 7,508,978 (\"Detection of grooves in scanned images,\" filed September 2004, granted March 2009), commonly cited as its book-scanning patent; the mechanism uses an infrared pattern to model and computationally flatten curved open pages. The Open Content Alliance, announced October 2005 and administered by the Internet Archive, promoted open mass digitization; the Internet Archive developed its Scribe workstation and later the Table Top Scribe, which began shipping to library partners around 2015. A parallel DIY book-scanner community documented low-cost two-camera cradle rigs."
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/guides/book-scanners--planetary-scanner-czech-national-library.jpg",
+        "alt": "Operator digitising a bound volume on a manual overhead book scanner, the book open on a cradle beneath an overhead imaging head",
+        "width": 1920,
+        "height": 1280,
+        "caption": "Digitising a bound volume on a manual book scanner at the National Library of the Czech Republic. The camera looks down at an open cradle, so the binding is never pressed flat against glass.",
+        "credit": {
+          "source": "Skot, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Book_scanner_digitization_National_library_of_the_Czech_republic.jpg",
+          "license": "CC BY-SA 4.0"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "How it works"

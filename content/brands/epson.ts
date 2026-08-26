@@ -91,6 +91,21 @@ const entry: BrandEntry = {
       ]
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/brands/epson--epson-lx800.png",
+        "alt": "Epson LX-800 dot matrix printer, a beige 1980s impact printer with a paper guide and control panel",
+        "width": 615,
+        "height": 376,
+        "caption": "An Epson LX-800 \u2014 a unit from the dot-matrix line that established Epson in office printing before its inkjet era.",
+        "credit": {
+          "source": "Oguenther, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Epson-lx800.png",
+          "license": "CC BY-SA 3.0"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "Printing technologies"

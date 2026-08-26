@@ -36,6 +36,21 @@ const entry: HistoryEntry = {
       text: "This is the pivot. Once printing flows through a central point for reasons of manageability, that point inevitably accumulates functions that have nothing to do with sharing a device and everything to do with running an organisation.",
     },
     {
+      kind: "figure",
+      image: {
+        src: "/images/history/print-servers-in-large-offices--line-printer-bank.jpg",
+        alt: "Several large line printers standing side by side in a computer centre machine room",
+        width: 1440,
+        height: 1080,
+        caption: "A row of line printers in the computer centre of the Gdansk Shipyard. Output capacity was pooled in one room and jobs were routed to it, rather than each department owning a device.",
+        credit: {
+          source: "Stanis\u0142aw Kosiedowski, via Wikimedia Commons",
+          url: "https://commons.wikimedia.org/wiki/File:Drukarki_wierszowe.jpg",
+          license: "CC BY-SA 4.0"
+        }
+      }
+    },
+    {
       kind: "heading",
       level: 2,
       text: "Metering, quotas, and the cost of a page",

@@ -47,6 +47,21 @@ const entry: GuideEntry = {
       "text": "Digitization from microfilm is distinct from digitizing paper directly. The source is already a photographic intermediate, so image quality is bounded by the quality of the original filming — its resolution, density, contrast, and any defects. A well-known consequence, noted explicitly in the FADGI guidelines, is that the original document's physical size can only be reconstructed from a scan if the reduction ratio is known or a physical scale was filmed in the frame, which is not standard practice."
     },
     {
+      "kind": "figure",
+      "image": {
+        "src": "/images/guides/microfilm-digitization--scanpro-2200-reader-scanner.jpg",
+        "alt": "Microfilm reader-scanner: a desktop unit with a film transport beneath an optical head, connected to a display showing the scanned frame",
+        "width": 1280,
+        "height": 1707,
+        "caption": "An e-ImageData ScanPro 2200 microfilm reader-scanner. The film is still advanced through a transport under an optical head; what changed is that the head now delivers a digital frame instead of projecting onto a screen.",
+        "credit": {
+          "source": "Acaraj\u00e9 No 1, via Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Microfilm_ScanPro_2200.jpg",
+          "license": "CC BY-SA 4.0"
+        }
+      }
+    },
+    {
       "kind": "heading",
       "level": 2,
       "text": "How it works"
