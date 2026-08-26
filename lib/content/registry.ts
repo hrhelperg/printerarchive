@@ -32,6 +32,7 @@ import histEvoOfficePrinting from "@/content/history/evolution-of-office-printin
 import histEvoColor from "@/content/history/evolution-of-color-printing";
 import histDesktopPublishing from "@/content/history/history-of-desktop-publishing";
 import histWirelessHistory from "@/content/history/history-of-wireless-printing";
+import histPortableDocFormats from "@/content/history/portable-document-formats-before-pdf";
 
 // Phase 4A — era + impact/early-digital clusters
 import hist1980s from "@/content/history/printing-in-the-1980s";
@@ -117,6 +118,7 @@ import std_pdf_a from "@/content/tools/pdf-a";
 import std_pdf_x from "@/content/tools/pdf-x";
 import std_pdf_ua from "@/content/tools/pdf-ua";
 import std_iso_32000 from "@/content/tools/iso-32000";
+import g_pdf_stream_filters from "@/content/guides/pdf-stream-filters-and-file-size";
 import std_tiff from "@/content/tools/tiff";
 import std_icc_profiles from "@/content/tools/icc-profiles";
 import std_cmyk from "@/content/tools/cmyk";
@@ -433,6 +435,23 @@ import histSpoolersQueues from "@/content/history/spoolers-and-print-queues";
 import histEnterpriseDocMgmt from "@/content/history/enterprise-document-management";
 import wfSharedPrinter from "@/content/workflows/shared-printer-workflows";
 
+
+// Wave 1 — historical evolution -> modern workflows
+import w1_mobile_printing_before_airprint from "@/content/history/mobile-printing-before-airprint";
+import w1_internet_fax_t37_t38 from "@/content/fax/internet-fax-t37-and-t38";
+import w1_fax_servers_inbound_routing from "@/content/guides/fax-servers-and-inbound-routing";
+import w1_pc_fax_modems_and_boards from "@/content/guides/pc-fax-modems-and-fax-boards";
+import w1_paperless_office_prediction from "@/content/history/paperless-office-prediction";
+import w1_zip_format_arc_lawsuit from "@/content/history/zip-format-and-the-arc-lawsuit";
+import w1_rar_format_eugene_roshal from "@/content/history/rar-format-and-eugene-roshal";
+import w1_archive_formats_before_web from "@/content/history/archive-formats-before-the-web";
+import w1_carbonless_paper from "@/content/guides/carbonless-paper";
+import w1_edi_business_documents from "@/content/workflows/edi-and-business-documents";
+import w1_history_of_resume_document from "@/content/history/history-of-the-resume-document";
+import w1_fax_over_ip_t38 from "@/content/tools/fax-over-ip-t38";
+import w1_from_sim_card_to_esim from "@/content/history/from-sim-card-to-esim";
+import w1_print_telemetry_privacy from "@/content/guides/print-telemetry-privacy-and-retention";
+
 export const allEntries: ContentEntry[] = [
   // Foundation
   historyOfPrinters,
@@ -463,6 +482,7 @@ export const allEntries: ContentEntry[] = [
   histEvoColor,
   histDesktopPublishing,
   histWirelessHistory,
+  histPortableDocFormats,
   hist1980s,
   histDecade1990s,
   histBeforeWifi,
@@ -538,6 +558,7 @@ export const allEntries: ContentEntry[] = [
   std_pdf_x,
   std_pdf_ua,
   std_iso_32000,
+  g_pdf_stream_filters,
   std_tiff,
   std_icc_profiles,
   std_cmyk,
@@ -832,4 +853,19 @@ export const allEntries: ContentEntry[] = [
   histSpoolersQueues,
   histEnterpriseDocMgmt,
   wfSharedPrinter,
+  // Wave 1 — historical evolution -> modern workflows
+  w1_mobile_printing_before_airprint,
+  w1_internet_fax_t37_t38,
+  w1_fax_servers_inbound_routing,
+  w1_pc_fax_modems_and_boards,
+  w1_paperless_office_prediction,
+  w1_zip_format_arc_lawsuit,
+  w1_rar_format_eugene_roshal,
+  w1_archive_formats_before_web,
+  w1_carbonless_paper,
+  w1_edi_business_documents,
+  w1_history_of_resume_document,
+  w1_fax_over_ip_t38,
+  w1_from_sim_card_to_esim,
+  w1_print_telemetry_privacy,
 ];
