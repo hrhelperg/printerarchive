@@ -1,18 +1,45 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   Semantic tokens. Light only, by design.
+
+   Surfaces run paper (page canvas) -> raised (cards, panels) -> sunken
+   (editorial bands that recede) -> sepia (archival/historical bands). Ink runs
+   display -> body -> soft -> faint. Nothing outside this block should define a
+   colour literal; reach for a token instead.
+
+   Contrast is verified against the WORST surface the colour is used on
+   (--color-paper-sunken, #f3f5f7), not against white. The previous
+   --color-ink-faint (#697386) measured 4.37:1 there and failed WCAG AA for
+   the metadata, kickers and captions it carried; it is darkened here.
+--------------------------------------------------------------------------- */
 @theme {
-  --color-paper: #fafbfc;
+  /* Surfaces */
+  --color-paper: #f7f8fa;
   --color-paper-raised: #ffffff;
-  --color-ink: #111827;
+  --color-paper-sunken: #f3f5f7;
+  --color-sepia: #f6f4ef;
+  --color-ink-surface: #0e1726;
+
+  /* Ink */
   --color-ink-display: #07111f;
-  --color-ink-soft: #3f4b5f;
-  --color-ink-faint: #697386;
-  --color-rule: #e7ebf0;
-  --color-rule-strong: #d8dee8;
-  --color-accent: #075dcc;
-  --color-accent-hover: #04469a;
-  --color-sepia: #f5f8fc;
-  --color-warn: #b45309;
+  --color-ink: #111827;
+  --color-ink-soft: #414b5c;
+  --color-ink-faint: #5d6575;
+
+  /* Rules */
+  --color-rule: #e5e8ed;
+  --color-rule-strong: #d3d9e2;
+
+  /* Accent — brighter and more contemporary than the previous #075dcc while
+     keeping 5.31:1 on the worst surface (spec's #1769e0 measured only 4.65). */
+  --color-accent: #1560d0;
+  --color-accent-hover: #0b4ba8;
+  --color-accent-wash: #eef4fd;
+  --color-warn: #a2530a;
+  --color-verified: #146c37;
+  --color-verified-wash: #eefaf1;
+
   --font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-mono-font), ui-monospace, SFMono-Regular, monospace;
@@ -27,6 +54,28 @@
   --ecosystem-banner-height: 48px;
   --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 10px 30px rgb(15 23 42 / 0.06);
   --shadow-card: 0 1px 2px rgb(15 23 42 / 0.05), 0 18px 45px rgb(15 23 42 / 0.07);
+
+  /* Measured height of the two-tier site header (identity row + section
+     rail), kept as a variable so sticky offsets below it never hardcode the
+     number. Verified at 102px < lg and 106px >= lg. */
+  --site-header-height: 6.375rem;
+
+  /* Vertical rhythm. Bands step up in drama from reference density to
+     homepage; nothing should invent its own section padding. */
+  --band-tight: clamp(2rem, 3vw, 2.75rem);
+  --band: clamp(3rem, 5vw, 4.5rem);
+  --band-loose: clamp(4rem, 7vw, 6.5rem);
+
+  /* Measure. Longform sits at the comfortable end, reference a little wider
+     because its lines are broken up by tables, lists and labels. */
+  --measure-longform: 68ch;
+  --measure-reference: 74ch;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --site-header-height: 6.625rem;
+  }
 }
 
 html {
@@ -50,13 +99,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  color: var(--color-accent);
-  text-underline-offset: 3px;
-}
+/* Element defaults live in @layer base so that a Tailwind colour utility on
+   an anchor actually wins. Unlayered rules beat layered utilities in the
+   cascade, which previously made `text-ink-soft` on an <a> a no-op and forced
+   every link-coloured surface to be fought with a bespoke class. */
+@layer base {
+  a {
+    color: var(--color-accent);
+    text-underline-offset: 3px;
+  }
 
-a:hover {
-  color: var(--color-accent-hover);
+  a:hover {
+    color: var(--color-accent-hover);
+  }
 }
 
 :focus-visible {
@@ -64,21 +119,86 @@ a:hover {
   outline-offset: 2px;
 }
 
-/* Editorial display + label scale (Source Serif 4 reused at display sizes) */
+/* ---------------------------------------------------------------------------
+   Type scale.
+
+   One ladder, used everywhere, all fluid. Display sizes are for the homepage
+   and hub mastheads; reference pages deliberately sit lower on the ladder so
+   they stay dense. Serif carries editorial voice, sans carries apparatus
+   (labels, metadata, technical values).
+--------------------------------------------------------------------------- */
 .text-display {
   font-family: var(--font-serif);
   color: var(--color-ink-display);
-  font-size: clamp(2.7rem, 4.8vw, 4.6rem);
-  line-height: 1.06;
-  letter-spacing: 0;
+  font-size: clamp(2.5rem, 1.6rem + 3.6vw, 4.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
 }
 
 .text-display-sm {
   font-family: var(--font-serif);
   color: var(--color-ink-display);
-  font-size: clamp(2rem, 3.8vw, 3.35rem);
+  font-size: clamp(1.95rem, 1.35rem + 2.5vw, 3.1rem);
   line-height: 1.1;
-  letter-spacing: 0;
+  letter-spacing: -0.012em;
+}
+
+/* Masthead for reference pages: present, but not homepage-loud. */
+.text-masthead {
+  font-family: var(--font-serif);
+  color: var(--color-ink-display);
+  font-size: clamp(1.75rem, 1.25rem + 1.9vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.text-section {
+  font-family: var(--font-serif);
+  color: var(--color-ink-display);
+  font-size: clamp(1.4rem, 1.1rem + 1.1vw, 1.95rem);
+  line-height: 1.2;
+  letter-spacing: -0.008em;
+}
+
+/* Standfirst / lede — the serif paragraph directly under a title. */
+.standfirst {
+  font-family: var(--font-serif);
+  font-size: clamp(1.08rem, 0.98rem + 0.45vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+
+/* Apparatus: bylines, dates, counts. */
+.meta-line {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-ink-faint);
+}
+
+.caption {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--color-ink-soft);
+}
+
+/* Technical label — spec sheets, field names, protocol values. */
+.tech-label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+.tech-value {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-ink);
+  font-variant-numeric: tabular-nums;
 }
 
 .kicker {
@@ -86,8 +206,69 @@ a:hover {
   font-size: 0.72rem;
   font-weight: 650;
   text-transform: uppercase;
-  letter-spacing: 0;
+  letter-spacing: 0.055em;
   color: var(--color-ink-faint);
+}
+
+/* Eyebrow that names an editorial register rather than a section. */
+.kicker-accent {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+  color: var(--color-accent);
+}
+
+/* ---------------------------------------------------------------------------
+   Editorial primitives — the alternatives to another rounded card.
+--------------------------------------------------------------------------- */
+
+/* A hairline-separated list row. Used for indexes and catalogues where a card
+   per item would be noise. */
+.editorial-row {
+  display: block;
+  border-top: 1px solid var(--color-rule);
+  padding-block: 1.05rem;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease-out,
+    padding-left 160ms ease-out;
+}
+.editorial-row:last-child {
+  border-bottom: 1px solid var(--color-rule);
+}
+.editorial-row:hover {
+  background-color: var(--color-paper-sunken);
+  padding-left: 0.5rem;
+}
+
+/* A band that recedes from the page canvas without becoming a card. */
+.band-sunken {
+  background: var(--color-paper-sunken);
+  border-block: 1px solid var(--color-rule);
+}
+.band-sepia {
+  background: var(--color-sepia);
+  border-block: 1px solid #e8e2d6;
+}
+
+/* Numbered rule used by index/catalogue surfaces. */
+.index-number {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Statistic used in the archive-scale strip. */
+.stat-value {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.75rem);
+  line-height: 1;
+  color: var(--color-ink-display);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
 }
 
 .premium-card {
@@ -117,6 +298,16 @@ a:hover {
 
 .premium-link:hover {
   color: var(--color-accent);
+}
+
+/* Horizontal scroller that keeps its scrollbar out of the design. The
+   content still scrolls by wheel, trackpad, touch and keyboard. */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
 
 /* Section separator */
