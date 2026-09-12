@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import type { ArchiveImage as ArchiveImageData } from "@/lib/content/types";
 import { getSectionMeta, type SectionId } from "@/lib/site";
 import { getSection, getBreadcrumbs } from "@/lib/content/queries";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { Container } from "@/components/layout/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { Frontispiece } from "@/components/content/Frontispiece";
-import { SectionList } from "@/components/content/SectionList";
+import { EntryIndex } from "@/components/content/EntryIndex";
+import { ModelTable } from "@/components/content/ModelTable";
+import { BrandGrid } from "@/components/content/BrandGrid";
 import { GlossaryIndex } from "@/components/content/GlossaryIndex";
 import { DiagnosticGroups } from "@/components/content/DiagnosticGroups";
 import { WorkflowGroups } from "@/components/content/WorkflowGroups";
@@ -230,12 +232,23 @@ export function hubMetadata(section: SectionId): Metadata {
   });
 }
 
+/**
+ * Hub shell.
+ *
+ * The masthead is shared so the archive reads as one publication, but the body
+ * below it is chosen per section: a catalogue is a table, an A-Z is an index, a
+ * diagnostic section is grouped by symptom, and a narrative section is a dated
+ * reading list. Ten hubs previously rendered the same card grid, which made a
+ * 56-model catalogue and an 11-term glossary look like the same object.
+ */
 export function SectionHub({ section }: { section: SectionId }) {
   const m = getSectionMeta(section);
   const items = getSection(section);
   const crumbs = getBreadcrumbs(section);
-  const isHistory = section === "history";
   const profile = HUB_PROFILE[section];
+
+  const sourceCount = items.reduce((n, e) => n + (e.sources?.length ?? 0), 0);
+  const updated = items.map((e) => e.updated).sort().reverse()[0];
 
   const groups = new Map<string, typeof items>();
   for (const e of items) {
@@ -243,33 +256,82 @@ export function SectionHub({ section }: { section: SectionId }) {
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key)!.push(e);
   }
-  const useGroups = groups.size > 1 && items.length >= 6;
+  const useGroups = groups.size > 1 && items.length >= 12;
 
   return (
     <>
-      <Container width="wide" className="pt-8">
-        <Breadcrumbs items={crumbs} />
-      </Container>
-      <div className="mt-6">
-        <Frontispiece
-          kicker="Section"
-          title={m.title}
-          lede={m.description}
-          meta={`${items.length} ${items.length === 1 ? "entry" : "entries"}`}
-          image={profile.image}
-          tone={profile.tone ?? "default"}
-          preload={profile.preload}
-          titleClassName="text-display-sm"
-        />
+      <JsonLd data={breadcrumbSchema(crumbs)} />
+
+      {/* Masthead — compact by design. The previous full-bleed frontispiece
+          spent an entire viewport announcing the section, so a hub could say
+          "56 entries" while showing none of them above the fold. */}
+      <div className="border-b border-rule bg-paper-raised">
+        <Container width="wide" className="pt-6">
+          <Breadcrumbs items={crumbs} />
+        </Container>
+        <Container width="wide" className="pb-10 pt-6 lg:pb-12">
+          {/* Centre-aligned, not bottom-aligned: the plate is taller than the
+              title block, and end-alignment pushed the title ~140px down the
+              page behind a band of empty space. */}
+          <div className="grid gap-8 lg:grid-cols-[1.6fr_0.9fr] lg:items-center lg:gap-14">
+            <div>
+              <p className="kicker">Section</p>
+              <h1 className="mt-3 max-w-[18ch] text-display-sm text-balance">
+                {m.title}
+              </h1>
+              <p className="mt-4 max-w-2xl standfirst text-pretty">
+                {m.description}
+              </p>
+              <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 meta-line">
+                <span className="tabular-nums">
+                  {items.length} {items.length === 1 ? "entry" : "entries"}
+                </span>
+                {sourceCount > 0 ? (
+                  <>
+                    <span aria-hidden>·</span>
+                    <span className="tabular-nums">{sourceCount} citations</span>
+                  </>
+                ) : null}
+                {updated ? (
+                  <>
+                    <span aria-hidden>·</span>
+                    <span>
+                      Updated <time dateTime={updated}>{updated}</time>
+                    </span>
+                  </>
+                ) : null}
+              </p>
+            </div>
+            {profile.image ? (
+              <figure className="lg:justify-self-end">
+                <div className="overflow-hidden border border-rule bg-paper-sunken">
+                  <Image
+                    src={profile.image.src}
+                    alt={profile.image.alt}
+                    width={profile.image.width}
+                    height={profile.image.height}
+                    priority={profile.preload}
+                    sizes="(max-width: 1024px) 100vw, 34vw"
+                    className="aspect-[16/10] h-full w-full object-cover"
+                  />
+                </div>
+                <figcaption className="mt-2 meta-line">
+                  {profile.image.credit.source} · {profile.image.credit.license}
+                </figcaption>
+              </figure>
+            ) : null}
+          </div>
+        </Container>
       </div>
 
-      <Container width="wide" className="mt-10">
-        <div className="grid gap-6 lg:grid-cols-[1fr_0.72fr]">
-          <p className="font-serif text-xl leading-8 text-ink-soft text-pretty">
-          {profile.framing}
+      {/* Framing */}
+      <Container width="wide" className="py-9">
+        <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr] lg:gap-14">
+          <p className="max-w-3xl text-[1.02rem] leading-8 text-ink-soft text-pretty">
+            {profile.framing}
           </p>
-          <aside className="premium-card-sm border-l-2 border-l-accent px-6 py-5">
-            <p className="kicker">Why this section matters</p>
+          <aside className="border-l-2 border-l-accent pl-5">
+            <p className="tech-label">Why this section matters</p>
             <p className="mt-2 text-sm leading-6 text-ink-soft text-pretty">
               {profile.significance}
             </p>
@@ -277,16 +339,20 @@ export function SectionHub({ section }: { section: SectionId }) {
         </div>
       </Container>
 
-      {isHistory ? <EvolutionBand /> : null}
+      {section === "history" ? <EvolutionBand /> : null}
 
-      <Container width="wide" className="py-14">
-        <JsonLd data={breadcrumbSchema(crumbs)} />
+      <Container width="wide" className="pb-[var(--band)] pt-2">
         {section === "tools" ? <InfrastructureMap /> : null}
         {section === "mobile-printing" ? <MobileHandoff /> : null}
+
         {items.length === 0 ? (
           <p className="text-ink-faint">
             New entries are being added to this section.
           </p>
+        ) : section === "models" ? (
+          <ModelTable items={items} />
+        ) : section === "brands" ? (
+          <BrandGrid items={items} />
         ) : section === "glossary" ? (
           <GlossaryIndex items={items} />
         ) : section === "troubleshooting" ? (
@@ -298,18 +364,18 @@ export function SectionHub({ section }: { section: SectionId }) {
             <section
               key={key}
               aria-labelledby={`group-${key}`}
-              className={idx > 0 ? "mt-14" : ""}
+              className={idx > 0 ? "mt-16" : ""}
             >
-              <p id={`group-${key}`} className="kicker">
-                {key === "__none__"
-                  ? "More in this section"
-                  : key.replace(/-/g, " ")}
+              <p id={`group-${key}`} className="tech-label">
+                {key === "__none__" ? "More in this section" : key.replace(/-/g, " ")}
               </p>
-              <SectionList items={list} />
+              <div className="mt-4">
+                <EntryIndex items={list} lead={idx === 0} />
+              </div>
             </section>
           ))
         ) : (
-          <SectionList items={items} />
+          <EntryIndex items={items} />
         )}
       </Container>
     </>

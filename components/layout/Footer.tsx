@@ -2,66 +2,80 @@ import Link from "next/link";
 import Image from "next/image";
 import { FOOTER_GROUPS, site, getSectionMeta } from "@/lib/site";
 import { PRODUCTS } from "@/lib/products";
+import { allEntries } from "@/lib/content/registry";
+import { allPosts } from "@/lib/blog/registry";
 import { ProductGlyph } from "@/components/content/ProductGlyph";
 import { Wordmark } from "@/components/identity/Wordmark";
 import { Container } from "./Container";
 
+const policyLinks = [
+  { href: "/about", label: "About" },
+  { href: "/editorial-policy", label: "Editorial policy" },
+  { href: "/source-policy", label: "Source policy" },
+  { href: "/archive-methodology", label: "Methodology" },
+  { href: "/changelog", label: "Changelog" },
+  { href: "/cookie-policy", label: "Cookie policy" },
+  { href: "#cookie-preferences", label: "Cookie preferences" },
+  { href: "/contact", label: "Contact" },
+];
+
+const machineLinks = [
+  { href: "/knowledge-graph", label: "Knowledge Graph" },
+  { href: "/timeline", label: "Timeline" },
+  { href: "/feed.xml", label: "RSS" },
+  { href: "/llms.txt", label: "llms.txt" },
+  { href: "/sitemap.xml", label: "Sitemap" },
+];
+
 export function Footer() {
-  const policyLinks = [
-    { href: "/about", label: "About" },
-    { href: "/editorial-policy", label: "Editorial policy" },
-    { href: "/source-policy", label: "Source policy" },
-    { href: "/archive-methodology", label: "Methodology" },
-    { href: "/cookie-policy", label: "Cookie policy" },
-    { href: "#cookie-preferences", label: "Cookie preferences" },
-    { href: "/contact", label: "Contact" },
-  ];
-  const resourceLinks = [
-    { href: "/knowledge-graph", label: "Knowledge Graph" },
-    { href: "/timeline", label: "Timeline" },
-    { href: "/changelog", label: "Changelog" },
-    { href: "/feed.xml", label: "RSS" },
-    { href: "/llms.txt", label: "llms.txt" },
-    { href: "/sitemap.xml", label: "Sitemap" },
-    { href: "https://github.com/hrhelperg/printerarchive", label: "GitHub" },
-  ];
+  // Counted from the registries, never typed in — a stale number in the
+  // footer is exactly the kind of thing that erodes the archive's credibility.
+  const entryCount = allEntries.length + allPosts.length;
+  const sourceCount = [...allEntries, ...allPosts].reduce(
+    (n, e) => n + (e.sources?.length ?? 0),
+    0,
+  );
 
   return (
-    <footer className="mt-24 border-t border-rule bg-paper-raised">
+    <footer className="mt-24 border-t border-rule bg-paper-sunken">
       <Container width="wide">
-        <div className="grid gap-10 py-14 lg:grid-cols-[1.35fr_2fr] lg:py-20">
+        {/* Institutional masthead */}
+        <div className="grid gap-10 border-b border-rule py-14 lg:grid-cols-[1.1fr_1.6fr] lg:gap-16">
           <div className="max-w-md">
             <Wordmark tagline="The world's printing encyclopedia" />
-            <p className="mt-5 text-sm leading-6 text-ink-soft">
+            <p className="mt-5 text-[0.95rem] leading-7 text-ink-soft">
               {site.description}
             </p>
-            <div className="mt-6 grid grid-cols-3 gap-3 font-sans text-sm">
-              <div className="premium-card-sm p-3">
-                <p className="text-lg font-semibold text-ink-display">300+</p>
-                <p className="mt-1 text-xs text-ink-faint">Reference pages</p>
+            <dl className="mt-7 flex flex-wrap gap-x-10 gap-y-4">
+              <div>
+                <dt className="tech-label">Reference pages</dt>
+                <dd className="mt-1 font-sans text-xl font-semibold text-ink-display tabular-nums">
+                  {entryCount}
+                </dd>
               </div>
-              <div className="premium-card-sm p-3">
-                <p className="text-lg font-semibold text-ink-display">10</p>
-                <p className="mt-1 text-xs text-ink-faint">Archive sections</p>
+              <div>
+                <dt className="tech-label">Cited sources</dt>
+                <dd className="mt-1 font-sans text-xl font-semibold text-ink-display tabular-nums">
+                  {sourceCount.toLocaleString("en-US")}
+                </dd>
               </div>
-              <div className="premium-card-sm p-3">
-                <p className="text-lg font-semibold text-ink-display">0</p>
-                <p className="mt-1 text-xs text-ink-faint">Affiliate links</p>
+              <div>
+                <dt className="tech-label">Affiliate links</dt>
+                <dd className="mt-1 font-sans text-xl font-semibold text-ink-display tabular-nums">
+                  0
+                </dd>
               </div>
-            </div>
+            </dl>
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {FOOTER_GROUPS.map((g) => (
               <nav key={g.heading} aria-label={g.heading}>
-                <p className="kicker">{g.heading}</p>
-                <ul className="mt-4 space-y-2 font-sans text-sm text-ink-soft">
+                <p className="tech-label">{g.heading}</p>
+                <ul className="mt-4 space-y-2.5 font-sans text-sm">
                   {g.ids.map((id) => (
                     <li key={id}>
-                      <Link
-                        href={`/${id}`}
-                        className="premium-link"
-                      >
+                      <Link href={`/${id}`} className="premium-link">
                         {getSectionMeta(id).label}
                       </Link>
                     </li>
@@ -76,9 +90,9 @@ export function Footer() {
                 </ul>
               </nav>
             ))}
-            <nav aria-label="Policies">
-              <p className="kicker">Policies</p>
-              <ul className="mt-4 space-y-2 font-sans text-sm text-ink-soft">
+            <nav aria-label="About the archive">
+              <p className="tech-label">About</p>
+              <ul className="mt-4 space-y-2.5 font-sans text-sm">
                 {policyLinks.map((l) => (
                   <li key={l.href}>
                     {l.href.startsWith("/") ? (
@@ -97,76 +111,70 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-rule py-10">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-            <section aria-labelledby="footer-products" className="lg:max-w-4xl">
-              <p id="footer-products" className="kicker">
-                Modern tools
-              </p>
-              <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                {Object.values(PRODUCTS).map((p) => (
-                  <li key={p.id}>
-                    <a
-                      href={p.links[0].href}
-                      target="_blank"
-                      rel="noopener noreferrer nofollow"
-                      className="premium-card-sm group flex h-full items-center gap-3 p-3 no-underline transition hover:border-rule-strong hover:shadow-[0_8px_24px_rgb(15_23_42_/_0.08)]"
-                    >
-                      {p.icon ? (
-                        <Image
-                          src={p.icon}
-                          alt=""
-                          width={34}
-                          height={34}
-                          className="h-[34px] w-[34px] shrink-0 rounded-md border border-rule"
-                        />
-                      ) : (
-                        <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-md border border-rule text-accent">
-                          <ProductGlyph id={p.id} className="h-4 w-4" />
-                        </span>
-                      )}
-                      <span className="font-sans text-sm font-semibold text-ink group-hover:text-accent">
-                        {p.name}
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <nav aria-label="Resources" className="min-w-[12rem]">
-              <p className="kicker">Resources</p>
-              <ul className="mt-4 space-y-2 font-sans text-sm text-ink-soft">
-                {resourceLinks.map((l) => (
-                  <li key={l.href}>
-                    {l.href.startsWith("/") ? (
-                      <a href={l.href} className="premium-link">
-                        {l.label}
-                      </a>
-                    ) : (
-                      <a
-                        href={l.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="premium-link"
-                      >
-                        {l.label}
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
+        {/* Publisher's other work — present, but plainly subordinate to the
+            archive above it: a quiet row, not a product grid. */}
+        <div className="grid gap-8 border-b border-rule py-10 lg:grid-cols-[1.1fr_1.6fr] lg:gap-16">
+          <div className="max-w-md">
+            <p className="tech-label">Modern tools</p>
+            <p className="mt-3 text-sm leading-6 text-ink-soft">
+              Contemporary tools from {site.publisher.name}, the publisher of
+              this archive. Listed for readers who came here to solve a
+              present-day document problem.
+            </p>
           </div>
+          <ul className="flex flex-wrap gap-x-6 gap-y-3 self-center">
+            {Object.values(PRODUCTS).map((p) => (
+              <li key={p.id}>
+                <a
+                  href={p.links[0].href}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="group inline-flex items-center gap-2 font-sans text-sm text-ink-soft no-underline transition-colors hover:text-accent"
+                >
+                  {p.icon ? (
+                    <Image
+                      src={p.icon}
+                      alt=""
+                      width={22}
+                      height={22}
+                      className="h-[22px] w-[22px] shrink-0 rounded border border-rule"
+                    />
+                  ) : (
+                    <ProductGlyph id={p.id} className="h-4 w-4 shrink-0 text-ink-faint" />
+                  )}
+                  {p.name}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-rule py-6 font-sans text-xs text-ink-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} {site.publisher.name}. Educational
-            reference content.
-          </p>
-          <p>
-            Published by {site.publisher.name} ·{" "}
+        {/* Machine-readable surfaces + legal */}
+        <div className="flex flex-col gap-5 py-8 lg:flex-row lg:items-center lg:justify-between">
+          <nav aria-label="Machine-readable">
+            <ul className="flex flex-wrap gap-x-5 gap-y-2 font-sans text-xs">
+              {machineLinks.map((l) => (
+                <li key={l.href}>
+                  <a href={l.href} className="premium-link">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="https://github.com/hrhelperg/printerarchive"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="premium-link"
+                >
+                  GitHub
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <p className="meta-line">
+            © {new Date().getFullYear()} {site.publisher.name} · Educational
+            reference content ·{" "}
             <a href={`mailto:${site.publisher.email}`}>{site.publisher.email}</a>
           </p>
         </div>

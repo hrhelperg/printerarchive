@@ -1,3 +1,6 @@
+/**
+ * Byline / edited-by / last-updated line under an article masthead.
+ */
 export function MetaBar({
   author,
   editor,
@@ -8,7 +11,7 @@ export function MetaBar({
   updated: string;
 }) {
   return (
-    <p className="mt-6 flex flex-wrap gap-x-3 gap-y-1 border-t border-rule pt-4 font-sans text-xs text-ink-faint">
+    <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-rule pt-4 meta-line">
       <span>By {author}</span>
       <span aria-hidden>·</span>
       <span>Edited by {editor}</span>

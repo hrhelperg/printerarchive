@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { buildMetadata } from "@/lib/seo/metadata";
 import {
   BLOG,
@@ -8,41 +9,56 @@ import {
   getBlogBreadcrumbs,
   readingMinutes,
 } from "@/lib/blog/queries";
-import type { BlogEntry } from "@/lib/content/types";
+import { getEntry } from "@/lib/content/queries";
+import type { ArchiveImage, BlogEntry, ContentBlock } from "@/lib/content/types";
 import { Container } from "@/components/layout/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { Frontispiece } from "@/components/content/Frontispiece";
-import { Motif } from "@/components/content/Motif";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema, blogSchema } from "@/lib/seo/schema";
 
-/** Restrained routes back into the encyclopedia, one per register. */
-const DISCOVERY: { href: string; label: string; note: string }[] = [
+/**
+ * Editorial territories the journal covers.
+ *
+ * These are NOT placeholder article cards. Each one names a subject the
+ * journal writes about and sends the reader to the encyclopedia section that
+ * already holds the underlying reference material — so the page is useful
+ * today, and gains posts without changing shape.
+ */
+const THEMES: { title: string; note: string; href: string; hub: string }[] = [
   {
+    title: "Printing & publishing",
+    note: "How pages get made, and what each production model displaced.",
     href: "/history",
-    label: "Printing History",
-    note: "How printing, fax and document technology developed over time.",
+    hub: "Printing history",
   },
   {
-    href: "/guides",
-    label: "Technology Guides",
-    note: "Mechanism-first explanations of how printing and scanning work.",
+    title: "Document systems",
+    note: "Capture, indexing, retrieval and retention as designed processes.",
+    href: "/workflows",
+    hub: "Document workflows",
   },
   {
+    title: "Historical transitions",
+    note: "The moments a technology stopped being infrastructure.",
     href: "/fax",
-    label: "Fax Technology",
-    note: "Document transmission, from analogue urgency to its long afterlife.",
+    hub: "Fax technology",
   },
   {
+    title: "Modern workflows",
+    note: "Formats, protocols and standards documents actually travel on.",
     href: "/tools",
-    label: "Tools & Formats",
-    note: "PDF, PostScript, queues and protocols — the infrastructure layer.",
+    hub: "Tools & formats",
   },
-  {
-    href: "/models",
-    label: "Printer & Fax Models",
-    note: "Source-backed reference pages for individual machines.",
-  },
+];
+
+/** Encyclopedia entries that pair with the journal's current subject matter. */
+const FROM_ARCHIVE: { section: "history" | "guides" | "tools"; slug: string }[] = [
+  { section: "history", slug: "history-of-desktop-publishing" },
+  { section: "history", slug: "enterprise-document-management" },
+  { section: "guides", slug: "optical-character-recognition" },
+  { section: "tools", slug: "what-is-pdf" },
+  { section: "history", slug: "paperless-office-prediction" },
+  { section: "guides", slug: "digital-preservation" },
 ];
 
 export function blogHubMetadata(): Metadata {
@@ -58,189 +74,227 @@ export function BlogHub() {
   const featured = getFeaturedPost();
   const rest = posts.filter((p) => p.slug !== featured?.slug);
   const crumbs = getBlogBreadcrumbs();
+  const archive = FROM_ARCHIVE.map((r) => getEntry(r.section, r.slug)).flatMap(
+    (e) => (e ? [e] : []),
+  );
 
   return (
     <>
-      <Container width="wide" className="pt-8">
-        <Breadcrumbs items={crumbs} />
-      </Container>
-      <div className="mt-6">
-        <Frontispiece
-          kicker="Blog / Journal"
-          title={BLOG.title}
-          lede={BLOG.lede}
-          meta={`${posts.length} ${posts.length === 1 ? "story" : "stories"}`}
-          titleClassName="text-display-sm"
-        />
+      <JsonLd
+        data={[
+          blogSchema(posts, BLOG.title, BLOG.description),
+          breadcrumbSchema(crumbs),
+        ]}
+      />
+
+      {/* Masthead. No image plate: the journal's identity is typographic, and
+          the previous motif tile floated in an empty column. */}
+      <div className="border-b border-rule bg-paper-raised">
+        <Container width="wide" className="pt-6">
+          <Breadcrumbs items={crumbs} />
+        </Container>
+        <Container width="wide" className="pb-12 pt-8 lg:pb-14">
+          <p className="kicker-accent">Blog / Journal</p>
+          <h1 className="mt-4 max-w-[16ch] text-display text-balance">
+            PrinterArchive Blog
+          </h1>
+          <p className="mt-6 max-w-2xl standfirst text-pretty">{BLOG.lede}</p>
+          <p className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-1 meta-line">
+            <span>
+              {posts.length} {posts.length === 1 ? "story" : "stories"}
+            </span>
+            <span aria-hidden>·</span>
+            <span>Essays, not encyclopedia entries</span>
+            <span aria-hidden>·</span>
+            <span>Every claim cited</span>
+          </p>
+        </Container>
       </div>
 
-      <Container width="wide" className="mt-10">
-        <JsonLd
-          data={[
-            blogSchema(posts, BLOG.title, BLOG.description),
-            breadcrumbSchema(crumbs),
-          ]}
-        />
-
-        <div className="grid gap-6 lg:grid-cols-[1fr_0.72fr]">
-          <p className="font-serif text-xl leading-8 text-ink-soft text-pretty">
-            The archive&apos;s reference sections explain how a technology works
-            and when it appeared. The journal is where those threads are pulled
-            together into an argument — longer pieces on how documents,
-            publishing and information systems changed one another, written to
-            be read rather than consulted.
-          </p>
-          <aside className="premium-card-sm border-l-2 border-l-accent px-6 py-5">
-            <p className="kicker">How these differ from entries</p>
-            <p className="mt-2 text-sm leading-6 text-ink-soft text-pretty">
-              Encyclopedia entries are reference material: stable, scoped and
-              built to be checked. Journal pieces are editorial essays — they
-              take a position, cite their sources in the same way, and link back
-              into the reference pages that carry the underlying detail.
-            </p>
-          </aside>
-        </div>
-      </Container>
-
-      {featured ? (
-        <Container width="wide" className="mt-14">
-          <section aria-labelledby="featured-story">
-            <p id="featured-story" className="kicker">
-              Featured story
-            </p>
-            <FeaturedCard post={featured} />
-          </section>
-        </Container>
-      ) : null}
+      {featured ? <FeaturedStory post={featured} /> : null}
 
       {rest.length > 0 ? (
-        <Container width="wide" className="mt-16">
-          <section aria-labelledby="latest-stories">
-            <p id="latest-stories" className="kicker">
-              Latest stories
-            </p>
-            <ul className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {rest.map((post) => (
-                <li key={post.slug}>
-                  <StoryCard post={post} />
-                </li>
-              ))}
-            </ul>
-          </section>
-        </Container>
-      ) : null}
-
-      <Container width="wide" className="mt-16 pb-6">
-        <section aria-labelledby="explore-archive">
-          <p id="explore-archive" className="kicker">
-            Explore the archive
-          </p>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-            {DISCOVERY.map((d) => (
-              <li key={d.href}>
-                <Link
-                  href={d.href}
-                  className="premium-card-sm group block h-full p-5 no-underline transition hover:border-rule-strong"
-                >
-                  <span className="font-sans text-base font-semibold leading-6 text-ink-display group-hover:text-accent">
-                    {d.label}
-                  </span>
-                  <span className="mt-2 block text-sm leading-6 text-ink-soft text-pretty">
-                    {d.note}
+        <Container width="wide" className="py-[var(--band)]">
+          <p className="kicker">More stories</p>
+          <ul className="mt-6">
+            {rest.map((post) => (
+              <li key={post.slug}>
+                <Link href={`${BLOG.path}/${post.slug}`} className="editorial-row group">
+                  <span className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                    <span className="tech-label min-w-[9rem]">{post.category}</span>
+                    <span className="flex-1 font-sans text-base font-semibold text-ink-display group-hover:text-accent">
+                      {post.title}
+                    </span>
+                    <span className="meta-line shrink-0">
+                      {readingMinutes(post)} min
+                    </span>
                   </span>
                 </Link>
               </li>
             ))}
           </ul>
-        </section>
-      </Container>
+        </Container>
+      ) : null}
+
+      {/* Editorial territories */}
+      <section aria-labelledby="blog-themes" className="band-sunken">
+        <Container width="wide" className="py-[var(--band)]">
+          <p className="kicker">What the journal covers</p>
+          <h2 id="blog-themes" className="mt-2 text-display-sm text-balance">
+            Four editorial territories
+          </h2>
+          <p className="mt-4 max-w-2xl standfirst">
+            Each one already has an encyclopedia section behind it. Stories are
+            added as the research warrants, not to fill a grid.
+          </p>
+          <ul className="mt-9 grid gap-x-10 gap-y-0 sm:grid-cols-2">
+            {THEMES.map((t) => (
+              <li key={t.title}>
+                <Link href={t.href} className="editorial-row group">
+                  <span className="block font-sans text-base font-semibold text-ink-display group-hover:text-accent">
+                    {t.title}
+                  </span>
+                  <span className="mt-1.5 block text-sm leading-6 text-ink-soft text-pretty">
+                    {t.note}
+                  </span>
+                  <span className="mt-2 block meta-line">
+                    Reference: {t.hub} <span aria-hidden>→</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      {/* Supporting reading from the encyclopedia */}
+      {archive.length > 0 ? (
+        <Container width="wide" className="py-[var(--band)]">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="kicker">From the archive</p>
+              <h2 className="mt-2 text-display-sm text-balance">
+                Reference reading behind the stories
+              </h2>
+            </div>
+          </div>
+          <ul className="mt-8 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+            {archive.map((e) => (
+              <li key={`${e.section}/${e.slug}`}>
+                <Link
+                  href={`/${e.section}/${e.slug}`}
+                  className="editorial-row group"
+                >
+                  <span className="tech-label">{e.section}</span>
+                  <span className="mt-2 block font-sans text-[0.95rem] font-semibold leading-6 text-ink-display group-hover:text-accent">
+                    {e.title}
+                  </span>
+                  <span className="mt-1.5 line-clamp-2 block text-sm leading-6 text-ink-soft">
+                    {e.description}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      ) : null}
     </>
   );
 }
 
-function FeaturedCard({ post }: { post: BlogEntry }) {
+/**
+ * The lead story. Asymmetric 60/40 composition with the article's own credited
+ * plate — large enough that it cannot be mistaken for a list item.
+ */
+function FeaturedStory({ post }: { post: BlogEntry }) {
   const minutes = readingMinutes(post);
+  const plate = post.hero ?? firstFigure(post.body);
+  const href = `${BLOG.path}/${post.slug}`;
+
   return (
-    <article className="premium-card mt-6 p-6 md:p-9">
-      <div className="grid gap-8 lg:grid-cols-[1.5fr_0.85fr] lg:items-center">
-        <div>
-          <p className="font-sans text-[11px] font-semibold uppercase tracking-wide text-accent">
-            {post.category}
-          </p>
-          <h2 className="mt-3 text-display-sm leading-tight text-balance">
-            <Link
-              href={`${BLOG.path}/${post.slug}`}
-              className="no-underline hover:text-accent"
-            >
-              {post.title}
-            </Link>
-          </h2>
-          <p className="mt-5 max-w-3xl font-serif text-lg leading-8 text-ink-soft text-pretty">
-            {post.description}
-          </p>
-          {post.topics?.length ? (
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {post.topics.map((t) => (
-                <li
-                  key={t}
-                  className="rounded-full border border-rule bg-paper px-3 py-1 font-sans text-xs font-semibold text-ink-faint"
-                >
-                  {t}
-                </li>
-              ))}
-            </ul>
+    <section aria-labelledby="featured-story">
+      <Container width="wide" className="py-[var(--band)]">
+        <p id="featured-story" className="kicker">
+          Featured story
+        </p>
+        <div className="mt-7 grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:gap-14">
+          <div>
+            <p className="tech-label">{post.category}</p>
+            <h2 className="mt-3 text-display-sm text-balance">
+              <Link href={href} className="text-ink-display no-underline hover:text-accent">
+                {post.title}
+              </Link>
+            </h2>
+            <p className="mt-6 max-w-2xl text-[1.05rem] leading-8 text-ink-soft text-pretty">
+              {post.summary}
+            </p>
+            {post.topics?.length ? (
+              <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-1">
+                {post.topics.map((t) => (
+                  <li key={t} className="tech-label">
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+            <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-rule pt-4 meta-line">
+              <span>By {post.author}</span>
+              <span aria-hidden>·</span>
+              <time dateTime={post.published}>{formatDate(post.published)}</time>
+              <span aria-hidden>·</span>
+              <span>{minutes} min read</span>
+              <span aria-hidden>·</span>
+              <span>{post.sources?.length ?? 0} sources</span>
+            </p>
+            <p className="mt-7">
+              <Link
+                href={href}
+                className="inline-flex items-center gap-2 bg-accent px-5 py-2.5 font-sans text-sm font-semibold text-white no-underline transition-colors hover:bg-accent-hover"
+              >
+                Read story <span aria-hidden>→</span>
+              </Link>
+            </p>
+          </div>
+
+          {plate ? (
+            <figure className="lg:justify-self-end">
+              <Link href={href} className="block no-underline">
+                <span className="block overflow-hidden border border-rule bg-paper-sunken">
+                  <Image
+                    src={plate.src}
+                    alt={plate.alt}
+                    width={plate.width}
+                    height={plate.height}
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 38vw"
+                    className="h-full w-full object-cover"
+                  />
+                </span>
+              </Link>
+              <figcaption className="mt-3 caption text-pretty">
+                {plate.caption}
+                <span className="mt-1 block text-ink-faint">
+                  {plate.credit.source} · {plate.credit.license}
+                </span>
+              </figcaption>
+            </figure>
           ) : null}
-          <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-rule pt-4 font-sans text-xs text-ink-faint">
-            <time dateTime={post.published}>{post.published}</time>
-            <span aria-hidden>·</span>
-            <span>{minutes} min read</span>
-            <span aria-hidden>·</span>
-            <span>
-              {post.sources?.length ?? 0}{" "}
-              {(post.sources?.length ?? 0) === 1 ? "source" : "sources"}
-            </span>
-          </p>
-          <p className="mt-6">
-            <Link
-              href={`${BLOG.path}/${post.slug}`}
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 font-sans text-sm font-semibold text-white no-underline transition-colors hover:bg-accent-hover"
-            >
-              Read article
-              <span aria-hidden>→</span>
-            </Link>
-          </p>
         </div>
-        <div
-          aria-hidden
-          className="hidden aspect-[4/3] w-full items-center justify-center rounded-lg border border-rule bg-sepia lg:flex"
-        >
-          <Motif className="h-20 w-20 text-rule-strong" />
-        </div>
-      </div>
-    </article>
+      </Container>
+    </section>
   );
 }
 
-function StoryCard({ post }: { post: BlogEntry }) {
-  const minutes = readingMinutes(post);
-  return (
-    <Link
-      href={`${BLOG.path}/${post.slug}`}
-      className="premium-card-sm group block h-full p-5 no-underline transition hover:border-rule-strong hover:shadow-[0_10px_26px_rgb(15_23_42_/_0.08)]"
-    >
-      <p className="font-sans text-[11px] font-semibold uppercase tracking-wide text-accent">
-        {post.category}
-      </p>
-      <h3 className="mt-2 font-sans text-base font-semibold leading-6 text-ink-display group-hover:text-accent">
-        {post.title}
-      </h3>
-      <p className="mt-2 line-clamp-3 text-sm leading-6 text-ink-soft text-pretty">
-        {post.description}
-      </p>
-      <p className="mt-3 font-sans text-xs font-semibold text-ink-faint">
-        <time dateTime={post.published}>{post.published}</time> · {minutes} min
-        read
-      </p>
-    </Link>
-  );
+function firstFigure(body: ContentBlock[]): ArchiveImage | undefined {
+  for (const b of body) if (b.kind === "figure") return b.image;
+  return undefined;
+}
+
+function formatDate(iso: string): string {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  });
 }
