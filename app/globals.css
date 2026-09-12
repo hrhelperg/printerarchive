@@ -310,6 +310,27 @@ body {
   display: none;
 }
 
+/* Signals that a horizontal rail continues past the right edge. Purely
+   decorative, and it disappears once the rail fits (no overflow, no fade). */
+.rail-fade::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  right: 0;
+  width: 2.5rem;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-paper-raised) 85%
+  );
+}
+@media (min-width: 1280px) {
+  .rail-fade::after {
+    display: none;
+  }
+}
+
 /* Section separator */
 .rule-sep {
   border: 0;

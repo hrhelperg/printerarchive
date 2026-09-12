@@ -24,9 +24,12 @@ export function Header() {
     // banner's own height variable, never a duplicated literal.
     <header className="sticky top-[var(--ecosystem-banner-height)] z-40 border-b border-rule bg-paper-raised/95 backdrop-blur">
       {/* Tier 1 — identity and search. */}
+      {/* Tier 1 wraps rather than compressing. At 320px the wordmark and the
+          search field cannot share a line, and a non-wrapping row squeezed the
+          input down to a single visible character. */}
       <Container
         width="wide"
-        className="flex h-14 items-center gap-4 lg:h-[3.75rem]"
+        className="flex min-h-14 flex-wrap items-center gap-x-4 gap-y-2 py-2 sm:flex-nowrap sm:py-0 lg:min-h-[3.75rem]"
       >
         <Link
           href="/"
@@ -49,7 +52,7 @@ export function Header() {
           action="https://www.google.com/search"
           method="get"
           role="search"
-          className="ml-auto flex min-w-0 flex-1 items-center gap-2 rounded-md border border-rule bg-paper px-3 py-1.5 transition-colors focus-within:border-accent sm:max-w-xs lg:max-w-sm"
+          className="flex w-full min-w-[11rem] flex-1 items-center gap-2 rounded-md border border-rule bg-paper px-3 py-1.5 transition-colors focus-within:border-accent sm:ml-auto sm:w-auto sm:max-w-xs lg:max-w-sm"
         >
           <input type="hidden" name="as_sitesearch" value="printerarchive.net" />
           <label htmlFor="site-search" className="sr-only">
@@ -72,14 +75,20 @@ export function Header() {
             id="site-search"
             name="q"
             type="search"
-            placeholder="Search the archive"
+            placeholder="Search"
             className="min-w-0 flex-1 bg-transparent font-sans text-sm text-ink outline-none placeholder:text-ink-faint"
           />
           <button
             type="submit"
             className="shrink-0 rounded font-sans text-xs font-semibold text-accent transition-colors hover:text-accent-hover"
           >
-            Search
+            {/* The word costs ~50px, which at 390px is the difference between
+                a usable field and a truncated placeholder. */}
+            <span className="hidden sm:inline">Search</span>
+            <span className="sm:hidden" aria-hidden>
+              &#8594;
+            </span>
+            <span className="sr-only sm:hidden">Search</span>
           </button>
         </form>
       </Container>
@@ -90,7 +99,7 @@ export function Header() {
           width and paint its links 200px to the left, on top of the wordmark.
           Overflow here is always `auto`, so the failure cannot recur. */}
       <nav aria-label="Sections" className="border-t border-rule">
-        <Container width="wide" className="relative">
+        <Container width="wide" className="relative rail-fade">
           <ul className="scrollbar-none -mx-1 flex items-stretch gap-0.5 overflow-x-auto font-sans text-[0.8125rem] font-semibold">
             {RAIL.map((item) => (
               <li key={item.href} className="shrink-0">

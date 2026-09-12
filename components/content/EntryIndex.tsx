@@ -39,14 +39,25 @@ export function EntryIndex({
                     {e.description}
                   </span>
                 </span>
-                <span className="tech-label shrink-0">{entryKicker(e)}</span>
-                {e.sources?.length ? (
-                  <span className="index-number shrink-0 w-10 text-right">
-                    {e.sources.length}
+                {/* Meta column. Never `shrink-0`: an era kicker such as "The
+                    page on the desk" is wider than a 390px viewport, and a
+                    non-shrinking flex item pushed the page into horizontal
+                    scroll. It wraps to its own line on narrow screens. */}
+                <span className="flex min-w-0 basis-full items-baseline gap-3 sm:basis-auto sm:justify-end">
+                  <span className="tech-label min-w-0 break-words">
+                    {entryKicker(e)}
                   </span>
-                ) : (
-                  <span className="index-number shrink-0 w-10 text-right">—</span>
-                )}
+                  <span
+                    className="index-number ml-auto w-8 shrink-0 text-right sm:ml-0"
+                    title={
+                      e.sources?.length
+                        ? `${e.sources.length} cited sources`
+                        : "No sources listed"
+                    }
+                  >
+                    {e.sources?.length ?? "—"}
+                  </span>
+                </span>
               </span>
             </Link>
           </li>
