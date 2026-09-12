@@ -1,12 +1,15 @@
 import type { MetadataRoute } from "next";
 import { site, SECTIONS } from "@/lib/site";
 import { allEntries } from "@/lib/content/registry";
+import { allPosts } from "@/lib/blog/registry";
 import { findContentIssues } from "@/lib/content/integrity";
 import { TAXONOMY } from "@/lib/knowledge-graph/taxonomy";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Build-time integrity gate: a violation fails `next build`.
-  const issues = findContentIssues(allEntries);
+  // Build-time integrity gate: a violation fails `next build`. Editorial
+  // posts are validated alongside encyclopedia entries — one gate, both
+  // registers, so a broken cross-link in either fails the build.
+  const issues = findContentIssues([...allEntries, ...allPosts]);
   if (issues.length > 0) {
     throw new Error(
       `Content integrity failed (${issues.length}):\n` +
@@ -26,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/knowledge-graph",
     ...TAXONOMY.map((c) => `/knowledge-graph/${c.id}`),
     "/timeline",
+    "/blog",
     ...SECTIONS.map((s) => `/${s.id}`),
   ];
   const statics = staticPaths.map((p) => ({
@@ -40,5 +44,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "yearly" as const,
     priority: 0.6,
   }));
-  return [...statics, ...articles];
+  const posts = allPosts.map((p) => ({
+    url: `${site.url}/blog/${p.slug}`,
+    lastModified: new Date(p.updated),
+    changeFrequency: "yearly" as const,
+    priority: 0.6,
+  }));
+  return [...statics, ...articles, ...posts];
 }

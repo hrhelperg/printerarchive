@@ -66,6 +66,13 @@ export function Footer() {
                       </Link>
                     </li>
                   ))}
+                  {g.links?.map((l) => (
+                    <li key={l.href}>
+                      <Link href={l.href} className="premium-link">
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </nav>
             ))}

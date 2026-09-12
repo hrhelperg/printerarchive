@@ -1,5 +1,6 @@
 import { site, SECTIONS } from "@/lib/site";
 import { getSection } from "@/lib/content/queries";
+import { BLOG, getPosts } from "@/lib/blog/queries";
 
 export const dynamic = "force-static";
 
@@ -20,9 +21,21 @@ export function GET() {
     `- Changelog: ${site.url}/changelog`,
     `- About: ${site.url}/about`,
     "",
-    "## Sections",
+    "## Blog",
+    "",
+    "Editorial stories about printing, documents, publishing, information systems and the evolution from physical to digital workflows. Distinct from the reference sections below: these are essays, not encyclopedia entries.",
+    "",
+    `Hub: ${site.url}${BLOG.path}`,
     "",
   ];
+  for (const p of getPosts()) {
+    const sourceCount = p.sources?.length ?? 0;
+    const suffix = sourceCount > 0 ? ` [${sourceCount} sources]` : "";
+    lines.push(
+      `- ${p.title} (${p.category}, ${p.published}): ${site.url}${BLOG.path}/${p.slug}${suffix}`,
+    );
+  }
+  lines.push("", "## Sections", "");
   for (const s of SECTIONS) {
     lines.push(`### ${s.title}`, s.description);
     for (const e of getSection(s.id)) {
