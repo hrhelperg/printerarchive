@@ -14,6 +14,7 @@ import { FigurePair } from "./FigurePair";
 import { ArchivalTable } from "./ArchivalTable";
 import { ResearchInset } from "./ResearchInset";
 import { Figure } from "./Figure";
+import { RichText } from "./RichText";
 import { ImageGroup } from "./ImageGroup";
 
 const slugify = (s: string) =>
@@ -64,7 +65,7 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
                 key={i}
                 className={`my-5 text-pretty ${i === 0 ? "dropcap" : ""}`}
               >
-                {b.text}
+                <RichText text={b.text} links={b.links} />
               </p>
             );
           case "list":

@@ -14,9 +14,22 @@ export interface ContentRef {
   slug: string;
 }
 
+/**
+ * A contextual link rendered inside a paragraph. `anchor` must appear verbatim
+ * exactly once in the paragraph's `text`; the renderer splits on it, so no
+ * markup is ever stored in content and the body stays plain, escapable text.
+ * Internal hrefs are site-relative ("/tools/postscript") and resolve through
+ * next/link; `external: true` opens in a new tab with an accessible label.
+ */
+export interface InlineLink {
+  anchor: string;
+  href: string;
+  external?: boolean;
+}
+
 export type ContentBlock =
   | { kind: "heading"; level: 2 | 3; text: string; id?: string }
-  | { kind: "paragraph"; text: string }
+  | { kind: "paragraph"; text: string; links?: InlineLink[] }
   | { kind: "list"; ordered?: boolean; items: string[] }
   | {
       kind: "callout";
@@ -168,3 +181,42 @@ export type ContentEntry =
   | WorkflowEntry
   | ToolEntry
   | ModelEntry;
+
+/**
+ * An editorial article in the Blog — PrinterArchive's publishing layer, as
+ * distinct from the encyclopedia's reference sections.
+ *
+ * Blog posts deliberately sit OUTSIDE `SectionId`. The section list is the
+ * encyclopedia's taxonomy: it drives the section grid, the entry totals, the
+ * knowledge-graph section mirror, and the reference listing in llms.txt.
+ * Folding an editorial narrative into that taxonomy would mix the two
+ * registers the archive keeps apart. Everything else is reused verbatim —
+ * `ContentBlock`, `ArchiveImage`, `ContentRef`, and the whole longform
+ * component set — so a post renders through the same machinery as an entry.
+ */
+export interface BlogEntry extends Omit<BaseEntry, "section"> {
+  section: "blog";
+  /** Primary editorial category, e.g. "Digital Publishing". Shown as kicker. */
+  category: string;
+  /**
+   * Shorter headline used for <title>, Open Graph and Twitter. The full
+   * editorial `title` stays on the page as the H1; this keeps the search
+   * result from being truncated mid-clause. Falls back to `title`.
+   */
+  seoTitle?: string;
+  /** Secondary topics, shown as tags on the hub and article. */
+  topics?: string[];
+  /** Marks the hub's lead story. At most one post should set this. */
+  featured?: boolean;
+  /**
+   * ISO date on which the post's time-sensitive external claims were last
+   * checked against their primary source. Rendered in the editorial note.
+   */
+  factsVerified?: string;
+}
+
+/**
+ * Everything the content-integrity gate validates: encyclopedia entries and
+ * editorial posts share one validator so neither register can drift.
+ */
+export type ArchiveEntry = ContentEntry | BlogEntry;
