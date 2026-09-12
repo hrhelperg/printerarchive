@@ -47,6 +47,7 @@ export function BlogArticlePage({ slug }: { slug: string }) {
       kicker={`Blog · ${post.category}`}
       schemas={schemas}
       related={getPostRelated(post)}
+      variant="editorial"
       badge="Sources cited"
       tags={post.topics}
       railRows={[

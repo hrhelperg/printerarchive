@@ -48,12 +48,9 @@ export function ArticlePage({
       kicker={`${sectionLabel}${showKick ? ` · ${kick}` : ""}`}
       schemas={schemas}
       related={related}
+      variant="reference"
       railRows={[{ term: "Section", value: sectionLabel }]}
-      metaLine={
-        e.essayLead ? null : (
-          <MetaBar author={e.author} editor={e.editor} updated={e.updated} />
-        )
-      }
+      metaLine={<MetaBar author={e.author} editor={e.editor} updated={e.updated} />}
     />
   );
 }
