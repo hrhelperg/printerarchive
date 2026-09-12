@@ -270,7 +270,10 @@ export function SectionHub({ section }: { section: SectionId }) {
           <Breadcrumbs items={crumbs} />
         </Container>
         <Container width="wide" className="pb-10 pt-6 lg:pb-12">
-          <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-end lg:gap-14">
+          {/* Centre-aligned, not bottom-aligned: the plate is taller than the
+              title block, and end-alignment pushed the title ~140px down the
+              page behind a band of empty space. */}
+          <div className="grid gap-8 lg:grid-cols-[1.6fr_0.9fr] lg:items-center lg:gap-14">
             <div>
               <p className="kicker">Section</p>
               <h1 className="mt-3 max-w-[18ch] text-display-sm text-balance">

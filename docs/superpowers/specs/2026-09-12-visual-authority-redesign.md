@@ -102,3 +102,61 @@ G. Hub identities                (fixes P2)
 H. Model + brand pages           (fixes P4)
 I. Mobile polish
 J. QA, screenshots, SEO parity
+
+## Results
+
+### SEO parity — verified, not assumed
+
+`origin/main` was built and fingerprinted, then the branch was built and
+fingerprinted, and the two compared across all 456 prerendered routes on:
+title, meta description, canonical, `og:title`, `og:url`, `og:type`,
+`twitter:card`, robots, `<h1>` count, and the set of schema.org `@type` values.
+
+    routes before=456 after=456   added: none   removed: none
+    title 0 · desc 0 · canonical 0 · ogtitle 0 · ogurl 0 · ogtype 0
+    twcard 0 · robots 0 · h1count 0 · schemas 0        (differing routes)
+
+`llms.txt`, `feed.xml` and `robots.txt` are byte-identical. `sitemap.xml`
+differs only in `<lastmod>`, which is `new Date()` at build time; its 454
+`<loc>` values are identical.
+
+### Performance
+
+    JS shipped      668K -> 668K   (unchanged)
+    CSS shipped      56K ->  64K   (+8K: tokens, type scale, primitives)
+    client components  3 ->   3    (all pre-existing)
+    new dependencies                0
+
+### Accessibility
+
+All new colour pairs measured against the surface they actually land on:
+white-on-accent 5.81, verified badge 6.06, ink-faint on paper/raised/sunken/
+sepia 5.51/5.86/5.36/5.33, accent on sunken/sepia 5.31/5.28. Zero failures.
+The pre-existing `--color-ink-faint` failure (4.37 on sunken) is fixed.
+
+Sampled routes: exactly one `<h1>`, zero images missing `alt`, every `<nav>`
+carries an `aria-label`, landmarks intact.
+
+### Responsive
+
+All 14 top-level routes report `scrollWidth == clientWidth` at 390px; sampled
+routes also at 320px. The `/history` overflow (426 vs 390) is fixed.
+
+### Blog discoverability
+
+`/blog` is linked from 455 of 456 routes (the exception is
+`_global-error.html`, which renders no chrome), in both header and footer. The
+Global City Intelligence article is linked from exactly two pages — the
+homepage and `/blog` — so it is discoverable without being site-wide linked.
+
+## Not done / deferred
+
+- **Search remains the scoped Google form.** Per §16 it is real, so it was made
+  more prominent rather than replaced; no search backend was built.
+- **No new imagery was sourced.** Everything on screen was already in the
+  approved manifest. `/brands`, `/models` and `/mobile-printing` still share the
+  HP LaserJet plate; giving them distinct images needs the image-verification
+  workflow, not a redesign.
+- **`FeaturedStories` and `ClosingBand` keep their original card treatment.**
+  They read acceptably in the new system and rewriting them was not needed to
+  meet the brief.

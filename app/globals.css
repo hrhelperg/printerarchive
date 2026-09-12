@@ -243,6 +243,18 @@ body {
   padding-left: 0.5rem;
 }
 
+/* The row's slide is motion, so it is opt-out. The background change stays:
+   it is a state cue, not decoration, and removing it would cost the hover
+   affordance entirely. */
+@media (prefers-reduced-motion: reduce) {
+  .editorial-row {
+    transition: none;
+  }
+  .editorial-row:hover {
+    padding-left: 0;
+  }
+}
+
 /* A band that recedes from the page canvas without becoming a card. */
 .band-sunken {
   background: var(--color-paper-sunken);
