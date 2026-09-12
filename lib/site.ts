@@ -106,9 +106,22 @@ export const getSectionMeta = (id: SectionId): SectionMeta => {
   return s;
 };
 
-export const FOOTER_GROUPS: { heading: string; ids: SectionId[] }[] = [
+/**
+ * Footer navigation. `ids` are encyclopedia sections; `links` carries anything
+ * that is not a section — currently the Blog, which sits deliberately outside
+ * SectionId. Extra links render after the section links in the same column.
+ */
+export const FOOTER_GROUPS: {
+  heading: string;
+  ids: SectionId[];
+  links?: { href: string; label: string }[];
+}[] = [
   { heading: "Learn", ids: ["guides", "troubleshooting", "workflows"] },
-  { heading: "History", ids: ["history", "fax"] },
+  {
+    heading: "Editorial",
+    ids: ["history", "fax"],
+    links: [{ href: "/blog", label: "Blog" }],
+  },
   {
     heading: "Reference",
     ids: ["brands", "glossary", "tools", "mobile-printing", "models"],

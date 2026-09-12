@@ -46,6 +46,14 @@ export function Header() {
                   </Link>
                 </li>
               ))}
+              <li key="blog" className="shrink-0">
+                <Link
+                  href="/blog"
+                  className="block whitespace-nowrap rounded-full px-2.5 py-2 no-underline transition-colors hover:bg-paper-raised hover:text-accent"
+                >
+                  Blog
+                </Link>
+              </li>
               <li key="knowledge-graph" className="shrink-0">
                 <Link
                   href="/knowledge-graph"

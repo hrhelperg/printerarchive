@@ -1,4 +1,4 @@
-import type { ContentEntry } from "@/lib/content/types";
+import type { ArchiveEntry } from "@/lib/content/types";
 
 function imageIssues(
   key: string,
@@ -29,11 +29,40 @@ function imageIssues(
 }
 
 /**
- * Pure content-integrity check. Returns a list of human-readable problems;
- * an empty array means the content set is valid. Used by the content check
- * script and enforced at build time so `next build` fails on violations.
+ * Site-relative routes an inline link may target that are not entry pages.
+ * Keep in sync with the static routes in app/sitemap.ts.
  */
-export function findContentIssues(entries: ContentEntry[]): string[] {
+const STATIC_ROUTES = new Set([
+  "/",
+  "/about",
+  "/contact",
+  "/editorial-policy",
+  "/source-policy",
+  "/archive-methodology",
+  "/changelog",
+  "/cookie-policy",
+  "/knowledge-graph",
+  "/timeline",
+  "/blog",
+  "/history",
+  "/guides",
+  "/troubleshooting",
+  "/brands",
+  "/workflows",
+  "/tools",
+  "/glossary",
+  "/mobile-printing",
+  "/fax",
+  "/models",
+]);
+
+/**
+ * Pure content-integrity check. Returns a list of human-readable problems;
+ * an empty array means the content set is valid. Validates encyclopedia
+ * entries and editorial blog posts alike. Used by the content check script
+ * and enforced at build time so `next build` fails on violations.
+ */
+export function findContentIssues(entries: ArchiveEntry[]): string[] {
   const issues: string[] = [];
   const isoDate = /^\d{4}-\d{2}-\d{2}$/;
   const keys = new Set(entries.map((e) => `${e.section}/${e.slug}`));
@@ -88,6 +117,65 @@ export function findContentIssues(entries: ContentEntry[]): string[] {
           const right = (b as { right?: Record<string, unknown> }).right ?? {};
           issues.push(...imageIssues(key, `figurePair[${idx}].left`, left));
           issues.push(...imageIssues(key, `figurePair[${idx}].right`, right));
+        }
+        if (b && (b as { kind?: string }).kind === "paragraph") {
+          const links = (b as { links?: unknown }).links;
+          const text = (b as { text?: unknown }).text;
+          if (links !== undefined) {
+            if (!Array.isArray(links)) {
+              issues.push(`${key}: paragraph[${idx}] links must be an array`);
+            } else {
+              const anchors = new Set<string>();
+              for (const l of links) {
+                const anchor = (l as { anchor?: unknown })?.anchor;
+                const href = (l as { href?: unknown })?.href;
+                if (typeof anchor !== "string" || !anchor.trim()) {
+                  issues.push(
+                    `${key}: paragraph[${idx}] link anchor must be a non-empty string`,
+                  );
+                  continue;
+                }
+                if (anchors.has(anchor)) {
+                  issues.push(
+                    `${key}: paragraph[${idx}] duplicate link anchor "${anchor}"`,
+                  );
+                }
+                anchors.add(anchor);
+                if (typeof text !== "string") continue;
+                const occurrences = text.split(anchor).length - 1;
+                if (occurrences !== 1) {
+                  issues.push(
+                    `${key}: paragraph[${idx}] anchor "${anchor}" occurs ${occurrences}x in text (must be exactly 1)`,
+                  );
+                }
+                if (typeof href !== "string" || !href.trim()) {
+                  issues.push(
+                    `${key}: paragraph[${idx}] link "${anchor}" has no href`,
+                  );
+                  continue;
+                }
+                const external = (l as { external?: unknown })?.external === true;
+                if (external) {
+                  if (!href.startsWith("https://")) {
+                    issues.push(
+                      `${key}: paragraph[${idx}] external link "${anchor}" must be https -> ${href}`,
+                    );
+                  }
+                } else if (!href.startsWith("/")) {
+                  issues.push(
+                    `${key}: paragraph[${idx}] link "${anchor}" is not site-relative and not marked external -> ${href}`,
+                  );
+                } else if (
+                  !STATIC_ROUTES.has(href) &&
+                  !keys.has(href.replace(/^\//, ""))
+                ) {
+                  issues.push(
+                    `${key}: paragraph[${idx}] internal link does not resolve -> ${href}`,
+                  );
+                }
+              }
+            }
+          }
         }
         if (b && (b as { kind?: string }).kind === "archivalTable") {
           const caption = (b as { caption?: unknown }).caption;
@@ -195,6 +283,27 @@ export function findContentIssues(entries: ContentEntry[]): string[] {
             `${key}: seeAlso ref does not resolve -> ${ref.section}/${ref.slug}`,
           );
         }
+      }
+    }
+
+    if (e.section === "blog") {
+      const category = (e as { category?: unknown }).category;
+      if (typeof category !== "string" || !category.trim()) {
+        issues.push(`${key}: blog post must declare a category`);
+      }
+      const src = (e as { sources?: unknown }).sources;
+      if (!Array.isArray(src) || src.length === 0) {
+        issues.push(`${key}: blog post must cite at least one source`);
+      }
+      const verified = (e as { factsVerified?: unknown }).factsVerified;
+      if (verified !== undefined && !isoDate.test(String(verified))) {
+        issues.push(
+          `${key}: factsVerified is not an ISO date (${String(verified)})`,
+        );
+      }
+      const topics = (e as { topics?: unknown }).topics;
+      if (topics !== undefined && !Array.isArray(topics)) {
+        issues.push(`${key}: topics must be an array`);
       }
     }
 
